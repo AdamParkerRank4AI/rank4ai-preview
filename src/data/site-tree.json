@@ -1,0 +1,178 @@
+{
+  "sections": [
+    {
+      "id": "homepage",
+      "name": "Homepage",
+      "path": "/",
+      "status": "build",
+      "h1": "Get Your Business Recommended by AI",
+      "metaTitle": "Rank4AI — UK AI Search Agency | AI Search Visibility",
+      "metaDesc": "UK AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity and Google AI.",
+      "hasFaqs": true,
+      "faqCount": 6,
+      "hasSchema": true,
+      "children": []
+    },
+    {
+      "id": "what-we-do",
+      "name": "What We Do",
+      "path": "/what-we-do/",
+      "status": "build",
+      "h1": "Work With Us",
+      "metaTitle": "Work With Rank4AI — AI Search Visibility Services & Pricing",
+      "metaDesc": "AI search visibility services from Rank4AI. Ecosystem services from £800/mo. Full agency from £1,500/mo.",
+      "hasFaqs": true,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": [
+        { "id": "audit", "name": "AI Visibility Audit", "path": "/what-we-do/ai-visibility-audit/", "status": "build", "h1": "AI Search Visibility Audit", "metaTitle": "AI Search Visibility Audit — Free AI Audit | Rank4AI", "metaDesc": "Free AI Search Visibility Audit from Rank4AI. We test your business across ChatGPT, Gemini, Perplexity, Claude, Copilot and Google AI.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "ecosystem", "name": "Ecosystem Services", "path": "/what-we-do/ecosystem-services/", "status": "build", "h1": "Ecosystem Services", "metaTitle": "AI Search Ecosystem Services | Rank4AI", "metaDesc": "AI search visibility built outside your website. Google ecosystem from £800/mo. Full ecosystem £2,500/mo.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "full-agency", "name": "Full Agency", "path": "/what-we-do/full-agency/", "status": "build", "h1": "Full Agency Service", "metaTitle": "Full Agency AI Search Visibility Service | Rank4AI", "metaDesc": "AI search visibility across your website and the full digital ecosystem. Standard, Strategic and Partner engagements.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "pricing", "name": "Pricing", "path": "/what-we-do/pricing/", "status": "build", "h1": "Pricing", "metaTitle": "AI Search Visibility Pricing | Rank4AI", "metaDesc": "Transparent pricing for AI search visibility services. Ecosystem from £800/mo. Full agency from £1,500/mo.", "hasFaqs": true, "faqCount": 0, "hasSchema": true }
+      ]
+    },
+    {
+      "id": "who-we-help",
+      "name": "Who We Help",
+      "path": "/who-we-help/",
+      "status": "build",
+      "h1": "AI Search Visibility for Your Sector",
+      "metaTitle": "AI Search Visibility by Industry & Location | Rank4AI",
+      "metaDesc": "AI search visibility for UK businesses. Professional services, ecommerce, local business, SaaS, B2B, retail.",
+      "hasFaqs": false,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": [
+        { "id": "professional-services", "name": "Professional Services", "path": "/who-we-help/professional-services/", "status": "build", "h1": "AI Search Visibility for Professional Services", "metaTitle": "AI Search Visibility for Professional Services | Rank4AI", "metaDesc": "AI search visibility for solicitors, accountants and consultants.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "ecommerce", "name": "Ecommerce", "path": "/who-we-help/ecommerce/", "status": "build", "h1": "AI Search Visibility for Ecommerce", "metaTitle": "AI Search Visibility for Ecommerce | Rank4AI", "metaDesc": "AI search visibility for ecommerce businesses.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "local-business", "name": "Local Business", "path": "/who-we-help/local-business/", "status": "build", "h1": "AI Search Visibility for Local Business", "metaTitle": "AI Search Visibility for Local Business | Rank4AI", "metaDesc": "AI search visibility for local and small businesses.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "saas", "name": "SaaS", "path": "/who-we-help/saas/", "status": "build", "h1": "AI Search Visibility for SaaS", "metaTitle": "AI Search Visibility for SaaS | Rank4AI", "metaDesc": "AI search visibility for SaaS companies.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "b2b", "name": "B2B", "path": "/who-we-help/b2b/", "status": "build", "h1": "AI Search Visibility for B2B", "metaTitle": "AI Search Visibility for B2B | Rank4AI", "metaDesc": "AI search visibility for B2B businesses.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "retail", "name": "Retail", "path": "/who-we-help/retail/", "status": "build", "h1": "AI Search Visibility for Retail", "metaTitle": "AI Search Visibility for Retail | Rank4AI", "metaDesc": "AI search visibility for retail businesses.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "london", "name": "London", "path": "/who-we-help/london/", "status": "build", "h1": "AI Search Agency London", "metaTitle": "AI Search Agency London | Rank4AI", "metaDesc": "AI search visibility agency in London.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "manchester", "name": "Manchester", "path": "/who-we-help/manchester/", "status": "build", "h1": "AI Search Agency Manchester", "metaTitle": "AI Search Agency Manchester | Rank4AI", "metaDesc": "AI search visibility agency in Manchester.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "birmingham", "name": "Birmingham", "path": "/who-we-help/birmingham/", "status": "build", "h1": "AI Search Agency Birmingham", "metaTitle": "AI Search Agency Birmingham | Rank4AI", "metaDesc": "AI search visibility agency in Birmingham.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "leeds", "name": "Leeds", "path": "/who-we-help/leeds/", "status": "build", "h1": "AI Search Agency Leeds", "metaTitle": "AI Search Agency Leeds | Rank4AI", "metaDesc": "AI search visibility agency in Leeds.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "bristol", "name": "Bristol", "path": "/who-we-help/bristol/", "status": "build", "h1": "AI Search Agency Bristol", "metaTitle": "AI Search Agency Bristol | Rank4AI", "metaDesc": "AI search visibility agency in Bristol.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "essex", "name": "Essex", "path": "/who-we-help/essex/", "status": "build", "h1": "AI Search Agency Essex", "metaTitle": "AI Search Agency Essex | Rank4AI", "metaDesc": "AI search visibility agency in Essex.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "colchester", "name": "Colchester", "path": "/who-we-help/colchester/", "status": "build", "h1": "AI Search Agency Colchester", "metaTitle": "AI Search Agency Colchester | Rank4AI", "metaDesc": "AI search visibility agency in Colchester.", "hasFaqs": true, "faqCount": 0, "hasSchema": true }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "path": "/research/",
+      "status": "build",
+      "h1": "Research",
+      "metaTitle": "UK AI Search Visibility Research & Data | Rank4AI",
+      "metaDesc": "Original research from 1,400+ UK business website audits.",
+      "hasFaqs": false,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": [
+        { "id": "stats", "name": "UK AI Visibility Stats", "path": "/research/uk-ai-visibility-stats/", "status": "build", "h1": "UK AI Visibility Statistics", "metaTitle": "AI Search Statistics UK 2026 | Rank4AI", "metaDesc": "Data from 1,400+ UK business website audits.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "case-studies", "name": "Case Studies", "path": "/research/case-studies/", "status": "build", "h1": "Case Studies", "metaTitle": "AI Search Visibility Case Studies | Rank4AI", "metaDesc": "Real results for real businesses.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "weekly-intel", "name": "Weekly Intelligence", "path": "/research/weekly-intelligence/", "status": "migrate", "h1": "Weekly Intelligence", "metaTitle": "AI Search Weekly Intelligence | Rank4AI", "metaDesc": "What changed in AI search this week.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "methodology", "name": "Methodology", "path": "/research/methodology/", "status": "migrate", "h1": "Testing Methodology", "metaTitle": "AI Search Audit Methodology | Rank4AI", "metaDesc": "How we test and measure AI search visibility.", "hasFaqs": false, "faqCount": 0, "hasSchema": true }
+      ]
+    },
+    {
+      "id": "learn",
+      "name": "Learn",
+      "path": "/learn/",
+      "status": "build",
+      "h1": "Learn",
+      "metaTitle": "AI Search Visibility Guides, Glossary & Tools | Rank4AI",
+      "metaDesc": "Learn about AI search visibility. Free guides, glossary, tools and 218 answered questions.",
+      "hasFaqs": false,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": [
+        { "id": "guides", "name": "Guides", "path": "/learn/guides/", "status": "migrate", "h1": "AI Search Guides", "metaTitle": "AI Search Visibility Guides | Rank4AI", "metaDesc": "In-depth guides covering AI search visibility.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "glossary", "name": "Glossary", "path": "/learn/glossary/", "status": "migrate", "h1": "AI Search Glossary", "metaTitle": "AI Search Glossary | Rank4AI", "metaDesc": "Definitions of 50+ AI search visibility terms.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "tools", "name": "Tools", "path": "/learn/tools/", "status": "build", "h1": "Free Tools", "metaTitle": "Free AI Search Tools | Rank4AI", "metaDesc": "Free AI visibility checker and llms.txt creator.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "questions", "name": "Questions (218)", "path": "/learn/questions/", "status": "migrate", "h1": "AI Search Questions and Answers", "metaTitle": "AI Search Questions and Answers | Rank4AI", "metaDesc": "218 AI search questions answered.", "hasFaqs": false, "faqCount": 0, "hasSchema": true }
+      ]
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "path": "/about/",
+      "status": "rebuild",
+      "h1": "About Rank4AI",
+      "metaTitle": "About Rank4AI — UK AI Search Agency",
+      "metaDesc": "UK AI search agency. Founded by Adam Parker and Jimmy Connoley. Based in Colchester, Essex.",
+      "hasFaqs": false,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": [
+        { "id": "how-we-work", "name": "How We Work", "path": "/about/how-we-work/", "status": "build", "h1": "How We Work", "metaTitle": "How We Work | Rank4AI", "metaDesc": "No juniors. No handoffs. No layers between you and the work.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "our-story", "name": "Our Story", "path": "/about/our-story/", "status": "migrate", "h1": "Our AI Search Story", "metaTitle": "Our Story | Rank4AI", "metaDesc": "Why Rank4AI exists.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "framework", "name": "Five Signal Framework", "path": "/about/five-signal-framework/", "status": "migrate", "h1": "The Five Signal Model", "metaTitle": "The Five Signal Model — AI Search Framework | Rank4AI", "metaDesc": "How AI platforms evaluate businesses through five signal layers.", "hasFaqs": false, "faqCount": 0, "hasSchema": true }
+      ]
+    },
+    {
+      "id": "blog",
+      "name": "Blog",
+      "path": "/blog/",
+      "status": "rebuild",
+      "h1": "Blog",
+      "metaTitle": "AI Search Visibility Blog | Rank4AI",
+      "metaDesc": "Practical insights on AI search visibility.",
+      "hasFaqs": false,
+      "faqCount": 0,
+      "hasSchema": true,
+      "children": []
+    },
+    {
+      "id": "conversion",
+      "name": "Conversion Pages",
+      "path": null,
+      "status": null,
+      "children": [
+        { "id": "free-audit", "name": "Free Audit", "path": "/free-audit/", "status": "build", "h1": "Get a Free AI Search Visibility Audit", "metaTitle": "Free AI Search Visibility Audit | Rank4AI", "metaDesc": "Get a free AI Search Visibility Audit from Rank4AI.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
+        { "id": "contact", "name": "Contact", "path": "/contact/", "status": "rebuild", "h1": "Contact Rank4AI", "metaTitle": "Contact Rank4AI | AI Search Visibility", "metaDesc": "Contact Rank4AI. Get in touch or book a call.", "hasFaqs": true, "faqCount": 2, "hasSchema": true },
+        { "id": "review-start", "name": "Review Start", "path": "/review-start/", "status": "keep", "h1": "Start Your Review", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "clarity-result", "name": "Audit Results", "path": "/clarity-result/", "status": "keep", "h1": "Audit Results", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false }
+      ]
+    },
+    {
+      "id": "legal",
+      "name": "Legal & Utility",
+      "path": null,
+      "status": null,
+      "children": [
+        { "id": "privacy", "name": "Privacy Policy", "path": "/privacy/", "status": "keep", "h1": "Privacy Policy", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "terms", "name": "Terms & Conditions", "path": "/terms/", "status": "keep", "h1": "Terms & Conditions", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "cookies", "name": "Cookie Policy", "path": "/cookies/", "status": "keep", "h1": "Cookie Policy", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "accessibility", "name": "Accessibility", "path": "/accessibility/", "status": "keep", "h1": "Accessibility", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "ecosystem", "name": "Ecosystem", "path": "/ecosystem/", "status": "keep", "h1": "Ecosystem and Public Presence", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "sitemap", "name": "Sitemap", "path": "/sitemap/", "status": "keep", "h1": "Sitemap", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false }
+      ]
+    },
+    {
+      "id": "knowledge-library",
+      "name": "Knowledge Library (hidden from nav)",
+      "path": null,
+      "status": null,
+      "children": [
+        { "id": "ai-search", "name": "/ai-search/* (72 pages)", "path": "/ai-search/", "status": "keep", "h1": "AI Search Visibility", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "ai-seo", "name": "/ai-seo/* (41 pages)", "path": "/ai-seo/", "status": "keep", "h1": "AI SEO", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "ai-marketing", "name": "/ai-marketing-growth/* (16 pages)", "path": "/ai-marketing-growth/", "status": "keep", "h1": "AI Marketing Growth", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false },
+        { "id": "ai-seo-agency", "name": "/ai-seo-agency-uk/* (10 pages)", "path": "/ai-seo-agency-uk/", "status": "keep", "h1": "AI SEO Agency UK", "metaTitle": "", "metaDesc": "", "hasFaqs": false, "faqCount": 0, "hasSchema": false }
+      ]
+    }
+  ],
+  "stats": {
+    "totalPages": 450,
+    "newPages": 25,
+    "migratePages": 260,
+    "keepPages": 165,
+    "redirectPages": 35,
+    "blogPosts": 89,
+    "questions": 218,
+    "statPages": 26,
+    "weeklyIntel": 6,
+    "redirects": 95
+  }
+}

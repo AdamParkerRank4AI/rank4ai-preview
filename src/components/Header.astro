@@ -1,0 +1,154 @@
+---
+// Header with dropdown navigation
+---
+<header>
+  <nav class="fixed top-0 w-full z-100 bg-white/92 backdrop-blur-xl border-b border-border">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between h-[68px] px-10 max-md:px-6">
+      <!-- Logo -->
+      <a href="/" class="shrink-0">
+        <img src="/logo.png" alt="Rank4AI" class="h-[30px] w-auto">
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden lg:flex items-center gap-7 list-none">
+        <!-- What We Do -->
+        <li class="relative group">
+          <a href="/what-we-do/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">
+            What We Do <span class="text-[10px] opacity-50">&#9662;</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 bg-white-pure border border-border rounded-xl p-6 min-w-[280px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <a href="/what-we-do/ai-visibility-audit/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">AI Visibility Audit</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">Find out where you stand</p>
+            <a href="/what-we-do/ecosystem-services/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">Ecosystem Services</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">We build outside your site</p>
+            <a href="/what-we-do/full-agency/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">Full Agency</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">We work on your site directly</p>
+            <div class="border-t border-border mt-3 pt-3">
+              <a href="/what-we-do/pricing/" class="block py-1 text-sm font-medium text-accent">See pricing &rarr;</a>
+              <a href="/about/how-we-work/" class="block py-1 text-sm font-medium text-accent">How we work &rarr;</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Who We Help -->
+        <li class="relative group">
+          <a href="/who-we-help/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">
+            Who We Help <span class="text-[10px] opacity-50">&#9662;</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 bg-white-pure border border-border rounded-xl p-6 min-w-[480px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 grid grid-cols-2 gap-6">
+            <div>
+              <h5 class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-3">By Sector</h5>
+              <a href="/who-we-help/professional-services/" class="block py-1 text-sm font-medium text-text hover:text-accent">Professional Services</a>
+              <a href="/who-we-help/ecommerce/" class="block py-1 text-sm font-medium text-text hover:text-accent">Ecommerce</a>
+              <a href="/who-we-help/local-business/" class="block py-1 text-sm font-medium text-text hover:text-accent">Local Business</a>
+              <a href="/who-we-help/saas/" class="block py-1 text-sm font-medium text-text hover:text-accent">SaaS</a>
+              <a href="/who-we-help/b2b/" class="block py-1 text-sm font-medium text-text hover:text-accent">B2B</a>
+              <a href="/who-we-help/retail/" class="block py-1 text-sm font-medium text-text hover:text-accent">Retail</a>
+            </div>
+            <div>
+              <h5 class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-3">By Location</h5>
+              <a href="/who-we-help/london/" class="block py-1 text-sm font-medium text-text hover:text-accent">London</a>
+              <a href="/who-we-help/manchester/" class="block py-1 text-sm font-medium text-text hover:text-accent">Manchester</a>
+              <a href="/who-we-help/birmingham/" class="block py-1 text-sm font-medium text-text hover:text-accent">Birmingham</a>
+              <a href="/who-we-help/leeds/" class="block py-1 text-sm font-medium text-text hover:text-accent">Leeds</a>
+              <a href="/who-we-help/bristol/" class="block py-1 text-sm font-medium text-text hover:text-accent">Bristol</a>
+              <a href="/who-we-help/essex/" class="block py-1 text-sm font-medium text-text hover:text-accent">Essex</a>
+              <a href="/who-we-help/colchester/" class="block py-1 text-sm font-medium text-text hover:text-accent">Colchester</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Research -->
+        <li class="relative group">
+          <a href="/research/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">
+            Research <span class="text-[10px] opacity-50">&#9662;</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 bg-white-pure border border-border rounded-xl p-6 min-w-[280px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <a href="/research/uk-ai-visibility-stats/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">UK AI Visibility Statistics</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">Data from 1,400+ audits</p>
+            <a href="/research/case-studies/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">Case Studies</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">Real results for real businesses</p>
+            <a href="/research/weekly-intelligence/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">Weekly Intelligence</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">What changed this week</p>
+            <a href="/research/methodology/" class="block py-1.5 text-sm font-medium text-text hover:text-accent">Methodology</a>
+            <p class="text-xs text-text-muted -mt-1 pb-2">How we test and measure</p>
+          </div>
+        </li>
+
+        <!-- Learn -->
+        <li class="relative group">
+          <a href="/learn/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">
+            Learn <span class="text-[10px] opacity-50">&#9662;</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 bg-white-pure border border-border rounded-xl p-6 min-w-[480px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 grid grid-cols-2 gap-6">
+            <div>
+              <h5 class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-3">Guides</h5>
+              <a href="/learn/guides/complete-guide-ai-search/" class="block py-1 text-sm font-medium text-text hover:text-accent">Complete AI Search Guide</a>
+              <a href="/learn/guides/geo/" class="block py-1 text-sm font-medium text-text hover:text-accent">Guide to GEO</a>
+              <a href="/learn/guides/get-cited-chatgpt/" class="block py-1 text-sm font-medium text-text hover:text-accent">How to Get Cited by ChatGPT</a>
+              <a href="/learn/guides/" class="block py-1 text-sm font-medium text-accent">All Guides &rarr;</a>
+            </div>
+            <div>
+              <h5 class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-3">Tools &amp; Resources</h5>
+              <a href="/learn/tools/ai-visibility-checker/" class="block py-1 text-sm font-medium text-text hover:text-accent">AI Visibility Checker</a>
+              <a href="/learn/tools/llms-txt-generator/" class="block py-1 text-sm font-medium text-text hover:text-accent">Free llms.txt Generator</a>
+              <a href="/learn/glossary/" class="block py-1 text-sm font-medium text-text hover:text-accent">Glossary (50+ terms)</a>
+              <a href="/learn/questions/" class="block py-1 text-sm font-medium text-text hover:text-accent">AI Search Questions (219)</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- About -->
+        <li>
+          <a href="/about/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">About</a>
+        </li>
+
+        <!-- Blog -->
+        <li>
+          <a href="/blog/" class="text-text-muted text-sm font-medium hover:text-text transition-colors">Blog</a>
+        </li>
+
+        <!-- CTA -->
+        <li>
+          <a href="/free-audit/" class="cta-primary !text-xs !py-2.5 !px-5">
+            Get a Free AI Search Visibility Audit
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-text" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white-pure border-t border-border max-h-[80vh] overflow-y-auto">
+      <div class="p-6 space-y-4">
+        <a href="/what-we-do/" class="block py-2 text-base font-medium text-text">What We Do</a>
+        <a href="/who-we-help/" class="block py-2 text-base font-medium text-text">Who We Help</a>
+        <a href="/research/" class="block py-2 text-base font-medium text-text">Research</a>
+        <a href="/learn/" class="block py-2 text-base font-medium text-text">Learn</a>
+        <a href="/about/" class="block py-2 text-base font-medium text-text">About</a>
+        <a href="/blog/" class="block py-2 text-base font-medium text-text">Blog</a>
+        <a href="/contact/" class="block py-2 text-base font-medium text-text">Contact</a>
+        <div class="pt-4">
+          <a href="/free-audit/" class="cta-primary w-full justify-center">Get a Free AI Search Visibility Audit</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div class="h-[68px]"></div>
+</header>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden')
+  })
+</script>

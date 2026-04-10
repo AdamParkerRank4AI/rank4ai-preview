@@ -1,0 +1,100 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title: string
+  description?: string
+  canonical?: string
+  ogImage?: string
+  noindex?: boolean
+}
+
+const {
+  title,
+  description = 'Rank4AI is a UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.',
+  canonical,
+  ogImage = '/og-image.png',
+  noindex = false,
+} = Astro.props
+
+const siteUrl = 'https://www.rank4ai.co.uk'
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
+  {noindex && <meta name="robots" content="noindex, nofollow">}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content={`${siteUrl}${ogImage}`}>
+  <meta property="og:site_name" content="Rank4AI">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+
+  <!-- Verification -->
+  <meta name="msvalidate.01" content="BB63278221A5AFFF5A032FEDE5EE1630">
+  <meta name="p:domain_verify" content="39e30e3b29d24cbe209ec748edc89e2e">
+
+  <!-- llms.txt discovery -->
+  <link rel="llms" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="/llms.txt">
+  <meta name="llms" content="/llms.txt">
+  <link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- GTM (via Partytown) -->
+  <script type="text/partytown">
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WRG6QRCP');
+  </script>
+</head>
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRG6QRCP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <Header />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible')
+        })
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+    })
+  </script>
+</body>
+</html>

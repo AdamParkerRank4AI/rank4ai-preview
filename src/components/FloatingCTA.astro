@@ -1,0 +1,42 @@
+---
+/**
+ * Floating CTA - appears after scrolling past the hero section.
+ * Sticks to bottom of screen on mobile, bottom-right on desktop.
+ * Disappears when user scrolls back to top.
+ */
+---
+
+<div id="floating-cta" class="fixed bottom-4 right-4 z-40 hidden">
+  <!-- Desktop: compact button -->
+  <a href="/free-audit/"
+    class="hidden sm:inline-flex items-center gap-2 px-5 py-3 bg-[#2bb891] hover:bg-[#239e7b] text-white text-sm font-bold rounded-xl shadow-lg shadow-[#2bb891]/25 transition-all hover:scale-105">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    Get a Free AI Search Visibility Audit
+  </a>
+
+  <!-- Mobile: full-width bar -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-[#eeece2] border-t border-[#0f2d2c]/10 px-4 py-3 shadow-lg">
+    <a href="/free-audit/"
+      class="flex items-center justify-center gap-2 w-full py-3 bg-[#2bb891] hover:bg-[#239e7b] text-white text-sm font-bold rounded-xl transition-colors">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      Get a Free AI Search Visibility Audit
+    </a>
+  </div>
+</div>
+
+<script>
+  const floatingCTA = document.getElementById('floating-cta');
+  if (floatingCTA) {
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      // Show after scrolling 400px down
+      if (scrollY > 400) {
+        floatingCTA.classList.remove('hidden');
+      } else {
+        floatingCTA.classList.add('hidden');
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+  }
+</script>

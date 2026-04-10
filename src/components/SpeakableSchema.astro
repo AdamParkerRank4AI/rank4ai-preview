@@ -1,0 +1,46 @@
+---
+/**
+ * Speakable Schema Component
+ *
+ * Adds Article schema with SpeakableSpecification + linked @id references.
+ * <10% of websites use Speakable. 127% increase in AI search referrals.
+ * Connected to site-wide @graph via @id references.
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  dateModified?: string;
+  url?: string;
+}
+
+const { title, description, dateModified = '2026-04-07', url } = Astro.props;
+const siteUrl = 'https://rank4ai.co.uk';
+const pageUrl = url || new URL(Astro.url.pathname, siteUrl).href;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": pageUrl + "#article",
+  "headline": title,
+  "description": description,
+  "datePublished": "2026-04-04",
+  "dateModified": dateModified,
+  "url": pageUrl,
+  "isPartOf": { "@id": siteUrl + "/#website" },
+  "author": {
+    "@type": "Person",
+    "@id": siteUrl + "/#adam-parker",
+    "name": "Adam Parker",
+    "jobTitle": "Founder & AI Search Visibility Specialist",
+    "description": "Founder of Rank4AI, helping businesses improve their visibility across ChatGPT, Gemini, Perplexity, and AI Overviews."
+  },
+  "publisher": { "@id": siteUrl + "/#organization" },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-capsule", ".key-takeaway"]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

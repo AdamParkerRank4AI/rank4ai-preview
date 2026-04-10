@@ -1,0 +1,39 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const siteUrl = 'https://rank4ai.co.uk';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `${siteUrl}${item.href}` } : {})
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<nav aria-label="Breadcrumb" class="text-sm text-[#4a6160] mb-6">
+  {items.map((item, i) => (
+    <>
+      {i > 0 && <span class="mx-1">&rsaquo;</span>}
+      {item.href ? (
+        <a href={item.href} class="hover:text-[#2bb891] transition-colors">{item.label}</a>
+      ) : (
+        <span class="text-[#0f2d2c]">{item.label}</span>
+      )}
+    </>
+  ))}
+</nav>

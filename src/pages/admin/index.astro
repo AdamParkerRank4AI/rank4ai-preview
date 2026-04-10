@@ -1,0 +1,474 @@
+---
+import siteTree from '../../data/site-tree.json'
+
+const sections = siteTree.sections
+const stats = siteTree.stats
+
+let buildCount = 0, migrateCount = 0, keepCount = 0, rebuildCount = 0
+function countStatus(items: any[]) {
+  for (const item of items) {
+    if (item.status === 'build') buildCount++
+    if (item.status === 'migrate') migrateCount++
+    if (item.status === 'keep') keepCount++
+    if (item.status === 'rebuild') rebuildCount++
+    if (item.children) countStatus(item.children)
+  }
+}
+countStatus(sections)
+
+// Flatten all pages for the full page list
+function flattenPages(items: any[], depth = 0): any[] {
+  let result: any[] = []
+  for (const item of items) {
+    if (item.path) {
+      result.push({ ...item, depth })
+    }
+    if (item.children) {
+      result = result.concat(flattenPages(item.children, depth + 1))
+    }
+  }
+  return result
+}
+const allPages = flattenPages(sections)
+---
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rank4AI — Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0f1419;
+      --surface: #161b22;
+      --surface-hover: #1c2128;
+      --border: #21262d;
+      --text: #e6edf3;
+      --text-muted: #7d8590;
+      --accent: #3de8b6;
+      --accent-dim: rgba(61, 232, 182, 0.1);
+      --green: #3fb950;
+      --amber: #d29922;
+      --red: #f85149;
+      --blue: #58a6ff;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', -apple-system, sans-serif; font-size: 14px; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+
+    /* LAYOUT */
+    .admin-layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+    /* SIDEBAR */
+    .sidebar { background: var(--surface); border-right: 1px solid var(--border); position: fixed; width: 240px; height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
+    .sidebar-header { padding: 20px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .sidebar-header img { height: 20px; opacity: 0.8; }
+    .sidebar-header span { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+    .sidebar-nav { flex: 1; padding: 8px; }
+    .sidebar-group { margin-bottom: 8px; }
+    .sidebar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); padding: 12px 8px 4px; }
+    .sidebar-link { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-radius: 6px; font-size: 13px; color: var(--text-muted); cursor: pointer; transition: all 0.1s; }
+    .sidebar-link:hover { background: var(--surface-hover); color: var(--text); }
+    .sidebar-link.active { background: var(--accent-dim); color: var(--accent); }
+    .sidebar-link .cnt { font-size: 11px; background: var(--bg); padding: 0 6px; border-radius: 8px; line-height: 18px; }
+    .sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--border); }
+    .sidebar-footer a { display: block; padding: 8px 10px; border-radius: 6px; font-size: 13px; color: var(--accent); }
+    .sidebar-footer a:hover { background: var(--accent-dim); }
+
+    /* MAIN */
+    .main { margin-left: 240px; }
+    .topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 12px 28px; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .topbar h1 { font-size: 15px; font-weight: 600; }
+    .topbar-actions { display: flex; gap: 8px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+    .btn:hover { background: var(--surface-hover); }
+    .btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+
+    /* CONTENT AREA */
+    .content { padding: 24px 28px; }
+    .content-section { margin-bottom: 32px; scroll-margin-top: 60px; }
+    .content-section > h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+    /* STAT CARDS */
+    .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 28px; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+    .stat .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .stat .val { font-size: 24px; font-weight: 700; }
+    .stat .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 4px; }
+    th { text-align: left; padding: 8px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: var(--bg); border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 8px 14px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface-hover); }
+    .mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: var(--text-muted); }
+    .indent { padding-left: 32px !important; }
+    .page-name { font-weight: 500; color: var(--text); }
+    .page-name:hover { color: var(--accent); cursor: pointer; }
+    .truncate { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* STATUS */
+    .status { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .s-build { background: rgba(88,166,255,0.12); color: var(--blue); }
+    .s-migrate { background: rgba(210,153,34,0.12); color: var(--amber); }
+    .s-keep { background: rgba(63,185,80,0.12); color: var(--green); }
+    .s-rebuild { background: rgba(248,81,73,0.12); color: var(--red); }
+
+    /* HEALTH DOT */
+    .dot { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .dot-y { background: rgba(63,185,80,0.15); color: var(--green); }
+    .dot-n { background: rgba(248,81,73,0.15); color: var(--red); }
+
+    /* TABS */
+    .tabs { display: flex; gap: 0; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .tab { padding: 8px 16px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* SUMMARY CARDS */
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .summary-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+    .summary-card h3 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+    .summary-card ul { list-style: none; }
+    .summary-card li { font-size: 12px; color: var(--text-muted); padding: 3px 0; display: flex; justify-content: space-between; }
+    .summary-card li span { color: var(--text); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<div class="admin-layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="/logo.png" alt="Rank4AI">
+      <span>Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-group">
+        <div class="sidebar-label">Overview</div>
+        <a href="#dashboard" class="sidebar-link active" onclick="showTab('dashboard')">Dashboard</a>
+        <a href="#site-tree" class="sidebar-link" onclick="showTab('site-tree')">Site Tree <span class="cnt">{stats.totalPages}</span></a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Content</div>
+        <a href="#pages" class="sidebar-link" onclick="showTab('pages')">Pages <span class="cnt">~65</span></a>
+        <a href="#blog" class="sidebar-link" onclick="showTab('blog')">Blog Posts <span class="cnt">{stats.blogPosts}</span></a>
+        <a href="#questions" class="sidebar-link" onclick="showTab('questions')">Questions <span class="cnt">{stats.questions}</span></a>
+        <a href="#stats-tab" class="sidebar-link" onclick="showTab('stats-tab')">Stats <span class="cnt">{stats.statPages}</span></a>
+        <a href="#weekly" class="sidebar-link" onclick="showTab('weekly')">Weekly Intel <span class="cnt">{stats.weeklyIntel}</span></a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Migration</div>
+        <a href="#redirects" class="sidebar-link" onclick="showTab('redirects')">Redirects <span class="cnt">{stats.redirects}</span></a>
+        <a href="#knowledge" class="sidebar-link" onclick="showTab('knowledge')">Knowledge Library <span class="cnt">175</span></a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-label">Health</div>
+        <a href="#issues" class="sidebar-link" onclick="showTab('issues')">Issues <span class="cnt">109</span></a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/" target="_blank">View live site &rarr;</a>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <h1 id="topbar-title">Dashboard</h1>
+      <div class="topbar-actions">
+        <a href="/" target="_blank" class="btn">View Site</a>
+        <button class="btn btn-primary">+ New Page</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ============ DASHBOARD TAB ============ -->
+      <div id="dashboard" class="tab-content active">
+        <div class="stats">
+          <div class="stat"><div class="label">Total Pages</div><div class="val">{stats.totalPages}</div><div class="sub">After rebuild</div></div>
+          <div class="stat"><div class="label">To Build</div><div class="val" style="color:var(--blue)">{buildCount}</div><div class="sub">New pages</div></div>
+          <div class="stat"><div class="label">To Migrate</div><div class="val" style="color:var(--amber)">{migrateCount}</div><div class="sub">Move + 301</div></div>
+          <div class="stat"><div class="label">Keep As-Is</div><div class="val" style="color:var(--green)">{keepCount}</div><div class="sub">No changes</div></div>
+          <div class="stat"><div class="label">301 Redirects</div><div class="val" style="color:var(--text-muted)">{stats.redirects}</div><div class="sub">Redirect rules</div></div>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>Content Volumes</h3>
+            <ul>
+              <li>Blog Posts <span>{stats.blogPosts}</span></li>
+              <li>AI Questions <span>{stats.questions}</span></li>
+              <li>Market Stats <span>{stats.statPages}</span></li>
+              <li>Weekly Intel <span>{stats.weeklyIntel}</span></li>
+              <li>Knowledge Library <span>175+</span></li>
+            </ul>
+          </div>
+          <div class="summary-card">
+            <h3>Build Progress</h3>
+            <ul>
+              <li>Homepage <span class="status s-build">build</span></li>
+              <li>What We Do (4 pages) <span class="status s-build">build</span></li>
+              <li>Who We Help (14 pages) <span class="status s-build">build</span></li>
+              <li>Research (hub + case studies) <span class="status s-build">build</span></li>
+              <li>Learn (hub + tools) <span class="status s-build">build</span></li>
+              <li>About (3 pages) <span class="status s-rebuild">rebuild</span></li>
+              <li>Free Audit page <span class="status s-build">build</span></li>
+            </ul>
+          </div>
+          <div class="summary-card">
+            <h3>Issues</h3>
+            <ul>
+              <li>Missing FAQs <span style="color:var(--red)">37</span></li>
+              <li>Missing AI Summary <span style="color:var(--red)">35</span></li>
+              <li>Missing Direct Answer <span style="color:var(--red)">35</span></li>
+              <li>Missing Meta Title <span style="color:var(--amber)">2</span></li>
+              <li>No Governance Role <span style="color:var(--amber)">29</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SITE TREE TAB ============ -->
+      <div id="site-tree" class="tab-content">
+        <div class="content-section">
+          <h2>Full Site Tree — Every Page</h2>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:25%">Page</th>
+                <th style="width:22%">URL</th>
+                <th style="width:8%">Status</th>
+                <th style="width:25%">H1</th>
+                <th style="width:5%">FAQs</th>
+                <th style="width:5%">Schema</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allPages.map((page: any) => (
+                <tr>
+                  <td class={page.depth > 0 ? 'indent' : ''}>
+                    <span class="page-name">{page.name}</span>
+                  </td>
+                  <td><span class="mono">{page.path}</span></td>
+                  <td><span class={`status s-${page.status}`}>{page.status}</span></td>
+                  <td class="truncate" title={page.h1}>{page.h1 || '-'}</td>
+                  <td><span class={`dot ${page.hasFaqs ? 'dot-y' : 'dot-n'}`}>{page.hasFaqs ? (page.faqCount || '?') : '-'}</span></td>
+                  <td><span class={`dot ${page.hasSchema ? 'dot-y' : 'dot-n'}`}>{page.hasSchema ? 'Y' : 'N'}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ PAGES TAB ============ -->
+      <div id="pages" class="tab-content">
+        <div class="content-section">
+          <h2>Nav Pages — The pages visible in navigation</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Page</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>H1</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sections.filter((s: any) => s.path).map((section: any) => (
+                <>
+                  <tr style="background: var(--bg);">
+                    <td><strong style="color:var(--accent)">{section.name}</strong></td>
+                    <td><span class="page-name">{section.name}</span></td>
+                    <td><span class="mono">{section.path}</span></td>
+                    <td><span class={`status s-${section.status}`}>{section.status}</span></td>
+                    <td class="truncate">{section.h1}</td>
+                  </tr>
+                  {section.children?.map((child: any) => (
+                    <tr>
+                      <td></td>
+                      <td class="indent"><span class="page-name">{child.name}</span></td>
+                      <td><span class="mono">{child.path}</span></td>
+                      <td><span class={`status s-${child.status}`}>{child.status}</span></td>
+                      <td class="truncate">{child.h1}</td>
+                    </tr>
+                  ))}
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ BLOG TAB ============ -->
+      <div id="blog" class="tab-content">
+        <div class="content-section">
+          <h2>Blog Posts — {stats.blogPosts} posts</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">Blog posts stay at /blog/[slug] — no URL changes. Content from Supabase blog_posts table. Categories to be added for filtering.</p>
+          <table>
+            <thead><tr><th>Status</th><th>Action</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><span class="status s-keep">no change</span></td><td>Keep all 89 posts at /blog/[slug]</td><td>Add category tags for filtering</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Rebuild /blog/ index page</td><td>Add category filter UI</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Add CTA to every post</td><td>"Get a Free AI Search Visibility Audit"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ QUESTIONS TAB ============ -->
+      <div id="questions" class="tab-content">
+        <div class="content-section">
+          <h2>AI Search Questions — {stats.questions} questions</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">Questions migrate from /ai-search-questions/[slug] to /learn/questions/[slug] with 301 redirects. Content from Supabase ai_questions table.</p>
+          <table>
+            <thead><tr><th>Status</th><th>Action</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><span class="status s-migrate">migrate</span></td><td>Move 218 questions to /learn/questions/[slug]</td><td>301 from old URLs</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Build /learn/questions/ index</td><td>With search and category filter</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Add CTA to every question</td><td>"Want us to check this for your business?"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ STATS TAB ============ -->
+      <div id="stats-tab" class="tab-content">
+        <div class="content-section">
+          <h2>Market Stats — {stats.statPages} stat pages</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">Stats migrate from /ai-market-stats/[slug] to /research/stats/[slug] with 301 redirects. Content from Supabase ai_market_stats table.</p>
+          <table>
+            <thead><tr><th>Status</th><th>Action</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><span class="status s-migrate">migrate</span></td><td>Move 26 stat pages to /research/stats/[slug]</td><td>301 from old URLs</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Build /research/uk-ai-visibility-stats/ dashboard</td><td>Visual stats overview</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ WEEKLY TAB ============ -->
+      <div id="weekly" class="tab-content">
+        <div class="content-section">
+          <h2>Weekly Intelligence — {stats.weeklyIntel} briefings</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">Weekly intel migrates from /ai-search-weekly/[slug] to /research/weekly-intelligence/[slug].</p>
+          <table>
+            <thead><tr><th>Status</th><th>Action</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><span class="status s-migrate">migrate</span></td><td>Move 6 briefings to /research/weekly-intelligence/[slug]</td><td>301 from old URLs</td></tr>
+              <tr><td><span class="status s-build">build</span></td><td>Build index page</td><td>/research/weekly-intelligence/</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ REDIRECTS TAB ============ -->
+      <div id="redirects" class="tab-content">
+        <div class="content-section">
+          <h2>301 Redirects — {stats.redirects} rules</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">Every old URL that changes gets a 301 redirect to its new location. Nothing returns a 404.</p>
+          <table>
+            <thead><tr><th>Old URL</th><th>&rarr;</th><th>New URL</th><th>Type</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">/ai-services</td><td>&rarr;</td><td class="mono">/what-we-do/</td><td>Services</td></tr>
+              <tr><td class="mono">/ai-services/ai-search-audit</td><td>&rarr;</td><td class="mono">/what-we-do/ai-visibility-audit/</td><td>Services</td></tr>
+              <tr><td class="mono">/ai-services/ai-content-rebuild</td><td>&rarr;</td><td class="mono">/what-we-do/ecosystem-services/</td><td>Services</td></tr>
+              <tr><td class="mono">/ai-services/ai-meaning-clean-up</td><td>&rarr;</td><td class="mono">/what-we-do/full-agency/</td><td>Services</td></tr>
+              <tr><td class="mono">/ai-seo-agency-uk/london</td><td>&rarr;</td><td class="mono">/who-we-help/london/</td><td>City</td></tr>
+              <tr><td class="mono">/ai-seo-agency-uk/manchester</td><td>&rarr;</td><td class="mono">/who-we-help/manchester/</td><td>City</td></tr>
+              <tr><td class="mono">/ai-seo-agency-uk/birmingham</td><td>&rarr;</td><td class="mono">/who-we-help/birmingham/</td><td>City</td></tr>
+              <tr><td class="mono">/ai-market-stats</td><td>&rarr;</td><td class="mono">/research/uk-ai-visibility-stats/</td><td>Research</td></tr>
+              <tr><td class="mono">/ai-search-questions</td><td>&rarr;</td><td class="mono">/learn/questions/</td><td>Learn</td></tr>
+              <tr><td class="mono">/glossary</td><td>&rarr;</td><td class="mono">/learn/glossary/</td><td>Learn</td></tr>
+              <tr><td class="mono">/guides</td><td>&rarr;</td><td class="mono">/learn/guides/</td><td>Learn</td></tr>
+              <tr><td class="mono">/methodology</td><td>&rarr;</td><td class="mono">/research/methodology/</td><td>Research</td></tr>
+            </tbody>
+          </table>
+          <p style="color:var(--text-muted); margin-top:12px; font-size:12px;">Showing 12 of {stats.redirects} redirects. Full list in COMPLETE_REBUILD_PLAN.md</p>
+        </div>
+      </div>
+
+      <!-- ============ KNOWLEDGE LIBRARY TAB ============ -->
+      <div id="knowledge" class="tab-content">
+        <div class="content-section">
+          <h2>Knowledge Library — 175+ pages (hidden from nav)</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">These pages keep their exact current URLs. They exist for SEO and AI authority. Reached via internal links, sitemap, and AI crawlers only.</p>
+          <table>
+            <thead><tr><th>Section</th><th>URL Prefix</th><th>Pages</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>/ai-search/*</td><td class="mono">/ai-search/</td><td>72</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-seo/*</td><td class="mono">/ai-seo/</td><td>41</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-marketing-growth/*</td><td class="mono">/ai-marketing-growth/</td><td>16</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-seo-agency-uk/*</td><td class="mono">/ai-seo-agency-uk/</td><td>10</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-search/comparisons/*</td><td class="mono">/ai-search/comparisons/</td><td>20</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-search/platforms/*</td><td class="mono">/ai-search/platforms/</td><td>13</td><td><span class="status s-keep">keep urls</span></td></tr>
+              <tr><td>/ai-search/citations/*</td><td class="mono">/ai-search/citations/</td><td>13</td><td><span class="status s-keep">keep urls</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ ISSUES TAB ============ -->
+      <div id="issues" class="tab-content">
+        <div class="content-section">
+          <h2>Issues — 109 items</h2>
+          <p style="color:var(--text-muted); margin-bottom:16px; font-size:13px;">From the current site audit. These will be fixed during the Astro rebuild.</p>
+          <table>
+            <thead><tr><th>Issue Type</th><th>Count</th><th>Severity</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Missing FAQs</td><td>37</td><td><span class="status s-rebuild">warning</span></td><td>Add FAQPage schema to all key pages</td></tr>
+              <tr><td>Missing AI Summary</td><td>35</td><td style="color:var(--text-muted)">info</td><td>Add AI summary field during migration</td></tr>
+              <tr><td>Missing Direct Answer</td><td>35</td><td style="color:var(--text-muted)">info</td><td>Add direct answer field during migration</td></tr>
+              <tr><td>Missing Meta Title</td><td>2</td><td><span class="status s-rebuild">warning</span></td><td>Add meta titles to 2 blog posts</td></tr>
+              <tr><td>No Governance Role</td><td>29</td><td style="color:var(--text-muted)">info</td><td>Assign governance roles during migration</td></tr>
+              <tr><td>Inconsistent Cluster IDs</td><td>~20</td><td style="color:var(--text-muted)">info</td><td>Standardise naming in new data model</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(tabId) {
+  // Hide all tabs
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+
+  // Show selected tab
+  const tab = document.getElementById(tabId);
+  if (tab) tab.classList.add('active');
+
+  // Highlight sidebar link
+  const link = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+  if (link) link.classList.add('active');
+
+  // Update topbar title
+  const titles = {
+    'dashboard': 'Dashboard',
+    'site-tree': 'Site Tree',
+    'pages': 'Pages',
+    'blog': 'Blog Posts',
+    'questions': 'AI Search Questions',
+    'stats-tab': 'Market Stats',
+    'weekly': 'Weekly Intelligence',
+    'redirects': 'Redirects',
+    'knowledge': 'Knowledge Library',
+    'issues': 'Issues'
+  };
+  document.getElementById('topbar-title').textContent = titles[tabId] || tabId;
+}
+</script>
+
+</body>
+</html>

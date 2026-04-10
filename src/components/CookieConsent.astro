@@ -1,0 +1,49 @@
+---
+/**
+ * GDPR Cookie Consent Banner
+ *
+ * Simple, non-intrusive bottom banner.
+ * Stores preference in localStorage. Only shows once.
+ */
+---
+
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 z-[9999] hidden">
+  <div class="bg-[#0f2d2c] border-t border-[#4a6160] px-4 py-3">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-[#eeece2]/70 text-center sm:text-left">
+        We use cookies to improve your experience. No tracking cookies without consent.
+        <a href="/privacy/" class="underline hover:text-[#2bb891]">Privacy Policy</a> &middot;
+        <a href="/cookies/" class="underline hover:text-[#2bb891]">Cookie Policy</a>
+      </p>
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="cookie-decline" class="px-4 py-1.5 text-xs font-medium text-[#eeece2]/60 hover:text-white border border-[#4a6160] hover:border-[#eeece2]/40 rounded transition-colors">
+          Decline
+        </button>
+        <button id="cookie-accept" class="px-4 py-1.5 text-xs font-medium text-white bg-[#2bb891] hover:bg-[#239e7b] rounded transition-colors">
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const consent = localStorage.getItem('cookie-consent');
+    if (consent) return;
+
+    const banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+    banner.classList.remove('hidden');
+
+    document.getElementById('cookie-accept')?.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'accepted');
+      banner.classList.add('hidden');
+    });
+
+    document.getElementById('cookie-decline')?.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'declined');
+      banner.classList.add('hidden');
+    });
+  })();
+</script>
