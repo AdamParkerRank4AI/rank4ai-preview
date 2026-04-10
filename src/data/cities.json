@@ -1,0 +1,9 @@
+[
+  { "slug": "london", "name": "London", "h1": "AI Search Agency London" },
+  { "slug": "manchester", "name": "Manchester", "h1": "AI Search Agency Manchester" },
+  { "slug": "birmingham", "name": "Birmingham", "h1": "AI Search Agency Birmingham" },
+  { "slug": "leeds", "name": "Leeds", "h1": "AI Search Agency Leeds" },
+  { "slug": "bristol", "name": "Bristol", "h1": "AI Search Agency Bristol" },
+  { "slug": "essex", "name": "Essex", "h1": "AI Search Agency Essex" },
+  { "slug": "colchester", "name": "Colchester", "h1": "AI Search Agency Colchester" }
+]

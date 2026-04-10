@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const stats = [
+  { value: '77%', slug: '77-percent-uk-sme-signal-conflicts', title: 'of UK SME websites are sending confusing signals to AI search platforms' },
+  { value: '53%', slug: '53-percent-uk-sme-unclear-h1-heading', title: 'have unclear H1 headings' },
+  { value: '44%', slug: '44-percent-uk-sme-no-organisation-schema', title: 'have no organisation schema' },
+  { value: '23%', slug: '23-percent-uk-sme-blocking-ai-crawlers', title: 'are blocking at least one major AI crawler' },
+  { value: '62%', slug: '62-percent-uk-sme-description-mismatch', title: 'describe their business differently across title, H1 and meta description' },
+  { value: '76%', slug: '76-percent-uk-sme-alt-text-issues', title: 'have homepage alt text issues' },
+  { value: '67%', slug: '67-percent-uk-sme-no-copyright-year', title: 'have no copyright year in their footer' },
+  { value: '52%', slug: '52-percent-uk-sme-faq-content-no-schema', title: 'have FAQ content but no FAQ schema' },
+  { value: '48%', slug: '48-percent-uk-sme-no-sameas-social-links', title: 'have no sameAs social links in structured data' },
+  { value: '36%', slug: '36-percent-uk-sme-trust-page-gap', title: 'have all three trust pages (privacy, terms, cookies)' },
+  { value: '29%', slug: '29-percent-uk-sme-title-h1-misalignment', title: 'have severe title tag and H1 misalignment' },
+  { value: '20%', slug: '70-percent-uk-sme-reviews-unverifiable', title: 'of review claims are unverifiable' },
+  { value: '13%', slug: '13-percent-uk-sme-llms-txt-adoption', title: 'have an llms.txt file' },
+  { value: '4%', slug: '4-percent-uk-sme-person-schema-gap', title: 'have Person schema' },
+]
+---
+<Layout title="AI Search Statistics UK 2026 — Original Data | Rank4AI" description="Original research data from 1,400+ UK business website audits. AI visibility statistics for UK SMEs.">
+
+<section class="pt-12 pb-24 reveal">
+  <div class="container">
+    <p class="section-tag">UK AI Visibility Research</p>
+    <h1 class="mb-6">AI Search Statistics UK 2026</h1>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-4 max-w-[700px]">Original research from 1,400+ UK business website audits. What we found when we tested how AI platforms interpret UK SME websites.</p>
+    <p class="text-sm text-text-muted mb-12">Source: Rank4AI Research, 2026</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {stats.map(stat => (
+        <div class="card">
+          <div class="font-display text-3xl text-teal leading-none mb-2">{stat.value}</div>
+          <p class="text-sm text-text-muted leading-relaxed">{stat.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16">
+    <h2 class="mb-4">Is your business one of them?</h2>
+    <p class="text-[17px] text-text-muted mb-10 max-w-[500px] mx-auto">Get a free audit to find out where your business stands across all five signal layers.</p>
+    <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
+  </div>
+</section>
+
+</Layout>
