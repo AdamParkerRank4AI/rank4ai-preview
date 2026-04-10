@@ -1,0 +1,961 @@
+[
+  {
+    "slug": "ai-search/ecosystem-validation",
+    "name": "Ecosystem Validation",
+    "layer": "L2A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation/public-records-governance-surfaces",
+    "name": "Public Records and Governance Surfaces",
+    "layer": "L3A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation/public-records-governance-surfaces"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation/media-distribution-entity-reinforcement",
+    "name": "Media Distribution and Entity Reinforcement",
+    "layer": "L3A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation/media-distribution-entity-reinforcement"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation/social-platform-consistency",
+    "name": "Social Platform Consistency",
+    "layer": "L3A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation/social-platform-consistency"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation/review-platforms-trust-signals",
+    "name": "Review Platforms and Trust Signals",
+    "layer": "L3A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation/review-platforms-trust-signals"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation/insights",
+    "name": "Ecosystem Validation Insights",
+    "layer": "L3B",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation/insights"
+  },
+  {
+    "slug": "ai-search/ecosystem-validation-directories-marketplaces",
+    "name": "Ecosystem Validation: Directories and Marketplaces",
+    "layer": "L3A",
+    "type": "static",
+    "url": "/ai-search/ecosystem-validation-directories-marketplaces"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-content-vs-ai-optimised-content",
+    "name": "AI Content vs AI Optimised Content",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-content-vs-ai-optimised-content"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-search-marketing-small-business",
+    "name": "AI Search Marketing Small Business",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-search-marketing-small-business"
+  },
+  {
+    "slug": "ai-marketing-growth/why-ai-marketing-fails",
+    "name": "Why AI Marketing Fails",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/why-ai-marketing-fails"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-visibility-strategy",
+    "name": "AI Visibility Strategy",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-visibility-strategy"
+  },
+  {
+    "slug": "ai-seo/what-is-llms-txt",
+    "name": "What is llms.txt",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/what-is-llms-txt"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-professional-services",
+    "name": "AI Search for Professional Services",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-professional-services"
+  },
+  {
+    "slug": "ai-search/get-brand-recommended-by-ai",
+    "name": "Get Brand Recommended by AI",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/get-brand-recommended-by-ai"
+  },
+  {
+    "slug": "ai-search/rank-in-ai-search",
+    "name": "Rank in AI Search",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/rank-in-ai-search"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-answers-cannibalise",
+    "name": "AI Answers Cannibalise",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-answers-cannibalise"
+  },
+  {
+    "slug": "ai-search/appear-in-ai-answers",
+    "name": "Appear in AI Answers",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/appear-in-ai-answers"
+  },
+  {
+    "slug": "ai-search/comparisons/conversational-vs-query-search",
+    "name": "Conversational vs Query Search",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/conversational-vs-query-search"
+  },
+  {
+    "slug": "ai-search/comparisons/generic-content-fails",
+    "name": "Generic Content Fails in AI",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/generic-content-fails"
+  },
+  {
+    "slug": "ai-search/comparisons/how-ai-decides",
+    "name": "How AI Decides",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/how-ai-decides"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-strengthens-organic-traffic",
+    "name": "AI Strengthens Organic Traffic",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-strengthens-organic-traffic"
+  },
+  {
+    "slug": "ai-search/comparisons/adapt-content-for-ai",
+    "name": "Adapt Content for AI",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/adapt-content-for-ai"
+  },
+  {
+    "slug": "ai-search/comparisons/future-organic-search",
+    "name": "Future of Organic Search",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/future-organic-search"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-ranking-vs-reasoning",
+    "name": "AI Ranking vs Reasoning",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-ranking-vs-reasoning"
+  },
+  {
+    "slug": "ai-search/why-ai-not-showing-my-business",
+    "name": "Why AI Not Showing My Business",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/why-ai-not-showing-my-business"
+  },
+  {
+    "slug": "ai-search/ai-authority-building-agency",
+    "name": "AI Authority Building Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-authority-building-agency"
+  },
+  {
+    "slug": "ai-search/comparisons/seo-changing-faster",
+    "name": "SEO Changing Faster",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/seo-changing-faster"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-search-optimisation-vs-seo",
+    "name": "AI Search Optimisation vs SEO",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-search-optimisation-vs-seo"
+  },
+  {
+    "slug": "ai-marketing-growth/why-ai-marketing-different-seo",
+    "name": "Why AI Marketing Different from SEO",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/why-ai-marketing-different-seo"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-brand-trust-signals",
+    "name": "AI Brand Trust Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-brand-trust-signals"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-search-paid-ads",
+    "name": "AI Search and Paid Ads",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-search-paid-ads"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-content-authority",
+    "name": "AI Content Authority",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-content-authority"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-powered-customer-journeys",
+    "name": "AI Powered Customer Journeys",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-powered-customer-journeys"
+  },
+  {
+    "slug": "ai-marketing-growth/what-ai-powered-marketing-means",
+    "name": "What AI Powered Marketing Means",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/what-ai-powered-marketing-means"
+  },
+  {
+    "slug": "ai-marketing-growth/conversational-marketing-ai",
+    "name": "Conversational Marketing AI",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/conversational-marketing-ai"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-powered-conversion-signals",
+    "name": "AI Powered Conversion Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-powered-conversion-signals"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-powered-engagement",
+    "name": "AI Powered Engagement",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-powered-engagement"
+  },
+  {
+    "slug": "ai-marketing-growth/ai-agents-marketing",
+    "name": "AI Agents Marketing",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-marketing-growth/ai-agents-marketing"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-search-local-businesses",
+    "name": "AI Search for Local Businesses",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-search-local-businesses"
+  },
+  {
+    "slug": "ai-search/conversational-search-optimisation",
+    "name": "Conversational Search Optimisation",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/conversational-search-optimisation"
+  },
+  {
+    "slug": "ai-search/who-should-i-hire",
+    "name": "Who Should I Hire for AI Search",
+    "layer": "L2B",
+    "type": "guide",
+    "url": "/ai-search/who-should-i-hire"
+  },
+  {
+    "slug": "ai-search/what-is-an-ai-search-agency",
+    "name": "What Is an AI Search Agency",
+    "layer": "L2B",
+    "type": "guide",
+    "url": "/ai-search/what-is-an-ai-search-agency"
+  },
+  {
+    "slug": "ai-search/comparisons/links-matter-less-ai",
+    "name": "Links Matter Less in AI",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/links-matter-less-ai"
+  },
+  {
+    "slug": "ai-search/agency-help-appear-in-ai",
+    "name": "Agency Help Appear in AI",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/agency-help-appear-in-ai"
+  },
+  {
+    "slug": "ai-search/comparisons/new-ways-to-rank",
+    "name": "New Ways to Rank",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/new-ways-to-rank"
+  },
+  {
+    "slug": "ai-search/perplexity-ranking-services",
+    "name": "Perplexity Ranking Services",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/perplexity-ranking-services"
+  },
+  {
+    "slug": "ai-search/ai-knowledge-graph-optimisation",
+    "name": "AI Knowledge Graph Optimisation",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-knowledge-graph-optimisation"
+  },
+  {
+    "slug": "ai-search/comparisons/meaning-new-ranking-factor",
+    "name": "Meaning: New Ranking Factor",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/meaning-new-ranking-factor"
+  },
+  {
+    "slug": "ai-search/ai-ranking-agency",
+    "name": "AI Ranking Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-ranking-agency"
+  },
+  {
+    "slug": "ai-search/entity-clarity-for-ai",
+    "name": "Entity Clarity for AI",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/entity-clarity-for-ai"
+  },
+  {
+    "slug": "ai-search/ai-search-consultants",
+    "name": "AI Search Consultants",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-search-consultants"
+  },
+  {
+    "slug": "ai-search/comparisons",
+    "name": "AI Search Comparisons",
+    "layer": "L2A",
+    "type": "category",
+    "url": "/ai-search/comparisons"
+  },
+  {
+    "slug": "ai-search/ai-discoverability-agency",
+    "name": "AI Discoverability Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-discoverability-agency"
+  },
+  {
+    "slug": "ai-search/comparisons/seo-to-meaning-transition",
+    "name": "SEO to Meaning Transition",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/seo-to-meaning-transition"
+  },
+  {
+    "slug": "ai-search/make-business-show-in-ai",
+    "name": "Make Business Show in AI",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/make-business-show-in-ai"
+  },
+  {
+    "slug": "ai-search/comparisons/is-seo-dead",
+    "name": "Is SEO Dead",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/is-seo-dead"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-engines-replace-ranking",
+    "name": "AI Engines Replace Ranking",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-engines-replace-ranking"
+  },
+  {
+    "slug": "ai-search/ai-authority-systems",
+    "name": "AI Authority Systems",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-authority-systems"
+  },
+  {
+    "slug": "ai-search/comparisons/ai-search-vs-google",
+    "name": "AI Search vs Google",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/ai-search-vs-google"
+  },
+  {
+    "slug": "ai-search/comparisons/google-other-explained",
+    "name": "Google Other Explained",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/comparisons/google-other-explained"
+  },
+  {
+    "slug": "ai-search/claude-ranking-agency",
+    "name": "Claude Ranking Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/claude-ranking-agency"
+  },
+  {
+    "slug": "ai-search/ai-recommendation-optimisation",
+    "name": "AI Recommendation Optimisation",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-recommendation-optimisation"
+  },
+  {
+    "slug": "ai-seo/technical/internal-linking-ai-visibility",
+    "name": "Internal Linking for AI Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/internal-linking-ai-visibility"
+  },
+  {
+    "slug": "ai-seo/technical/internal-meaning-graphs",
+    "name": "Internal Meaning Graphs",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/internal-meaning-graphs"
+  },
+  {
+    "slug": "ai-seo/technical/ai-clarity-over-keywords",
+    "name": "AI Clarity Over Keywords",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-clarity-over-keywords"
+  },
+  {
+    "slug": "ai-seo/technical/ai-trust-signals",
+    "name": "AI Trust Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-trust-signals"
+  },
+  {
+    "slug": "ai-seo/technical/ai-model-confidence-signals",
+    "name": "AI Model Confidence Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-model-confidence-signals"
+  },
+  {
+    "slug": "ai-seo/technical/why-ai-misinterprets-businesses",
+    "name": "Why AI Misinterprets Businesses",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/why-ai-misinterprets-businesses"
+  },
+  {
+    "slug": "ai-seo/technical/ai-meaning-signals",
+    "name": "AI Meaning Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-meaning-signals"
+  },
+  {
+    "slug": "ai-seo/technical/ai-interpretation",
+    "name": "AI Interpretation",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-interpretation"
+  },
+  {
+    "slug": "ai-seo/technical/technical-ai-clarity-service-pages",
+    "name": "Technical AI Clarity for Service Pages",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/technical-ai-clarity-service-pages"
+  },
+  {
+    "slug": "ai-seo/technical/diagnosing-weak-ai-meaning",
+    "name": "Diagnosing Weak AI Meaning",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/diagnosing-weak-ai-meaning"
+  },
+  {
+    "slug": "ai-seo/technical/examples-outcomes-signals",
+    "name": "Examples & Outcomes Signals",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/examples-outcomes-signals"
+  },
+  {
+    "slug": "ai-seo/technical/meaning-beats-seo",
+    "name": "Meaning Beats SEO",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/meaning-beats-seo"
+  },
+  {
+    "slug": "ai-seo/technical/ai-reasoning-patterns",
+    "name": "AI Reasoning Patterns",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/technical/ai-reasoning-patterns"
+  },
+  {
+    "slug": "ai-search/framework",
+    "name": "AI Search Framework",
+    "layer": "L2A",
+    "type": "guide",
+    "url": "/ai-search/framework"
+  },
+  {
+    "slug": "ai-search/citations/prompt-behaviour-types-overview",
+    "name": "Prompt Behaviour Types Overview",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/citations/prompt-behaviour-types-overview"
+  },
+  {
+    "slug": "ai-search/citations/how-to-win-comparative-prompts",
+    "name": "How To Win Comparative Prompts",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/citations/how-to-win-comparative-prompts"
+  },
+  {
+    "slug": "ai-search/citations/how-to-show-up-for-navigational-prompts",
+    "name": "How To Show Up For Navigational Prompts",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/citations/how-to-show-up-for-navigational-prompts"
+  },
+  {
+    "slug": "ai-search/citations/citations-vs-mentions",
+    "name": "Citations vs Mentions",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/citations/citations-vs-mentions"
+  },
+  {
+    "slug": "ai-search/citations/keywords-vs-prompts",
+    "name": "Keywords vs Prompts",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/citations/keywords-vs-prompts"
+  },
+  {
+    "slug": "ai-search/citations",
+    "name": "Prompts, Citations, and AI Inclusion",
+    "layer": "L3A",
+    "type": "category",
+    "url": "/ai-search/citations"
+  },
+  {
+    "slug": "ai-search/citations/why-am-i-not-cited-in-ai-answers",
+    "name": "Why Am I Not Cited In AI Answers",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/citations/why-am-i-not-cited-in-ai-answers"
+  },
+  {
+    "slug": "ai-search/citations/why-am-i-not-cited-in-ai-answers/mistakes-that-reduce-ai-inclusion",
+    "name": "Mistakes That Reduce AI Inclusion",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/citations/why-am-i-not-cited-in-ai-answers/mistakes-that-reduce-ai-inclusion"
+  },
+  {
+    "slug": "ai-search/citations/why-am-i-not-cited-in-ai-answers/common-reasons-businesses-are-not-cited",
+    "name": "Common Reasons Businesses Are Not Cited",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/citations/why-am-i-not-cited-in-ai-answers/common-reasons-businesses-are-not-cited"
+  },
+  {
+    "slug": "ai-search/citations/prompt-audit",
+    "name": "Prompt Audit",
+    "layer": "L4",
+    "type": "service",
+    "url": "/ai-search/citations/prompt-audit"
+  },
+  {
+    "slug": "ai-search/citations/how-to-show-up-for-navigational-prompts/prompt-framing-examples-by-industry",
+    "name": "Prompt Framing Examples By Industry",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/citations/how-to-show-up-for-navigational-prompts/prompt-framing-examples-by-industry"
+  },
+  {
+    "slug": "ai-search/citations/how-to-win-comparative-prompts/example-citation-pattern-analysis",
+    "name": "Example Citation Pattern Analysis",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/citations/how-to-win-comparative-prompts/example-citation-pattern-analysis"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-local-business",
+    "name": "AI search for local business",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-local-business"
+  },
+  {
+    "slug": "ai-seo/industry/why-ai-advice-differs-by-industry",
+    "name": "Why AI gives different advice by industry",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/industry/why-ai-advice-differs-by-industry"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-ecommerce",
+    "name": "AI search for ecommerce",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-ecommerce"
+  },
+  {
+    "slug": "ai-seo/industry",
+    "name": "AI search by industry",
+    "layer": "L2A",
+    "type": "category",
+    "url": "/ai-seo/industry"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-small-business",
+    "name": "AI search for small business",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-small-business"
+  },
+  {
+    "slug": "ai-seo/industry/hybrid-business-ai-industry",
+    "name": "Can one business fit multiple AI industry categories",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/industry/hybrid-business-ai-industry"
+  },
+  {
+    "slug": "ai-seo/industry/local-signals-override-scale",
+    "name": "Why local signals override scale in AI answers",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-seo/industry/local-signals-override-scale"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-saas",
+    "name": "AI search for SaaS",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-saas"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-b2b",
+    "name": "AI search for B2B",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-b2b"
+  },
+  {
+    "slug": "ai-seo/industry/ecommerce-signals-confuse-ai",
+    "name": "Why ecommerce signals confuse AI industry context",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-seo/industry/ecommerce-signals-confuse-ai"
+  },
+  {
+    "slug": "ai-seo/industry/ai-search-for-retail",
+    "name": "AI search for retail",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo/industry/ai-search-for-retail"
+  },
+  {
+    "slug": "ai-seo/industry/industry-misclassification-risks",
+    "name": "Risks of industry misclassification in AI search",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/industry/industry-misclassification-risks"
+  },
+  {
+    "slug": "ai-search/platforms/perplexity-citation",
+    "name": "Why Citation Matters for Perplexity Visibility",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/platforms/perplexity-citation"
+  },
+  {
+    "slug": "ai-search/platforms/claude-visibility",
+    "name": "Claude Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/claude-visibility"
+  },
+  {
+    "slug": "ai-search/platforms/can-you-optimise",
+    "name": "Is AI Visibility Something You Can Optimise",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/platforms/can-you-optimise"
+  },
+  {
+    "slug": "ai-search/platforms/gemini-visibility",
+    "name": "Gemini Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/gemini-visibility"
+  },
+  {
+    "slug": "ai-search/platforms/chatgpt-clarity",
+    "name": "Why Clarity Affects ChatGPT Visibility",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-search/platforms/chatgpt-clarity"
+  },
+  {
+    "slug": "ai-search/platforms/google-ai-overviews-visibility",
+    "name": "Google AI Overviews Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/google-ai-overviews-visibility"
+  },
+  {
+    "slug": "ai-search/platforms/why-visibility-differs",
+    "name": "Why AI Visibility Differs by Platform",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/platforms/why-visibility-differs"
+  },
+  {
+    "slug": "ai-search/platforms/risks",
+    "name": "AI Visibility Risks Businesses Overlook",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/platforms/risks"
+  },
+  {
+    "slug": "ai-search/platforms/perplexity-visibility",
+    "name": "Perplexity Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/perplexity-visibility"
+  },
+  {
+    "slug": "ai-search/platforms/chatgpt-visibility",
+    "name": "ChatGPT Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/chatgpt-visibility"
+  },
+  {
+    "slug": "ai-search/platforms/meta-ai-visibility",
+    "name": "Meta AI Visibility",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-search/platforms/meta-ai-visibility"
+  },
+  {
+    "slug": "ai-search/platforms",
+    "name": "AI Platform Visibility",
+    "layer": "L3A",
+    "type": "category",
+    "url": "/ai-search/platforms"
+  },
+  {
+    "slug": "ai-seo-agency-uk/services/intent-mapping",
+    "name": "Intent mapping in AI SEO agency engagements",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/services/intent-mapping"
+  },
+  {
+    "slug": "ai-seo-agency-uk/services/definition-control",
+    "name": "Definition control in AI SEO agency work",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/services/definition-control"
+  },
+  {
+    "slug": "ai-seo-agency-uk/when-to-use",
+    "name": "When to use an AI SEO agency in the UK",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/when-to-use"
+  },
+  {
+    "slug": "ai-seo-agency-uk/services/maintenance",
+    "name": "Ongoing review and maintenance in AI SEO",
+    "layer": "L3B",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/services/maintenance"
+  },
+  {
+    "slug": "ai-seo-agency-uk/content-structuring",
+    "name": "Content structuring for AI SEO agencies in the UK",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/content-structuring"
+  },
+  {
+    "slug": "ai-seo-agency-uk/risks-limitations",
+    "name": "Risks and limitations of AI SEO in the UK",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/risks-limitations"
+  },
+  {
+    "slug": "ai-seo-agency-uk/boundaries-exclusions",
+    "name": "Boundaries and exclusions of AI SEO agencies in the UK",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/boundaries-exclusions"
+  },
+  {
+    "slug": "ai-seo-agency-uk/ai-seo-vs-seo",
+    "name": "AI SEO vs traditional SEO in the UK",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/ai-seo-vs-seo"
+  },
+  {
+    "slug": "ai-seo-agency-uk/ai-interpretation",
+    "name": "How AI SEO agencies support AI interpretation in the UK",
+    "layer": "L3A",
+    "type": "topic",
+    "url": "/ai-seo-agency-uk/ai-interpretation"
+  },
+  {
+    "slug": "ai-seo/ai-seo-strategy/quick-checklist",
+    "name": "AI SEO strategy quick checklist",
+    "layer": "L3B",
+    "type": "guide",
+    "url": "/ai-seo/ai-seo-strategy/quick-checklist"
+  },
+  {
+    "slug": "ai-seo/ai-seo-vs-traditional-seo",
+    "name": "AI SEO vs traditional SEO",
+    "layer": "L3A",
+    "type": "guide",
+    "url": "/ai-seo/ai-seo-vs-traditional-seo"
+  },
+  {
+    "slug": "ai-seo/ai-seo-agency",
+    "name": "AI SEO agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/ai-seo-agency"
+  },
+  {
+    "slug": "ai-seo/ai-seo-vs-geo",
+    "name": "AI SEO vs GEO",
+    "layer": "L3A",
+    "type": "guide",
+    "url": "/ai-seo/ai-seo-vs-geo"
+  },
+  {
+    "slug": "ai-seo/ai-seo-strategy",
+    "name": "AI SEO strategy",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/ai-seo-strategy"
+  },
+  {
+    "slug": "ai-seo/what-ai-seo-means",
+    "name": "What AI SEO means in plain English",
+    "layer": "L3A",
+    "type": "guide",
+    "url": "/ai-seo/what-ai-seo-means"
+  },
+  {
+    "slug": "ai-seo/ai-seo-audit",
+    "name": "AI SEO audit",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/ai-seo-audit"
+  },
+  {
+    "slug": "ai-seo/how-to-talk-about-ai-seo-without-confusion",
+    "name": "How to talk about AI SEO without confusion",
+    "layer": "L3A",
+    "type": "guide",
+    "url": "/ai-seo/how-to-talk-about-ai-seo-without-confusion"
+  },
+  {
+    "slug": "ai-seo/ai-seo-audit/what-you-get",
+    "name": "What you get from an AI SEO audit",
+    "layer": "L3B",
+    "type": "guide",
+    "url": "/ai-seo/ai-seo-audit/what-you-get"
+  },
+  {
+    "slug": "ai-seo/common-mistakes-ai-seo",
+    "name": "Common mistakes with AI SEO",
+    "layer": "L3A",
+    "type": "guide",
+    "url": "/ai-seo/common-mistakes-ai-seo"
+  },
+  {
+    "slug": "ai-seo/ai-seo-agency/how-to-choose",
+    "name": "How to choose an AI SEO agency",
+    "layer": "L3B",
+    "type": "guide",
+    "url": "/ai-seo/ai-seo-agency/how-to-choose"
+  },
+  {
+    "slug": "ai-seo/technical/how-website-platforms-affect-ai-search-visibility",
+    "name": "How website platforms affect AI search visibility",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-seo/technical/how-website-platforms-affect-ai-search-visibility"
+  },
+  {
+    "slug": "ai-seo/technical",
+    "name": "Technical AI Search Optimisation",
+    "layer": "L2A",
+    "type": "category",
+    "url": "/ai-seo/technical"
+  },
+  {
+    "slug": "ai-search/ai-search-agency",
+    "name": "AI Search Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-search-agency"
+  },
+  {
+    "slug": "ai-search/chatgpt-ranking-agency",
+    "name": "ChatGPT Ranking Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/chatgpt-ranking-agency"
+  },
+  {
+    "slug": "ai-search/ai-visibility-agency",
+    "name": "AI Visibility Agency",
+    "layer": "L2B",
+    "type": "topic",
+    "url": "/ai-search/ai-visibility-agency"
+  }
+]
