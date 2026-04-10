@@ -1,0 +1,12 @@
+---
+import stats from '../../data/stats.json'
+
+export function getStaticPaths() {
+  return stats.map((s: any) => ({
+    params: { slug: s.slug },
+    props: { slug: s.slug }
+  }))
+}
+
+return Astro.redirect(`/research/stats/${Astro.params.slug}/`, 301)
+---

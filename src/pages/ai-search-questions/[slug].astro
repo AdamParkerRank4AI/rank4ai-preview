@@ -1,0 +1,12 @@
+---
+import questions from '../../data/questions.json'
+
+export function getStaticPaths() {
+  return questions.map((q: any) => ({
+    params: { slug: q.slug },
+    props: { slug: q.slug }
+  }))
+}
+
+return Astro.redirect(`/learn/questions/${Astro.params.slug}/`, 301)
+---
