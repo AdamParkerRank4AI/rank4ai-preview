@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import blogs from '../../data/blogs.json'
+
+export function getStaticPaths() {
+  return blogs.map((post: any) => ({
+    params: { slug: post.slug },
+    props: post
+  }))
+}
+
+const { title, slug, metaTitle, metaDesc, primaryQuestion, directAnswer, bodyContent, cardExcerpt, author, publishedAt, updatedAt, youtubeUrl, spotifyUrl, faqCount, governanceCluster } = Astro.props
+
+const pageTitle = metaTitle || `${title} | Rank4AI`
+const pageDesc = metaDesc || cardExcerpt || `${title} — AI search visibility insights from Rank4AI.`
+const pubDate = publishedAt ? new Date(publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
+const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
+---
+<Layout title={pageTitle} description={pageDesc}>
+
+<article class="pt-12 pb-24">
+  <div class="container-narrow">
+    <!-- Breadcrumb -->
+    <p class="text-xs text-text-muted mb-4">
+      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
+      <a href="/blog/" class="hover:text-accent">Blog</a> &rsaquo;
+      <span>{title}</span>
+    </p>
+
+    <!-- Category tag -->
+    {governanceCluster && (
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">{governanceCluster}</p>
+    )}
+
+    <h1 class="mb-4">{title}</h1>
+
+    <!-- Dates + Author -->
+    <div class="flex flex-wrap gap-4 text-sm text-text-muted mb-8">
+      {author && <span>By <span class="font-medium text-teal">{author}</span></span>}
+      {pubDate && <span>Published {pubDate}</span>}
+      {updDate && <span>Updated {updDate}</span>}
+    </div>
+
+    <!-- Direct Answer -->
+    {directAnswer && (
+      <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+        <p class="text-[15px] text-text-muted leading-relaxed">{directAnswer}</p>
+      </div>
+    )}
+
+    <!-- YouTube embed -->
+    {youtubeUrl && (
+      <div class="my-8 aspect-video rounded-xl overflow-hidden">
+        <iframe
+          src={youtubeUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')}
+          class="w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    )}
+
+    <!-- Body content -->
+    {bodyContent ? (
+      <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed [&_h2]:font-display [&_h2]:text-teal [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-teal [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:mb-5 [&_ol]:mb-5 [&_li]:mb-2 [&_a]:text-accent [&_a:hover]:underline [&_strong]:text-teal [&_strong]:font-medium" set:html={bodyContent} />
+    ) : (
+      <p class="text-[17px] text-text-muted leading-relaxed mb-5">{cardExcerpt || 'Content migrating.'}</p>
+    )}
+
+    <!-- Spotify embed -->
+    {spotifyUrl && (
+      <div class="my-8">
+        <iframe
+          src={`https://open.spotify.com/embed/episode/${spotifyUrl.split('/').pop()}`}
+          width="100%"
+          height="152"
+          frameborder="0"
+          allow="encrypted-media"
+          loading="lazy"
+          class="rounded-xl"
+        ></iframe>
+      </div>
+    )}
+  </div>
+
+  <!-- CTA -->
+  <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
+    <h2 class="!text-2xl mb-4">Want us to check this for your business?</h2>
+    <p class="text-text-muted mb-8 max-w-[400px] mx-auto text-sm">Every engagement starts with an audit across all six AI platforms.</p>
+    <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
+  </div>
+</article>
+
+<!-- Article Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": pageDesc,
+  "author": { "@type": "Person", "name": author || "Adam Parker" },
+  "publisher": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
+  "datePublished": publishedAt || undefined,
+  "dateModified": updatedAt || publishedAt || undefined,
+  "url": `https://www.rank4ai.co.uk/blog/${slug}/`
+})} />
+
+</Layout>

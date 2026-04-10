@@ -1,16 +1,42 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
+import questions from '../../../data/questions.json'
+
+const categories = [...new Set(questions.map((q: any) => q.category).filter(Boolean))].sort()
+const grouped: Record<string, any[]> = {}
+for (const q of questions) {
+  const cat = (q as any).category || 'Other'
+  if (!grouped[cat]) grouped[cat] = []
+  grouped[cat].push(q)
+}
 ---
-<Layout title="AI Search Questions and Answers | Rank4AI" description="219 AI search questions answered. The most comprehensive library of AI search visibility Q&A online.">
-<section class="pt-12 pb-24 reveal">
-  <div class="container-narrow">
+<Layout title="AI Search Questions and Answers | Rank4AI" description="285 AI search questions answered. The most comprehensive library of AI search visibility Q&A online.">
+<section class="pt-12 pb-24">
+  <div class="container">
     <p class="section-tag">Questions</p>
-    <h1 class="mb-6">AI Search Questions and Answers</h1>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-10">219 questions about AI search visibility, answered clearly. Covering AI platforms, AI SEO, technical visibility, industry-specific questions, citations and more.</p>
-    <p class="text-sm text-text-muted italic">Questions migrating from previous site with full content, YouTube videos, podcast embeds and distribution links. Coming soon.</p>
+    <h1 class="mb-4">AI Search Questions and Answers</h1>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-4">{questions.length} questions about AI search visibility, answered clearly.</p>
+    <p class="text-sm text-text-muted mb-10">Covering AI platforms, AI SEO, technical visibility, industry-specific questions, citations and more.</p>
+    <div class="flex flex-wrap gap-2 mb-12">
+      {categories.map((cat: string) => (
+        <span class="text-xs font-semibold text-teal px-3 py-1.5 border border-border rounded-full bg-white">{cat} ({grouped[cat]?.length || 0})</span>
+      ))}
+    </div>
+    {Object.entries(grouped).sort().map(([cat, qs]) => (
+      <div class="mb-12">
+        <h2 class="!text-xl mb-4">{cat} <span class="text-sm text-text-muted font-body">({(qs as any[]).length})</span></h2>
+        <div class="space-y-2">
+          {(qs as any[]).map((q) => (
+            <a href={`/learn/questions/${q.slug}/`} class="block p-3 rounded-lg hover:bg-off-white transition-colors text-[15px] text-text hover:text-accent">
+              {q.question}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
-  <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16">
-    <h2 class="mb-4">Want us to check this for your business?</h2>
+  <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
+    <h2 class="!text-2xl mb-4">Want us to check this for your business?</h2>
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
 </section>

@@ -1,0 +1,57 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import stats from '../../../data/stats.json'
+
+export function getStaticPaths() {
+  return stats.map((s: any) => ({
+    params: { slug: s.slug },
+    props: s
+  }))
+}
+
+const { title, slug, category, statValue, statDate, sourceName, sourceUrl, summary, bodyContent } = Astro.props
+const pageTitle = `${title} | Rank4AI`
+const pageDesc = summary || `${title} — AI search visibility research from Rank4AI.`
+---
+<Layout title={pageTitle} description={pageDesc}>
+
+<article class="pt-12 pb-24">
+  <div class="container-narrow">
+    <p class="text-xs text-text-muted mb-4">
+      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
+      <a href="/research/" class="hover:text-accent">Research</a> &rsaquo;
+      <a href="/research/uk-ai-visibility-stats/" class="hover:text-accent">Statistics</a> &rsaquo;
+      <span>{title}</span>
+    </p>
+
+    {category && <p class="text-[11px] font-semibold uppercase tracking-widest text-accent mb-4">{category}</p>}
+
+    <h1 class="mb-6">{title}</h1>
+
+    {statValue && (
+      <div class="bg-off-white border border-border rounded-xl p-8 text-center mb-8">
+        <div class="font-display text-6xl text-teal leading-none mb-3">{statValue}</div>
+        <p class="text-sm text-text-muted">{summary}</p>
+      </div>
+    )}
+
+    {bodyContent ? (
+      <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed [&_h2]:font-display [&_h2]:text-teal [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-5 [&_ul]:mb-5 [&_li]:mb-2 [&_a]:text-accent [&_strong]:text-teal" set:html={bodyContent} />
+    ) : (
+      <p class="text-[17px] text-text-muted leading-relaxed">{summary}</p>
+    )}
+
+    {sourceName && (
+      <p class="text-sm text-text-muted mt-8 pt-4 border-t border-border">
+        Source: {sourceName} {statDate && `(${statDate})`}
+      </p>
+    )}
+  </div>
+
+  <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
+    <h2 class="!text-2xl mb-4">Is your business one of them?</h2>
+    <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
+  </div>
+</article>
+
+</Layout>
