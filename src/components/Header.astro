@@ -128,16 +128,41 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden hidden bg-white-pure border-t border-border max-h-[80vh] overflow-y-auto">
-      <div class="p-6 space-y-4">
-        <a href="/what-we-do/" class="block py-2 text-base font-medium text-text">What We Do</a>
-        <a href="/who-we-help/" class="block py-2 text-base font-medium text-text">Who We Help</a>
-        <a href="/research/" class="block py-2 text-base font-medium text-text">Research</a>
-        <a href="/learn/" class="block py-2 text-base font-medium text-text">Learn</a>
-        <a href="/about/" class="block py-2 text-base font-medium text-text">About</a>
-        <a href="/blog/" class="block py-2 text-base font-medium text-text">Blog</a>
-        <a href="/contact/" class="block py-2 text-base font-medium text-text">Contact</a>
-        <div class="pt-4">
-          <a href="/free-audit/" class="cta-primary w-full justify-center">Get a Free AI Search Visibility Audit</a>
+      <div class="p-4 space-y-1">
+        <!-- What We Do -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white" onclick="this.parentElement.classList.toggle('open')">
+            What We Do <span class="text-xs text-text-muted transition-transform duration-200">&#9662;</span>
+          </button>
+          <div class="mobile-accordion-content hidden pl-4 pb-2 space-y-1">
+            <a href="/what-we-do/ai-visibility-audit/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">AI Visibility Audit</a>
+            <a href="/what-we-do/ecosystem-services/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Ecosystem Services</a>
+            <a href="/what-we-do/full-agency/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Full Agency</a>
+            <a href="/what-we-do/pricing/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Pricing</a>
+          </div>
+        </div>
+        <!-- Who We Help -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white" onclick="this.parentElement.classList.toggle('open')">
+            Who We Help <span class="text-xs text-text-muted transition-transform duration-200">&#9662;</span>
+          </button>
+          <div class="mobile-accordion-content hidden pl-4 pb-2 space-y-1">
+            <a href="/who-we-help/professional-services/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Professional Services</a>
+            <a href="/who-we-help/ecommerce/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Ecommerce</a>
+            <a href="/who-we-help/local-business/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Local Business</a>
+            <a href="/who-we-help/london/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">London</a>
+            <a href="/who-we-help/manchester/" class="block py-2 px-3 text-sm text-text-muted hover:text-accent rounded-lg">Manchester</a>
+            <a href="/who-we-help/" class="block py-2 px-3 text-sm text-accent hover:underline rounded-lg">See all &rarr;</a>
+          </div>
+        </div>
+        <!-- Direct links -->
+        <a href="/research/" class="block py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white">Research</a>
+        <a href="/learn/" class="block py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white">Learn</a>
+        <a href="/about/" class="block py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white">About</a>
+        <a href="/blog/" class="block py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white">Blog</a>
+        <a href="/contact/" class="block py-3 px-3 text-base font-medium text-text rounded-lg hover:bg-off-white">Contact</a>
+        <div class="pt-3 px-3">
+          <a href="/free-audit/" class="cta-primary w-full justify-center text-sm">Get a Free AI Search Visibility Audit</a>
         </div>
       </div>
     </div>
@@ -151,4 +176,39 @@
   document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
     document.getElementById('mobile-menu')?.classList.toggle('hidden')
   })
+  // Mobile accordion
+  document.querySelectorAll('.mobile-accordion').forEach(acc => {
+    acc.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).tagName === 'A') return
+    })
+  })
+  document.querySelectorAll('.mobile-accordion button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.parentElement?.querySelector('.mobile-accordion-content')
+      content?.classList.toggle('hidden')
+      const arrow = btn.querySelector('span')
+      if (arrow) arrow.style.transform = content?.classList.contains('hidden') ? '' : 'rotate(180deg)'
+    })
+  })
 </script>
+
+<style>
+  /* Mobile sticky CTA bar */
+  @media (max-width: 1023px) {
+    .mobile-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1024px) {
+    .mobile-cta-bar { display: none; }
+  }
+</style>

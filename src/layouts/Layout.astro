@@ -118,6 +118,13 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
 
   <Footer />
 
+  <!-- Mobile sticky CTA bar -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-90 bg-white border-t border-border py-3 px-4">
+    <a href="/free-audit/" class="cta-primary w-full justify-center text-sm !py-2.5">Free AI Search Visibility Audit</a>
+  </div>
+  <!-- Bottom padding for mobile CTA -->
+  <div class="lg:hidden h-16"></div>
+
   <!-- Scroll reveal -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
