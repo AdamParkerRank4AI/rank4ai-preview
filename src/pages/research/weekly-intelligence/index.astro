@@ -1,0 +1,29 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import weekly from '../../../data/weekly.json'
+
+const sorted = [...weekly].sort((a: any, b: any) => {
+  const da = a.publishDate ? new Date(a.publishDate).getTime() : 0
+  const db = b.publishDate ? new Date(b.publishDate).getTime() : 0
+  return db - da
+})
+---
+<Layout title="AI Search Weekly Intelligence | Rank4AI" description="What changed in AI search this week. Weekly intelligence briefings from Rank4AI.">
+<section class="pt-12 pb-24">
+  <div class="container-narrow">
+    <p class="section-tag">Weekly Intelligence</p>
+    <h1 class="mb-4">Weekly Intelligence</h1>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-10">What changed in AI search this week. Platform updates, signal shifts, and what it means for UK businesses.</p>
+    <div class="space-y-4">
+      {sorted.map((item: any) => (
+        <a href={`/research/weekly-intelligence/${item.slug}/`} class="card block group">
+          <h3 class="!text-base text-teal mb-2 group-hover:text-accent transition-colors">{item.title}</h3>
+          <p class="text-xs text-text-muted">{item.cardExcerpt || item.topSummary || ''}</p>
+          {item.publishDate && <p class="text-xs text-text-muted mt-2 opacity-60">{new Date(item.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>}
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16"><a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a></div>
+</section>
+</Layout>
