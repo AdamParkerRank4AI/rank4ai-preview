@@ -1,0 +1,12 @@
+---
+import weekly from '../../data/weekly.json'
+
+export function getStaticPaths() {
+  return weekly.map((w: any) => ({
+    params: { slug: w.slug },
+    props: { slug: w.slug }
+  }))
+}
+
+return Astro.redirect(`/research/weekly-intelligence/${Astro.params.slug}/`, 301)
+---
