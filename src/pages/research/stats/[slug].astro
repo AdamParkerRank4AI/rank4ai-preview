@@ -1,5 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import AuthorBox from '../../../components/AuthorBox.astro'
 import stats from '../../../data/stats.json'
 
 export function getStaticPaths() {
@@ -17,12 +19,12 @@ const pageDesc = summary || `${title} – AI search visibility research from Ran
 
 <article class="pt-12 pb-24">
   <div class="container-narrow">
-    <p class="text-xs text-text-muted mb-4">
-      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
-      <a href="/research/" class="hover:text-accent">Research</a> &rsaquo;
-      <a href="/research/uk-ai-visibility-stats/" class="hover:text-accent">Statistics</a> &rsaquo;
-      <span>{title}</span>
-    </p>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Statistics', href: '/research/uk-ai-visibility-stats/' },
+      { label: title }
+    ]} />
 
     {category && <p class="text-[11px] font-semibold uppercase tracking-widest text-accent mb-4">{category}</p>}
 
@@ -46,6 +48,18 @@ const pageDesc = summary || `${title} – AI search visibility research from Ran
         Source: {sourceName} {statDate && `(${statDate})`}
       </p>
     )}
+
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related Research</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/research/uk-ai-visibility-stats/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">All UK AI Visibility Statistics</span></a>
+        <a href="/research/methodology/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Methodology</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">The Five Signal Model</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+
+    <AuthorBox name="Adam Parker" role="AI Search Visibility Specialist" />
   </div>
 
   <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">

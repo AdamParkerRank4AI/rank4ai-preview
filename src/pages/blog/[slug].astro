@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import AuthorBox from '../../components/AuthorBox.astro'
 import blogs from '../../data/blogs.json'
 
 export function getStaticPaths() {
@@ -12,7 +14,7 @@ export function getStaticPaths() {
 const { title, slug, metaTitle, metaDesc, primaryQuestion, directAnswer, bodyContent, cardExcerpt, author, publishedAt, updatedAt, youtubeUrl, spotifyUrl, faqCount, governanceCluster } = Astro.props
 
 const pageTitle = metaTitle || `${title} | Rank4AI`
-const pageDesc = metaDesc || cardExcerpt || `${title} – AI search visibility insights from Rank4AI.`
+const pageDesc = metaDesc || cardExcerpt || `${title} - AI search visibility insights from Rank4AI.`
 const pubDate = publishedAt ? new Date(publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 ---
@@ -20,30 +22,29 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
 
 <article class="pt-12 pb-24">
   <div class="container-narrow">
-    <!-- Breadcrumb -->
-    <p class="text-xs text-text-muted mb-4">
-      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
-      <a href="/blog/" class="hover:text-accent">Blog</a> &rsaquo;
-      <span>{title}</span>
-    </p>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog', href: '/blog/' },
+      { label: title }
+    ]} />
 
-    <!-- Category tag -->
     {governanceCluster && (
-      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">{governanceCluster}</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4 mt-6">{governanceCluster}</p>
     )}
 
     <h1 class="mb-4">{title}</h1>
 
-    <!-- Dates + Author -->
+    <!-- Author + Dates -->
     <div class="flex flex-wrap gap-4 text-sm text-text-muted mb-8">
       {author && <span>By <span class="font-medium text-teal">{author}</span></span>}
       {pubDate && <span>Published {pubDate}</span>}
       {updDate && <span>Updated {updDate}</span>}
     </div>
 
-    <!-- Direct Answer -->
+    <!-- Direct Answer / Answer Capsule -->
     {directAnswer && (
       <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Quick Answer</p>
         <p class="text-[15px] text-text-muted leading-relaxed">{directAnswer}</p>
       </div>
     )}
@@ -64,7 +65,7 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
 
     <!-- Body content -->
     {bodyContent ? (
-      <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed [&_h2]:font-display [&_h2]:text-teal [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-teal [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:mb-5 [&_ol]:mb-5 [&_li]:mb-2 [&_a]:text-accent [&_a:hover]:underline [&_strong]:text-teal [&_strong]:font-medium" set:html={bodyContent} />
+      <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed" set:html={bodyContent} />
     ) : (
       <p class="text-[17px] text-text-muted leading-relaxed mb-5">{cardExcerpt || 'Content migrating.'}</p>
     )}
@@ -83,12 +84,25 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
         ></iframe>
       </div>
     )}
+
+    <!-- Internal links -->
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/learn/guides/complete-guide-ai-search/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Complete Guide to AI Search Visibility</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">The Five Signal Model</span></a>
+        <a href="/research/uk-ai-visibility-stats/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">UK AI Visibility Statistics</span></a>
+        <a href="/what-we-do/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Services</span></a>
+      </div>
+    </div>
+
+    <!-- Author box -->
+    <AuthorBox name={author || "Adam Parker"} role="AI Search Visibility Specialist" dateModified={updDate || pubDate} />
   </div>
 
   <!-- CTA -->
   <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
     <h2 class="!text-2xl mb-4">Want us to check this for your business?</h2>
-    <p class="text-text-muted mb-8 max-w-[400px] mx-auto text-sm">Every engagement starts with an audit across all six AI platforms.</p>
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
 </article>

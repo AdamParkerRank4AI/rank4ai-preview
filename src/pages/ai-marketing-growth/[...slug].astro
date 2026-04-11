@@ -1,4 +1,6 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import AuthorBox from '../../components/AuthorBox.astro'
 import Layout from '../../layouts/Layout.astro'
 import library from '../../data/knowledge-library-full.json'
 
@@ -13,29 +15,54 @@ export function getStaticPaths() {
 
 const { name, metaTitle, metaDesc, aiSummary, directAnswer, bodyContent, youtubeUrl } = Astro.props
 const title = metaTitle || `${name} | Rank4AI`
-const description = metaDesc || aiSummary || `${name} – AI marketing growth from Rank4AI.`
+const description = metaDesc || aiSummary || `${name} - AI Marketing Growth from Rank4AI.`
 ---
 <Layout title={title} description={description}>
 <section class="pt-12 pb-24">
   <div class="container-narrow">
-    <p class="text-xs text-text-muted mb-4">
-      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
-      <a href="/ai-marketing-growth/" class="hover:text-accent">AI Marketing Growth</a> &rsaquo;
-      <span>{name}</span>
-    </p>
-    <h1 class="mb-6">{name}</h1>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'AI Marketing Growth', href: '/ai-marketing-growth/' },
+      { label: name }
+    ]} />
+
+    <h1 class="mb-4 mt-6">{name}</h1>
+    <p class="text-sm text-text-muted mb-6">By Adam Parker | Rank4AI</p>
+
     {directAnswer && (
       <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Key Point</p>
         <p class="text-[15px] text-text-muted leading-relaxed">{directAnswer}</p>
       </div>
     )}
+
     {bodyContent ? (
       <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed" set:html={bodyContent} />
     ) : (
       <p class="text-[17px] text-text-muted leading-relaxed mb-5">{aiSummary || 'Content migrating from previous site.'}</p>
     )}
+
+    {youtubeUrl && (
+      <div class="my-8 aspect-video rounded-xl overflow-hidden">
+        <iframe src={youtubeUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')} class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    )}
+
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/ai-marketing-growth/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">AI Marketing Growth Hub</span></a>
+        <a href="/learn/guides/ai-search-roi/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">AI Search ROI</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">The Five Signal Model</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+
+    <AuthorBox name="Adam Parker" role="AI Search Visibility Specialist" />
   </div>
+
   <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
+    <h2 class="!text-2xl mb-4">Want us to check this for your business?</h2>
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
 </section>
