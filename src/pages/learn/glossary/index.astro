@@ -1,14 +1,80 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
+
+const glossaryContent = `# AI Search Glossary
+
+Published: 12 February 2026
+
+Last updated: 12 February 2026
+
+Review cycle: Quarterly review for AI model changes.
+
+[Get Full AI Search Audit→](https://www.rank4ai.co.uk/review-start) [Quick AI Search Check](https://www.rank4ai.co.uk/quick-ai-search)
+
+In short
+
+The AI search glossary defines key terms used in AI visibility and optimisation. It provides stable meanings for concepts such as citation, mention, prompt behaviour, authority layering, and inclusion confidence.
+
+Clear definitions reduce ambiguity across pages and ensure that related content reinforces a single canonical meaning. This improves interpretive stability for AI systems.
+
+This glossary supports the authority structure of the site by keeping terminology consistent and preventing drift between pages.
+
+## AI Search Visibility
+
+AI search visibility refers to whether a business is mentioned, cited or recommended within AI generated responses.
+
+## Citation
+
+A citation occurs when an AI system directly references a source, often including a link.
+
+## Mention
+
+A mention occurs when an AI system names a business without formally citing it.
+
+## Inclusion
+
+Inclusion refers to being selected within an AI generated answer regardless of ranking.
+
+## Prompt
+
+A prompt is the question or instruction given to an AI system.
+
+## Comparative Prompt
+
+A prompt asking an AI system to compare multiple providers.
+
+## Navigational Prompt
+
+A prompt designed to locate a specific brand or entity.
+
+## Problem Based Prompt
+
+A prompt focused on solving a specific issue.
+
+## Entity Grounding
+
+Entity grounding refers to how clearly a business is defined as a distinct entity.
+
+## Interpretive Stability
+
+Interpretive stability refers to consistent AI classification over time.
+
+## Ranking Versus Inclusion
+
+Ranking refers to search engine position. Inclusion refers to selection within AI answers.
+
+## Get a clarity snapshot
+
+If you want to see how AI search platforms currently interpret your organisation, start with`
 ---
 <Layout title="AI Search Glossary | Rank4AI" description="Definitions of 50+ AI search visibility terms including citation, mention, prompt types, The Five Signal Model and key concepts.">
-<section class="pt-12 pb-24 reveal">
+<section class="pt-12 pb-24">
   <div class="container-narrow">
     <p class="section-tag">Glossary</p>
-    <h1 class="mb-6">AI Search Glossary</h1>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-10">50+ AI search terms explained in plain English.</p>
-    <p class="text-sm text-text-muted italic">Glossary content migrating from previous site. Full glossary coming soon.</p>
+    <h1 class="mb-2">AI Search Glossary</h1>
+    <p class="text-sm text-text-muted mb-8">Published: 12 February 2026 | Last updated: 12 February 2026</p>
+    <div class="prose max-w-none text-[15px] text-text-muted leading-relaxed" set:html={glossaryContent} />
   </div>
-  <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16"><a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a></div>
+  <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16"><a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a></div>
 </section>
 </Layout>
