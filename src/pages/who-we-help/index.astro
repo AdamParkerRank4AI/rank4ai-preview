@@ -11,14 +11,23 @@ const professions = [
   { slug: 'estate-agents', name: 'Estate Agents' },
   { slug: 'architects', name: 'Architects' },
   { slug: 'financial-advisors', name: 'Financial Advisors' },
+  { slug: 'restaurants', name: 'Restaurants' },
+  { slug: 'hospitality', name: 'Hotels & Hospitality' },
+  { slug: 'recruitment', name: 'Recruitment' },
+  { slug: 'tradespeople', name: 'Tradespeople' },
+  { slug: 'healthcare', name: 'Healthcare' },
+  { slug: 'property', name: 'Property' },
+  { slug: 'education', name: 'Education & Training' },
+  { slug: 'technology', name: 'Technology' },
+  { slug: 'marketing-agencies', name: 'Marketing Agencies' },
 ]
 ---
-<Layout title="AI Search Visibility by Industry & Location | Rank4AI" description="AI search visibility for UK businesses. Professional services, ecommerce, local business, SaaS, B2B, retail, accountants, solicitors, dentists and more.">
+<Layout title="AI Search Visibility by Industry & Location | Rank4AI" description="AI search visibility for UK businesses across 21 sectors and 7 cities. Professional services, ecommerce, SaaS, B2B, accountants, solicitors, dentists, restaurants and more.">
 <section class="pt-12 pb-24 reveal">
   <div class="container">
     <p class="section-tag">Who We Help</p>
     <h1 class="mb-6">AI Search Visibility for Your Sector</h1>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-10 max-w-[700px]">We work with UK businesses across every sector and profession. The same five signal layers apply – but how they manifest differs by industry.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-10 max-w-[700px]">We work with UK businesses across every sector and profession. The same five signal layers apply - but how they manifest differs by industry. Each page shows the specific AI search challenges and opportunities for your business type.</p>
 
     <h2 class="mb-6">By Sector</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
@@ -30,8 +39,8 @@ const professions = [
       ))}
     </div>
 
-    <h2 class="mb-6">By Profession</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+    <h2 class="mb-6">By Profession & Industry</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
       {professions.map(p => (
         <a href={`/who-we-help/${p.slug}/`} class="bg-off-white border border-border rounded-xl px-5 py-4 text-sm font-medium text-text text-center hover:bg-teal hover:text-text-light hover:border-teal transition-all">
           {p.name}
