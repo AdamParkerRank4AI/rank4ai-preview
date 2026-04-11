@@ -12,7 +12,7 @@ export function getStaticPaths() {
 const { title, slug, metaTitle, metaDesc, primaryQuestion, directAnswer, bodyContent, cardExcerpt, author, publishedAt, updatedAt, youtubeUrl, spotifyUrl, faqCount, governanceCluster } = Astro.props
 
 const pageTitle = metaTitle || `${title} | Rank4AI`
-const pageDesc = metaDesc || cardExcerpt || `${title} — AI search visibility insights from Rank4AI.`
+const pageDesc = metaDesc || cardExcerpt || `${title} – AI search visibility insights from Rank4AI.`
 const pubDate = publishedAt ? new Date(publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 ---

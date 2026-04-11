@@ -13,7 +13,7 @@ export function getStaticPaths() {
 
 const { name, metaTitle, metaDesc, aiSummary, directAnswer, bodyContent, faqCount, youtubeUrl } = Astro.props
 const title = metaTitle || `${name} | Rank4AI`
-const description = metaDesc || aiSummary || `${name} — AI SEO information from Rank4AI.`
+const description = metaDesc || aiSummary || `${name} – AI SEO information from Rank4AI.`
 ---
 <Layout title={title} description={description}>
 <section class="pt-12 pb-24">
