@@ -12,7 +12,11 @@ import Layout from '../../layouts/Layout.astro'
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
         <h2 class="!text-xl mb-4">Send a Message</h2>
-        <form class="space-y-4">
+        <form action="https://formsubmit.co/info@rank4ai.co.uk" method="POST" class="space-y-4">
+          <input type="hidden" name="_subject" value="New contact from Rank4AI website">
+          <input type="hidden" name="_next" value="https://www.rank4ai.co.uk/contact/?submitted=true">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
           <div>
             <label class="block text-sm font-medium text-teal mb-1">Name</label>
             <input type="text" class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm" placeholder="Your name">
