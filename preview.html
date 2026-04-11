@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rank4AI — UK AI Search Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #faf9f6;
+  --white-pure: #ffffff;
+  --off-white: #f4f2ed;
+  --teal: #0f2d2c;
+  --teal-light: #133938;
+  --teal-mid: #1a4a48;
+  --teal-pale: #e8efee;
+  --accent: #2bb891;
+  --accent-bright: #3de8b6;
+  --text: #0f2d2c;
+  --text-muted: #4a6160;
+  --text-light: #f4f2ed;
+  --text-light-muted: #8a9e9c;
+  --border: #e2dfda;
+  --border-teal: #1e4746;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grain texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Teal left-accent for quotes */
+.quote-block {
+  border-left: 3px solid var(--teal);
+  padding: 24px 0 24px 28px;
+  margin: 32px 0;
+}
+.quote-block p {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--teal);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Testimonial cards */
+.testimonials {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.testimonial-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+}
+.testimonial-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.testimonial-card .author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal);
+  font-style: normal;
+}
+
+/* AI endorsement section */
+.ai-endorsement {
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 40px;
+}
+.endorsement-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.endorsement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.endorsement-card {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.endorsement-platform {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.endorsement-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* Counter animation */
+.stat-item .num {
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--accent-bright);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 100px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.faq-a {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* STAT BOXES — 3 across */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 40px 64px;
+}
+.hero-stat {
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white-pure);
+}
+.hero-stat .val {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat .lbl {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* 3 STEPS */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.step {
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--teal);
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.step p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+/* Connector line between steps */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -13px;
+  top: 70px;
+  width: 24px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* SIGNAL BANNER */
+.signal-banner {
+  padding: 48px 40px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--off-white);
+  overflow: hidden;
+}
+.signal-banner .heading {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--teal);
+  max-width: 600px;
+  margin: 0 auto 12px;
+  line-height: 1.2;
+}
+.signal-banner .sub {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.signal-types {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.signal-type {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--white);
+}
+.scroll-track-wrap {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+}
+.scroll-track-wrap::before,
+.scroll-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.scroll-track-wrap::before { left: 0; background: linear-gradient(90deg, var(--off-white), transparent); }
+.scroll-track-wrap::after { right: 0; background: linear-gradient(270deg, var(--off-white), transparent); }
+.scroll-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: scroll-left 40s linear infinite;
+  width: max-content;
+}
+.scroll-track img {
+  height: 26px;
+  width: auto;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+.scroll-track img:hover {
+  opacity: 1;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* PLATFORM BAR — reusable */
+.platform-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.platform-bar .platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.platform-bar .platform .icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+}
+.platform-bar.dark .platform { color: var(--teal); opacity: 0.75; }
+.platform-bar.light .platform { color: var(--text-light); opacity: 0.7; }
+.icon-chatgpt { background: #10a37f; }
+.icon-gemini { background: #4285f4; }
+.icon-googleai { background: #ea4335; }
+.icon-perplexity { background: #1a1a2e; }
+.icon-claude { background: #cc785c; }
+.icon-copilot { background: #0078d4; }
+
+/* WhatsApp float */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #25D366;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 100;
+  transition: transform 0.2s;
+}
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* Statement line */
+.statement {
+  text-align: center;
+  padding: 64px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.statement p {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--teal);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 40px;
+}
+.nav-logo img { height: 30px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; position: relative; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--teal) !important;
+  color: var(--text-light) !important;
+  padding: 10px 22px !important;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--teal-mid) !important; }
+
+/* Dropdown trigger */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' \25BE'; font-size: 10px; opacity: 0.5; }
+
+/* Dropdown panel */
+.dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 280px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 200;
+}
+.nav-dropdown:hover .dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown with two columns */
+.dropdown-2col {
+  min-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.dropdown-col h5 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.dropdown-col a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text) !important;
+  font-weight: 500 !important;
+}
+.dropdown-col a:hover { color: var(--accent) !important; }
+.dropdown-col .sub { font-size: 12px; color: var(--text-muted); font-weight: 400 !important; margin-top: -4px; padding-bottom: 4px; }
+.dropdown-divider { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px; }
+.dropdown-divider a { font-size: 13px; color: var(--accent) !important; font-weight: 500 !important; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: 160px 40px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-tag {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.05;
+  font-weight: 400;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+.hero p {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 40px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: var(--text-light);
+  padding: 16px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.hero-cta:hover {
+  background: var(--teal-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(15, 45, 44, 0.15);
+}
+
+/* ============================================
+   PARTNER / PLATFORM LOGOS
+   ============================================ */
+.logo-bar {
+  padding: 48px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--off-white);
+}
+.logo-bar-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.logo-item {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: 0.5;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* ============================================
+   CONTENT SECTIONS — white bg
+   ============================================ */
+.section {
+  padding: 100px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.section-wide {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+.section-wide h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+.section p, .section-wide p {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.section p:last-child, .section-wide p:last-child { margin-bottom: 0; }
+
+.highlight { color: var(--teal); font-weight: 500; }
+.link { color: var(--accent); text-decoration: none; font-weight: 500; }
+.link:hover { text-decoration: underline; }
+
+/* ============================================
+   TEAL SECTIONS
+   ============================================ */
+.teal-bg {
+  background: var(--teal);
+  color: var(--text-light);
+  padding: 100px 40px;
+}
+.teal-bg .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.teal-bg h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+.teal-bg p {
+  font-size: 17px;
+  color: var(--text-light-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.teal-bg .accent { color: var(--accent-bright); }
+.teal-bg .tag { color: var(--accent-bright); }
+
+/* ============================================
+   WHAT WE BUILD — 3 boxes
+   ============================================ */
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.build-card {
+  background: rgba(250, 249, 246, 0.06);
+  border: 1px solid var(--border-teal);
+  border-radius: 12px;
+  padding: 32px;
+}
+.build-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+.build-card p {
+  font-size: 14px;
+  color: var(--text-light-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   FIVE SIGNALS — on white
+   ============================================ */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.signal-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.signal-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15, 45, 44, 0.06);
+}
+.signal-card h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.signal-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   STATS BAR — teal
+   ============================================ */
+.stats-bar {
+  background: var(--teal);
+  padding: 64px 40px;
+}
+.stats-row {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-item .num {
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--accent-bright);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-item .label {
+  font-size: 13px;
+  color: var(--text-light-muted);
+}
+
+/* ============================================
+   WHO WE HELP
+   ============================================ */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+.who-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+  font-size: 15px;
+  font-weight: 500;
+}
+.who-card:hover {
+  background: var(--teal);
+  color: var(--text-light);
+  border-color: var(--teal);
+}
+.who-cities {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+.who-cities a { color: var(--text-muted); text-decoration: none; }
+.who-cities a:hover { color: var(--teal); }
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+  background: var(--off-white);
+  text-align: center;
+  padding: 100px 40px;
+  border-top: 1px solid var(--border);
+}
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.final-cta p {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--teal);
+  color: var(--text-light);
+  padding: 80px 40px 40px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-brand img { height: 26px; width: auto; opacity: 0.7; margin-bottom: 16px; }
+.footer-brand p { font-size: 14px; color: var(--text-light-muted); line-height: 1.6; max-width: 280px; }
+.footer-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 14px; color: var(--text-light-muted); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent-bright); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-teal);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-light-muted);
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+.divider { border-top: 1px solid var(--border); }
+.divider-teal { border-top: 1px solid var(--border-teal); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .build-grid, .signal-grid, .stats-row, .who-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .hero, .section, .section-wide, .teal-bg, .final-cta, footer, .stats-bar, .logo-bar { padding-left: 24px; padding-right: 24px; }
+  .logo-row { gap: 24px; }
+  .who-cities { flex-wrap: wrap; }
+  .signal-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav><div class="nav-inner">
+  <div class="nav-logo"><img src="rank4ai-logo.png" alt="Rank4AI"></div>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#">What We Do</a>
+      <div class="dropdown-panel">
+        <div class="dropdown-col">
+          <a href="#">AI Visibility Audit</a>
+          <div class="sub">Find out where you stand</div>
+          <a href="#">Ecosystem Services</a>
+          <div class="sub">We build outside your site</div>
+          <a href="#">Full Agency</a>
+          <div class="sub">We work on your site directly</div>
+          <div class="dropdown-divider">
+            <a href="#">See pricing &rarr;</a>
+            <a href="#">How we work &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="#">Who We Help</a>
+      <div class="dropdown-panel dropdown-2col">
+        <div class="dropdown-col">
+          <h5>By Sector</h5>
+          <a href="#">Professional Services</a>
+          <a href="#">Ecommerce</a>
+          <a href="#">Local Business</a>
+          <a href="#">SaaS</a>
+          <a href="#">B2B</a>
+          <a href="#">Retail</a>
+        </div>
+        <div class="dropdown-col">
+          <h5>By Location</h5>
+          <a href="#">London</a>
+          <a href="#">Manchester</a>
+          <a href="#">Birmingham</a>
+          <a href="#">Leeds</a>
+          <a href="#">Bristol</a>
+          <a href="#">Essex</a>
+          <a href="#">Colchester</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="#">Research</a>
+      <div class="dropdown-panel">
+        <div class="dropdown-col">
+          <a href="#">UK AI Visibility Statistics</a>
+          <div class="sub">Data from 1,400+ audits</div>
+          <a href="#">Case Studies</a>
+          <div class="sub">Real results for real businesses</div>
+          <a href="#">Weekly Intelligence</a>
+          <div class="sub">What changed this week</div>
+          <a href="#">Methodology</a>
+          <div class="sub">How we test and measure</div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="#">Learn</a>
+      <div class="dropdown-panel dropdown-2col">
+        <div class="dropdown-col">
+          <h5>Guides</h5>
+          <a href="#">Complete AI Search Guide</a>
+          <a href="#">Guide to GEO</a>
+          <a href="#">How to Get Cited by ChatGPT</a>
+          <a href="#">All Guides &rarr;</a>
+        </div>
+        <div class="dropdown-col">
+          <h5>Tools &amp; Resources</h5>
+          <a href="#">AI Visibility Checker</a>
+          <a href="#">Free llms.txt Creator</a>
+          <a href="#">Glossary (50+ terms)</a>
+          <a href="#">AI Search Questions (218)</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#" class="nav-cta">Get a Free AI Search Visibility Audit</a></li>
+  </ul>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">UK AI Search Agency</div>
+  <h1>Get Your Business Recommended by AI Search</h1>
+  <div class="platform-bar dark" style="justify-content: center; margin-bottom: 28px;">
+    <span class="platform"><span class="icon icon-chatgpt">G</span> ChatGPT</span>
+    <span class="platform"><span class="icon icon-claude">C</span> Claude</span>
+    <span class="platform"><span class="icon icon-gemini">G</span> Gemini</span>
+    <span class="platform"><span class="icon icon-perplexity">P</span> Perplexity</span>
+    <span class="platform"><span class="icon icon-copilot">C</span> Copilot</span>
+    <span class="platform"><span class="icon icon-googleai">G</span> Google AI</span>
+  </div>
+  <p>When someone asks an AI platform to recommend a business in your category, one or two get mentioned. The rest do not exist.</p>
+  <a href="#" class="hero-cta">Get a Free AI Search Visibility Audit &rarr;</a>
+</section>
+
+<!-- STAT BOXES -->
+<div class="hero-stats">
+  <div class="hero-stat">
+    <div class="val">1,400+</div>
+    <div class="lbl">UK businesses audited</div>
+  </div>
+  <div class="hero-stat">
+    <div class="val">6</div>
+    <div class="lbl">AI platforms tested</div>
+  </div>
+  <div class="hero-stat">
+    <div class="val">77%</div>
+    <div class="lbl">of UK SMEs sending confusing signals to AI</div>
+  </div>
+</div>
+
+<!-- SIGNAL BANNER -->
+<div class="signal-banner">
+  <div class="heading">We build across 85+ platforms and sources</div>
+  <div class="sub">Entity verification. Authority. Trust. Citations. Technical credibility. Distribution. Six signal types across the platforms AI systems use to decide who to recommend. 120+ active touchpoints per client.</div>
+  <div class="signal-types">
+    <span class="signal-type">Entity Verification</span>
+    <span class="signal-type">Authority</span>
+    <span class="signal-type">Trust</span>
+    <span class="signal-type">Citations</span>
+    <span class="signal-type">Technical Credibility</span>
+    <span class="signal-type">Distribution</span>
+  </div>
+  <div class="scroll-track-wrap">
+    <div class="scroll-track">
+      <img src="google-business-profile.png" alt="Google" title="Google Business Profile">
+      <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
+      <img src="youtube.png" alt="YouTube" title="YouTube">
+      <img src="bing.png" alt="Bing" title="Bing">
+      <img src="trustpilot.png" alt="Trustpilot" title="Trustpilot">
+      <img src="github.png" alt="GitHub" title="GitHub">
+      <img src="medium.png" alt="Medium" title="Medium">
+      <img src="substack.png" alt="Substack" title="Substack">
+      <img src="reddit.png" alt="Reddit" title="Reddit">
+      <img src="quora.png" alt="Quora" title="Quora">
+      <img src="clutch.png" alt="Clutch" title="Clutch">
+      <img src="blogger.png" alt="Blogger" title="Blogger">
+      <img src="apple-podcasts.png" alt="Apple Podcasts" title="Apple Podcasts">
+      <img src="spotify-podcasts.png" alt="Spotify" title="Spotify">
+      <img src="facebook.png" alt="Facebook" title="Facebook">
+      <img src="instagram.png" alt="Instagram" title="Instagram">
+      <img src="x-twitter.png" alt="X" title="X / Twitter">
+      <img src="threads.png" alt="Threads" title="Threads">
+      <img src="pinterest.png" alt="Pinterest" title="Pinterest">
+      <img src="wordpress.png" alt="WordPress" title="WordPress">
+      <img src="crunchbase.png" alt="Crunchbase" title="Crunchbase">
+      <img src="goodfirms.png" alt="GoodFirms" title="GoodFirms">
+      <img src="wikidata.png" alt="Wikidata" title="Wikidata">
+      <img src="companies-house.png" alt="Companies House" title="Companies House">
+      <img src="google-scholar.png" alt="Google Scholar" title="Google Scholar">
+      <img src="product-hunt.png" alt="Product Hunt" title="Product Hunt">
+      <img src="devto.png" alt="Dev.to" title="Dev.to">
+      <img src="hashnode.png" alt="Hashnode" title="Hashnode">
+      <img src="tumblr.png" alt="Tumblr" title="Tumblr">
+      <img src="flipboard.png" alt="Flipboard" title="Flipboard">
+      <img src="listen-notes.png" alt="Listen Notes" title="Listen Notes">
+      <img src="capterra.png" alt="Capterra" title="Capterra">
+      <img src="g2.png" alt="G2" title="G2">
+      <img src="stack-overflow.png" alt="Stack Overflow" title="Stack Overflow">
+      <img src="glassdoor.png" alt="Glassdoor" title="Glassdoor">
+      <img src="angellist.png" alt="AngelList" title="AngelList">
+      <img src="google-my-maps.png" alt="Google My Maps" title="Google My Maps">
+      <img src="google-dataset-search.png" alt="Google Dataset Search" title="Google Dataset Search">
+      <img src="apple-business-connect.png" alt="Apple Business" title="Apple Business Connect">
+      <img src="google-ecosystem.png" alt="Google Ecosystem" title="Google Ecosystem">
+      <!-- Duplicate for seamless loop -->
+      <img src="google-business-profile.png" alt="Google" title="Google Business Profile">
+      <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
+      <img src="youtube.png" alt="YouTube" title="YouTube">
+      <img src="bing.png" alt="Bing" title="Bing">
+      <img src="trustpilot.png" alt="Trustpilot" title="Trustpilot">
+      <img src="github.png" alt="GitHub" title="GitHub">
+      <img src="medium.png" alt="Medium" title="Medium">
+      <img src="substack.png" alt="Substack" title="Substack">
+      <img src="reddit.png" alt="Reddit" title="Reddit">
+      <img src="quora.png" alt="Quora" title="Quora">
+      <img src="clutch.png" alt="Clutch" title="Clutch">
+      <img src="blogger.png" alt="Blogger" title="Blogger">
+      <img src="apple-podcasts.png" alt="Apple Podcasts" title="Apple Podcasts">
+      <img src="spotify-podcasts.png" alt="Spotify" title="Spotify">
+      <img src="facebook.png" alt="Facebook" title="Facebook">
+      <img src="instagram.png" alt="Instagram" title="Instagram">
+      <img src="x-twitter.png" alt="X" title="X / Twitter">
+      <img src="threads.png" alt="Threads" title="Threads">
+      <img src="pinterest.png" alt="Pinterest" title="Pinterest">
+      <img src="wordpress.png" alt="WordPress" title="WordPress">
+      <img src="crunchbase.png" alt="Crunchbase" title="Crunchbase">
+      <img src="goodfirms.png" alt="GoodFirms" title="GoodFirms">
+      <img src="wikidata.png" alt="Wikidata" title="Wikidata">
+      <img src="companies-house.png" alt="Companies House" title="Companies House">
+      <img src="google-scholar.png" alt="Google Scholar" title="Google Scholar">
+      <img src="product-hunt.png" alt="Product Hunt" title="Product Hunt">
+      <img src="devto.png" alt="Dev.to" title="Dev.to">
+      <img src="hashnode.png" alt="Hashnode" title="Hashnode">
+      <img src="tumblr.png" alt="Tumblr" title="Tumblr">
+      <img src="flipboard.png" alt="Flipboard" title="Flipboard">
+      <img src="listen-notes.png" alt="Listen Notes" title="Listen Notes">
+      <img src="capterra.png" alt="Capterra" title="Capterra">
+      <img src="g2.png" alt="G2" title="G2">
+      <img src="stack-overflow.png" alt="Stack Overflow" title="Stack Overflow">
+      <img src="glassdoor.png" alt="Glassdoor" title="Glassdoor">
+      <img src="angellist.png" alt="AngelList" title="AngelList">
+      <img src="google-my-maps.png" alt="Google My Maps" title="Google My Maps">
+      <img src="google-dataset-search.png" alt="Google Dataset Search" title="Google Dataset Search">
+      <img src="apple-business-connect.png" alt="Apple Business" title="Apple Business Connect">
+      <img src="google-ecosystem.png" alt="Google Ecosystem" title="Google Ecosystem">
+    </div>
+  </div>
+</div>
+
+<!-- ANSWER BLOCK -->
+<div class="section" style="border-bottom: 1px solid var(--border);">
+  <div class="section-tag">The question every business is asking</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 38px); color: var(--teal); margin-bottom: 24px;">How do I get my business recommended on ChatGPT, Claude and Google AI?</h2>
+  <p>Rank4AI is a UK AI search agency. We get your business recommended by ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.</p>
+  <p>This work is sometimes described as AI SEO, GEO or AIO. These terms all describe the same challenge: appearing inside AI-generated answers rather than traditional search result lists.</p>
+  <p>We do not offer traditional SEO retainers or PPC services. Our focus is entirely on AI driven search recommendations, not Google ranking positions.</p>
+  <p>Google traffic is collapsing. Organic clicks down 17%, paid down 68%. That traffic moved to AI search. We help you get recommended when buyers ask who to trust.</p>
+  <p><span class="highlight">The result? More traffic, more enquiries, and stronger market presence.</span></p>
+  <p style="margin-top: 24px;"><a href="#" class="link">Get a Free AI Search Visibility Audit &rarr;</a></p>
+</div>
+
+<!-- SIGNAL BAR — moved below, replaced with scrolling banner -->
+
+<!-- 3 STEPS -->
+<div class="section-wide" style="border-bottom: 1px solid var(--border);">
+  <div class="section-tag">How It Works</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); text-align: center;">Three steps. No jargon.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Audit</h3>
+      <p>We test your visibility across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. You get a personalised report.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Report</h3>
+      <p>A clear breakdown — what AI sees, what it misses, and what to fix first. No jargon. No waffle.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Action</h3>
+      <p>We build it for you, or give you the roadmap to do it yourself. Your call. You choose the pace.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH HAS CHANGED -->
+<div class="section">
+  <div class="section-tag">The Shift</div>
+  <h2>Search has changed</h2>
+  <p>Traditional search showed a list of websites. Users clicked through and chose.</p>
+  <p>AI works differently. It gives a single answer. That answer is not based on Google rankings. It is based on which business the AI system <span class="highlight">understands clearly, trusts, and can confidently recommend.</span></p>
+  <p>In our UK testing, the overlap between strong Google rankings and AI answers is consistently low. Businesses on page one of Google are regularly absent from AI responses entirely.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- HOW AI DECIDES -->
+<div class="section">
+  <div class="section-tag">How AI Decides</div>
+  <h2>AI does not rely on your website alone</h2>
+  <p>AI platforms build a picture of your business from everywhere it appears online. Your website. Your directories. Your reviews. Your press mentions. Your professional listings. Your editorial coverage.</p>
+  <p><span class="highlight">One voice is weak evidence. Many consistent voices from independent sources are strong evidence.</span></p>
+  <p>A business that appears consistently across trusted sources — with the same clear description of what it does everywhere — gets recommended. A business that only exists on its own website, or describes itself differently in different places, gets skipped.</p>
+</div>
+
+<!-- STATS & FACTS -->
+<div class="stats-bar" style="padding: 80px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-tag" style="color: var(--accent-bright);">UK AI Visibility Research</div>
+    <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--text-light); margin-bottom: 12px;">What we found when we audited 1,400+ UK business websites</h2>
+    <p style="color: var(--text-light-muted); margin-bottom: 48px; max-width: 600px; font-size: 16px;">Original research data. No other AI search agency has this.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">77%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">of UK SME websites are sending confusing signals to AI search platforms</div>
+      </div>
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">53%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">have unclear H1 headings — AI cannot understand what the business does</div>
+      </div>
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">44%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">have no organisation schema — AI cannot identify who they are from structured data</div>
+      </div>
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">23%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">are blocking at least one major AI crawler without knowing it</div>
+      </div>
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">62%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">describe their business differently across their title tag, H1 and meta description</div>
+      </div>
+      <div class="stat-card" style="background: rgba(250,249,246,0.06); border: 1px solid var(--border-teal); border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="font-family: var(--font-display); font-size: 48px; color: var(--accent-bright); line-height: 1; margin-bottom: 8px;">13%</div>
+        <div style="font-size: 14px; color: var(--text-light-muted); line-height: 1.5;">have an llms.txt file — the emerging standard for communicating directly with AI systems</div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 32px;"><a href="#" style="color: var(--accent-bright); text-decoration: none; font-weight: 500; font-size: 15px;">See all 26 research stats &rarr;</a></p>
+  </div>
+</div>
+
+<!-- WHAT WE BUILD — white background, teal-bordered cards -->
+<div class="section-wide">
+  <div class="section-tag">What We Build</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); margin-bottom: 16px;">The connected presence that earns AI trust</h2>
+  <p style="color: var(--text-muted); margin-bottom: 48px;">We build the full picture AI needs to recommend your business. Not just content. Not just your website. The entire digital footprint — structured, connected, and consistent across every source AI platforms draw from.</p>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Entity Verification</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Confirming your business exists and is real. Legal registration. Governance records. Industry standards. Institutional trust signals. Consistent name, website and description across every source AI cross-references before it recommends anything.</p>
+    </div>
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Authority Signals</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Content that demonstrates structured expertise. Guides. Research. Answers to the questions your customers actually ask. Depth that signals specialisation, not volume.</p>
+    </div>
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Trust Signals</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Reviews. Ratings. Reputation platforms. Independent users confirming your business does what it says. The validation AI systems cross-reference before recommending.</p>
+    </div>
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Citation Signals</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Press mentions. Editorial coverage. Community references. PR citations. Third-party sources independently referencing your business in credible contexts.</p>
+    </div>
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Technical Credibility</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Your web presence structured so AI can read it. Crawler access. Structured data. The technical foundations that determine whether AI can extract and attribute your content.</p>
+    </div>
+    <div style="background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 12px; padding: 28px;">
+      <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--teal); margin-bottom: 10px;">Distribution Signals</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0;">Publishing platforms. Video. Podcasts. Professional listings. The breadth of presence that extends your entity footprint across the sources AI draws from.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND EQUITY — white bg -->
+<div class="section">
+  <div class="section-tag">The Bigger Picture</div>
+  <h2>Building digital brand equity</h2>
+  <p>This is not a ChatGPT trick. It is building genuine digital brand equity — a clearly understood business, with clear messaging, a strong website, and a connected digital footprint across the sources AI systems already trust.</p>
+  <p>Established brands already appear in AI answers. Not because they did AI work — but because they accumulated this over years. Directory listings. Press mentions. Consistent presence everywhere. AI systems have seen them and trust them.</p>
+  <p><span class="highlight">We engineer deliberately what they accumulated passively. The mechanism is the same. The timeline is different.</span></p>
+  <p style="font-family: var(--font-display); font-size: 22px; color: var(--teal); margin-top: 32px;">Presence. Consistency. Confidence. Inclusion.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY NOW — white bg -->
+<div class="section">
+  <div class="section-tag">The Window</div>
+  <h2>Why now matters</h2>
+  <p>The businesses that build AI trust now will be extremely difficult to displace. AI confidence compounds over time. Each month of consistent signals makes the position more stable.</p>
+  <p>Most competitors are not thinking about this yet. <span class="highlight">Consistency compounds. Instability resets what has been built.</span> This is the window.</p>
+</div>
+
+<!-- STATEMENT -->
+<div class="statement">
+  <p>Presence. Consistency. Confidence. Inclusion.</p>
+</div>
+
+<!-- AI PLATFORM ENDORSEMENT -->
+<div class="ai-endorsement">
+  <div class="endorsement-inner">
+    <div class="section-tag">Independent Validation</div>
+    <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); margin-bottom: 8px;">What AI platforms said about our methodology</h2>
+    <p style="color: var(--text-muted);">We asked ChatGPT, Claude and Perplexity to evaluate our AI Search Audit methodology. Here is what they returned:</p>
+    <div class="endorsement-grid">
+      <div class="endorsement-card">
+        <div class="endorsement-platform">ChatGPT</div>
+        <p>"The Five Signal Model provides a structured, comprehensive framework for evaluating AI search visibility. The methodology addresses the key factors that influence how AI systems interpret and recommend businesses."</p>
+      </div>
+      <div class="endorsement-card">
+        <div class="endorsement-platform">Claude</div>
+        <p>"This audit methodology reflects a sophisticated understanding of how large language models evaluate and surface business information. The five signal framework maps well to the actual mechanisms AI systems use."</p>
+      </div>
+      <div class="endorsement-card">
+        <div class="endorsement-platform">Perplexity</div>
+        <p>"The approach is well-structured and addresses the core factors that determine visibility in AI-generated answers. The emphasis on consistency across multiple sources aligns with how retrieval-augmented systems evaluate entities."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="section-tag">What Clients Say</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal);">Working with Rank4AI</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"This team truly understands AI search and what it means for modern marketing. They helped us optimize our content and strategy for AI powered discovery, resulting in measurable gains in visibility and engagement. Their approach is smart, forward thinking, and grounded in real performance."</p>
+      <div class="author">Rhys Davies — CEO, Blackthorne Consulting</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"We knew AI search was going to be a big shift. The number of people starting to look for services through tools like ChatGPT is rising fast, and it felt important for us to understand this properly and build a solid baseline early on. What stood out straight away was how down to earth the team are. They clearly know their stuff, but they also take the time to explain what is being done and why it matters. Unlike traditional agencies, we were not passed down to juniors. We worked directly with senior people throughout the process. It was a breath of fresh air."</p>
+      <div class="author">Rishi Bansropun — Managing Director, RB Financial</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FIVE SIGNALS — white bg -->
+<div class="section-wide">
+  <div class="section-tag">The Five Signal Model</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); margin-bottom: 16px;">How AI forms confidence in your business</h2>
+  <p style="color: var(--text-muted); margin-bottom: 0;">AI systems evaluate businesses through five signal layers. When all five are strong, the business gets recommended. When any one is weak, confidence drops.</p>
+  <div class="signal-grid">
+    <div class="signal-card"><h3>Identity Clarity</h3><p>Can AI clearly understand what your business is, what category it belongs to, and what it should not be confused with?</p></div>
+    <div class="signal-card"><h3>Subject Authority</h3><p>Does AI associate your business with the right topics, questions and expertise?</p></div>
+    <div class="signal-card"><h3>Meaning Architecture</h3><p>Can AI read, understand and interpret your website structure, page layouts, internal linking and technical foundations?</p></div>
+    <div class="signal-card"><h3>Ecosystem Validation</h3><p>Do third-party platforms and public sources describe your business consistently?</p></div>
+    <div class="signal-card"><h3>Signal Consistency</h3><p>Do your older content and signals align with your current positioning, or do they contradict it?</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHO WE HELP -->
+<div class="section-wide">
+  <div class="section-tag">Who We Help</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); margin-bottom: 16px;">AI visibility for your sector</h2>
+  <div class="who-grid">
+    <a href="#" class="who-card">Professional Services</a>
+    <a href="#" class="who-card">Ecommerce</a>
+    <a href="#" class="who-card">Local Business</a>
+    <a href="#" class="who-card">SaaS</a>
+    <a href="#" class="who-card">B2B</a>
+    <a href="#" class="who-card">Retail</a>
+  </div>
+  <div class="who-cities">
+    <a href="#">London</a>
+    <a href="#">Manchester</a>
+    <a href="#">Birmingham</a>
+    <a href="#">Leeds</a>
+    <a href="#">Bristol</a>
+    <a href="#">Essex</a>
+    <a href="#">Colchester</a>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Find out if AI can see your business</h2>
+  <p>Every engagement starts with an audit across all six AI platforms. We test how AI currently interprets your business, identify the gaps, and tell you exactly where to start.</p>
+  <a href="#" class="hero-cta">Get a Free AI Search Visibility Audit &rarr;</a>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="section-tag">Common Questions</div>
+  <h2 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); color: var(--teal); margin-bottom: 40px;">Frequently asked</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">What is AI search visibility?</div>
+    <div class="faq-a">AI search visibility is whether AI platforms like ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI can find, understand and recommend your business when someone asks a relevant question. It is different from SEO — AI systems recommend businesses, not web pages.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Is this the same as SEO?</div>
+    <div class="faq-a">No. SEO ranks pages in search results. AI search visibility determines whether AI platforms recommend your business in generated answers. Different systems, different signals. In our testing, businesses on page one of Google are regularly absent from AI responses entirely.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Which AI platforms do you cover?</div>
+    <div class="faq-a">ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. Each sources information differently and requires a different mix of signals. We test and build across all six.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Do you need to work on my website?</div>
+    <div class="faq-a">Not necessarily. Our ecosystem services build your AI presence entirely outside your website — we do not touch your site, your code or your current setup. For businesses that want us working on the website directly, we offer full agency engagements. The audit tells us which approach is right.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How long does it take to see results?</div>
+    <div class="faq-a">Initial effects appear within weeks. AI confidence builds and compounds over months as signals become more consistent across more trusted sources. This is infrastructure, not a campaign.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How much does it cost?</div>
+    <div class="faq-a">Every engagement starts with an AI Visibility Audit. Ecosystem services start from £800 per month. Full agency services are scoped individually following the audit. See our full pricing on the Work With Us page.</div>
+  </div>
+</div>
+
+<!-- WHATSAPP -->
+<a href="#" class="whatsapp-float" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- TRUST & GOVERNANCE — pre-footer -->
+<div style="background: var(--off-white); border-top: 1px solid var(--border); padding: 64px 40px;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div class="section-tag">Trust, Legal and Governance</div>
+    <p style="font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">Rank4AI is a UK based AI search agency operated by Rank4AI Ltd. All services, operations and publications under the Rank4AI brand are delivered by Rank4AI Ltd.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+      <div>
+        <h4 style="font-size: 13px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">Legal and Registration</h4>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0;">Registered in England and Wales. Company number 16584507. DUNS 233980021. ICO registered. UK Government procurement supplier. Details publicly available via Companies House and OpenCorporates.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">Standards and Governance</h4>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0;">Operates under UK data protection and consumer standards. Aligns with UK GDPR, ISO 27001 and ISO 9001 principles. Working towards Cyber Essentials certification.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 13px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">Domain Continuity</h4>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0;">Primary domain www.rank4ai.co.uk. Business ownership, entity and services remain unchanged. Reviewed quarterly. Last reviewed 31 March 2026.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="rank4ai-logo.png" alt="Rank4AI">
+      <p>Rank4AI is a UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.</p>
+      <p style="margin-top: 12px; font-size: 13px;">Founded by Adam Parker, specialising in AI search visibility and recommendation systems.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="#">Start Here</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Founder Insights</a></li>
+      <li><a href="#">How We Work</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Ecosystem</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul>
+      <li><a href="#">Guides</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Questions</a></li>
+      <li><a href="#">Glossary</a></li>
+      <li><a href="#">Methodology</a></li>
+      <li><a href="#">GEO Guide</a></li>
+      <li><a href="#">Complete Guide</a></li>
+      <li><a href="#">Free llms.txt Creator</a></li>
+      <li><a href="#">AI Knowledge Map</a></li>
+      <li><a href="#">Query and Coverage</a></li>
+      <li><a href="#">Boundaries</a></li>
+      <li><a href="#">Industry Rankings</a></li>
+      <li><a href="#">AI Search Specialists</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="#">AI Search Audit</a></li>
+      <li><a href="#">Ecosystem Services</a></li>
+      <li><a href="#">Full Agency</a></li>
+      <li><a href="#">All Services</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Standards</h4><ul>
+      <li><a href="#">Accessibility and Inclusion</a></li>
+      <li><a href="#">Ethical Design Principles</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul></div>
+  </div>
+  <!-- Authority Architecture links row -->
+  <div style="max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--border-teal);">
+    <div style="display: flex; gap: 28px; flex-wrap: wrap; font-size: 13px; margin-bottom: 24px;">
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">AI SEO</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">Technical AI Clarity</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">AI Search Questions</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">Blog</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">Industry Clusters</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">Ecosystem</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">AI Search Citations</a>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#3de8b6'" onmouseout="this.style.color='var(--text-light-muted)'">AI Search Platforms</a>
+    </div>
+  </div>
+  <!-- Legal bottom bar -->
+  <div class="footer-bottom">
+    <span>&copy; 2026 Rank4AI. Rank4AI Ltd. Company number 16584507. Registered in England and Wales. 40 De Vere Road, Colchester, CO3 4EA.</span>
+    <span>
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none;">Privacy Policy</a> &middot;
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none;">Cookie Policy</a> &middot;
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none;">Terms of Service</a> &middot;
+      <a href="#" style="color: var(--text-light-muted); text-decoration: none;">Accessibility</a>
+    </span>
+  </div>
+  <div style="max-width: 1200px; margin: 16px auto 0; text-align: center; font-size: 11px; color: var(--text-light-muted); opacity: 0.5;">
+    Content reviewed quarterly as part of ongoing governance and accuracy monitoring. Last reviewed: 31 March 2026
+  </div>
+</footer>
+
+<!-- SCROLL REVEAL JS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add reveal class to sections
+  document.querySelectorAll('.section, .section-wide, .teal-bg, .testimonials, .ai-endorsement, .faq-section, .statement').forEach(function(el) {
+    el.classList.add('reveal');
+  });
+
+  // Intersection Observer for scroll reveals
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Counter animation for stats
+  function animateCounter(el, target, suffix) {
+    var current = 0;
+    var duration = 1500;
+    var step = target / (duration / 16);
+    var timer = setInterval(function() {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.round(current) + suffix;
+    }, 16);
+  }
+
+  var statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        var nums = entry.target.querySelectorAll('.num');
+        nums.forEach(function(num) {
+          var text = num.textContent.trim();
+          var value = parseInt(text);
+          var suffix = text.replace(/[0-9]/g, '');
+          num.textContent = '0' + suffix;
+          animateCounter(num, value, suffix);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var statsBar = document.querySelector('.stats-bar');
+  if (statsBar) statsObserver.observe(statsBar);
+});
+</script>
+
+</body>
+</html>

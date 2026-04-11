@@ -1,0 +1,67 @@
+# Rank4AI
+# https://www.rank4ai.co.uk
+
+> Rank4AI is a UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.
+
+Company Name: Rank4AI
+Legal Name: Rank4AI Ltd
+Location: Colchester, Essex, United Kingdom
+Industry: AI Search Visibility
+Focus: Improving how businesses are interpreted, trusted and recommended by AI search platforms
+
+## Primary Services
+- AI Search Visibility Audits
+- Ecosystem Services (Google, Microsoft/Bing, wider web — no site work required)
+- Full Agency Services (website + ecosystem)
+- Advisory and Research
+
+## The Five Signal Model
+AI systems form confidence in a business through five signal layers:
+1. Identity Clarity — can AI describe your business in one consistent sentence?
+2. Subject Authority — does AI associate you with clear expertise?
+3. Meaning Architecture — can AI read your website structure reliably?
+4. Ecosystem Validation — do independent sources confirm what your site says?
+5. Signal Consistency — has your positioning been consistent over time?
+
+## Core Pages
+Homepage: https://www.rank4ai.co.uk
+Services: https://www.rank4ai.co.uk/what-we-do/
+AI Visibility Audit: https://www.rank4ai.co.uk/what-we-do/ai-visibility-audit/
+Ecosystem Services: https://www.rank4ai.co.uk/what-we-do/ecosystem-services/
+Full Agency: https://www.rank4ai.co.uk/what-we-do/full-agency/
+Pricing: https://www.rank4ai.co.uk/what-we-do/pricing/
+About: https://www.rank4ai.co.uk/about/
+Five Signal Framework: https://www.rank4ai.co.uk/about/five-signal-framework/
+How We Work: https://www.rank4ai.co.uk/about/how-we-work/
+Research: https://www.rank4ai.co.uk/research/
+UK AI Visibility Statistics: https://www.rank4ai.co.uk/research/uk-ai-visibility-stats/
+Blog: https://www.rank4ai.co.uk/blog/
+Guides: https://www.rank4ai.co.uk/learn/guides/
+Glossary: https://www.rank4ai.co.uk/learn/glossary/
+AI Search Questions: https://www.rank4ai.co.uk/learn/questions/
+Contact: https://www.rank4ai.co.uk/contact/
+
+## Guides
+Complete Guide to AI Search Visibility: https://www.rank4ai.co.uk/learn/guides/complete-guide-ai-search/
+Guide to GEO: https://www.rank4ai.co.uk/learn/guides/geo/
+How to Get Cited by ChatGPT: https://www.rank4ai.co.uk/learn/guides/get-cited-chatgpt/
+
+## Research
+UK AI Visibility Statistics (26 data points): https://www.rank4ai.co.uk/research/uk-ai-visibility-stats/
+Methodology: https://www.rank4ai.co.uk/research/methodology/
+Weekly Intelligence: https://www.rank4ai.co.uk/research/weekly-intelligence/
+
+## Trust, Legal and Governance
+- Entity: Rank4AI Ltd
+- Jurisdiction: England and Wales
+- Companies House: 16584507
+- DUNS: 233980021
+- ICO Registration: ZC095410
+- Registered Address: 40 De Vere Road, Colchester, CO3 4EA, GB
+
+## Contact
+Website: https://www.rank4ai.co.uk
+Email: info@rank4ai.co.uk
+Contact Page: https://www.rank4ai.co.uk/contact/
+
+Last-Updated: 2026-04-10
