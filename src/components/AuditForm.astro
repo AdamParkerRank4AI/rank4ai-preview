@@ -464,9 +464,11 @@
         body: JSON.stringify(supabasePayload),
       });
 
-      // Also send email notification via FormSubmit (backup)
+      // Send email notifications via FormSubmit
       const emailData = new FormData();
       emailData.append('_subject', 'New AI Search Visibility Audit Request');
+      emailData.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
+      emailData.append('_template', 'table');
       emailData.append('Business', fd.get('business_name') as string);
       emailData.append('Website', fd.get('website_url') as string);
       emailData.append('Email', fd.get('email') as string);
