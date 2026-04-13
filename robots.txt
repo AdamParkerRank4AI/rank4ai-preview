@@ -1,0 +1,61 @@
+# Robots.txt - Rank4AI.co.uk
+# AI Search Optimised - All Crawlers Welcome
+# Last updated: 2026-04-10
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI Crawlers - All Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Default
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.rank4ai.co.uk/sitemap-index.xml
+
+# AI-specific resources
+# llms.txt: https://www.rank4ai.co.uk/llms.txt
+# ai-sitemap: https://www.rank4ai.co.uk/ai-sitemap.txt

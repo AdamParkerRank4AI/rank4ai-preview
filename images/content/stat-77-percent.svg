@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f2d2c" rx="16"/>
+  <text x="400" y="220" text-anchor="middle" font-family="DM Serif Display,serif" font-size="140" fill="#3de8b6" opacity="0.9">77%</text>
+  <text x="400" y="280" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="#8a9e9c">of UK SME websites sending confusing signals to AI</text>
+  <text x="400" y="310" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#8a9e9c" opacity="0.6">Source: Rank4AI Research, 2026</text>
+</svg>
