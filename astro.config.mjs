@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 
 export default defineConfig({
-  site: 'https://www.rank4ai.co.uk',
+  site: 'https://www.rank4ai.online',
   vite: {
     plugins: [tailwindcss()]
   },

@@ -19,6 +19,7 @@ const {
   noindex = false,
 } = Astro.props
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const siteUrl = 'https://www.rank4ai.co.uk'
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
 ---
@@ -51,17 +52,17 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
   <meta name="p:domain_verify" content="39e30e3b29d24cbe209ec748edc89e2e">
 
   <!-- llms.txt discovery -->
-  <link rel="llms" href="/llms.txt">
-  <link rel="alternate" type="text/markdown" href="/llms.txt">
-  <meta name="llms" content="/llms.txt">
-  <link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+  <link rel="llms" href={`${base}/llms.txt`}>
+  <link rel="alternate" type="text/markdown" href={`${base}/llms.txt`}>
+  <meta name="llms" content={`${base}/llms.txt`}>
+  <link rel="sitemap" type="application/xml" href={`${base}/sitemap-index.xml`}>
 
   <!-- Favicon -->
-  <link rel="icon" href="/logo.png">
-  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="icon" href={`${base}/logo.png`}>
+  <link rel="apple-touch-icon" href={`${base}/logo.png`}>
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="Rank4AI Blog" href="/rss.xml">
+  <link rel="alternate" type="application/rss+xml" title="Rank4AI Blog" href={`${base}/rss.xml`}>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,7 +121,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
 
   <!-- Mobile sticky CTA bar -->
   <div class="lg:hidden fixed bottom-0 left-0 right-0 z-90 bg-white border-t border-border py-3 px-4">
-    <a href="/free-audit/" class="cta-primary w-full justify-center text-sm !py-2.5">Free AI Search Visibility Audit</a>
+    <a href={`${base}/free-audit/`} class="cta-primary w-full justify-center text-sm !py-2.5">Free AI Search Visibility Audit</a>
   </div>
   <!-- Bottom padding for mobile CTA -->
   <div class="lg:hidden h-16"></div>

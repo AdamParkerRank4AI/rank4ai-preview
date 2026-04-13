@@ -1,0 +1,335 @@
+---
+// AI Conversation Example — scroll-triggered, auto-rotating chat simulation
+// Shows how AI platforms recommend businesses
+const exchanges = [
+  {
+    question: "Can you recommend a good accountancy firm in London for a small business?",
+    response: "Based on reputation, client reviews and industry recognition, I would recommend looking at Carter & Blake Accounting. They specialise in small business accounting across London and have strong ratings on multiple review platforms.",
+    businessName: "Carter & Blake Accounting",
+  },
+  {
+    question: "Who are the best digital marketing agencies in Manchester?",
+    response: "Several agencies stand out in Manchester. One that consistently appears across trusted sources is Northside Digital. They have verified case studies, a clear service focus, and consistent presence across professional directories.",
+    businessName: "Northside Digital",
+  },
+  {
+    question: "I need a commercial solicitor in Birmingham. Any recommendations?",
+    response: "For commercial law in Birmingham, Ashworth & Partners is well regarded. They appear consistently across legal directories, have structured expertise in commercial contracts, and maintain strong client testimonials across multiple platforms.",
+    businessName: "Ashworth & Partners",
+  },
+  {
+    question: "What IT support companies would you recommend for a growing business?",
+    response: "For growing businesses, I would suggest Clearpath IT Solutions. They have a clearly defined service offering, verified credentials, and consistent descriptions across business directories and review platforms.",
+    businessName: "Clearpath IT Solutions",
+  },
+  {
+    question: "Can you suggest a financial adviser for retirement planning?",
+    response: "For retirement planning, Greystone Financial Advisory has strong recognition. They appear across regulated directories, have verified qualifications, and their expertise is consistently described across multiple independent sources.",
+    businessName: "Greystone Financial Advisory",
+  },
+  {
+    question: "Who should I use for commercial property management in Essex?",
+    response: "In Essex, Bridgewell Property Group is frequently referenced for commercial property management. They have verified industry memberships, consistent presence across property platforms, and clear client endorsements.",
+    businessName: "Bridgewell Property Group",
+  },
+]
+---
+
+<div class="ai-conversation-wrap reveal">
+  <p class="text-xs font-semibold uppercase tracking-widest text-text-muted mb-3 text-center">Example of how AI recommends businesses</p>
+
+  <div class="ai-chat-window">
+    <!-- Chat header -->
+    <div class="ai-chat-header">
+      <div class="flex items-center gap-2.5">
+        <div class="ai-avatar-logo">
+          <svg width="18" height="18" viewBox="0 0 41 41" fill="white">
+            <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835A9.964 9.964 0 0 0 18.306.5a10.079 10.079 0 0 0-9.614 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 7.516 3.35 10.078 10.078 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L7.044 23.856a7.504 7.504 0 0 1-2.747-10.237zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .113-.012l8.051 4.649a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.649-1.131zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.5v5l-4.331 2.5-4.331-2.5V18z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="text-sm font-semibold text-teal">ChatABC</div>
+          <div class="text-[11px] text-text-muted">Simulated conversation</div>
+        </div>
+      </div>
+      <div class="flex gap-1.5">
+        <div class="w-2.5 h-2.5 rounded-full bg-border"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-border"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-accent"></div>
+      </div>
+    </div>
+
+    <!-- Chat body -->
+    <div class="ai-chat-body" id="ai-chat-body">
+      {exchanges.map((exchange, i) => (
+        <div class={`ai-exchange ${i === 0 ? 'active' : ''}`} data-index={i}>
+          <div class="ai-bubble-user">
+            <p>{exchange.question}</p>
+          </div>
+          <div class="ai-bubble-ai">
+            <div class="ai-avatar-small ai-avatar-gpt">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                <path d="M12.7 4.5c2.5-.2 4.8 1.2 5.7 3.5.2.5.3 1 .4 1.5 1.8.8 3 2.5 3 4.5 0 1.5-.7 2.9-1.8 3.8l-.1.1c.3 2.3-1 4.5-3.2 5.4-.6.2-1.2.3-1.8.3-1.3 1.5-3.3 2.2-5.2 1.7-.5-.1-1-.3-1.4-.6-1.8.7-3.9.2-5.2-1.3-.7-.8-1.1-1.9-1.1-3 0-.3 0-.6.1-.9-1.7-1-2.7-2.8-2.4-4.8.1-.5.2-1 .4-1.5.1-.2.2-.4.3-.5C1.8 10.8 3 9 5 8.3c.5-.2 1-.3 1.5-.3.5-.5 1.1-.9 1.7-1.2C9.8 5.8 11.3 4.6 12.7 4.5z" fill="none" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <p set:html={exchange.response.replace(
+              exchange.businessName,
+              `<strong class="text-teal">${exchange.businessName}</strong>`
+            )} />
+          </div>
+        </div>
+      ))}
+
+      <!-- Typing indicator -->
+      <div class="ai-typing hidden" id="ai-typing">
+      <div class="ai-avatar-small ai-avatar-gpt">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path d="M12.7 4.5c2.5-.2 4.8 1.2 5.7 3.5.2.5.3 1 .4 1.5 1.8.8 3 2.5 3 4.5 0 1.5-.7 2.9-1.8 3.8l-.1.1c.3 2.3-1 4.5-3.2 5.4-.6.2-1.2.3-1.8.3-1.3 1.5-3.3 2.2-5.2 1.7-.5-.1-1-.3-1.4-.6-1.8.7-3.9.2-5.2-1.3-.7-.8-1.1-1.9-1.1-3 0-.3 0-.6.1-.9-1.7-1-2.7-2.8-2.4-4.8.1-.5.2-1 .4-1.5.1-.2.2-.4.3-.5C1.8 10.8 3 9 5 8.3c.5-.2 1-.3 1.5-.3.5-.5 1.1-.9 1.7-1.2C9.8 5.8 11.3 4.6 12.7 4.5z" fill="none" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="flex gap-1 items-center px-4 py-2.5 bg-off-white rounded-xl">
+        <div class="typing-dot"></div>
+        <div class="typing-dot" style="animation-delay: 0.15s"></div>
+        <div class="typing-dot" style="animation-delay: 0.3s"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <p class="text-[11px] text-text-muted text-center mt-3 italic max-w-[280px] mx-auto leading-relaxed">Illustrative example using fictional business names. AI responses are simulated to show how recommendation works.</p>
+</div>
+
+<style>
+  .ai-conversation-wrap {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .ai-chat-window {
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(15, 45, 44, 0.06);
+    background: var(--color-white-pure);
+  }
+
+  .ai-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-off-white);
+  }
+
+  .ai-avatar-logo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: #10a37f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-avatar-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.375rem;
+    background: var(--color-teal);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .ai-avatar-gpt {
+    background: #10a37f;
+  }
+
+  .ai-chat-body {
+    padding: 1.5rem 1.25rem;
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .ai-chat-body { height: 400px; }
+  }
+
+  .ai-exchange {
+    display: none;
+  }
+  .ai-exchange.active {
+    display: block;
+  }
+
+  .ai-bubble-user {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .ai-exchange.active.animate .ai-bubble-user {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-bubble-user p {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem 1rem 0.25rem 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    max-width: 85%;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ai-bubble-ai {
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .ai-exchange.active.animate .ai-bubble-ai {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-bubble-ai p {
+    background: var(--color-white-pure);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem 1rem 1rem 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-typing {
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .ai-typing.hidden {
+    display: none;
+  }
+
+  .typing-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: var(--color-text-muted);
+    animation: typing-bounce 1s infinite;
+  }
+
+  @keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  /* Fade out */
+  .ai-exchange.fade-out .ai-bubble-user,
+  .ai-exchange.fade-out .ai-bubble-ai {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  @media (max-width: 768px) {
+    .ai-chat-body { min-height: 180px; }
+    .ai-bubble-user p, .ai-bubble-ai p { font-size: 0.8125rem; }
+  }
+</style>
+
+<script define:vars={{ exchangeCount: exchanges.length }}>
+  // Scroll-triggered animation with auto-rotation
+  const chatBody = document.getElementById('ai-chat-body');
+  const typingIndicator = document.getElementById('ai-typing');
+  let currentIndex = 0;
+  let rotationTimer = null;
+  let hasTriggered = false;
+
+  function animateExchange(index) {
+    const exchange = chatBody?.querySelector(`[data-index="${index}"]`);
+    if (!exchange) return;
+
+    // Show the exchange
+    chatBody?.querySelectorAll('.ai-exchange').forEach(el => {
+      el.classList.remove('active', 'animate', 'fade-out');
+    });
+    exchange.classList.add('active');
+
+    // Animate question first
+    requestAnimationFrame(() => {
+      exchange.classList.add('animate');
+    });
+
+    // Show typing indicator after question appears, then show response
+    setTimeout(() => {
+      if (typingIndicator) typingIndicator.classList.remove('hidden');
+    }, 600);
+
+    setTimeout(() => {
+      if (typingIndicator) typingIndicator.classList.add('hidden');
+      // Response animation is handled by CSS transition on .animate class
+      // But we need to stagger it - add a class to trigger response
+      const aiBubble = exchange.querySelector('.ai-bubble-ai');
+      if (aiBubble) {
+        aiBubble.style.transitionDelay = '0s';
+      }
+    }, 1400);
+  }
+
+  function rotateToNext() {
+    const current = chatBody?.querySelector(`[data-index="${currentIndex}"]`);
+    if (current) {
+      current.classList.add('fade-out');
+    }
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % exchangeCount;
+      animateExchange(currentIndex);
+    }, 400);
+  }
+
+  function startRotation() {
+    // Animate the first exchange
+    animateExchange(0);
+
+    // Set up auto-rotation every 8 seconds
+    rotationTimer = setInterval(rotateToNext, 8000);
+  }
+
+  // IntersectionObserver — trigger once when 30% visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasTriggered) {
+        hasTriggered = true;
+        startRotation();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const wrapper = document.querySelector('.ai-conversation-wrap');
+  if (wrapper) observer.observe(wrapper);
+
+  // Stagger the AI response animation
+  // Override CSS to delay the AI bubble appearance
+  const style = document.createElement('style');
+  style.textContent = `.ai-exchange.active.animate .ai-bubble-ai { transition-delay: 1.4s; }`;
+  document.head.appendChild(style);
+</script>

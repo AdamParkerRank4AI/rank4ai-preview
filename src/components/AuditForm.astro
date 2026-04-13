@@ -293,10 +293,17 @@
         current_stage: 'partial',
       });
 
-      navigator.sendBeacon(
-        'https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations',
-        new Blob([partialPayload], { type: 'application/json' })
-      );
+      // Use fetch with keepalive (sendBeacon can't set custom headers needed by Supabase)
+      fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
+        method: 'POST',
+        keepalive: true,
+        headers: {
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
+          'Content-Type': 'application/json',
+        },
+        body: partialPayload,
+      }).catch(() => {});
 
       // Also send via FormSubmit as backup notification
       const formPayload = new FormData();
