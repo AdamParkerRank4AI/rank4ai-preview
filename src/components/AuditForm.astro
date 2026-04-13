@@ -1,0 +1,427 @@
+---
+// Multi-step AI Search Visibility Audit Form
+// Captures data field-by-field for drop-off recovery
+// Sends WhatsApp alert if started but not submitted after 5 minutes
+---
+
+<div id="audit-form" class="max-w-[560px] mx-auto">
+  <!-- Progress bar -->
+  <div class="flex items-center gap-2 mb-8">
+    <div class="flex-1">
+      <div class="h-1.5 bg-border rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-full bg-accent rounded-full transition-all duration-300" style="width: 33%"></div>
+      </div>
+    </div>
+    <span id="step-label" class="text-xs text-text-muted font-medium">Step 1 of 3</span>
+  </div>
+
+  <form id="audit-form-element" class="space-y-6">
+    <!-- STEP 1: About your business -->
+    <div id="step-1" class="form-step">
+      <h2 class="font-display text-2xl text-teal mb-2">Tell us about your business</h2>
+      <p class="text-sm text-text-muted mb-6">We use this to test your AI search visibility across all six platforms.</p>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-teal mb-1.5">Business name <span class="text-red-500">*</span></label>
+          <input type="text" name="business_name" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="Your business name">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-teal mb-1.5">Website URL <span class="text-red-500">*</span></label>
+          <input type="url" name="website_url" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="https://yourwebsite.com">
+        </div>
+      </div>
+
+      <button type="button" onclick="nextStep(2)" class="cta-primary w-full justify-center mt-6">Continue &rarr;</button>
+    </div>
+
+    <!-- STEP 2: Scale & status -->
+    <div id="step-2" class="form-step hidden">
+      <h2 class="font-display text-2xl text-teal mb-2">Scale & status</h2>
+      <p class="text-sm text-text-muted mb-6">Helps us tailor the audit to your situation.</p>
+
+      <div class="space-y-6">
+        <!-- Company size -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-3">Company size</label>
+          <div class="flex flex-wrap gap-2">
+            <label class="pill-selector"><input type="radio" name="company_size" value="Solo" class="sr-only"><span>Solo</span></label>
+            <label class="pill-selector"><input type="radio" name="company_size" value="2-10" class="sr-only"><span>2-10</span></label>
+            <label class="pill-selector"><input type="radio" name="company_size" value="11-50" class="sr-only"><span>11-50</span></label>
+            <label class="pill-selector"><input type="radio" name="company_size" value="50+" class="sr-only"><span>50+</span></label>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-3">How do you handle marketing?</label>
+          <div class="flex flex-wrap gap-2">
+            <label class="pill-selector"><input type="radio" name="marketing" value="In-house" class="sr-only"><span>In-house</span></label>
+            <label class="pill-selector"><input type="radio" name="marketing" value="Outsourced" class="sr-only"><span>Outsourced</span></label>
+            <label class="pill-selector"><input type="radio" name="marketing" value="None yet" class="sr-only"><span>None yet</span></label>
+          </div>
+        </div>
+
+        <!-- Agency experience -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-3">Worked with an SEO or AI search agency?</label>
+          <div class="flex flex-wrap gap-2">
+            <label class="pill-selector"><input type="radio" name="agency_experience" value="Yes" class="sr-only"><span>Yes</span></label>
+            <label class="pill-selector"><input type="radio" name="agency_experience" value="No" class="sr-only"><span>No</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-3 mt-6">
+        <button type="button" onclick="prevStep(1)" class="cta-secondary flex-1 justify-center">&larr; Back</button>
+        <button type="button" onclick="nextStep(3)" class="cta-primary flex-1 justify-center">Continue &rarr;</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Goals & contact -->
+    <div id="step-3" class="form-step hidden">
+      <h2 class="font-display text-2xl text-teal mb-2">Goals & contact details</h2>
+      <p class="text-sm text-text-muted mb-6">What are you trying to achieve?</p>
+
+      <div class="space-y-6">
+        <!-- Goals -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-3">What are your goals? <span class="text-xs text-text-muted font-normal">(select all that apply)</span></label>
+          <div class="flex flex-wrap gap-2">
+            <label class="chip-selector"><input type="checkbox" name="goals" value="Get more leads" class="sr-only"><span>Get more leads</span></label>
+            <label class="chip-selector"><input type="checkbox" name="goals" value="Build AI search visibility" class="sr-only"><span>Build AI search visibility</span></label>
+            <label class="chip-selector"><input type="checkbox" name="goals" value="Beat competitors to AI search" class="sr-only"><span>Beat competitors to AI search</span></label>
+            <label class="chip-selector"><input type="checkbox" name="goals" value="Understand where we stand" class="sr-only"><span>Understand where we stand</span></label>
+            <label class="chip-selector"><input type="checkbox" name="goals" value="Future-proof our marketing" class="sr-only"><span>Future-proof our marketing</span></label>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-1.5">Email address <span class="text-red-500">*</span></label>
+          <input type="email" name="email" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="you@business.com">
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label class="block text-sm font-medium text-teal mb-1.5">Phone number <span class="text-red-500">*</span></label>
+          <input type="tel" name="phone" id="phone-input" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="07XXX XXXXXX" pattern="0?7\d{8,9}">
+          <p id="phone-hint" class="text-xs text-text-muted mt-1">UK mobile number</p>
+          <label class="flex items-center gap-2 mt-2 cursor-pointer">
+            <input type="checkbox" id="outside-uk" name="outside_uk" class="rounded border-border" onchange="togglePhoneValidation()">
+            <span class="text-xs text-text-muted">I'm outside the UK</span>
+          </label>
+        </div>
+
+        <!-- Consent -->
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" name="marketing_consent" required class="rounded border-border mt-0.5">
+          <span class="text-xs text-text-muted leading-relaxed">I agree to receive communications from Rank4AI about my AI search visibility audit and related services. You can unsubscribe at any time. See our <a href="/privacy/" class="link">Privacy Policy</a>.</span>
+        </label>
+      </div>
+
+      <div class="flex gap-3 mt-6">
+        <button type="button" onclick="prevStep(2)" class="cta-secondary flex-1 justify-center">&larr; Back</button>
+        <button type="submit" class="cta-primary flex-1 justify-center">Get My Free Audit &rarr;</button>
+      </div>
+    </div>
+
+    <!-- THANK YOU (shown after submit) -->
+    <div id="step-thank-you" class="form-step hidden text-center py-8">
+      <div class="text-4xl mb-4">&#10003;</div>
+      <h2 class="font-display text-2xl text-teal mb-3">Thank you</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-2">Your AI Search Visibility Audit request has been received.</p>
+      <p class="text-sm text-text-muted">We will email you within 1 working day with your audit. If you have questions, <a href="https://wa.me/447389183338" class="link">message us on WhatsApp</a>.</p>
+    </div>
+
+    <!-- Hidden fields -->
+    <input type="hidden" name="source" value="website">
+    <input type="hidden" name="page_url" id="page-url-field">
+    <input type="hidden" name="started_at" id="started-at-field">
+  </form>
+
+  <p class="text-xs text-text-muted text-center mt-4">No commitment. No spam. 1,400+ UK businesses audited.</p>
+</div>
+
+<style>
+  .form-step.hidden { display: none; }
+
+  /* Pill selector (radio) */
+  .pill-selector {
+    cursor: pointer;
+  }
+  .pill-selector span {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: all 0.15s;
+    background: var(--color-white-pure);
+  }
+  .pill-selector input:checked + span {
+    background: var(--color-teal);
+    color: var(--color-text-light);
+    border-color: var(--color-teal);
+  }
+  .pill-selector:hover span {
+    border-color: var(--color-teal);
+  }
+
+  /* Chip selector (checkbox) */
+  .chip-selector {
+    cursor: pointer;
+  }
+  .chip-selector span {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: all 0.15s;
+    background: var(--color-white-pure);
+  }
+  .chip-selector input:checked + span {
+    background: var(--color-accent);
+    color: var(--color-teal);
+    border-color: var(--color-accent);
+  }
+  .chip-selector:hover span {
+    border-color: var(--color-accent);
+  }
+
+  .cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--color-text);
+    padding: 1rem 2rem;
+    border-radius: 0.625rem;
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .cta-secondary:hover {
+    border-color: var(--color-teal);
+  }
+</style>
+
+<script>
+  // Track form data for partial submission capture
+  const formData: Record<string, any> = {};
+  let formStarted = false;
+  let dropOffTimer: ReturnType<typeof setTimeout> | null = null;
+  const DROPOFF_MINUTES = 5;
+
+  // Set page URL and start time
+  document.getElementById('page-url-field')?.setAttribute('value', window.location.href);
+
+  // Capture field data on blur (partial submission)
+  document.querySelectorAll('#audit-form-element input, #audit-form-element select').forEach(input => {
+    input.addEventListener('change', () => {
+      const el = input as HTMLInputElement;
+      if (el.name === 'goals') {
+        // Multi-select
+        const checked = document.querySelectorAll('input[name="goals"]:checked');
+        formData.goals = Array.from(checked).map(c => (c as HTMLInputElement).value);
+      } else if (el.type === 'checkbox' && el.name !== 'goals') {
+        formData[el.name] = el.checked;
+      } else if (el.type === 'radio') {
+        formData[el.name] = el.value;
+      } else {
+        formData[el.name] = el.value;
+      }
+
+      // Start dropoff timer on first interaction
+      if (!formStarted) {
+        formStarted = true;
+        formData.started_at = new Date().toISOString();
+        document.getElementById('started-at-field')?.setAttribute('value', formData.started_at);
+        startDropOffTimer();
+      }
+
+      // Save partial data to sessionStorage
+      sessionStorage.setItem('rank4ai_audit_partial', JSON.stringify(formData));
+    });
+
+    input.addEventListener('blur', () => {
+      const el = input as HTMLInputElement;
+      if (el.value && el.name !== 'marketing_consent') {
+        formData[el.name] = el.value;
+        sessionStorage.setItem('rank4ai_audit_partial', JSON.stringify(formData));
+      }
+    });
+  });
+
+  function startDropOffTimer() {
+    if (dropOffTimer) clearTimeout(dropOffTimer);
+    dropOffTimer = setTimeout(() => {
+      // 5 minutes passed without submission - send partial data alert
+      if (!formData._submitted) {
+        sendPartialAlert();
+      }
+    }, DROPOFF_MINUTES * 60 * 1000);
+  }
+
+  function sendPartialAlert() {
+    // Send partial data to backend for dropoff notification
+    const partial = sessionStorage.getItem('rank4ai_audit_partial');
+    if (partial) {
+      // Use Beacon API so it works even if page is closing
+      const data = JSON.parse(partial);
+      data._type = 'partial_dropoff';
+      data._dropped_at = new Date().toISOString();
+
+      // Send to FormSubmit as a notification
+      const formPayload = new FormData();
+      formPayload.append('_subject', 'DROPOFF ALERT: Audit form started but not submitted');
+      formPayload.append('Business', data.business_name || 'Unknown');
+      formPayload.append('Website', data.website_url || 'Unknown');
+      formPayload.append('Email', data.email || 'Not captured');
+      formPayload.append('Phone', data.phone || 'Not captured');
+      formPayload.append('Started at', data.started_at || '');
+      formPayload.append('Dropped at', data._dropped_at);
+      formPayload.append('Step reached', getCurrentStep().toString());
+      formPayload.append('Data captured', JSON.stringify(data));
+
+      navigator.sendBeacon('https://formsubmit.co/ajax/info@rank4ai.co.uk', formPayload);
+    }
+  }
+
+  // Also capture on page unload
+  window.addEventListener('beforeunload', () => {
+    if (formStarted && !formData._submitted) {
+      sendPartialAlert();
+    }
+  });
+
+  function getCurrentStep(): number {
+    if (!document.getElementById('step-1')?.classList.contains('hidden')) return 1;
+    if (!document.getElementById('step-2')?.classList.contains('hidden')) return 2;
+    if (!document.getElementById('step-3')?.classList.contains('hidden')) return 3;
+    return 0;
+  }
+
+  function nextStep(step: number) {
+    // Validate current step
+    const currentStep = step - 1;
+    const currentSection = document.getElementById(`step-${currentStep}`);
+    const requiredFields = currentSection?.querySelectorAll('[required]');
+    let valid = true;
+
+    requiredFields?.forEach(field => {
+      const input = field as HTMLInputElement;
+      if (!input.value) {
+        input.style.borderColor = '#ef4444';
+        valid = false;
+      } else {
+        input.style.borderColor = '';
+      }
+    });
+
+    if (!valid) return;
+
+    // Hide all steps, show target
+    document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
+    document.getElementById(`step-${step}`)?.classList.remove('hidden');
+
+    // Update progress
+    const progress = (step / 3) * 100;
+    (document.getElementById('progress-bar') as HTMLElement).style.width = `${progress}%`;
+    (document.getElementById('step-label') as HTMLElement).textContent = `Step ${step} of 3`;
+
+    // Scroll to top of form
+    document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function prevStep(step: number) {
+    document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
+    document.getElementById(`step-${step}`)?.classList.remove('hidden');
+
+    const progress = (step / 3) * 100;
+    (document.getElementById('progress-bar') as HTMLElement).style.width = `${progress}%`;
+    (document.getElementById('step-label') as HTMLElement).textContent = `Step ${step} of 3`;
+  }
+
+  function togglePhoneValidation() {
+    const phone = document.getElementById('phone-input') as HTMLInputElement;
+    const hint = document.getElementById('phone-hint') as HTMLElement;
+    const outsideUK = (document.getElementById('outside-uk') as HTMLInputElement).checked;
+
+    if (outsideUK) {
+      phone.removeAttribute('pattern');
+      phone.placeholder = '+1 234 567 8900';
+      hint.textContent = 'International number';
+    } else {
+      phone.setAttribute('pattern', '0?7\\d{8,9}');
+      phone.placeholder = '07XXX XXXXXX';
+      hint.textContent = 'UK mobile number';
+    }
+  }
+
+  // Make functions available globally
+  (window as any).nextStep = nextStep;
+  (window as any).prevStep = prevStep;
+  (window as any).togglePhoneValidation = togglePhoneValidation;
+
+  // Form submission
+  document.getElementById('audit-form-element')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    formData._submitted = true;
+    if (dropOffTimer) clearTimeout(dropOffTimer);
+
+    // Collect all form data
+    const form = e.target as HTMLFormElement;
+    const submitData = new FormData(form);
+    submitData.append('_subject', 'New AI Search Visibility Audit Request');
+    submitData.append('_captcha', 'false');
+
+    // Collect goals
+    const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(c => (c as HTMLInputElement).value);
+    submitData.set('goals', goals.join(', '));
+
+    try {
+      await fetch('https://formsubmit.co/ajax/info@rank4ai.co.uk', {
+        method: 'POST',
+        body: submitData,
+      });
+    } catch (err) {
+      // Fallback: try regular form submission
+      form.action = 'https://formsubmit.co/info@rank4ai.co.uk';
+      form.method = 'POST';
+      form.submit();
+      return;
+    }
+
+    // Show thank you
+    document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
+    document.getElementById('step-thank-you')?.classList.remove('hidden');
+    (document.getElementById('progress-bar') as HTMLElement).style.width = '100%';
+    (document.getElementById('step-label') as HTMLElement).textContent = 'Complete';
+
+    // Clear partial data
+    sessionStorage.removeItem('rank4ai_audit_partial');
+  });
+
+  // Restore partial data if returning
+  const saved = sessionStorage.getItem('rank4ai_audit_partial');
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.entries(data).forEach(([key, value]) => {
+      const input = document.querySelector(`[name="${key}"]`) as HTMLInputElement;
+      if (input && typeof value === 'string') {
+        input.value = value;
+      }
+    });
+  }
+</script>
