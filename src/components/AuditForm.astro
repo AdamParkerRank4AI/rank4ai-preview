@@ -28,7 +28,7 @@
         </div>
         <div>
           <label class="block text-sm font-medium text-teal mb-1.5">Website URL <span class="text-red-500">*</span></label>
-          <input type="url" name="website_url" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="https://yourwebsite.com">
+          <input type="text" name="website_url" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="yourwebsite.com">
         </div>
       </div>
 
@@ -105,8 +105,8 @@
         <!-- Phone -->
         <div>
           <label class="block text-sm font-medium text-teal mb-1.5">Phone number <span class="text-red-500">*</span></label>
-          <input type="tel" name="phone" id="phone-input" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="07XXX XXXXXX" pattern="0?7\d{8,9}">
-          <p id="phone-hint" class="text-xs text-text-muted mt-1">UK mobile number</p>
+          <input type="tel" name="phone" id="phone-input" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="07XXX XXXXXX or 01234 567890" pattern="0\d{9,10}">
+          <p id="phone-hint" class="text-xs text-text-muted mt-1">UK phone number (mobile or landline)</p>
           <label class="flex items-center gap-2 mt-2 cursor-pointer">
             <input type="checkbox" id="outside-uk" name="outside_uk" class="rounded border-border" onchange="togglePhoneValidation()">
             <span class="text-xs text-text-muted">I'm outside the UK</span>
@@ -337,18 +337,41 @@
     const currentSection = document.getElementById(`step-${currentStep}`);
     const requiredFields = currentSection?.querySelectorAll('[required]');
     let valid = true;
+    let firstInvalid: HTMLElement | null = null;
+
+    // Clear previous errors
+    currentSection?.querySelectorAll('.field-error').forEach(el => el.remove());
 
     requiredFields?.forEach(field => {
       const input = field as HTMLInputElement;
+      // Remove old error styling
+      input.style.borderColor = '';
+      const existingError = input.parentElement?.querySelector('.field-error');
+      if (existingError) existingError.remove();
+
       if (!input.value) {
         input.style.borderColor = '#ef4444';
+        const errorMsg = document.createElement('p');
+        errorMsg.className = 'field-error text-xs text-red-500 mt-1';
+        errorMsg.textContent = 'This field is required';
+        input.parentElement?.appendChild(errorMsg);
         valid = false;
-      } else {
-        input.style.borderColor = '';
+        if (!firstInvalid) firstInvalid = input;
+      } else if (input.name === 'phone' && !input.validity.valid) {
+        input.style.borderColor = '#ef4444';
+        const errorMsg = document.createElement('p');
+        errorMsg.className = 'field-error text-xs text-red-500 mt-1';
+        errorMsg.textContent = 'Please enter a valid UK phone number (e.g. 07123 456789 or 01onal 234567)';
+        input.parentElement?.appendChild(errorMsg);
+        valid = false;
+        if (!firstInvalid) firstInvalid = input;
       }
     });
 
-    if (!valid) return;
+    if (!valid) {
+      firstInvalid?.focus();
+      return;
+    }
 
     // Hide all steps, show target
     document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
@@ -359,8 +382,12 @@
     (document.getElementById('progress-bar') as HTMLElement).style.width = `${progress}%`;
     (document.getElementById('step-label') as HTMLElement).textContent = `Step ${step} of 3`;
 
-    // Scroll to top of form
-    document.getElementById('audit-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Scroll to top of form with offset for fixed header
+    const formEl = document.getElementById('audit-form');
+    if (formEl) {
+      const y = formEl.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 
   function prevStep(step: number) {
@@ -370,6 +397,12 @@
     const progress = (step / 3) * 100;
     (document.getElementById('progress-bar') as HTMLElement).style.width = `${progress}%`;
     (document.getElementById('step-label') as HTMLElement).textContent = `Step ${step} of 3`;
+
+    const formEl = document.getElementById('audit-form');
+    if (formEl) {
+      const y = formEl.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 
   function togglePhoneValidation() {
@@ -382,9 +415,9 @@
       phone.placeholder = '+1 234 567 8900';
       hint.textContent = 'International number';
     } else {
-      phone.setAttribute('pattern', '0?7\\d{8,9}');
-      phone.placeholder = '07XXX XXXXXX';
-      hint.textContent = 'UK mobile number';
+      phone.setAttribute('pattern', '0\\d{9,10}');
+      phone.placeholder = '07XXX XXXXXX or 01234 567890';
+      hint.textContent = 'UK phone number (mobile or landline)';
     }
   }
 
