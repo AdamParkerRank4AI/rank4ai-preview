@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Complete Guide to AI Search Visibility | Rank4AI" description="The definitive guide to AI search visibility. How AI search works, why it matters for UK businesses, and how to build the visibility that gets your business recommended.">
 <article class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Complete Guide Ai Search' }
+    ]} />
+
     <p class="section-tag">Flagship Guide</p>
     <h1 class="mb-4">The Complete Guide to AI Search Visibility</h1>
     <p class="text-sm text-text-muted mb-8">By Adam Parker | Published February 2026 | Last updated April 2026</p>

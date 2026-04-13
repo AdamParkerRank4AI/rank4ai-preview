@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Google AI Overview Ranking Factors | Rank4AI" description="What determines whether your business appears in Google AI Overviews. Ranking factors and how to optimise for them.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Google Ai Overview Ranking Factors' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Google AI Overview Ranking Factors</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Google AI Overviews appear at the top of Google search results, providing an AI-generated summary before the traditional links. Being cited in an AI Overview is different from ranking in organic results – it requires a different set of signals.</p>

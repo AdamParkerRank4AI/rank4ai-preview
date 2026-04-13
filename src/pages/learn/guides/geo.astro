@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="The Master Guide to GEO - Generative Engine Optimisation | Rank4AI" description="The definitive guide to Generative Engine Optimisation (GEO). What GEO is, how it differs from SEO, and how to build visibility in AI-generated answers.">
 <article class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Geo' }
+    ]} />
+
     <p class="section-tag">Flagship Guide</p>
     <h1 class="mb-4">The Master Guide to GEO</h1>
     <p class="text-sm text-text-muted mb-8">Generative Engine Optimisation | By Adam Parker | Updated April 2026</p>

@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="ChatGPT SEO – Complete UK Guide | Rank4AI" description="How to get your business recommended by ChatGPT. ChatGPT SEO guide for UK businesses from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Chatgpt Seo' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">ChatGPT SEO – Complete UK Guide</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">ChatGPT has 900+ million weekly active users. When someone asks it to recommend a business in your category, it either mentions you or it does not. There is no page 2.</p>

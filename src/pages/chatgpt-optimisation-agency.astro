@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 <Layout title="ChatGPT Optimisation Agency UK - Rank4AI" description="ChatGPT optimisation agency in the UK. We get your business recommended by ChatGPT through Bing ecosystem building, entity clarity and consistent digital presence.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Chatgpt Optimisation Agency' }
+    ]} />
+
     <p class="section-tag">ChatGPT Optimisation</p>
     <h1 class="mb-6">ChatGPT Optimisation Agency UK</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">ChatGPT has 900+ million weekly active users. When someone asks it to recommend a business in your category, it either mentions you or it does not. There is no page 2.</p>

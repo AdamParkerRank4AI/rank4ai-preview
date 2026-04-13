@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility Case Studies | Rank4AI" description="Real AI search visibility results for real businesses. Case studies from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Case Studies', href: '/research/case-studies/' },
+      { label: 'Case Studies' }
+    ]} />
+
     <p class="section-tag">Case Studies</p>
     <h1 class="mb-6">Case Studies</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">Real results for real businesses. How AI search visibility was measured, built, and improved.</p>

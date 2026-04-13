@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Accountants UK | Rank4AI" description="Get your accountancy firm recommended by ChatGPT, Claude, Gemini and Perplexity. AI search visibility for UK accountants.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Accountants' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Accountants</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When a business owner asks ChatGPT "recommend an accountant near me," your firm should appear. In our UK testing, accountancy firms scored the highest of any sector on AI visibility signals – but most still do not show up in AI answers.</p>

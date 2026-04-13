@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 <Layout title="Google AI Optimisation UK - Rank4AI | AI Overviews & Gemini" description="Google AI optimisation for UK businesses. Get cited in Google AI Overviews and Gemini. Build presence across Google's 20+ platforms.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Google Ai Optimisation' }
+    ]} />
+
     <p class="section-tag">Google AI Optimisation</p>
     <h1 class="mb-6">Google AI Optimisation UK</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Google AI Overviews appear at the top of search results, replacing traditional links with AI-generated answers. Gemini is Google's AI assistant. Google AI Mode is the new dedicated AI search tab. All three pull from different combinations of signals - but all favour businesses with strong presence across Google's own infrastructure.</p>

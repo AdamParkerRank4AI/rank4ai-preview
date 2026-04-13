@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Top AI Visibility Audits 2026 | Rank4AI" description="The top AI visibility audit services compared. Which audits test the most platforms, measure the most signals, and deliver the best results.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Top Ai Visibility Audits' }
+    ]} />
+
     <p class="section-tag">Rankings</p>
     <h1 class="mb-4">Top AI Visibility Audits 2026</h1>
     <p class="text-sm text-text-muted mb-8">Last updated: April 2026 | Based on public information, published methodologies, and service comparisons</p>

@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Terms of Service | Rank4AI" description="Terms of Service for Rank4AI Ltd.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Terms' }
+    ]} />
+
     <h1 class="mb-2">Terms of Service</h1>
     <p class="text-sm text-text-muted mb-8">Effective date: 16 January 2026 | Last updated: 4 March 2026</p>
     <div class="prose max-w-none text-[15px] text-text-muted leading-relaxed">

@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Education & Training UK | Rank4AI" description="Get your education or training business recommended by AI search. Courses, tutoring, professional development.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Education' }
+    ]} />
+
     <p class="section-tag">By Sector</p>
     <h1 class="mb-6">AI Search Visibility for Education &amp; Training</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Training providers, tutoring services, and professional development companies are seeing a growing share of enquiries come through AI. When someone asks "best project management course in the UK" or "recommend a maths tutor near me," AI builds its answer from course platforms, review sites, and professional directories.</p>

@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Structured Data for AI Search | Rank4AI" description="How structured data and schema markup drive AI search visibility. Content with proper schema has 2.5x higher citation chance.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Structured Data For Ai' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Structured Data for AI Search</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Content with proper schema markup has a 2.5x higher chance of appearing in AI-generated answers. Structured data is the machine-readable layer that tells AI platforms exactly what your business is and how it connects to the wider web.</p>

@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Privacy Policy | Rank4AI" description="Privacy Policy for Rank4AI Ltd. How we collect, use and protect personal data.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Privacy' }
+    ]} />
+
     <h1 class="mb-2">Privacy Policy</h1>
     <p class="text-sm text-text-muted mb-8">Effective date: 16 January 2026 | Last updated: 4 March 2026</p>
     <div class="prose max-w-none text-[15px] text-text-muted leading-relaxed">

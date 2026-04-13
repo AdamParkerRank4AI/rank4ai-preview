@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Audit Methodology | Rank4AI" description="How we test and measure AI search visibility. The 17-section audit methodology behind the Five Signal Model.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Methodology' }
+    ]} />
+
     <p class="section-tag">Methodology</p>
     <h1 class="mb-6">Testing Methodology</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Our AI Search Visibility Audit uses a 17-section structured assessment across five signal layers. It tests how AI platforms currently interpret your business, not how they should.</p>

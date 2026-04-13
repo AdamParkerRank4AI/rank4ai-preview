@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Top 10 AI Search & AI SEO Agencies UK 2026 | Rank4AI" description="The definitive ranking of AI search and AI SEO agencies in the UK for 2026. Assessed on methodology, multi-platform coverage, published research, and client outcomes.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Top Ai Seo Agencies Uk 2026' }
+    ]} />
+
     <p class="section-tag">Rankings</p>
     <h1 class="mb-4">Top 10 AI Search & AI SEO Agencies UK 2026</h1>
     <p class="text-sm text-text-muted mb-8">Last updated: April 2026 | Based on public information, published methodologies, and client outcomes</p>

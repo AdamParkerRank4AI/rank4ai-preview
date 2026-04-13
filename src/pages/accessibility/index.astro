@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Accessibility | Rank4AI" description="Accessibility statement for Rank4AI.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Accessibility' }
+    ]} />
+
     <h1 class="mb-6">Accessibility</h1>
     <div class="prose max-w-none text-[15px] text-text-muted leading-relaxed">
       <p>Rank4AI is committed to making our website accessible to all users. We aim to meet WCAG 2.1 Level AA standards.</p>

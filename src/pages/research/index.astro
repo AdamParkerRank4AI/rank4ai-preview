@@ -1,10 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="UK AI Search Visibility Research & Data | Rank4AI" description="Original research from 1,400+ UK business website audits. AI visibility statistics, case studies, weekly intelligence and methodology from Rank4AI.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research' }
+    ]} />
+
     <p class="section-tag">Research</p>
     <h1 class="mb-6">Research</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-12 max-w-[700px]">Original UK data from 1,400+ business website audits. No other AI search agency has this.</p>

@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import weekly from '../../../data/weekly.json'
 
@@ -11,6 +12,12 @@ const sorted = [...weekly].sort((a: any, b: any) => {
 <Layout title="AI Search Weekly Intelligence | Rank4AI" description="What changed in AI search this week. Weekly intelligence briefings from Rank4AI.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Weekly Intelligence' }
+    ]} />
+
     <p class="section-tag">Weekly Intelligence</p>
     <h1 class="mb-4">Weekly Intelligence</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">What changed in AI search this week. Platform updates, signal shifts, and what it means for UK businesses.</p>

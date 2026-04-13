@@ -1,10 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Free AI Search Visibility Audit | Rank4AI" description="Get a free AI Search Visibility Audit from Rank4AI. We test how your business appears across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.">
 
 <section class="pt-24 pb-24">
-  <div class="max-w-[600px] mx-auto px-10 max-md:px-6 text-center">
+  <div class="max-w
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Free Audit' }
+    ]} />
+-[600px] mx-auto px-10 max-md:px-6 text-center">
     <p class="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent mb-4">UK AI Search Agency</p>
     <h1 class="mb-6">Get a Free AI Search Visibility Audit</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-4">We test your business across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. You get a detailed report showing exactly where you stand.</p>

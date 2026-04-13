@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Explained – Podcast | Rank4AI" description="AI Search Explained by Rank4AI. Listen on Apple Podcasts, Spotify, and all major platforms.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Podcast' }
+    ]} />
+
     <p class="section-tag">Podcast</p>
     <h1 class="mb-6">AI Search Explained</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">Practical insights on AI search visibility. Each episode answers one question clearly.</p>

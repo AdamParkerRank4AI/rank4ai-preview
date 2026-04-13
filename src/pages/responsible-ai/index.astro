@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Responsible AI | Rank4AI" description="Rank4AI's approach to responsible AI practices. How we work ethically with AI search systems.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Responsible Ai' }
+    ]} />
+
     <h1 class="mb-6">Responsible AI</h1>
     <div class="prose max-w-none text-[15px] text-text-muted leading-relaxed">
       <p>Rank4AI is committed to working responsibly with AI search systems. Our approach is built on transparency, honesty, and ethical practice.</p>

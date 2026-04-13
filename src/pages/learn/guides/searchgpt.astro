@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="SearchGPT Optimisation – UK Guide | Rank4AI" description="How to rank in SearchGPT. OpenAI's search product uses Bing as its primary data source.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Searchgpt' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">SearchGPT Optimisation</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT is OpenAI's dedicated search product – a real-time web search feature integrated into ChatGPT. Unlike standard ChatGPT which draws from training data, SearchGPT actively crawls the web to provide current answers.</p>

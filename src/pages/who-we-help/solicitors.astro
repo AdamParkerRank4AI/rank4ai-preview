@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Solicitors UK | Rank4AI" description="Get your law firm recommended by ChatGPT, Claude, Gemini and Perplexity. AI search visibility for UK solicitors.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Solicitors' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Solicitors</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When someone asks an AI platform "recommend a solicitor for conveyancing near me," your firm should appear. In our UK testing, law firms scored zero on several key AI visibility signals.</p>

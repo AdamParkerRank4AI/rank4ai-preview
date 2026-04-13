@@ -1,10 +1,17 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="The Five Signal Model – AI Search Framework | Rank4AI" description="How AI platforms evaluate businesses through Identity Clarity, Subject Authority, Meaning Architecture, Ecosystem Validation and Signal Consistency.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Five Signal Framework' }
+    ]} />
+
     <p class="section-tag">The Five Signal Model</p>
     <h1 class="mb-6">The Five Signal Model</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">AI platforms do not rank pages. They interpret organisations. They build a picture of what a business is, what it specialises in and how confidently they can recommend it.</p>

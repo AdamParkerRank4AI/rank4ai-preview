@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Entity SEO for AI Search | Rank4AI" description="How entity SEO drives AI search visibility. Brands with strong entity signals are 4x more likely to appear in AI recommendations.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Entity Seo For Ai' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Entity SEO for AI Search</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Entity SEO is the practice of building a clear, consistent, and well-connected entity that AI systems can understand and recommend. It is the bridge between traditional SEO and AI search visibility.</p>

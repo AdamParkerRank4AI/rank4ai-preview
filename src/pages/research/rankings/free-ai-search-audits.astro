@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Free AI Search Audits Compared 2026 | Rank4AI" description="Comparison of free AI search audit tools and services. Which free audits are worth using and what do they actually test.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Free Ai Search Audits' }
+    ]} />
+
     <p class="section-tag">Rankings</p>
     <h1 class="mb-6">Free AI Search Audits Compared</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Several agencies and tools now offer free AI search audits. But they vary enormously in what they actually test. Some check a single platform with a handful of prompts. Others test all six major AI platforms across five signal layers.</p>

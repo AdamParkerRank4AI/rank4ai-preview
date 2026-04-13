@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Restaurants UK | Rank4AI" description="Get your restaurant recommended by ChatGPT, Claude and Google AI when people ask where to eat.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Restaurants' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Restaurants</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When someone asks ChatGPT "best Italian restaurant near me" or "where should I eat in [town]," AI builds its answer from Google reviews, TripAdvisor, local directories, social media, and food publications. If your restaurant only has a website and a Google Business Profile, you are missing most of the sources AI checks.</p>

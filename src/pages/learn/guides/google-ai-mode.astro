@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Google AI Mode Optimisation UK | Rank4AI" description="How to optimise for Google AI Mode. The new AI-powered search tab in Google, powered by Gemini 2.5. UK guide from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Google Ai Mode' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Google AI Mode Optimisation</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Google AI Mode is a new AI-powered tab in Google Search, powered by Gemini 2.5. When activated, it replaces traditional search results with a single AI-generated answer. No organic results are shown.</p>

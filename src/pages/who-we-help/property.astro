@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Property & Real Estate UK | Rank4AI" description="Get your property business recommended by ChatGPT, Claude and Google AI. AI visibility for UK property companies.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Property' }
+    ]} />
+
     <p class="section-tag">By Sector</p>
     <h1 class="mb-6">AI Search Visibility for Property</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Property developers, management companies, and commercial agents are increasingly being searched via AI. When a buyer asks "best property developers in [area]" or a tenant asks "recommend a property management company near me," AI builds its answer from sources beyond just Rightmove and Zoopla.</p>

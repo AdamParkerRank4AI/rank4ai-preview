@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Is My Business Visible on AI Search? | Rank4AI" description="Check if your business appears in ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. Free AI visibility check from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Check Ai Visibility' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Is My Business Visible on AI Search?</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">The quickest way to find out: ask. Open ChatGPT, Claude, Gemini or Perplexity and type "recommend a [your service] in [your area]." If your business does not appear, you have an AI visibility gap.</p>

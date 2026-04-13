@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import sectors from '../../data/sectors.json'
 import cities from '../../data/cities.json'
@@ -25,6 +26,11 @@ const professions = [
 <Layout title="AI Search Visibility by Industry & Location | Rank4AI" description="AI search visibility for UK businesses across 21 sectors and 7 cities. Professional services, ecommerce, SaaS, B2B, accountants, solicitors, dentists, restaurants and more.">
 <section class="pt-12 pb-24 reveal">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help' }
+    ]} />
+
     <p class="section-tag">Who We Help</p>
     <h1 class="mb-6">AI Search Visibility for Your Sector</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10 max-w-[700px]">We work with UK businesses across every sector and profession. The same five signal layers apply - but how they manifest differs by industry. Each page shows the specific AI search challenges and opportunities for your business type.</p>

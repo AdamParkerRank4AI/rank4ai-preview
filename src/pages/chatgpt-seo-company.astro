@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 <Layout title="ChatGPT SEO Company UK - Rank4AI" description="ChatGPT SEO company in the UK. We help businesses get recommended by ChatGPT through Bing ecosystem building and entity visibility.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Chatgpt Seo Company' }
+    ]} />
+
     <p class="section-tag">ChatGPT SEO</p>
     <h1 class="mb-6">ChatGPT SEO Company UK</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Rank4AI is a UK AI search agency specialising in ChatGPT visibility. We help businesses get recommended when people ask ChatGPT questions about their industry, services or location.</p>

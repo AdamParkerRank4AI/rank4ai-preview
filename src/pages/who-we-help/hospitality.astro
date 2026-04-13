@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Hotels & Hospitality UK | Rank4AI" description="Get your hotel or hospitality business recommended by ChatGPT, Claude and Google AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Hospitality' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Hotels &amp; Hospitality</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When someone asks AI "best hotels in [destination]" or "where to stay near [attraction]," the answer is built from booking platforms, review sites, travel publications, and your own web presence. OTAs (Online Travel Agents) dominate many AI answers – but independent hotels can compete with the right signals.</p>

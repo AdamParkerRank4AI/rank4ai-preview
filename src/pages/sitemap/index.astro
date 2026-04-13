@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Knowledge Map | Rank4AI" description="Complete map of all AI search visibility content on Rank4AI.">
 <section class="pt-12 pb-24">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Sitemap' }
+    ]} />
+
     <h1 class="mb-6">AI Knowledge Map</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">A complete map of everything we cover.</p>
 

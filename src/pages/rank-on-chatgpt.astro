@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 <Layout title="Rank on ChatGPT - How to Get Your Business Recommended | Rank4AI" description="How to rank on ChatGPT. Get your UK business recommended when people ask ChatGPT for suggestions in your category.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Rank On Chatgpt' }
+    ]} />
+
     <p class="section-tag">Rank on ChatGPT</p>
     <h1 class="mb-6">How to Rank on ChatGPT</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">You cannot "rank" on ChatGPT the way you rank on Google. ChatGPT does not have a results page. It gives a single answer. But you can build the signals that make ChatGPT confident enough to recommend your business.</p>

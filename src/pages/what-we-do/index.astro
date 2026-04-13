@@ -1,10 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Work With Rank4AI – AI Search Visibility Services & Pricing" description="AI search visibility services from Rank4AI. Ecosystem services from £800/mo. Full agency from £1,500/mo. Every engagement starts with an audit across all six AI platforms.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'What We Do' }
+    ]} />
+
     <p class="section-tag">What We Do</p>
     <h1 class="mb-6">Work With Us</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Rank4AI is a UK AI search agency. We get your business recommended by ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.</p>

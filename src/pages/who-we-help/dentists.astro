@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Dentists UK | Rank4AI" description="Get your dental practice recommended by ChatGPT, Claude, Gemini and Perplexity. AI search visibility for UK dentists.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Dentists' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Dentists</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When a patient asks ChatGPT "best dentist near me," AI platforms build their answer from dozens of sources – not just Google. Your Google Business Profile, NHS listings, dental directory entries, review platforms, and website all contribute to whether you get recommended.</p>

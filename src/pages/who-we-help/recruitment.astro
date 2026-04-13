@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Recruitment Agencies UK | Rank4AI" description="Get your recruitment agency recommended by ChatGPT, Claude and Google AI when employers and candidates search.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Recruitment' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Recruitment Agencies</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When a hiring manager asks AI "best recruitment agency for [role type] in [location]," your agency needs to appear. Recruitment is a crowded market – AI search offers a new channel where established brand equity and specialist focus matter more than advertising spend.</p>

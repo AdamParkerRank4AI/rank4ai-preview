@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 
 const rankings = [
@@ -33,6 +34,13 @@ const cityRankings = [
 <Layout title="AI Search Agency Rankings UK | Rank4AI" description="Industry rankings, agency comparisons, and landscape reports for the UK AI search market.">
 <section class="pt-12 pb-24 reveal">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Rankings' }
+    ]} />
+
     <p class="section-tag">Rankings</p>
     <h1 class="mb-4">Rankings</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10 max-w-[700px]">Industry rankings, agency comparisons, and landscape reports for the UK AI search market.</p>

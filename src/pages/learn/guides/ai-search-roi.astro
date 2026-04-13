@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="AI Search ROI – The Business Case | Rank4AI" description="What is the return on investment from AI search visibility? The business case for investing in AI search optimisation.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Ai Search Roi' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">AI Search ROI – The Business Case</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">AI search visibility is infrastructure, not a campaign. Unlike paid advertising, it does not stop when the budget stops. The position built in month two is the foundation for month six.</p>

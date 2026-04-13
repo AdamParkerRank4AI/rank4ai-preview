@@ -1,10 +1,17 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Full Agency AI Search Visibility Service | Rank4AI" description="AI search visibility across your website and the full digital ecosystem. Standard, Strategic and Partner engagements. Scope determined by audit.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'What We Do', href: '/what-we-do/' },
+      { label: 'Full Agency' }
+    ]} />
+
     <p class="section-tag">Full Agency – Includes Site Work</p>
     <h1 class="mb-6">Full Agency Service</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">We work on your website directly alongside the full ecosystem build. Technical implementation, content restructure, authority architecture. Scope is always determined by the audit.</p>

@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for B2B UK | Rank4AI" description="How B2B businesses can get recommended by ChatGPT, Claude and Google AI. UK guide from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Ai Search B2B' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">AI Search Visibility for B2B UK</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">B2B buyers are increasingly using AI to research suppliers, compare services, and shortlist providers. When a procurement manager asks ChatGPT "recommend a [your service] provider in the UK," your business needs to appear.</p>

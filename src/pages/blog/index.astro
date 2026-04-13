@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import blogs from '../../data/blogs.json'
 
@@ -12,6 +13,11 @@ const clusters = [...new Set(blogs.map((b: any) => b.governanceCluster).filter(B
 <Layout title="AI Search Visibility Blog | Rank4AI" description="Practical insights on AI search visibility from Rank4AI. Each post answers one question clearly.">
 <section class="pt-12 pb-24">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog' }
+    ]} />
+
     <p class="section-tag">Blog</p>
     <h1 class="mb-4">Blog</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-8">Practical insights on AI search visibility. Each post answers one question clearly.</p>

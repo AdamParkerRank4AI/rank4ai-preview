@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="Answer Engine Optimisation (AEO) – UK Guide | Rank4AI" description="What is Answer Engine Optimisation? AEO explained for UK businesses. How to optimise for AI-generated answers.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Aeo' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">Answer Engine Optimisation (AEO)</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Answer Engine Optimisation (AEO) is the practice of optimising content so AI platforms can extract, summarise, and cite it when answering user questions. It is closely related to GEO (Generative Engine Optimisation) and AI SEO – all three terms describe the same fundamental challenge.</p>

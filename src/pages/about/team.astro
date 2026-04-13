@@ -1,10 +1,17 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Our Team | Rank4AI" description="Meet the Rank4AI team. No juniors. No handoffs. Senior people doing the work.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Team' }
+    ]} />
+
     <p class="section-tag">Team</p>
     <h1 class="mb-6">Our Team</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">No juniors. No handoffs. No layers between you and the people doing the work.</p>

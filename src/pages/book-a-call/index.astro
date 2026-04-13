@@ -1,9 +1,15 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Book a Call | Rank4AI" description="Book a 30-minute discovery call with Rank4AI. Discuss your AI search visibility and find out how we can help.">
 <section class="pt-24 pb-24">
-  <div class="max-w-[600px] mx-auto px-10 max-md:px-6 text-center">
+  <div class="max-w
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Book A Call' }
+    ]} />
+-[600px] mx-auto px-10 max-md:px-6 text-center">
     <p class="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent mb-4">Book a Call</p>
     <h1 class="mb-6">Book a Call</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-4">30-minute discovery call to discuss your situation. No obligation, no sales pressure.</p>

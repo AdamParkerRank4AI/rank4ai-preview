@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Technology Companies UK | Rank4AI" description="Get your tech company recommended by ChatGPT, Claude and Google AI. AI visibility for UK IT and technology businesses.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Technology' }
+    ]} />
+
     <p class="section-tag">By Sector</p>
     <h1 class="mb-6">AI Search Visibility for Technology Companies</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Technology companies have a natural advantage in AI search. Developer platforms (GitHub, Stack Overflow), tech publications, and professional communities all function as high-trust citation sources that AI platforms reference heavily.</p>

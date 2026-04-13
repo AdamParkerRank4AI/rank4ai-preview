@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 
 const guides = [
@@ -29,6 +30,13 @@ const guides = [
 <Layout title="AI Search Visibility Guides | Rank4AI" description="22 in-depth guides covering AI search visibility, GEO, ChatGPT SEO, Perplexity, Copilot, entity SEO, structured data and more.">
 <section class="pt-12 pb-24 reveal">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Guides' }
+    ]} />
+
     <p class="section-tag">Guides</p>
     <h1 class="mb-4">AI Search Guides</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-10">{guides.length} in-depth guides covering every aspect of AI search visibility.</p>

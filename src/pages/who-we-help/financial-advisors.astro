@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Financial Advisors UK | Rank4AI" description="Get your financial advice firm recommended by ChatGPT, Claude, Gemini and Perplexity. AI search visibility for UK IFAs.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Financial Advisors' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Financial Advisors</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When someone asks an AI platform "recommend an independent financial advisor near me," the platform checks multiple sources before naming anyone. FCA registration, client reviews, professional listings, and consistent descriptions all factor into whether your firm gets recommended.</p>

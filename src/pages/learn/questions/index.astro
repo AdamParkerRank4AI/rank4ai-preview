@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import questions from '../../../data/questions.json'
 
@@ -13,6 +14,12 @@ for (const q of questions) {
 <Layout title="AI Search Questions and Answers | Rank4AI" description="285 AI search questions answered. The most comprehensive library of AI search visibility Q&A online.">
 <section class="pt-12 pb-24">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Questions' }
+    ]} />
+
     <p class="section-tag">Questions</p>
     <h1 class="mb-4">AI Search Questions and Answers</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-4">{questions.length} questions about AI search visibility, answered clearly.</p>

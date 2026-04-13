@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 
 const stats = [
@@ -22,6 +23,12 @@ const stats = [
 
 <section class="pt-12 pb-24 reveal">
   <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Uk Ai Visibility Stats' }
+    ]} />
+
     <p class="section-tag">UK AI Visibility Research</p>
     <h1 class="mb-6">AI Search Statistics UK 2026</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-4 max-w-[700px]">Original research from 1,400+ UK business website audits. What we found when we tested how AI platforms interpret UK SME websites.</p>

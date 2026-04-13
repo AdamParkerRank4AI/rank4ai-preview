@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="GEO vs SEO – Complete Comparison | Rank4AI" description="What is the difference between GEO and SEO? Generative Engine Optimisation vs Search Engine Optimisation explained.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Geo Vs Seo' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">GEO vs SEO – What Is the Difference?</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">SEO ranks pages in search engine results. GEO (Generative Engine Optimisation) gets businesses recommended in AI-generated answers. Different systems. Different signals. Different outcomes.</p>

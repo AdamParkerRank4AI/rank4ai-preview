@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 
 const glossaryContent = `# AI Search Glossary
@@ -70,6 +71,12 @@ If you want to see how AI search platforms currently interpret your organisation
 <Layout title="AI Search Glossary | Rank4AI" description="Definitions of 50+ AI search visibility terms including citation, mention, prompt types, The Five Signal Model and key concepts.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Glossary' }
+    ]} />
+
     <p class="section-tag">Glossary</p>
     <h1 class="mb-2">AI Search Glossary</h1>
     <p class="text-sm text-text-muted mb-8">Published: 12 February 2026 | Last updated: 12 February 2026</p>

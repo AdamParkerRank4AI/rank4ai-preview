@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="How to Appear in Perplexity UK | Rank4AI" description="How to get your UK business cited by Perplexity AI. Step-by-step guide from Rank4AI.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'Appear In Perplexity' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">How to Appear in Perplexity – UK Guide</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Perplexity is unique among AI platforms: it explicitly cites its sources. This means you can see exactly whether your business is being referenced – and if it is not, you know there is a gap to fill.</p>

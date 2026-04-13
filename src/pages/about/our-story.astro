@@ -1,10 +1,17 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Our Story | Rank4AI" description="Why Rank4AI exists. How we spotted the gap between Google rankings and AI recommendations, and built a UK agency around closing it.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Our Story' }
+    ]} />
+
     <p class="section-tag">Our Story</p>
     <h1 class="mb-6">Our AI Search Story</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">We did not come to AI search through SEO. We came to it through watching how AI systems actually behave – what they recommend, what they skip, and why.</p>

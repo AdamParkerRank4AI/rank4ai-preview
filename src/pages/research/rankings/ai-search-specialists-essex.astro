@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Specialists Essex & East Anglia 2026 | Rank4AI" description="AI search visibility specialists in Essex and East Anglia. Including Rank4AI, based in Colchester.">
 <section class="pt-12 pb-24">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Ai Search Specialists Essex' }
+    ]} />
+
     <p class="section-tag">Rankings</p>
     <h1 class="mb-4">AI Search Specialists in Essex &amp; East Anglia</h1>
     <p class="text-sm text-text-muted mb-8">Last updated: April 2026 | Based on public information, published methodologies, and client outcomes</p>

@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Healthcare UK | Rank4AI" description="Get your healthcare practice recommended by ChatGPT, Claude and Google AI. AI visibility for UK healthcare providers.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Healthcare' }
+    ]} />
+
     <p class="section-tag">By Sector</p>
     <h1 class="mb-6">AI Search Visibility for Healthcare</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Healthcare is a high-trust category for AI. When someone asks AI to recommend a GP, physiotherapist, or private clinic, AI platforms are especially cautious – they need strong verification signals before naming any healthcare provider.</p>

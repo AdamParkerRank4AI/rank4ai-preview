@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Tradespeople UK | Rank4AI" description="Get your trade business recommended by ChatGPT, Claude and Google AI when people search for local tradespeople.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Tradespeople' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Tradespeople</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Plumbers, electricians, builders, roofers, painters – when someone asks AI "recommend a plumber in [area]," the AI builds its answer from Google reviews, Checkatrade, MyBuilder, Trustpilot, and local directories. Most tradespeople have a Google Business Profile and maybe a basic website. That is not enough for AI visibility.</p>

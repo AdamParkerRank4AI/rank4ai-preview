@@ -1,10 +1,17 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Ecosystem Services | Rank4AI" description="AI search visibility built outside your website. Google ecosystem from £800/mo. Core ecosystem £1,300/mo. Full ecosystem £2,500/mo. No code changes, no disruption.">
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'What We Do', href: '/what-we-do/' },
+      { label: 'Ecosystem Services' }
+    ]} />
+
     <p class="section-tag">Ecosystem Services – No Site Work</p>
     <h1 class="mb-6">Ecosystem Services</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">Everything we build sits outside your existing website. We do not touch your site, your code or your current setup.</p>

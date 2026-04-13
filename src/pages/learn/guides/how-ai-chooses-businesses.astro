@@ -1,9 +1,17 @@
 ---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 ---
 <Layout title="How AI Chooses Which Businesses to Recommend | Rank4AI" description="How do ChatGPT, Claude, Gemini and Perplexity decide which businesses to recommend? The mechanics explained.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Guides', href: '/learn/guides/' },
+      { label: 'How Ai Chooses Businesses' }
+    ]} />
+
     <p class="section-tag">Guide</p>
     <h1 class="mb-6">How AI Chooses Which Businesses to Recommend</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">AI platforms do not rank pages. They interpret organisations. When someone asks "recommend a [service] near me," the AI builds a probabilistic model of every business it knows about in that category and selects the one it has the most confidence in.</p>

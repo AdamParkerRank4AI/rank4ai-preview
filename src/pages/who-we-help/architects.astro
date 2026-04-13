@@ -1,9 +1,16 @@
 ---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="AI Search Visibility for Architects UK | Rank4AI" description="Get your architecture practice recommended by ChatGPT, Claude, Gemini and Perplexity. AI search visibility for UK architects.">
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: 'Architects' }
+    ]} />
+
     <p class="section-tag">By Profession</p>
     <h1 class="mb-6">AI Search Visibility for Architects</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">When a client asks AI "best architects for sustainable residential projects in the UK," two things matter: can AI clearly identify what your practice specialises in, and do independent sources confirm it?</p>
