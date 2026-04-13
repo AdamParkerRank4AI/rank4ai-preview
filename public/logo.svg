@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56">
+  <!-- Spokes -->
+  <line x1="26" y1="28" x2="26" y2="7" stroke="#2bb891" stroke-width="0.8" opacity="0.3"/>
+  <line x1="26" y1="28" x2="44" y2="18" stroke="#0a2421" stroke-width="0.8" opacity="0.2"/>
+  <line x1="26" y1="28" x2="38" y2="43" stroke="#2bb891" stroke-width="0.8" opacity="0.3"/>
+  <line x1="26" y1="28" x2="14" y2="43" stroke="#0a2421" stroke-width="0.8" opacity="0.2"/>
+  <line x1="26" y1="28" x2="8" y2="18" stroke="#2bb891" stroke-width="0.8" opacity="0.3"/>
+  <!-- Pentagon outline -->
+  <polygon points="26,7 44,18 38,43 14,43 8,18" fill="none" stroke="#0a2421" stroke-width="0.6" opacity="0.12"/>
+  <!-- Centre -->
+  <circle cx="26" cy="28" r="5.5" fill="#0a2421"/>
+  <circle cx="26" cy="28" r="2.5" fill="#2bb891"/>
+  <!-- 5 nodes: teal, dark, teal, dark, teal -->
+  <circle cx="26" cy="7" r="3" fill="#2bb891"/>
+  <circle cx="44" cy="18" r="2.5" fill="#0a2421"/>
+  <circle cx="38" cy="43" r="3" fill="#2bb891"/>
+  <circle cx="14" cy="43" r="2.5" fill="#0a2421"/>
+  <circle cx="8" cy="18" r="3" fill="#2bb891"/>
+  <!-- Text -->
+  <text x="58" y="24" font-family="'DM Serif Display', Georgia, serif" font-size="26" fill="#0a2421">Rank</text>
+  <text x="116" y="24" font-family="'DM Serif Display', Georgia, serif" font-size="26" fill="#2bb891">4</text>
+  <text x="130" y="24" font-family="'DM Serif Display', Georgia, serif" font-size="26" fill="#0a2421">AI</text>
+  <text x="58" y="43" font-family="'DM Sans', sans-serif" font-size="8.5" fill="#6b8280" letter-spacing="3.5">AI SEARCH AGENCY</text>
+</svg>
