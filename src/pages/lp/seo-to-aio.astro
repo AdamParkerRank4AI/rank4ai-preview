@@ -1,37 +1,30 @@
 ---
 import '../../styles/global.css'
+import AuditForm from '../../components/AuditForm.astro'
 ---
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO to AIO – Make the Shift | Rank4AI</title>
+  <title>SEO to AIO - Make the Shift | Rank4AI</title>
   <meta name="description" content="Google traffic is collapsing. Make the shift from SEO to AI Search Visibility. Free audit from Rank4AI.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="/logo.png">
 </head>
 <body class="bg-white min-h-screen">
-  <div class="max-w-[600px] mx-auto px-6 py-16 text-center">
-    <img src="/logo.png" alt="Rank4AI" class="h-8 mx-auto mb-12 opacity-60">
+  <div class="max-w-[640px] mx-auto px-6 py-12">
+    <img src="/logo.png" alt="Rank4AI" class="h-8 mx-auto mb-10 opacity-60">
 
-    <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">The Shift</p>
-    <h1 class="font-display text-4xl md:text-5xl text-teal leading-tight mb-6">SEO is Not Enough. AI Search is Here.</h1>
-    <p class="text-lg text-text-muted leading-relaxed mb-4">Google organic clicks down 17%. Paid clicks down 68%. That traffic moved to AI search.</p>
-    <p class="text-text-muted mb-8">Ranking on Google does not mean you appear in AI answers. Different system. Different signals. Different work. We help UK businesses make the shift.</p>
-
-    <div class="bg-off-white rounded-xl p-8 mb-8 text-left">
-      <h2 class="font-display text-xl text-teal mb-4 text-center">Get Your Free AI Search Visibility Audit</h2>
-      <form action="https://formsubmit.co/info@rank4ai.co.uk" method="POST" class="space-y-4"><input type="hidden" name="_subject" value="PPC Lead from Rank4AI"><input type="hidden" name="_captcha" value="false"><input type="text" name="_honey" style="display:none">
-        <input type="text" placeholder="Your name" class="w-full px-4 py-3 border border-border rounded-lg text-sm" required>
-        <input type="email" placeholder="Email address" class="w-full px-4 py-3 border border-border rounded-lg text-sm" required>
-        <input type="url" placeholder="Website URL" class="w-full px-4 py-3 border border-border rounded-lg text-sm" required>
-        <button type="submit" class="cta-primary w-full justify-center">Get My Free Audit &rarr;</button>
-      </form>
-      <p class="text-xs text-text-muted text-center mt-4">No commitment. We test all 6 AI platforms.</p>
+    <div class="text-center mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">The Shift</p>
+      <h1 class="font-display text-3xl md:text-4xl text-teal leading-tight mb-4">SEO is Not Enough. AI Search is Here.</h1>
+      <p class="text-text-muted leading-relaxed">Google organic clicks down 17%. Paid clicks down 68%. That traffic moved to AI search. We help UK businesses make the shift.</p>
     </div>
 
-    <p class="text-xs text-text-muted">Rank4AI Ltd · Company 16584507 · <a href="/" class="underline">rank4ai.co.uk</a></p>
+    <AuditForm />
+
+    <p class="text-center text-xs text-text-muted mt-8">Rank4AI Ltd - Company 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
   </div>
 </body>
 </html>
