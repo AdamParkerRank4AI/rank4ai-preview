@@ -6,7 +6,7 @@
       "path": "/",
       "status": "build",
       "h1": "Get Your Business Recommended by AI",
-      "metaTitle": "Rank4AI — UK AI Search Agency | AI Search Visibility",
+      "metaTitle": "Rank4AI  -  UK AI Search Agency | AI Search Visibility",
       "metaDesc": "UK AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity and Google AI.",
       "hasFaqs": true,
       "faqCount": 6,
@@ -19,13 +19,13 @@
       "path": "/what-we-do/",
       "status": "build",
       "h1": "Work With Us",
-      "metaTitle": "Work With Rank4AI — AI Search Visibility Services & Pricing",
+      "metaTitle": "Work With Rank4AI  -  AI Search Visibility Services & Pricing",
       "metaDesc": "AI search visibility services from Rank4AI. Ecosystem services from £800/mo. Full agency from £1,500/mo.",
       "hasFaqs": true,
       "faqCount": 0,
       "hasSchema": true,
       "children": [
-        { "id": "audit", "name": "AI Visibility Audit", "path": "/what-we-do/ai-visibility-audit/", "status": "build", "h1": "AI Search Visibility Audit", "metaTitle": "AI Search Visibility Audit — Free AI Audit | Rank4AI", "metaDesc": "Free AI Search Visibility Audit from Rank4AI. We test your business across ChatGPT, Gemini, Perplexity, Claude, Copilot and Google AI.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
+        { "id": "audit", "name": "AI Visibility Audit", "path": "/what-we-do/ai-visibility-audit/", "status": "build", "h1": "AI Search Visibility Audit", "metaTitle": "AI Search Visibility Audit  -  Free AI Audit | Rank4AI", "metaDesc": "Free AI Search Visibility Audit from Rank4AI. We test your business across ChatGPT, Gemini, Perplexity, Claude, Copilot and Google AI.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
         { "id": "ecosystem", "name": "Ecosystem Services", "path": "/what-we-do/ecosystem-services/", "status": "build", "h1": "Ecosystem Services", "metaTitle": "AI Search Ecosystem Services | Rank4AI", "metaDesc": "AI search visibility built outside your website. Google ecosystem from £800/mo. Full ecosystem £2,500/mo.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
         { "id": "full-agency", "name": "Full Agency", "path": "/what-we-do/full-agency/", "status": "build", "h1": "Full Agency Service", "metaTitle": "Full Agency AI Search Visibility Service | Rank4AI", "metaDesc": "AI search visibility across your website and the full digital ecosystem. Standard, Strategic and Partner engagements.", "hasFaqs": true, "faqCount": 0, "hasSchema": true },
         { "id": "pricing", "name": "Pricing", "path": "/what-we-do/pricing/", "status": "build", "h1": "Pricing", "metaTitle": "AI Search Visibility Pricing | Rank4AI", "metaDesc": "Transparent pricing for AI search visibility services. Ecosystem from £800/mo. Full agency from £1,500/mo.", "hasFaqs": true, "faqCount": 0, "hasSchema": true }
@@ -100,7 +100,7 @@
       "path": "/about/",
       "status": "rebuild",
       "h1": "About Rank4AI",
-      "metaTitle": "About Rank4AI — UK AI Search Agency",
+      "metaTitle": "About Rank4AI  -  UK AI Search Agency",
       "metaDesc": "UK AI search agency. Founded by Adam Parker and Jimmy Connoley. Based in Colchester, Essex.",
       "hasFaqs": false,
       "faqCount": 0,
@@ -108,7 +108,7 @@
       "children": [
         { "id": "how-we-work", "name": "How We Work", "path": "/about/how-we-work/", "status": "build", "h1": "How We Work", "metaTitle": "How We Work | Rank4AI", "metaDesc": "No juniors. No handoffs. No layers between you and the work.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
         { "id": "our-story", "name": "Our Story", "path": "/about/our-story/", "status": "migrate", "h1": "Our AI Search Story", "metaTitle": "Our Story | Rank4AI", "metaDesc": "Why Rank4AI exists.", "hasFaqs": false, "faqCount": 0, "hasSchema": true },
-        { "id": "framework", "name": "Five Signal Framework", "path": "/about/five-signal-framework/", "status": "migrate", "h1": "The Five Signal Model", "metaTitle": "The Five Signal Model — AI Search Framework | Rank4AI", "metaDesc": "How AI platforms evaluate businesses through five signal layers.", "hasFaqs": false, "faqCount": 0, "hasSchema": true }
+        { "id": "framework", "name": "Five Signal Framework", "path": "/about/five-signal-framework/", "status": "migrate", "h1": "The Five Signal Model", "metaTitle": "The Five Signal Model  -  AI Search Framework | Rank4AI", "metaDesc": "How AI platforms evaluate businesses through five signal layers.", "hasFaqs": false, "faqCount": 0, "hasSchema": true }
       ]
     },
     {
