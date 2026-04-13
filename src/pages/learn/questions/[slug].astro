@@ -52,6 +52,9 @@ const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
       </div>
     )}
 
+    <!-- Image -->
+    <img src="/images/content/ai-platforms.svg" alt="AI search platforms" class="w-full rounded-xl mb-8" loading="lazy">
+
     <!-- Full answer -->
     {fullAnswer ? (
       <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed" set:html={fullAnswer} />

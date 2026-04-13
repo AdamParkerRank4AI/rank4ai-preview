@@ -63,6 +63,9 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
       </div>
     )}
 
+    <!-- Image -->
+    <img src="/images/content/ai-search-signals.svg" alt="AI search visibility signals" class="w-full rounded-xl mb-8" loading="lazy">
+
     <!-- Body content -->
     {bodyContent ? (
       <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed" set:html={bodyContent} />
