@@ -4,9 +4,9 @@
 // Sends WhatsApp alert if started but not submitted after 5 minutes
 ---
 
-<div id="audit-form" class="max-w-[560px] mx-auto">
+<div id="audit-form" class="max-w-[560px] mx-auto" role="form" aria-label="AI Search Visibility Audit request form">
   <!-- Progress bar -->
-  <div class="flex items-center gap-2 mb-8">
+  <div class="flex items-center gap-2 mb-8" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" aria-label="Form progress">
     <div class="flex-1">
       <div class="h-1.5 bg-border rounded-full overflow-hidden">
         <div id="progress-bar" class="h-full bg-accent rounded-full transition-all duration-300" style="width: 33%"></div>
@@ -283,14 +283,16 @@
 
       // Save partial data to Supabase as a conversation with 'partial' stage
       const partialPayload = JSON.stringify({
-        name: data.business_name || null,
+        company_name: data.business_name || null,
+        contact_name: data.business_name || null,
         website_url: data.website_url || null,
         email: data.email || null,
         phone: data.phone || null,
-        business_type: data.company_size || null,
-        message: `PARTIAL DROPOFF - Step ${getCurrentStep()} - Goals: ${(data.goals || []).join(', ')} - Marketing: ${data.marketing || ''} - Agency exp: ${data.agency_experience || ''}`,
+        company_size: data.company_size || null,
+        notes: `PARTIAL DROPOFF - Step ${getCurrentStep()} - Goals: ${(data.goals || []).join(', ')} - Marketing: ${data.marketing || ''} - Agency exp: ${data.agency_experience || ''}`,
         source: 'website_partial',
-        current_stage: 'partial',
+        current_stage: 'new',
+        audit_status: 'pending',
       });
 
       // Use fetch with keepalive (sendBeacon can't set custom headers needed by Supabase)
@@ -432,16 +434,22 @@
     // Collect goals
     const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(c => (c as HTMLInputElement).value);
 
-    // Write to Supabase
+    // Write to Supabase — columns must match the conversations table
     const supabasePayload = {
-      name: fd.get('business_name'),
+      company_name: fd.get('business_name'),
+      contact_name: fd.get('business_name'),
       email: fd.get('email'),
       phone: fd.get('phone'),
       website_url: fd.get('website_url'),
-      business_type: fd.get('company_size'),
-      message: `Goals: ${goals.join(', ')} | Marketing: ${fd.get('marketing')} | Agency exp: ${fd.get('agency_experience')} | Size: ${fd.get('company_size')}`,
+      company_size: fd.get('company_size') || null,
+      goals: goals.join(', ') || null,
+      marketing_type: fd.get('marketing') || null,
+      agency_experience: fd.get('agency_experience') || null,
+      consent: true,
+      notes: `Form: Website Audit Form | Marketing: ${fd.get('marketing') || 'N/A'} | Agency exp: ${fd.get('agency_experience') || 'N/A'}`,
       source: 'website',
       current_stage: 'new',
+      audit_status: 'pending',
     };
 
     try {

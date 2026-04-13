@@ -118,7 +118,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
       </ul>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-text" aria-label="Menu">
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-text" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -128,7 +128,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-white-pure border-t border-border max-h-[80vh] overflow-y-auto">
+    <div id="mobile-menu" role="navigation" aria-label="Mobile navigation" class="lg:hidden hidden bg-white-pure border-t border-border max-h-[80vh] overflow-y-auto">
       <div class="p-4 space-y-1">
         <!-- What We Do -->
         <div class="mobile-accordion">
@@ -175,7 +175,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 <script>
   document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-    document.getElementById('mobile-menu')?.classList.toggle('hidden')
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-btn');
+    menu?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', menu?.classList.contains('hidden') ? 'false' : 'true');
   })
   // Mobile accordion
   document.querySelectorAll('.mobile-accordion').forEach(acc => {
