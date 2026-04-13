@@ -281,18 +281,31 @@
       data._type = 'partial_dropoff';
       data._dropped_at = new Date().toISOString();
 
-      // Send to FormSubmit as a notification
+      // Save partial data to Supabase as a conversation with 'partial' stage
+      const partialPayload = JSON.stringify({
+        name: data.business_name || null,
+        website_url: data.website_url || null,
+        email: data.email || null,
+        phone: data.phone || null,
+        business_type: data.company_size || null,
+        message: `PARTIAL DROPOFF - Step ${getCurrentStep()} - Goals: ${(data.goals || []).join(', ')} - Marketing: ${data.marketing || ''} - Agency exp: ${data.agency_experience || ''}`,
+        source: 'website_partial',
+        current_stage: 'partial',
+      });
+
+      navigator.sendBeacon(
+        'https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations',
+        new Blob([partialPayload], { type: 'application/json' })
+      );
+
+      // Also send via FormSubmit as backup notification
       const formPayload = new FormData();
       formPayload.append('_subject', 'DROPOFF ALERT: Audit form started but not submitted');
       formPayload.append('Business', data.business_name || 'Unknown');
       formPayload.append('Website', data.website_url || 'Unknown');
       formPayload.append('Email', data.email || 'Not captured');
       formPayload.append('Phone', data.phone || 'Not captured');
-      formPayload.append('Started at', data.started_at || '');
-      formPayload.append('Dropped at', data._dropped_at);
       formPayload.append('Step reached', getCurrentStep().toString());
-      formPayload.append('Data captured', JSON.stringify(data));
-
       navigator.sendBeacon('https://formsubmit.co/ajax/info@rank4ai.co.uk', formPayload);
     }
   }
@@ -382,25 +395,50 @@
 
     // Collect all form data
     const form = e.target as HTMLFormElement;
-    const submitData = new FormData(form);
-    submitData.append('_subject', 'New AI Search Visibility Audit Request');
-    submitData.append('_captcha', 'false');
+    const fd = new FormData(form);
 
     // Collect goals
     const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(c => (c as HTMLInputElement).value);
-    submitData.set('goals', goals.join(', '));
+
+    // Write to Supabase
+    const supabasePayload = {
+      name: fd.get('business_name'),
+      email: fd.get('email'),
+      phone: fd.get('phone'),
+      website_url: fd.get('website_url'),
+      business_type: fd.get('company_size'),
+      message: `Goals: ${goals.join(', ')} | Marketing: ${fd.get('marketing')} | Agency exp: ${fd.get('agency_experience')} | Size: ${fd.get('company_size')}`,
+      source: 'website',
+      current_stage: 'new',
+    };
 
     try {
-      await fetch('https://formsubmit.co/ajax/info@rank4ai.co.uk', {
+      // Write to Supabase (primary)
+      await fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
         method: 'POST',
-        body: submitData,
+        headers: {
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(supabasePayload),
       });
+
+      // Also send email notification via FormSubmit (backup)
+      const emailData = new FormData();
+      emailData.append('_subject', 'New AI Search Visibility Audit Request');
+      emailData.append('Business', fd.get('business_name') as string);
+      emailData.append('Website', fd.get('website_url') as string);
+      emailData.append('Email', fd.get('email') as string);
+      emailData.append('Phone', fd.get('phone') as string);
+      emailData.append('Size', fd.get('company_size') as string || '');
+      emailData.append('Marketing', fd.get('marketing') as string || '');
+      emailData.append('Agency Experience', fd.get('agency_experience') as string || '');
+      emailData.append('Goals', goals.join(', '));
+      emailData.append('_captcha', 'false');
+      fetch('https://formsubmit.co/ajax/info@rank4ai.co.uk', { method: 'POST', body: emailData });
     } catch (err) {
-      // Fallback: try regular form submission
-      form.action = 'https://formsubmit.co/info@rank4ai.co.uk';
-      form.method = 'POST';
-      form.submit();
-      return;
+      console.error('Submission error:', err);
     }
 
     // Show thank you
