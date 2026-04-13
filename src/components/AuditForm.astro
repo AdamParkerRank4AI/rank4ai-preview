@@ -105,7 +105,7 @@
         <!-- Phone -->
         <div>
           <label class="block text-sm font-medium text-teal mb-1.5">Phone number <span class="text-red-500">*</span></label>
-          <input type="tel" name="phone" id="phone-input" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="07XXX XXXXXX or 01234 567890" pattern="0\d{9,10}">
+          <input type="tel" name="phone" id="phone-input" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none transition-colors" placeholder="07XXX XXXXXX or 01234 567890" pattern="0[\d\s]{9,13}">
           <p id="phone-hint" class="text-xs text-text-muted mt-1">UK phone number (mobile or landline)</p>
           <label class="flex items-center gap-2 mt-2 cursor-pointer">
             <input type="checkbox" id="outside-uk" name="outside_uk" class="rounded border-border" onchange="togglePhoneValidation()">
@@ -415,7 +415,7 @@
       phone.placeholder = '+1 234 567 8900';
       hint.textContent = 'International number';
     } else {
-      phone.setAttribute('pattern', '0\\d{9,10}');
+      phone.setAttribute('pattern', '0[\\d\\s]{9,13}');
       phone.placeholder = '07XXX XXXXXX or 01234 567890';
       hint.textContent = 'UK phone number (mobile or landline)';
     }
