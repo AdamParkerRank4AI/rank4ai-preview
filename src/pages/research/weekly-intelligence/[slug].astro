@@ -13,6 +13,7 @@ export function getStaticPaths() {
 const { title, slug, topSummary, bodyContent, cardExcerpt, metaTitle, metaDesc, author, publishDate } = Astro.props
 const pageTitle = metaTitle || `${title} | Rank4AI`
 const pageDesc = metaDesc || cardExcerpt || topSummary || ''
+import AuthorBox from '../../../components/AuthorBox.astro'
 const pubDate = publishDate ? new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 ---
 <Layout title={pageTitle} description={pageDesc}>
@@ -42,5 +43,8 @@ const pubDate = publishDate ? new Date(publishDate).toLocaleDateString('en-GB', 
     )}
   </div>
   <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16"><a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a></div>
+  <div class="container-narrow mt-8">
+    <AuthorBox />
+  </div>
 </article>
 </Layout>
