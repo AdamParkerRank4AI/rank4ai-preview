@@ -1,0 +1,75 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import Layout from '../../../layouts/Layout.astro'
+---
+<Layout title="Adam Parker - Founder, Rank4AI | AI Search Visibility Specialist" description="Adam Parker is the founder of Rank4AI, a UK AI search agency. Over 15 years in search marketing, leading AI visibility programmes for 40+ UK businesses.">
+
+<article class="pt-12 pb-24 reveal">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Team', href: '/about/team/' },
+      { label: 'Adam Parker' }
+    ]} />
+
+    <div class="flex items-center gap-5 mb-8 mt-6">
+      <div class="w-20 h-20 rounded-full bg-teal text-text-light flex items-center justify-center text-2xl font-bold flex-shrink-0">AP</div>
+      <div>
+        <h1 class="!text-3xl mb-1">Adam Parker</h1>
+        <p class="text-accent font-medium">Founder, Rank4AI</p>
+      </div>
+    </div>
+
+    <h2 class="mt-10 mb-4">Background</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Adam is the founder of Rank4AI, a UK AI search agency focused on helping businesses get recommended by ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">He has over 15 years of experience in search marketing and has led AI visibility programmes for more than 40 UK businesses across professional services, legal, healthcare and technology sectors.</p>
+
+    <h2 class="mt-10 mb-4">Approach</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Adam came to AI search through watching how AI systems actually behave. Not through SEO theory, but through testing what AI platforms recommend, what they skip, and why.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">His focus is on building genuine digital brand equity. The same kind of trust and recognition that established brands accumulated over years, engineered deliberately in months.</p>
+
+    <h2 class="mt-10 mb-4">Research</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Adam has audited over 1,400 UK businesses for AI search visibility, producing original research data that no other agency has published. This research underpins the Five Signal Model and Rank4AI's methodology.</p>
+
+    <h2 class="mt-10 mb-4">The Five Signal Model</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Adam developed the <a href="/about/five-signal-framework/" class="link">Five Signal Model</a> for AI search visibility: Identity Clarity, Subject Authority, Meaning Architecture, Ecosystem Validation, and Signal Consistency. This framework shapes every Rank4AI engagement.</p>
+
+    <h2 class="mt-10 mb-4">Company</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Rank4AI Ltd is registered in England and Wales. Company number 16584507. Based in Colchester, Essex. Adam works directly with every client. No juniors, no handoffs.</p>
+
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Connect</h2>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://www.linkedin.com/in/adamparkerrank4ai/" class="link text-sm" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/rank4ai" class="link text-sm" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="/contact/" class="link text-sm">Contact</a>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/about/team/jimmy-connoley/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Jimmy Connoley</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Five Signal Model</span></a>
+        <a href="/research/methodology/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Methodology</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Person Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Adam Parker",
+  "jobTitle": "Founder",
+  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
+  "description": "AI search visibility specialist with over 15 years in search marketing. Founder of Rank4AI.",
+  "knowsAbout": ["AI search visibility", "AI SEO", "Generative engine optimisation", "ChatGPT optimisation", "Entity-based SEO"],
+  "sameAs": ["https://www.linkedin.com/in/adamparkerrank4ai/", "https://x.com/rank4ai"],
+  "url": "https://www.rank4ai.co.uk/about/team/adam-parker/"
+})} />
+
+</Layout>

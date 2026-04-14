@@ -1,0 +1,59 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import Layout from '../../../layouts/Layout.astro'
+---
+<Layout title="Jimmy Connoley - Co-Founder, Rank4AI | AI Search Strategist" description="Jimmy Connoley is co-founder of Rank4AI. AI search strategist specialising in entity clarity and citation architecture for UK businesses.">
+
+<article class="pt-12 pb-24 reveal">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Team', href: '/about/team/' },
+      { label: 'Jimmy Connoley' }
+    ]} />
+
+    <div class="flex items-center gap-5 mb-8 mt-6">
+      <div class="w-20 h-20 rounded-full bg-teal text-text-light flex items-center justify-center text-2xl font-bold flex-shrink-0">JC</div>
+      <div>
+        <h1 class="!text-3xl mb-1">Jimmy Connoley</h1>
+        <p class="text-accent font-medium">Co-Founder, Rank4AI</p>
+      </div>
+    </div>
+
+    <h2 class="mt-10 mb-4">Background</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Jimmy is the co-founder of Rank4AI, a UK AI search agency. He specialises in entity clarity and citation architecture for UK businesses.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">He has 12 years of experience across B2B and professional services sectors, with a focus on how AI platforms interpret and classify business entities.</p>
+
+    <h2 class="mt-10 mb-4">Expertise</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Jimmy focuses on the structural side of AI visibility. How businesses are described across directories, listings, and professional platforms. How those descriptions align or conflict. And how AI systems use that information to decide who to recommend.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">His work on citation architecture helps businesses build consistent, verifiable presence across the 85+ platforms that AI search engines draw from.</p>
+
+    <h2 class="mt-10 mb-4">Role at Rank4AI</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Jimmy works directly with clients on ecosystem validation and signal consistency. He leads the citation and directory strategy for every engagement, making sure businesses are described the same way everywhere AI looks.</p>
+
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/about/team/adam-parker/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Adam Parker</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Five Signal Model</span></a>
+        <a href="/what-we-do/ecosystem-services/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Ecosystem Services</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Person Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jimmy Connoley",
+  "jobTitle": "Co-Founder",
+  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
+  "description": "AI search strategist specialising in entity clarity and citation architecture for UK businesses.",
+  "knowsAbout": ["Entity clarity", "Citation architecture", "AI ecosystem validation", "B2B AI search"],
+  "url": "https://www.rank4ai.co.uk/about/team/jimmy-connoley/"
+})} />
+
+</Layout>
