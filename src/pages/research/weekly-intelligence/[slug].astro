@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import weekly from '../../../data/weekly.json'
 
 export function getStaticPaths() {
@@ -17,12 +18,12 @@ const pubDate = publishDate ? new Date(publishDate).toLocaleDateString('en-GB', 
 <Layout title={pageTitle} description={pageDesc}>
 <article class="pt-12 pb-24">
   <div class="container-narrow">
-    <p class="text-xs text-text-muted mb-4">
-      <a href="/" class="hover:text-accent">Home</a> &rsaquo;
-      <a href="/research/" class="hover:text-accent">Research</a> &rsaquo;
-      <a href="/research/weekly-intelligence/" class="hover:text-accent">Weekly Intelligence</a> &rsaquo;
-      <span>Briefing</span>
-    </p>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Weekly Intelligence', href: '/research/weekly-intelligence/' },
+      { label: title }
+    ]} />
     <p class="text-[11px] font-semibold uppercase tracking-widest text-accent mb-4">Weekly Intelligence</p>
     <h1 class="!text-3xl mb-4">{title}</h1>
     <div class="flex gap-4 text-sm text-text-muted mb-8">

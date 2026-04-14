@@ -1,33 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
-  <rect width="800" height="400" fill="#f4f2ed" rx="16"/>
-  <!-- 5 circles in a row -->
-  <circle cx="120" cy="200" r="50" fill="#0f2d2c" opacity="0.08" stroke="#0f2d2c" stroke-width="1"/>
-  <circle cx="260" cy="200" r="50" fill="#0f2d2c" opacity="0.08" stroke="#0f2d2c" stroke-width="1"/>
-  <circle cx="400" cy="200" r="50" fill="#0f2d2c" opacity="0.08" stroke="#0f2d2c" stroke-width="1"/>
-  <circle cx="540" cy="200" r="50" fill="#0f2d2c" opacity="0.08" stroke="#0f2d2c" stroke-width="1"/>
-  <circle cx="680" cy="200" r="50" fill="#0f2d2c" opacity="0.08" stroke="#0f2d2c" stroke-width="1"/>
-  <!-- Numbers -->
-  <text x="120" y="208" text-anchor="middle" font-family="DM Serif Display,serif" font-size="28" fill="#0f2d2c">1</text>
-  <text x="260" y="208" text-anchor="middle" font-family="DM Serif Display,serif" font-size="28" fill="#0f2d2c">2</text>
-  <text x="400" y="208" text-anchor="middle" font-family="DM Serif Display,serif" font-size="28" fill="#0f2d2c">3</text>
-  <text x="540" y="208" text-anchor="middle" font-family="DM Serif Display,serif" font-size="28" fill="#0f2d2c">4</text>
-  <text x="680" y="208" text-anchor="middle" font-family="DM Serif Display,serif" font-size="28" fill="#0f2d2c">5</text>
-  <!-- Labels -->
-  <text x="120" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Identity</text>
-  <text x="120" y="290" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Clarity</text>
-  <text x="260" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Subject</text>
-  <text x="260" y="290" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Authority</text>
-  <text x="400" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Meaning</text>
-  <text x="400" y="290" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Architecture</text>
-  <text x="540" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Ecosystem</text>
-  <text x="540" y="290" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Validation</text>
-  <text x="680" y="275" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Signal</text>
-  <text x="680" y="290" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a6160">Consistency</text>
-  <!-- Connecting lines -->
-  <line x1="170" y1="200" x2="210" y2="200" stroke="#2bb891" stroke-width="1"/>
-  <line x1="310" y1="200" x2="350" y2="200" stroke="#2bb891" stroke-width="1"/>
-  <line x1="450" y1="200" x2="490" y2="200" stroke="#2bb891" stroke-width="1"/>
-  <line x1="590" y1="200" x2="630" y2="200" stroke="#2bb891" stroke-width="1"/>
-  <!-- Title -->
-  <text x="400" y="100" text-anchor="middle" font-family="DM Serif Display,serif" font-size="24" fill="#0f2d2c">The Five Signal Model</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+  <rect width="700" height="380" rx="12" fill="#fcfbf9"/>
+  <!-- Pentagon connecting lines -->
+  <polygon points="350,55 520,175 455,330 245,330 180,175" fill="none" stroke="#0a2421" stroke-width="1" opacity="0.1"/>
+  <!-- Spokes to centre -->
+  <line x1="350" y1="190" x2="350" y2="55" stroke="#2bb891" stroke-width="1" opacity="0.2"/>
+  <line x1="350" y1="190" x2="520" y2="175" stroke="#0a2421" stroke-width="1" opacity="0.15"/>
+  <line x1="350" y1="190" x2="455" y2="330" stroke="#2bb891" stroke-width="1" opacity="0.2"/>
+  <line x1="350" y1="190" x2="245" y2="330" stroke="#0a2421" stroke-width="1" opacity="0.15"/>
+  <line x1="350" y1="190" x2="180" y2="175" stroke="#2bb891" stroke-width="1" opacity="0.2"/>
+  <!-- Centre -->
+  <circle cx="350" cy="190" r="42" fill="#0a2421"/>
+  <circle cx="350" cy="190" r="20" fill="#2bb891"/>
+  <text x="350" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="600">AI</text>
+  <text x="350" y="198" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#fff" font-weight="600">TRUST</text>
+  <!-- 5 Signal nodes -->
+  <circle cx="350" cy="55" r="26" fill="#2bb891"/>
+  <text x="350" y="51" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Identity</text>
+  <text x="350" y="63" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Clarity</text>
+
+  <circle cx="520" cy="175" r="26" fill="#0a2421"/>
+  <text x="520" y="171" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Subject</text>
+  <text x="520" y="183" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Authority</text>
+
+  <circle cx="455" cy="330" r="26" fill="#2bb891"/>
+  <text x="455" y="326" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Meaning</text>
+  <text x="455" y="338" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Architecture</text>
+
+  <circle cx="245" cy="330" r="26" fill="#0a2421"/>
+  <text x="245" y="326" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Ecosystem</text>
+  <text x="245" y="338" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Validation</text>
+
+  <circle cx="180" cy="175" r="26" fill="#2bb891"/>
+  <text x="180" y="171" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Signal</text>
+  <text x="180" y="183" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#fff" font-weight="600">Consistency</text>
+
+  <!-- Label -->
+  <text x="350" y="375" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#6b8280">The Five Signal Model - How AI forms confidence in your business</text>
 </svg>
