@@ -1,0 +1,4 @@
+# Catch-all redirects for old URL patterns
+/ai-search-questions/* /learn/questions/:splat 301
+/ai-market-stats/* /research/stats/:splat 301
+/ai-search-weekly/* /research/weekly-intelligence/:splat 301
