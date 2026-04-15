@@ -1,0 +1,94 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import Layout from '../../layouts/Layout.astro'
+import AuthorBox from '../../components/AuthorBox.astro'
+---
+<Layout title="AI Search Advisory & Consultancy | Rank4AI" description="Senior-level AI search strategy and consultancy. We advise, you implement. £1,000 to £3,000 per month.">
+
+<section class="pt-12 pb-24 reveal">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'What We Do', href: '/what-we-do/' },
+      { label: 'Advisory & Consultancy' }
+    ]} />
+
+    <p class="section-tag">Advisory & Consultancy</p>
+    <h1 class="mb-6">AI Search Advisory</h1>
+
+    <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8 mt-6">
+      <p class="text-[15px] text-text-muted leading-relaxed">Senior-level AI search strategy. We advise. You or your team implement. £1,000 to £3,000 per month depending on scope.</p>
+    </div>
+
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Not every business needs us to do the work. Some have internal teams, existing agencies, or technical capability. What they need is the strategy, the framework, and the expert direction.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Our advisory service gives you direct access to senior AI search specialists. We tell you what to build, what to fix, and in what order. You handle the implementation.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-10">Every advisory engagement starts with the AI Visibility Audit. From there we build a strategy specific to your business, your sector, and your current digital footprint.</p>
+
+    <h2 class="mb-4">What You Get</h2>
+    <div class="space-y-4 mb-12">
+      <div class="card-teal-border">
+        <h3 class="!text-lg text-teal mb-2">AI Visibility Strategy</h3>
+        <p class="text-sm text-text-muted leading-relaxed">A clear plan covering all five signal layers. What to build, what to fix, what to prioritise. Based on your audit findings and competitive landscape.</p>
+      </div>
+      <div class="card-teal-border">
+        <h3 class="!text-lg text-teal mb-2">Monthly Strategy Sessions</h3>
+        <p class="text-sm text-text-muted leading-relaxed">Regular calls with senior specialists. Review progress, adjust direction, answer questions. No juniors. No account managers.</p>
+      </div>
+      <div class="card-teal-border">
+        <h3 class="!text-lg text-teal mb-2">Implementation Briefs</h3>
+        <p class="text-sm text-text-muted leading-relaxed">Detailed briefs your team or agency can action. Technical specs, content requirements, platform-specific guidance. Everything documented clearly.</p>
+      </div>
+      <div class="card-teal-border">
+        <h3 class="!text-lg text-teal mb-2">Progress Tracking</h3>
+        <p class="text-sm text-text-muted leading-relaxed">We monitor your AI visibility across all six platforms. You see what changed, what improved, and what needs attention next.</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4">Pricing</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="card text-center">
+        <h3 class="!text-lg text-teal mb-2">Essentials</h3>
+        <p class="font-display text-2xl text-teal mb-3">£1,000<span class="text-sm text-text-muted font-body">/mo</span></p>
+        <p class="text-sm text-text-muted leading-relaxed">Monthly strategy session. AI visibility monitoring. Quarterly implementation briefs.</p>
+      </div>
+      <div class="card text-center border-teal border-2">
+        <h3 class="!text-lg text-teal mb-2">Standard</h3>
+        <p class="font-display text-2xl text-teal mb-3">£2,000<span class="text-sm text-text-muted font-body">/mo</span></p>
+        <p class="text-sm text-text-muted leading-relaxed">Fortnightly sessions. Full implementation briefs. Ongoing platform monitoring. Priority support.</p>
+      </div>
+      <div class="card text-center">
+        <h3 class="!text-lg text-teal mb-2">Strategic</h3>
+        <p class="font-display text-2xl text-teal mb-3">£3,000<span class="text-sm text-text-muted font-body">/mo</span></p>
+        <p class="text-sm text-text-muted leading-relaxed">Weekly sessions. Full strategy ownership. Team training. Competitor tracking. Board-level reporting.</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4">Who This Is For</h2>
+    <ul class="space-y-3 mb-12">
+      <li class="text-[17px] text-text-muted leading-relaxed">Businesses with internal marketing teams who need AI search direction</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Companies with existing agencies who want specialist AI strategy alongside</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Organisations with technical capability who need the roadmap, not the labour</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Leadership teams who want to understand AI search before committing to a full service</li>
+    </ul>
+
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/what-we-do/ecosystem-services/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Ecosystem Services</span></a>
+        <a href="/what-we-do/full-agency/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Full Agency</span></a>
+        <a href="/what-we-do/ai-visibility-audit/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">AI Visibility Audit</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Start With a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+
+    <AuthorBox />
+  </div>
+
+  <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16">
+    <h2 class="mb-4">Start with the audit</h2>
+    <p class="text-[17px] text-text-muted mb-10 max-w-[500px] mx-auto">Every advisory engagement begins with understanding where you stand. The audit shows us what to prioritise.</p>
+    <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
+  </div>
+</section>
+
+</Layout>
