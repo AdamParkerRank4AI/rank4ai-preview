@@ -1,0 +1,56 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import Layout from '../layouts/Layout.astro'
+import AuthorBox from '../components/AuthorBox.astro'
+---
+<Layout title="AI Visibility SEO Agency UK | Rank4AI" description="UK AI visibility SEO agency. We help businesses get recommended by ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.">
+<article class="pt-12 pb-24">
+  <div class="container-narrow">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'AI Visibility SEO Agency' }]} />
+    <p class="section-tag">AI Visibility SEO Agency</p>
+    <h1 class="mb-6">AI Visibility SEO Agency</h1>
+
+    <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+      <p class="text-[15px] text-teal font-medium leading-relaxed m-0">An AI visibility SEO agency helps businesses appear in AI-generated answers across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. This is different from traditional SEO which focuses on Google rankings.</p>
+    </div>
+
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Rank4AI is a UK AI visibility SEO agency. We focus entirely on getting businesses recommended by AI search platforms. Not Google rankings. Not PPC. Just AI recommendations.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Traditional SEO agencies optimise for Google search results. AI visibility requires a different approach. AI platforms recommend businesses based on entity clarity, trust signals, and consistency across multiple sources.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">In our testing of 1,400+ UK businesses, 77% are sending confusing signals to AI platforms. Strong Google rankings do not guarantee AI recommendations.</p>
+
+    <h2 class="mt-12 mb-4">What an AI Visibility SEO Agency Does</h2>
+    <ul class="space-y-3 mb-10">
+      <li class="text-[17px] text-text-muted leading-relaxed">Tests your visibility across all six major AI platforms</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Identifies gaps in how AI interprets your business</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Builds consistent signals across directories, reviews, and listings</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Structures your website so AI can extract and cite your content</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Monitors AI recommendations over time</li>
+    </ul>
+
+    <h2 class="mt-12 mb-4">Why Choose Rank4AI</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">We work exclusively on AI search visibility. No SEO retainers. No PPC. We have audited over 1,400 UK businesses and published original research on AI visibility patterns.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Every engagement starts with a free audit across all six AI platforms. <a href="/free-audit/" class="link">Get yours here</a>.</p>
+
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/what-we-do/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Services</span></a>
+        <a href="/what-we-do/pricing/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Pricing</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Five Signal Model</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+    <AuthorBox />
+  </div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is an AI visibility SEO agency?", "acceptedAnswer": { "@type": "Answer", "text": "An AI visibility SEO agency helps businesses get recommended by AI search platforms like ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI. Unlike traditional SEO which focuses on Google rankings, AI visibility work focuses on entity clarity, trust signals, and ecosystem presence." }},
+    { "@type": "Question", "name": "How much does an AI visibility SEO agency cost?", "acceptedAnswer": { "@type": "Answer", "text": "Rank4AI ecosystem services start from £800 per month. Full agency services start from £1,500 per month. Advisory starts from £1,000 per month. Every engagement begins with a free audit." }},
+    { "@type": "Question", "name": "Do I need an AI visibility agency if I already rank well on Google?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. In our testing, Google rankings and AI recommendations rarely overlap. Businesses on page one of Google are often absent from AI answers. AI uses different signals to decide who to recommend." }}
+  ]
+})} />
+</Layout>
