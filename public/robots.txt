@@ -54,7 +54,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://www.rank4ai.online/sitemap-index.xml
+Sitemap: https://www.rank4ai.co.uk/sitemap-index.xml
 
 # AI-specific resources
 # llms.txt: https://www.rank4ai.co.uk/llms.txt

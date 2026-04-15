@@ -315,7 +315,7 @@
       formPayload.append('Email', data.email || 'Not captured');
       formPayload.append('Phone', data.phone || 'Not captured');
       formPayload.append('Step reached', getCurrentStep().toString());
-      navigator.sendBeacon('https://formsubmit.co/ajax/info@rank4ai.online', formPayload);
+      navigator.sendBeacon('https://formsubmit.co/ajax/info@rank4ai.co.uk', formPayload);
     }
   }
 
@@ -478,7 +478,7 @@
       emailData.append('Agency Experience', fd.get('agency_experience') as string || '');
       emailData.append('Goals', goals.join(', '));
       emailData.append('_captcha', 'false');
-      fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
+      fetch('https://formsubmit.co/ajax/info@rank4ai.co.uk', { method: 'POST', body: emailData });
     } catch (err) {
       console.error('Submission error:', err);
     }
