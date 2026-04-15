@@ -49,6 +49,9 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
 # Default
 User-agent: *
 Allow: /
