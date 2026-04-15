@@ -11,7 +11,25 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/admin/') && !page.includes('/lp/'),
+      filter: (page) => {
+        // Exclude admin, landing pages, and all redirect stub paths
+        if (page.includes('/admin/') || page.includes('/lp/')) return false;
+        if (page.includes('/ai-search-questions/')) return false;
+        if (page.includes('/ai-market-stats/')) return false;
+        if (page.includes('/ai-search-weekly/')) return false;
+        if (page.includes('/ai-services/')) return false;
+        if (page.includes('/ai-services')) return false;
+        // Exclude other old redirect paths
+        if (page.includes('/workingwithus')) return false;
+        if (page.includes('/work-with-an-ai-search-specialist')) return false;
+        if (page.includes('/free-ai-search-audit/')) return false;
+        if (page.includes('/free-ai-search-report/')) return false;
+        if (page.includes('/technical-ai-optimisation')) return false;
+        if (page.includes('/ai-platform-visibility')) return false;
+        if (page.includes('/ai-search-visibility')) return false;
+        if (page.includes('/ai-search-vs-seo')) return false;
+        return true;
+      },
     }),
     partytown({
       config: {

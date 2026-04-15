@@ -2,3 +2,5 @@
 /ai-search-questions/* /learn/questions/:splat 301
 /ai-market-stats/* /research/stats/:splat 301
 /ai-search-weekly/* /research/weekly-intelligence/:splat 301
+/ai-services /what-we-do/ 301
+/ai-services/* /what-we-do/ 301
