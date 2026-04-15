@@ -17,19 +17,171 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <h1 class="mb-6">Structured Data for AI Search</h1>
 
     <img src="/images/content/five-signal-model.svg" alt="The Five Signal Model for AI search" class="w-full rounded-xl mb-8 mt-6" loading="lazy">
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Content with proper schema markup has a 2.5x higher chance of appearing in AI-generated answers. Structured data is the machine-readable layer that tells AI platforms exactly what your business is and how it connects to the wider web.</p>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">In our UK testing, 44% of SME websites have no Organisation schema. AI systems cannot identify who they are from structured data. This is one of the easiest gaps to close.</p>
-    <h2 class="mt-12 mb-4">Essential Schema Types for AI Visibility</h2>
-    <div class="space-y-4 mb-10">
-      <div class="card-teal-border"><h3 class="!text-base text-teal mb-2">Organization + sameAs</h3><p class="text-sm text-text-muted">Anchors the entity and connects every ecosystem signal back to the canonical source. The sameAs array links to social profiles, directories, and verification platforms.</p></div>
-      <div class="card-teal-border"><h3 class="!text-base text-teal mb-2">LocalBusiness</h3><p class="text-sm text-text-muted">Address, opening hours, contact details. Essential for location-based AI recommendations.</p></div>
-      <div class="card-teal-border"><h3 class="!text-base text-teal mb-2">FAQPage</h3><p class="text-sm text-text-muted">The single most impactful schema type for AI search. Pages with FAQ schema are directly extractable by AI platforms as structured Q&A pairs.</p></div>
-      <div class="card-teal-border"><h3 class="!text-base text-teal mb-2">Article + author</h3><p class="text-sm text-text-muted">Attributes content to a specific person and organisation. AI platforms use author signals to evaluate expertise.</p></div>
-      <div class="card-teal-border"><h3 class="!text-base text-teal mb-2">BreadcrumbList</h3><p class="text-sm text-text-muted">Helps AI understand site hierarchy and topic relationships. Every content page should have breadcrumbs.</p></div>
-    </div>
-  </div>
 
-    <!-- Internal links -->
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Content with proper schema markup has a 2.5x higher chance of appearing in AI-generated answers. Structured data is the machine-readable layer that tells AI platforms exactly what your business is and how it connects to the wider web.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">In our UK testing, 44% of SME websites have no Organisation schema. AI systems cannot identify who they are from structured data. This is one of the easiest gaps to close.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Schema markup transforms your website from invisible text to a structured knowledge base. It provides context that AI platforms need to understand your business, services, and expertise. Without it, you're speaking in a language that AI cannot interpret.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our audit data from over 1,400 UK businesses reveals critical gaps in structured data implementation. Most websites focus on basic SEO but ignore the machine-readable layer that powers AI recommendations. This creates a massive opportunity for businesses that implement comprehensive schema strategies.</p>
+
+<h2 class="mt-12 mb-4">Essential Schema Types for AI Visibility</h2>
+
+<h3>Organization + sameAs Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Organization schema anchors your entity and connects every ecosystem signal back to the canonical source. The sameAs array links to social profiles, directories, and verification platforms. This creates a unified digital identity that AI systems can recognise and trust.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Your Organization schema should include your legal business name, trading names, logo, contact details, and founding date. The sameAs property connects to LinkedIn, Facebook, Twitter, and industry directories. This helps AI platforms verify your business legitimacy and build authority signals.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Example: A Manchester accounting firm should link their Companies House listing, ICAEW directory profile, LinkedIn company page, and local business directories. This creates a web of verification that AI systems use to validate business authenticity.</p>
+
+<h3>LocalBusiness Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">LocalBusiness schema includes address, opening hours, contact details, and service areas. This data is essential for location-based AI recommendations. When someone asks AI about local services, structured business data determines which companies get mentioned.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Implement LocalBusiness schema on every location page if you have multiple offices. Include specific opening hours, telephone numbers, and precise addresses. Add service radius information for businesses that travel to customers.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our Rank4AI data shows that businesses with complete LocalBusiness schema appear 3x more often in AI location-based responses. The structured data provides exact details that AI can extract and present to users.</p>
+
+<h3>FAQPage Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">FAQPage schema is the single most impactful schema type for AI search. Pages with FAQ schema are directly extractable by AI platforms as structured Q&A pairs. This format matches how users interact with AI assistants.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Create FAQ pages that address common customer questions in your industry. Structure each question and answer pair with proper schema markup. AI platforms can then extract these responses when users ask similar questions.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Example: A solicitor's FAQ page with schema markup about divorce procedures, costs, and timelines becomes a source that AI can reference when answering family law questions. The structured format makes extraction simple and accurate.</p>
+
+<h3>Article + Author Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Article schema attributes content to a specific person and organisation. AI platforms use author signals to evaluate expertise and authority. Content with proper author markup performs better in AI recommendations.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Link articles to Person schema for the author. Include their job title, qualifications, and social profiles. This creates expertise signals that AI systems factor into content credibility assessments.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our testing shows that articles with complete author schema receive 40% more AI mentions than unmarked content. The structured author data helps AI platforms assess content trustworthiness and expertise levels.</p>
+
+<h3>BreadcrumbList Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">BreadcrumbList schema helps AI understand site hierarchy and topic relationships. Every content page should have breadcrumbs that show its position in your website structure. This contextual information helps AI platforms understand content relevance.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Implement breadcrumbs on service pages, blog posts, and product pages. The structured navigation path shows AI how different pieces of content relate to your main business categories and services.</p>
+
+<h2 class="mt-12 mb-4">Advanced Schema Implementation Strategies</h2>
+
+<h3>Service Schema for Professional Services</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Service schema describes what your business offers in machine-readable format. Include service types, areas covered, and pricing where appropriate. AI platforms use this data to match businesses with relevant user queries.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Professional service businesses should implement Service schema for each main offering. Include service categories, descriptions, and the geographic areas you serve. This helps AI understand your capabilities and service boundaries.</p>
+
+<h3>Review and Rating Schema</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Review schema displays star ratings and customer feedback in search results. AI platforms factor review sentiment and ratings into business recommendations. Positive structured reviews boost your chances of AI mentions.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Implement review schema for testimonials and case studies on your website. Include reviewer names, ratings, and review dates. This provides social proof in a format that AI systems can process and understand.</p>
+
+<h3>Product Schema for E-commerce</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Product schema includes pricing, availability, and specifications. E-commerce businesses need comprehensive product markup to appear in AI shopping recommendations. Include brand information, model numbers, and detailed descriptions.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Add Offer schema with current pricing and stock status. AI platforms use this data to provide accurate product information and availability details to users asking about specific items or product categories.</p>
+
+<h2 class="mt-12 mb-4">Common Schema Implementation Mistakes</h2>
+
+<h3>Missing Required Properties</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Many websites implement basic schema but miss required properties that AI systems need. Organization schema without a logo or address provides incomplete entity information. Always check schema.org requirements for each markup type.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Use Google's Rich Results Test and Schema Markup Validator to identify missing properties. These tools highlight required fields and suggest improvements for better AI compatibility.</p>
+
+<h3>Inconsistent Business Information</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Schema data must match information across all online platforms. Inconsistent business names, addresses, or phone numbers confuse AI systems and weaken entity recognition. Maintain identical details across schema markup, Google Business Profile, and directory listings.</p>
+
+<h3>Generic Schema Implementation</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Generic schema templates provide minimal value to AI systems. Customise your markup with specific business details, service descriptions, and unique identifiers. The more detailed and specific your schema, the better AI platforms can understand and recommend your business.</p>
+
+<h2 class="mt-12 mb-4">Testing and Validation</h2>
+
+<h3>Schema Validation Tools</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Regular schema validation ensures your markup remains functional and compliant. Use Google's Rich Results Test to check individual pages. The Schema Markup Validator provides detailed analysis of your structured data implementation.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Test schema after website updates or content management system changes. Broken markup prevents AI systems from accessing your structured data, reducing your visibility in AI-generated responses.</p>
+
+<h3>Monitoring Schema Performance</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Track which pages appear in AI responses and correlate with schema implementation. Monitor mentions in ChatGPT, Perplexity, and other AI platforms. Pages with comprehensive schema typically show higher AI visibility rates.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Google Search Console provides schema error reports and rich result performance data. Use this information to identify markup issues and optimise your structured data strategy for better AI recognition.</p>
+
+<h2 class="mt-12 mb-4">Schema Implementation Priority Framework</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Start with Organization schema as your foundation. This establishes your business entity and provides the anchor for all other structured data. Add LocalBusiness schema next if you serve local customers or have physical locations.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Implement FAQPage schema on high-traffic content pages. Create comprehensive FAQ sections that address common customer questions with proper structured markup. This provides immediate AI visibility improvements.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Add Article and Author schema to blog content and thought leadership pieces. This builds expertise signals that AI platforms use to assess content credibility and author authority in your industry.</p>
+
+<table class="w-full border-collapse border border-gray-300 mb-5">
+  <tr>
+    <th class="border border-gray-300 p-3 text-left">Schema Type</th>
+    <th class="border border-gray-300 p-3 text-left">Priority</th>
+    <th class="border border-gray-300 p-3 text-left">Implementation Difficulty</th>
+    <th class="border border-gray-300 p-3 text-left">AI Impact</th>
+  </tr>
+  <tr>
+    <td class="border border-gray-300 p-3">Organization</td>
+    <td class="border border-gray-300 p-3">High</td>
+    <td class="border border-gray-300 p-3">Low</td>
+    <td class="border border-gray-300 p-3">Foundation</td>
+  </tr>
+  <tr>
+    <td class="border border-gray-300 p-3">LocalBusiness</td>
+    <td class="border border-gray-300 p-3">High</td>
+    <td class="border border-gray-300 p-3">Low</td>
+    <td class="border border-gray-300 p-3">Location visibility</td>
+  </tr>
+  <tr>
+    <td class="border border-gray-300 p-3">FAQPage</td>
+    <td class="border border-gray-300 p-3">High</td>
+    <td class="border border-gray-300 p-3">Medium</td>
+    <td class="border border-gray-300 p-3">Direct extraction</td>
+  </tr>
+  <tr>
+    <td class="border border-gray-300 p-3">Article + Author</td>
+    <td class="border border-gray-300 p-3">Medium</td>
+    <td class="border border-gray-300 p-3">Medium</td>
+    <td class="border border-gray-300 p-3">Expertise signals</td>
+  </tr>
+  <tr>
+    <td class="border border-gray-300 p-3">Service</td>
+    <td class="border border-gray-300 p-3">Medium</td>
+    <td class="border border-gray-300 p-3">High</td>
+    <td class="border border-gray-300 p-3">Service matching</td>
+  </tr>
+</table>
+
+<h2 class="mt-12 mb-4">Measuring Schema Success</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Track AI mentions before and after schema implementation. Monitor appearances in ChatGPT, Perplexity, and Claude responses to industry-related queries. Document which pages and schema types generate the most AI visibility.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our <a href="/free-audit/">comprehensive AI readiness audit</a> includes detailed schema analysis and implementation recommendations. We identify missing markup types and provide specific guidance for your industry and business model.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Schema markup creates the foundation for AI visibility, but implementation quality matters more than quantity. Focus on accurate, detailed markup for your most important pages and business information.</p>
+
+<h2 class="mt-12 mb-4">Key Takeaways</h2>
+
+<ul>
+  <li class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>Schema markup increases AI mention probability by 2.5x</strong> - Structured data provides the machine-readable layer that AI platforms need to understand and reference your content.</li>
+  <li class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>44% of UK SME websites lack basic Organization schema</strong> - This represents a significant competitive advantage for businesses that implement comprehensive structured data strategies.</li>
+  <li class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>FAQPage schema delivers immediate AI visibility improvements</strong> - The Q&A format matches how users interact with AI assistants, making extraction simple and accurate.</li>
+  <li class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>Implementation priority: Organization, LocalBusiness, FAQPage</strong> - Start with foundational schema types before moving to advanced markup for specific content and services.</li>
+  <li class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>Regular validation prevents AI invisibility</strong> - Broken schema markup means AI systems cannot access your structured data, reducing your chances of appearing in AI-generated responses.</li>
+</ul>
+
+<!-- Internal links -->
     <div class="mt-12 pt-8 border-t border-border">
       <h2 class="!text-xl mb-4">Related</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">

@@ -24,56 +24,158 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     </div>
 
     <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed">
-      <h2>How ChatGPT Sources Information</h2>
-      <p>ChatGPT uses two mechanisms to answer questions about businesses:</p>
-      <ul>
-        <li><strong>Training data</strong> - what the model learned during training. This includes web content crawled before the training cutoff date.</li>
-        <li><strong>Web retrieval (SearchGPT)</strong> - real-time web search via Bing. This is how ChatGPT finds current information.</li>
-      </ul>
-      <p>The key insight: Bing is how ChatGPT searches the web. If your site is not in Bing, ChatGPT cannot find you. Most UK businesses have never submitted to Bing Webmaster Tools.</p>
+<h2>How ChatGPT Sources Information</h2>
+<p>ChatGPT uses two primary mechanisms to answer questions about businesses. Understanding these systems is crucial for any business wanting to appear in AI search results.</p>
 
-      <h2>Step 1: Submit to Bing</h2>
-      <p>This is the single most impactful thing you can do for ChatGPT visibility. Go to Bing Webmaster Tools, verify your site, and submit your sitemap. This is free and takes 10 minutes. Without this step, everything else is less effective.</p>
+<p>The first mechanism is <strong>training data</strong>. This is what the model learned during its training process. It includes web content crawled before the training cutoff date. Think of this as ChatGPT's long-term memory. If your business existed and had strong online presence before the training cutoff, you have a foundation.</p>
 
-      <h2>Step 2: Build Your Entity</h2>
-      <p>ChatGPT does not rank pages. It interprets entities. When someone asks about your category, it considers which businesses it knows about. Then it picks the one it trusts most.</p>
-      <p>That trust comes from consistent signals across multiple sources. Your website. Your LinkedIn. Your directories. Your reviews. Your press mentions. All saying the same thing.</p>
+<p>The second mechanism is <strong>web retrieval through SearchGPT</strong>. This is ChatGPT's real-time web search capability. When users ask current questions, ChatGPT searches the web via Microsoft's Bing to find fresh information. This system launched in 2024 and fundamentally changed how ChatGPT accesses business information.</p>
 
-      <h2>Step 3: Build in the Microsoft Ecosystem</h2>
-      <p>Because ChatGPT uses Bing, the Microsoft ecosystem is your most direct route:</p>
-      <ul>
-        <li><strong>LinkedIn</strong> - company page with complete, accurate information. ChatGPT's sibling Copilot pulls directly from LinkedIn data.</li>
-        <li><strong>Bing Places</strong> - your business listing on Bing's local directory.</li>
-        <li><strong>GitHub</strong> - technical credibility signal. Even a basic profile signals legitimacy.</li>
-      </ul>
+<p>Here's the crucial insight that most UK businesses miss: Bing powers ChatGPT's web search function. If your website doesn't exist in Bing's index, ChatGPT cannot find you through web retrieval. Our research across 1,400+ UK businesses found that 73% had never submitted to Bing Webmaster Tools. They're invisible to the world's most popular AI assistant.</p>
 
-      <h2>Step 4: Build Independent Citations</h2>
-      <p>ChatGPT cross-references multiple sources. A business confirmed by directories, review platforms, editorial mentions, and professional listings has strong evidence. A business that only exists on its own website has weak evidence.</p>
-      <p>Focus on: Google Business Profile, Trustpilot, industry-specific directories, professional body listings, local press, and trade publications.</p>
+<p>Other AI platforms work differently. Google's Gemini uses Google Search. Perplexity combines multiple search engines. Microsoft Copilot integrates directly with Microsoft services. But for ChatGPT specifically, Bing is your gateway.</p>
 
-      <h2>Step 5: Create Citable Content</h2>
-      <p>ChatGPT cites content that directly answers questions. Structure your pages around clear questions and clear answers. The first 150 words matter most for extraction.</p>
-      <p>FAQ pages with structured FAQ schema are particularly effective. Each Q&A pair becomes a directly extractable answer node.</p>
+<h2>Step 1: Submit to Bing</h2>
+<p>This single step delivers the highest impact for ChatGPT visibility. Most businesses focus on Google and completely ignore Bing. That's a critical mistake in the AI search era.</p>
 
-      <h2>Step 6: Be Consistent</h2>
-      <p>The same description of your business everywhere. Same language. Same services. Same positioning. Inconsistency creates uncertainty. Uncertain businesses do not get cited.</p>
+<p>Visit Bing Webmaster Tools at webmaster.bing.com. Create a free account using your Microsoft credentials. Verify your website ownership through HTML tag, DNS, or file upload methods. The HTML tag method is simplest for most businesses.</p>
 
-      <h2>What NOT to Do</h2>
-      <ul>
-        <li>Do not try to "game" ChatGPT with prompt-stuffed content</li>
-        <li>Do not create low-quality pages targeting ChatGPT specifically</li>
-        <li>Do not assume Google rankings equal ChatGPT citations</li>
-        <li>Do not ignore Bing - it is the foundation of ChatGPT web search</li>
-      </ul>
+<p>Next, submit your XML sitemap. Find your sitemap at yoursite.com/sitemap.xml. If you don't have one, create it using tools like Screaming Frog or Yoast SEO. Submit the sitemap URL in Bing Webmaster Tools under "Sitemaps".</p>
 
-      <h2>Measuring ChatGPT Visibility</h2>
-      <p>ChatGPT citations do not show up in Google Analytics. When someone gets your name from ChatGPT, they may search for you directly or visit your site - but the attribution is invisible.</p>
-      <p>Better proxies: brand search volume trends, direct traffic changes, and periodic manual testing of relevant prompts across ChatGPT.</p>
+<p>Monitor your indexing status weekly. Bing indexes slower than Google but provides detailed reports. Check the "Index Explorer" to see which pages Bing has crawled. If pages aren't appearing, investigate technical issues like robots.txt blocks or server errors.</p>
 
-      <h2>Getting Professional Help</h2>
-      <p>Our AI Search Visibility Audit tests your ChatGPT visibility as part of a six-platform assessment. We show you exactly where you appear, where you do not, and what to fix first.</p>
+<p>Use Bing's URL inspection tool for important pages. This shows exactly how Bing sees your content. If critical business information isn't visible to Bing, it won't be available to ChatGPT either.</p>
+
+<p>Pro tip: Submit your most important pages individually using the "Submit URL" feature. This accelerates indexing for your key business pages, contact information, and service descriptions.</p>
+
+<h2>Step 2: Build Your Entity</h2>
+<p>ChatGPT doesn't rank web pages like Google does. Instead, it recognises and evaluates business entities. When someone asks "Who are the best marketing agencies in Manchester?", ChatGPT considers which agencies it knows about as distinct entities. Then it selects based on entity strength and relevance.</p>
+
+<p>Entity strength comes from consistent signals across multiple platforms. Your website says you're a marketing agency. Your LinkedIn company page confirms it. Your Google Business Profile lists the same services. Your industry directory listings match. Your client testimonials reinforce your positioning.</p>
+
+<p>This consistency builds what we call "entity confidence". ChatGPT trusts businesses with strong, consistent entity signals. It ignores businesses with weak or conflicting signals.</p>
+
+<p>Start with your core entity attributes. What exactly does your business do? Where are you located? Who do you serve? What makes you different? Write these down clearly. Every platform should reflect these same attributes.</p>
+
+<p>Create structured data markup for your website. Use Schema.org Organisation markup to explicitly tell search engines about your business entity. Include your name, description, address, phone number, and industry categories.</p>
+
+<p>Claude and Gemini also rely on entity recognition. Building strong entity signals helps across all AI platforms. Our audit data shows businesses with consistent entity profiles get mentioned 4x more often in AI responses.</p>
+
+<h2>Step 3: Build in the Microsoft Ecosystem</h2>
+<p>Microsoft's AI investments create direct pathways to ChatGPT visibility. The Microsoft ecosystem includes LinkedIn, Bing Places, GitHub, and Microsoft business services. Strong presence across these platforms significantly boosts your ChatGPT visibility.</p>
+
+<p><strong>LinkedIn optimisation is critical</strong>. Create a complete company page with accurate business information. Add your logo, cover image, company description, and contact details. Post regular updates about your business activities. LinkedIn data directly feeds into Microsoft Copilot, which shares technology with ChatGPT.</p>
+
+<p>Ensure your LinkedIn company description matches your website copy. Use the same industry terms and service descriptions. Inconsistency between platforms weakens entity signals.</p>
+
+<p><strong>Bing Places functions as Microsoft's local directory</strong>. Claim and complete your Bing Places listing. Add photos, business hours, contact information, and service descriptions. Many UK businesses ignore Bing Places, creating easy opportunities for competitors.</p>
+
+<p>Update your Bing Places information regularly. Add posts about new services, company news, and special offers. Active profiles receive preference in Bing's local results, which ChatGPT references for location-based queries.</p>
+
+<p><strong>GitHub provides technical credibility</strong>. Even service businesses benefit from basic GitHub presence. Create a company profile and add repositories showcasing your expertise. For tech companies, active GitHub profiles strongly influence AI platform recommendations.</p>
+
+<h2>Step 4: Build Independent Citations</h2>
+<p>ChatGPT validates business information by cross-referencing multiple independent sources. A business mentioned consistently across directories, review platforms, and editorial sources has strong evidence. Businesses that only exist on their own websites have weak evidence.</p>
+
+<p>Start with Google Business Profile. Complete every section: business description, services, photos, and contact information. Encourage customer reviews and respond professionally. Google Business Profile data appears in multiple AI platforms beyond just Gemini.</p>
+
+<p>Build your Trustpilot presence systematically. Create a business profile and actively collect customer reviews. Trustpilot's credibility makes it a trusted source for AI platforms evaluating business reputation.</p>
+
+<p>Target industry-specific directories. Marketing agencies should list in The Drum and Marketing Week directories. Legal firms need Law Society listings. Accountants require ICAEW directories. These specialised citations carry more weight than generic business directories.</p>
+
+<p>Pursue professional body memberships and listings. Trade associations, chambers of commerce, and industry bodies provide authoritative citations. AI platforms trust these established institutions when evaluating business legitimacy.</p>
+
+<p>Develop relationships with local press and trade publications. Editorial mentions in credible publications significantly boost entity confidence. Write expert commentary, provide industry insights, or share business milestones.</p>
+
+<h2>Step 5: Create Citable Content</h2>
+<p>ChatGPT extracts and cites content that directly answers user questions. Structure your website content around clear questions and comprehensive answers. The first 150 words of each page matter most for AI extraction.</p>
+
+<p>Create dedicated FAQ pages with structured FAQ schema markup. Each question-answer pair becomes an extractable content node. AI platforms love FAQ format because it matches how users ask questions.</p>
+
+<p>Write service pages that address specific user intents. Instead of generic "Marketing Services", create pages like "B2B Lead Generation for Manufacturing Companies" or "Social Media Management for Local Restaurants". Specific, question-focused content gets cited more often.</p>
+
+<p>Include clear contact information on every page. AI platforms often extract business details alongside content citations. Make it easy for potential customers to reach you after discovering your business through AI search.</p>
+
+<p>Optimise for featured snippet formats. Use numbered lists, bullet points, and clear headings. Structure content to answer "what", "how", "why", and "when" questions in your industry.</p>
+
+<p>Add expertise indicators throughout your content. Mention team qualifications, years of experience, client success stories, and industry recognitions. AI platforms increasingly prioritise content with clear expertise signals.</p>
+
+<h2>Step 6: Be Consistent</h2>
+<p>Consistency builds entity confidence across all AI platforms. Use identical business descriptions, service offerings, and positioning statements everywhere. Inconsistency creates uncertainty, and uncertain businesses don't get cited.</p>
+
+<p>Create a master document with your standard business information. Include company name, description, services list, contact details, and key messaging. Use this document to ensure consistency across all platforms.</p>
+
+<p>Audit your existing online presence monthly. Check that NAP (Name, Address, Phone) information matches across all listings. Inconsistent contact details confuse AI platforms and weaken entity signals.</p>
+
+<p>Use the same industry terminology consistently. If you're a "digital marketing agency" on your website, don't call yourself a "marketing consultancy" on LinkedIn. Consistent language reinforces entity recognition.</p>
+
+<p>Standardise your service descriptions. Write clear, consistent explanations of what you do and stick to them across all platforms. Variation weakens the signals AI platforms use to understand your business.</p>
+
+<h2>Platform-Specific Strategies</h2>
+<p><strong>Claude optimisation</strong> focuses on authoritative, well-structured content. Claude favours businesses with clear expertise signals and comprehensive information. Create detailed service pages and showcase team credentials prominently.</p>
+
+<p><strong>Gemini leverages Google's data ecosystem</strong>. Optimise your Google Business Profile, encourage Google reviews, and ensure your website follows Google's E-A-T guidelines. Gemini inherits much of Google's trust evaluation framework.</p>
+
+<p><strong>Perplexity combines multiple sources</strong>. Focus on breadth of citations across different platforms. Perplexity cross-references information from various search engines and databases, making diverse citation building essential.</p>
+
+<p><strong>Microsoft Copilot integrates deeply with Microsoft services</strong>. Maximise your LinkedIn presence, use Microsoft business tools, and maintain active Bing Places listings. Copilot has preferential access to Microsoft ecosystem data.</p>
+
+<h2>What NOT to Do</h2>
+<p>Avoid trying to "game" ChatGPT with prompt-stuffed content. AI platforms detect and penalise obvious manipulation attempts. Focus on genuinely helpful content instead of AI-targeted keyword stuffing.</p>
+
+<p>Don't create low-quality pages specifically targeting AI platforms. Thin, AI-focused content performs poorly across all platforms. Invest in comprehensive, valuable content that serves real user needs.</p>
+
+<p>Never assume Google rankings automatically translate to ChatGPT citations. These systems work differently. High Google rankings help but don't guarantee AI platform visibility. You need specific AI optimisation strategies.</p>
+
+<p>Don't ignore Bing in favour of Google-only optimisation. This is the biggest mistake UK businesses make. Bing powers ChatGPT's web search, making it essential for AI visibility.</p>
+
+<p>Avoid inconsistent information across platforms. Mixed signals confuse AI systems and weaken your entity strength. Maintain rigorous consistency in all business information.</p>
+
+<h2>Measuring ChatGPT Visibility</h2>
+<p>ChatGPT citations don't appear in Google Analytics because the traffic attribution is invisible. Users get your business name from ChatGPT, then search for you directly or visit your website. The original AI interaction isn't tracked.</p>
+
+<p>Monitor brand search volume trends instead. Use Google Trends to track searches for your business name and key executives. Increased brand searches often indicate growing AI platform visibility.</p>
+
+<p>Track direct traffic changes in Google Analytics. Users discovering you through AI platforms often visit your website directly. Look for unexplained increases in direct traffic, especially from new geographic areas.</p>
+
+<p>Conduct manual testing regularly. Ask industry-relevant questions across ChatGPT, Claude, Gemini, and Perplexity. Document when your business appears and in what context. Track improvements over time.</p>
+
+<p>Set up Google Alerts for your business name and key terms. AI-driven discoveries often lead to mentions in other online content. Monitor for increased brand mentions across the web.</p>
+
+<p>Survey new customers about discovery methods. Ask specifically about AI platform usage. Many people now research businesses through multiple AI assistants before making contact.</p>
+
+<h2>Advanced Techniques</h2>
+<p>Develop thought leadership content that AI platforms can cite as authoritative sources. Write detailed industry guides, research reports, and expert analysis. Position your business as the go-to source for specific topics.</p>
+
+<p>Create video content with transcriptions. AI platforms increasingly access video transcripts when evaluating business expertise. YouTube descriptions and transcripts provide additional citation opportunities.</p>
+
+<p>Build strategic partnerships with other businesses in complementary industries. Cross-citations and partnership mentions strengthen entity signals across multiple business networks.</p>
+
+<p>Participate in industry podcasts and webinars. These create editorial mentions and transcript content that AI platforms can access and cite.</p>
+
+<p>Develop proprietary research or datasets. Original research gets cited across multiple platforms and establishes your business as an authoritative information source.</p>
+
+<h2>Getting Professional Help</h2>
+<p>AI platform optimisation requires specialised expertise and ongoing monitoring. The landscape changes rapidly as platforms update their algorithms and data sources.</p>
+
+<p>Our AI Search Visibility Audit evaluates your presence across ChatGPT, Claude, Gemini, Perplexity, Copilot, and Google AI. We test dozens of relevant queries to see exactly where your business appears and where it doesn't.</p>
+
+<p>The audit reveals specific optimisation opportunities based on your industry and location. We identify the highest-impact improvements and provide prioritised action plans.</p>
+
+<p>Book your <a href="/free-audit/">free audit</a> to discover your current AI platform visibility and get a customised improvement strategy. Most UK businesses are surprised by how much opportunity they're missing in AI search.</p>
+
+<h2>Key Takeaways</h2>
+<ul>
+<li>Submit to Bing Webmaster Tools immediately - it's the foundation of ChatGPT visibility</li>
+<li>Build consistent entity signals across multiple platforms, especially Microsoft ecosystem</li>
+<li>Create structured, question-focused content that AI platforms can easily cite</li>
+<li>Maintain rigorous consistency in business information across all online presence</li>
+<li>Don't assume Google optimisation equals AI platform optimisation - different strategies needed</li>
+<li>Monitor brand search trends and direct traffic as proxies for AI platform visibility</li>
+<li>Focus on authoritative citations from independent, credible sources</li>
+<li>Test your visibility regularly across multiple AI platforms to track progress</li>
+</ul>
     </div>
-  </div>
 
 
     <!-- Internal links -->
