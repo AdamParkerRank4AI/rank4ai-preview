@@ -4,3 +4,7 @@
 /ai-search-weekly/* /research/weekly-intelligence/:splat 301
 /ai-services /what-we-do/ 301
 /ai-services/* /what-we-do/ 301
+/ai-search-visibility /ai-search/ 301
+/technical-ai-optimisation /ai-seo/technical/ 301
+/ai-platform-visibility /ai-search/platforms/ 301
+/ai-search-vs-seo /ai-search/comparisons/ai-search-vs-google/ 301
