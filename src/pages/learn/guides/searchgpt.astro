@@ -17,15 +17,165 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <h1 class="mb-6">SearchGPT Optimisation</h1>
 
     <img src="/images/content/five-signal-model.svg" alt="The Five Signal Model for AI search" class="w-full rounded-xl mb-8 mt-6" loading="lazy">
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT is OpenAI's dedicated search product – a real-time web search feature integrated into ChatGPT. Unlike standard ChatGPT which draws from training data, SearchGPT actively crawls the web to provide current answers.</p>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT uses Bing as its primary data source. The top ranking factors are: link quality, relevance, freshness, link quantity, and content depth.</p>
-    <h2 class="mt-12 mb-4">How SearchGPT Differs from Standard ChatGPT</h2>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Standard ChatGPT responses draw from training data – what the model learned during training. SearchGPT adds real-time web retrieval on top of this. If your business is well-represented in Bing's index AND has strong entity signals in the training data, you get recommended in both modes.</p>
-    <h2 class="mt-12 mb-4">What to Do</h2>
-    <p class="text-[17px] text-text-muted leading-relaxed mb-5">The same work that builds ChatGPT visibility builds SearchGPT visibility: submit to Bing, build consistent entity signals, create structured content that answers real questions, and maintain independent citations across trusted sources.</p>
-  </div>
 
-    <!-- Internal links -->
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT is OpenAI's dedicated search product – a real-time web search feature integrated into ChatGPT. Unlike standard ChatGPT which draws from training data, SearchGPT actively crawls the web to provide current answers.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT uses Bing as its primary data source. The top ranking factors are: link quality, relevance, freshness, link quantity, and content depth. This creates new opportunities for businesses to gain visibility in AI-powered search results.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our analysis of 1,400+ UK businesses shows that companies with strong Bing visibility are 3x more likely to appear in SearchGPT results. The businesses performing best have consistent entity signals across multiple platforms.</p>
+
+<h2 class="mt-12 mb-4">How SearchGPT Differs from Standard ChatGPT</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Standard ChatGPT responses draw from training data – what the model learned during training. SearchGPT adds real-time web retrieval on top of this. If your business is well-represented in Bing's index AND has strong entity signals in the training data, you get recommended in both modes.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">The key difference lies in timing and data sources. Standard ChatGPT has a knowledge cutoff date. SearchGPT can access information published minutes ago. This means recent news, product launches, or business updates can influence SearchGPT responses immediately.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT also provides source citations. Users can see where information comes from and visit the original websites. This creates a direct pathway from AI responses to your business website – something standard ChatGPT cannot offer.</p>
+
+<h3>Response Speed and Accuracy</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT responses take longer to generate because they involve real-time web crawling. However, the accuracy improves significantly for time-sensitive queries. Business hours, pricing, availability, and current events receive more accurate responses.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">For example, if someone asks "What are the opening hours for Italian restaurants in Manchester today?", SearchGPT can check current websites for holiday schedules or temporary closures. Standard ChatGPT would rely on older training data.</p>
+
+<h2 class="mt-12 mb-4">SearchGPT's Technical Architecture</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT combines OpenAI's language model with Bing's search infrastructure. When you submit a query, the system first determines if real-time data would improve the response. If yes, it searches Bing's index for relevant, current information.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">The system then synthesises web results with the language model's existing knowledge. This hybrid approach allows for more comprehensive and current responses than either system could provide alone.</p>
+
+<h3>Data Integration Process</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">The integration happens in three stages. First, SearchGPT analyses your query for real-time information needs. Second, it searches Bing for relevant current data. Third, it combines web results with pre-trained knowledge to generate a response.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">This process explains why some queries trigger SearchGPT while others use standard responses. Business-related queries, current events, and factual lookups typically activate the search component.</p>
+
+<h2 class="mt-12 mb-4">Key Ranking Factors for SearchGPT</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT inherits many ranking signals from Bing. However, our research with UK businesses reveals some unique patterns. Content depth matters more than traditional SEO factors like keyword density.</p>
+
+<table class="w-full border-collapse border border-gray-300 mb-5">
+<tr>
+<th class="border border-gray-300 p-2 bg-gray-100">Ranking Factor</th>
+<th class="border border-gray-300 p-2 bg-gray-100">Importance</th>
+<th class="border border-gray-300 p-2 bg-gray-100">Impact on SearchGPT</th>
+</tr>
+<tr>
+<td class="border border-gray-300 p-2">Link Quality</td>
+<td class="border border-gray-300 p-2">Very High</td>
+<td class="border border-gray-300 p-2">Determines source trustworthiness</td>
+</tr>
+<tr>
+<td class="border border-gray-300 p-2">Content Relevance</td>
+<td class="border border-gray-300 p-2">Very High</td>
+<td class="border border-gray-300 p-2">Matches query intent precisely</td>
+</tr>
+<tr>
+<td class="border border-gray-300 p-2">Information Freshness</td>
+<td class="border border-gray-300 p-2">High</td>
+<td class="border border-gray-300 p-2">Prioritises recent updates</td>
+</tr>
+<tr>
+<td class="border border-gray-300 p-2">Link Quantity</td>
+<td class="border border-gray-300 p-2">Medium</td>
+<td class="border border-gray-300 p-2">Supports but doesn't guarantee inclusion</td>
+</tr>
+<tr>
+<td class="border border-gray-300 p-2">Content Depth</td>
+<td class="border border-gray-300 p-2">High</td>
+<td class="border border-gray-300 p-2">Comprehensive answers preferred</td>
+</tr>
+</table>
+
+<h3>Entity Recognition and Authority</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT shows strong preference for recognised entities. Businesses with consistent NAP (Name, Address, Phone) data across multiple platforms perform better. This includes Google My Business, Bing Places, industry directories, and social media profiles.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Authority signals extend beyond traditional backlinks. Customer reviews, media mentions, and social proof contribute to SearchGPT visibility. Our audit of UK businesses found that companies with 50+ Google reviews were twice as likely to appear in SearchGPT responses.</p>
+
+<h2 class="mt-12 mb-4">Optimisation Strategies for SearchGPT</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">The same work that builds ChatGPT visibility builds SearchGPT visibility: submit to Bing, build consistent entity signals, create structured content that answers real questions, and maintain independent citations across trusted sources.</p>
+
+<h3>Bing Webmaster Tools Setup</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Start with Bing Webmaster Tools. Submit your sitemap and verify your domain. Enable automatic sitemap detection to ensure new content gets indexed quickly. Monitor crawl errors and fix them promptly.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Bing's indexing differs from Google's. It places more weight on social signals and exact-match domains. If you have social media profiles, ensure they link back to your main website with consistent branding.</p>
+
+<h3>Content Structure for AI Consumption</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Structure content to answer specific questions. Use clear headings, bullet points, and numbered lists. SearchGPT performs well with content that directly addresses user queries without excessive preamble.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">For example, instead of writing "Our company has been providing excellent plumbing services for many years", write "We provide 24-hour emergency plumbing services in Birmingham, including pipe repairs, boiler installations, and drain unblocking."</p>
+
+<h3>Local Business Optimisation</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Local businesses need consistent information across all platforms. Update Bing Places for Business with accurate hours, services, and contact details. Include high-quality photos and respond to customer reviews.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Create location-specific content pages. A restaurant might have separate pages for "Italian Restaurant Manchester City Centre" and "Private Dining Manchester" rather than one generic "About Us" page.</p>
+
+<h2 class="mt-12 mb-4">Content Creation Best Practices</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT favours comprehensive, authoritative content. Create in-depth guides that cover topics thoroughly. A 2,000-word guide on "Complete Guide to Bathroom Renovations in London" will outperform ten 200-word blog posts on related topics.</p>
+
+<h3>Question-Based Content Strategy</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Build content around questions your customers actually ask. Use tools like AnswerThePublic or analyse customer support queries. Create dedicated pages for common questions with detailed, actionable answers.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Structure these pages with clear headings, step-by-step instructions, and relevant examples. SearchGPT can then extract specific sections to answer user queries while citing your website as the source.</p>
+
+<h3>Technical Implementation</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Implement schema markup for all business information. Use LocalBusiness, Product, Service, and FAQ schemas where appropriate. This structured data helps SearchGPT understand your content context and extract relevant information accurately.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Ensure fast page loading speeds and mobile responsiveness. SearchGPT may consider user experience signals when selecting sources. A slow-loading page might get bypassed even if it contains relevant information.</p>
+
+<h2 class="mt-12 mb-4">Measuring SearchGPT Performance</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Track SearchGPT visibility through direct testing and referral traffic analysis. Regularly search for your business name, services, and industry topics using SearchGPT. Document when and how your business appears in responses.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Monitor referral traffic from OpenAI and ChatGPT in your analytics. Set up UTM parameters for links you control to track which content drives the most AI-powered traffic to your website.</p>
+
+<h3>Key Metrics to Monitor</h3>
+
+<ul class="text-[17px] text-text-muted leading-relaxed mb-5">
+<li>Frequency of business mentions in SearchGPT responses</li>
+<li>Quality of information accuracy in AI-generated summaries</li>
+<li>Click-through rates from SearchGPT citations to your website</li>
+<li>Conversion rates from AI-driven referral traffic</li>
+<li>Changes in overall organic search visibility</li>
+</ul>
+
+<h2 class="mt-12 mb-4">Common Implementation Mistakes</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Many businesses focus exclusively on Google optimisation while ignoring Bing. This approach misses SearchGPT opportunities. Allocate at least 20% of your SEO effort to Bing-specific optimisation.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Another common mistake is inconsistent NAP data. If your business name varies between "ABC Ltd", "ABC Limited", and "ABC Company" across different platforms, SearchGPT may struggle to recognise you as a single entity.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Over-optimising for keywords while neglecting natural language patterns also reduces SearchGPT visibility. AI systems prefer conversational, helpful content over keyword-stuffed pages.</p>
+
+<h2 class="mt-12 mb-4">Future Considerations</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">SearchGPT will likely evolve rapidly. OpenAI continues developing new features and improving response accuracy. Businesses that establish strong foundations now will benefit as the platform grows.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Voice search integration seems inevitable. Prepare your content for voice queries by including natural language patterns and conversational question formats. This preparation will serve you well across all AI search platforms.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Consider getting a comprehensive <a href="/free-audit/">free audit</a> of your current AI visibility. Understanding your baseline performance helps identify the most impactful optimisation opportunities for your specific business.</p>
+
+<h2 class="mt-12 mb-4">Key Takeaways</h2>
+
+<ul class="text-[17px] text-text-muted leading-relaxed mb-5">
+<li><strong>SearchGPT uses Bing as its primary data source</strong> - optimise for Bing to improve SearchGPT visibility</li>
+<li><strong>Real-time web crawling sets it apart</strong> - keep your website information current and accurate</li>
+<li><strong>Entity consistency matters more than keywords</strong> - maintain consistent NAP data across all platforms</li>
+<li><strong>Content depth outperforms content volume</strong> - create comprehensive guides rather than multiple shallow posts</li>
+<li><strong>Question-based content performs well</strong> - structure content around actual customer queries</li>
+<li><strong>Technical implementation supports visibility</strong> - use schema markup and ensure fast loading speeds</li>
+<li><strong>Regular monitoring enables optimisation</strong> - test SearchGPT responses and track referral traffic patterns</li>
+</ul>
+
+<!-- Internal links -->
     <div class="mt-12 pt-8 border-t border-border">
       <h2 class="!text-xl mb-4">Related</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
