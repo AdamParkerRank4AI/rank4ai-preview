@@ -8,65 +8,156 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Built for AI Search, SEO & AI Overviews | Rank4AI</title>
-  <meta name="description" content="The UK's first website builder designed for AI search, SEO and Google AI Overviews. Design, development and content in one team.">
+  <title>AI SEO Ready Websites | Built for AI Search, SEO & AI Overviews | Rank4AI</title>
+  <meta name="description" content="Websites built for AI search, SEO and Google AI Overviews. One team. Design, development and content. None of them understand AI search. We do.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
 </head>
 <body class="bg-white min-h-screen">
-  <div class="max-w-[640px] mx-auto px-6 py-12">
-    <img src={`${base}/logo.svg`} alt="Rank4AI - UK AI Search Agency" class="h-8 mx-auto mb-10" role="img">
 
-    <div class="text-center mb-10">
-      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">AI SEO Ready Websites</p>
-      <h1 class="font-display text-3xl md:text-4xl text-teal leading-tight mb-5">One Team. Design, Development and Content. Built for AI Search, SEO and AI Overviews.</h1>
+  <!-- HERO - Dark teal, killer headline -->
+  <div class="bg-teal text-text-light py-16 px-6">
+    <div class="max-w-[640px] mx-auto text-center">
+      <img src={`${base}/logo-dark.svg`} alt="Rank4AI" class="h-7 mx-auto mb-10 opacity-80" role="img">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-bright mb-6">AI SEO Ready Websites</p>
+      <h1 class="font-display text-3xl md:text-4xl text-text-light leading-tight mb-5">Your web developer builds it. Your designer styles it. Your content writer fills it.</h1>
       <div class="w-16 h-[3px] bg-accent mx-auto mb-6 rounded-full"></div>
-      <p class="text-text-muted leading-relaxed mb-4">Your web developer builds it. Your designer styles it. Your content writer fills it. None of them understand AI search, SEO and AI Overviews.</p>
-      <p class="text-text-muted leading-relaxed font-medium">We do all three. One team. Built for ChatGPT, Google AI Overviews, and traditional SEO from day one.</p>
+      <p class="text-xl text-accent-bright font-display mb-3">None of them understand AI search, SEO and AI Overviews.</p>
+      <p class="text-lg text-text-light-muted">We do all three. One team.</p>
+    </div>
+  </div>
+
+  <!-- THE PROBLEM -->
+  <div class="max-w-[640px] mx-auto px-6 py-14">
+    <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">The problem</p>
+    <h2 class="font-display text-2xl text-teal mb-6">Three people. Zero AI visibility.</h2>
+
+    <div class="space-y-4 mb-10">
+      <div class="bg-off-white rounded-xl p-5 border-l-3 border-red-400">
+        <p class="text-sm text-text-muted"><strong class="text-teal">The developer</strong> writes clean code. But no schema markup. No llms.txt. No AI crawler access. AI platforms visit the site and leave with nothing.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-5 border-l-3 border-red-400">
+        <p class="text-sm text-text-muted"><strong class="text-teal">The designer</strong> makes it look great. But headings are decorative, not structured. Page hierarchy is visual, not semantic. AI skips the content.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-5 border-l-3 border-red-400">
+        <p class="text-sm text-text-muted"><strong class="text-teal">The content writer</strong> writes for humans. Not for AI extraction. No answer-first structure. No citable definitions. AI ignores it.</p>
+      </div>
     </div>
 
-    <div class="grid grid-cols-3 gap-3 mb-10">
-      <div class="bg-off-white rounded-xl p-4 text-center">
-        <div class="font-display text-2xl text-teal mb-1">SEO</div>
-        <div class="text-[11px] text-text-muted">Google rankings</div>
+    <div class="bg-off-white rounded-xl p-5 border-l-3 border-red-400 mb-10">
+      <p class="text-sm text-text-muted"><strong class="text-teal">WordPress?</strong> Plugin bloat, slow pages, security plugins blocking AI crawlers. Sites we audit on WordPress average 40% lower AI readability scores.</p>
+    </div>
+    <div class="bg-off-white rounded-xl p-5 border-l-3 border-red-400 mb-10">
+      <p class="text-sm text-text-muted"><strong class="text-teal">Lovable, Base44, Bolt?</strong> JavaScript-heavy code AI crawlers cannot parse. Sitemaps break silently. We rebuilt our own site after Lovable - 244 pages dropped to 47 overnight.</p>
+    </div>
+  </div>
+
+  <!-- THE SOLUTION -->
+  <div class="bg-teal py-14 px-6">
+    <div class="max-w-[640px] mx-auto">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-bright mb-4">The solution</p>
+      <h2 class="font-display text-2xl text-text-light mb-8">AI SEO Ready. From day one.</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <div class="bg-teal-light rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-accent-bright mb-2">SEO</div>
+          <p class="text-xs text-text-light-muted">Google rankings. Traditional search. The foundation.</p>
+        </div>
+        <div class="bg-teal-light rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-accent-bright mb-2">AI Search</div>
+          <p class="text-xs text-text-light-muted">ChatGPT, Claude, Gemini, Perplexity, Copilot.</p>
+        </div>
+        <div class="bg-teal-light rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-accent-bright mb-2">AI Overviews</div>
+          <p class="text-xs text-text-light-muted">Google's AI answers. Above organic results.</p>
+        </div>
       </div>
-      <div class="bg-off-white rounded-xl p-4 text-center">
-        <div class="font-display text-2xl text-accent mb-1">AI</div>
-        <div class="text-[11px] text-text-muted">ChatGPT, Claude, Gemini</div>
+
+      <div class="space-y-3">
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">Static HTML. Zero bloat. Pages load in under 200ms.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">Schema markup on every page. AI reads your business correctly.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">Content structured for AI extraction. Answer-first. Citable. Clear.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">All AI crawlers allowed and tested. GPTBot, ClaudeBot, PerplexityBot.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">llms.txt file. The sitemap for AI platforms.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">SEO, AI search and AI Overviews optimised simultaneously.</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <span class="text-accent-bright text-lg leading-none mt-0.5">&#10003;</span>
+          <p class="text-sm text-text-light-muted">One team. Design. Development. Content. No handoffs.</p>
+        </div>
       </div>
-      <div class="bg-off-white rounded-xl p-4 text-center">
-        <div class="font-display text-2xl text-teal mb-1">AIO</div>
-        <div class="text-[11px] text-text-muted">Google AI Overviews</div>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <div class="max-w-[640px] mx-auto px-6 py-14">
+    <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">The proof</p>
+    <h2 class="font-display text-2xl text-teal mb-8">Our own site. Built this way.</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
+        <div class="font-display text-3xl text-teal mb-1">900</div>
+        <div class="text-[11px] text-text-muted">pages live</div>
+      </div>
+      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
+        <div class="font-display text-3xl text-teal mb-1">0.01s</div>
+        <div class="text-[11px] text-text-muted">server response</div>
+      </div>
+      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
+        <div class="font-display text-3xl text-teal mb-1">100%</div>
+        <div class="text-[11px] text-text-muted">schema coverage</div>
+      </div>
+      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
+        <div class="font-display text-3xl text-teal mb-1">6/6</div>
+        <div class="text-[11px] text-text-muted">AI platforms tested</div>
       </div>
     </div>
 
     <div class="bg-off-white rounded-xl p-6 mb-10">
-      <h2 class="font-display text-xl text-teal mb-4">Why most websites fail at AI search</h2>
-      <ul class="space-y-3 text-sm text-text-muted">
-        <li><strong class="text-teal">Developer builds it.</strong> Clean code, maybe. But no schema, no llms.txt, no AI crawler access. AI can't read it.</li>
-        <li><strong class="text-teal">Designer styles it.</strong> Looks great. But headings are decorative, not structured. AI skips it.</li>
-        <li><strong class="text-teal">Content goes in last.</strong> Written for humans, not AI. No answer-first structure. AI ignores it.</li>
-        <li><strong class="text-teal">WordPress adds bloat.</strong> Plugin conflicts, slow pages, security plugins blocking AI crawlers. AI avoids it.</li>
-        <li><strong class="text-teal">AI builders generate mess.</strong> Lovable, Base44, Bolt produce JavaScript-heavy code AI crawlers can't parse.</li>
-      </ul>
+      <p class="text-sm text-text-muted leading-relaxed italic mb-3">"We knew AI search was going to be a big shift. What stood out straight away was how down to earth the team are. They clearly know their stuff, but they also take the time to explain what is being done and why it matters."</p>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-teal text-text-light flex items-center justify-center text-xs font-bold">RB</div>
+        <div>
+          <p class="text-sm font-semibold text-teal">Rishi Bansropun</p>
+          <p class="text-xs text-text-muted">Managing Director, RB Financial</p>
+        </div>
+      </div>
     </div>
 
-    <div class="bg-teal rounded-xl p-6 mb-10 text-text-light">
-      <h2 class="font-display text-xl mb-4">What we build differently</h2>
-      <ul class="space-y-2 text-sm text-text-light-muted">
-        <li>Static HTML. Zero bloat. Pages load in under 200ms.</li>
-        <li>Schema markup on every page. AI reads your business correctly.</li>
-        <li>Content structured for AI extraction. Answer-first, citable, clear.</li>
-        <li>All AI crawlers allowed and tested. GPTBot, ClaudeBot, PerplexityBot.</li>
-        <li>llms.txt file. The sitemap for AI platforms.</li>
-        <li>SEO and AI Overviews optimised simultaneously.</li>
-        <li>1,400+ UK businesses audited. We know what AI looks for.</li>
-      </ul>
-    </div>
-
-    <AuditForm />
-
-    <p class="text-center text-xs text-text-muted mt-8">Rank4AI Ltd - Company 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
+    <p class="text-center text-text-muted text-[15px] leading-relaxed mb-4">1,400+ UK businesses audited. We know what AI looks for.</p>
+    <p class="text-center text-teal font-display text-xl mb-10">Every project starts with a free audit.</p>
   </div>
+
+  <!-- FORM -->
+  <div class="bg-off-white py-14 px-6">
+    <div class="max-w-[560px] mx-auto">
+      <h2 class="font-display text-2xl text-teal text-center mb-2">Get your free AI search audit</h2>
+      <p class="text-sm text-text-muted text-center mb-8">We test your site across all six AI platforms and tell you exactly what to fix.</p>
+      <AuditForm />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="max-w-[640px] mx-auto px-6 py-8 text-center">
+    <p class="text-xs text-text-muted">Rank4AI Ltd - Company 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
+  </div>
+
 </body>
 </html>
