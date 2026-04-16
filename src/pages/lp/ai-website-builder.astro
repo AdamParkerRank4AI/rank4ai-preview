@@ -1,0 +1,72 @@
+---
+import '../../styles/global.css'
+import AuditForm from '../../components/AuditForm.astro'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Built for AI Search, SEO & AI Overviews | Rank4AI</title>
+  <meta name="description" content="The UK's first website builder designed for AI search, SEO and Google AI Overviews. Design, development and content in one team.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
+</head>
+<body class="bg-white min-h-screen">
+  <div class="max-w-[640px] mx-auto px-6 py-12">
+    <img src={`${base}/logo.svg`} alt="Rank4AI - UK AI Search Agency" class="h-8 mx-auto mb-10" role="img">
+
+    <div class="text-center mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">UK's #1 AI Search Website Builder</p>
+      <h1 class="font-display text-3xl md:text-4xl text-teal leading-tight mb-5">One Team. Design, Development and Content. Built for AI Search.</h1>
+      <div class="w-16 h-[3px] bg-accent mx-auto mb-6 rounded-full"></div>
+      <p class="text-text-muted leading-relaxed mb-4">Most websites are built by developers who don't understand marketing, designed by creatives who don't understand search, and filled with content nobody optimised for AI.</p>
+      <p class="text-text-muted leading-relaxed font-medium">We do all three. One team. Built for ChatGPT, Google AI Overviews, and traditional SEO from day one.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-3 mb-10">
+      <div class="bg-off-white rounded-xl p-4 text-center">
+        <div class="font-display text-2xl text-teal mb-1">SEO</div>
+        <div class="text-[11px] text-text-muted">Google rankings</div>
+      </div>
+      <div class="bg-off-white rounded-xl p-4 text-center">
+        <div class="font-display text-2xl text-accent mb-1">AI</div>
+        <div class="text-[11px] text-text-muted">ChatGPT, Claude, Gemini</div>
+      </div>
+      <div class="bg-off-white rounded-xl p-4 text-center">
+        <div class="font-display text-2xl text-teal mb-1">AIO</div>
+        <div class="text-[11px] text-text-muted">Google AI Overviews</div>
+      </div>
+    </div>
+
+    <div class="bg-off-white rounded-xl p-6 mb-10">
+      <h2 class="font-display text-xl text-teal mb-4">Why most websites fail at AI search</h2>
+      <ul class="space-y-3 text-sm text-text-muted">
+        <li><strong class="text-teal">Developer builds it.</strong> Clean code, maybe. But no schema, no llms.txt, no AI crawler access. AI can't read it.</li>
+        <li><strong class="text-teal">Designer styles it.</strong> Looks great. But headings are decorative, not structured. AI skips it.</li>
+        <li><strong class="text-teal">Content goes in last.</strong> Written for humans, not AI. No answer-first structure. AI ignores it.</li>
+        <li><strong class="text-teal">WordPress adds bloat.</strong> Plugin conflicts, slow pages, security plugins blocking AI crawlers. AI avoids it.</li>
+        <li><strong class="text-teal">AI builders generate mess.</strong> Lovable, Base44, Bolt produce JavaScript-heavy code AI crawlers can't parse.</li>
+      </ul>
+    </div>
+
+    <div class="bg-teal rounded-xl p-6 mb-10 text-text-light">
+      <h2 class="font-display text-xl mb-4">What we build differently</h2>
+      <ul class="space-y-2 text-sm text-text-light-muted">
+        <li>Static HTML. Zero bloat. Pages load in under 200ms.</li>
+        <li>Schema markup on every page. AI reads your business correctly.</li>
+        <li>Content structured for AI extraction. Answer-first, citable, clear.</li>
+        <li>All AI crawlers allowed and tested. GPTBot, ClaudeBot, PerplexityBot.</li>
+        <li>llms.txt file. The sitemap for AI platforms.</li>
+        <li>SEO and AI Overviews optimised simultaneously.</li>
+        <li>1,400+ UK businesses audited. We know what AI looks for.</li>
+      </ul>
+    </div>
+
+    <AuditForm />
+
+    <p class="text-center text-xs text-text-muted mt-8">Rank4AI Ltd - Company 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
+  </div>
+</body>
+</html>

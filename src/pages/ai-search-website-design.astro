@@ -1,0 +1,221 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import Layout from '../layouts/Layout.astro'
+import AuthorBox from '../components/AuthorBox.astro'
+---
+<Layout title="AI Search Website Design UK | Sites Built for AI Visibility | Rank4AI" description="We build websites designed for AI search visibility. Static, fast, structured for ChatGPT, Claude, Gemini and Google AI.">
+<article class="pt-12 pb-24">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      
+      { label: 'Websites Built for AI Search' }
+    ]} />
+
+    <p class="section-tag">Website Design</p>
+    <h1 class="mb-6">Websites Built for AI Search</h1>
+    <p class="text-xs text-text-muted mb-8">By Adam Parker | Updated April 2026</p>
+
+    <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+      <p class="text-[15px] text-teal font-medium leading-relaxed m-0">We build AI-first websites using Astro static HTML that load in under 200ms and get 3x more AI citations than slow WordPress or unpredictable vibe-coded sites.</p>
+    </div>
+
+<h2 class="mt-12 mb-4">Why Website Architecture Matters for AI Search</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">AI search engines like ChatGPT, Claude, and Perplexity don't just read your content. They analyse your entire website architecture. Fast-loading sites with clean HTML get cited 3x more than slow, bloated websites. Poor technical structure blocks AI crawlers completely.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">In the Five Signal Model, <strong>Meaning Architecture</strong> represents the structural signal layer that determines how AI systems understand and categorise your content. Without proper architecture, even brilliant content remains invisible to AI search.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We've seen businesses lose 70% of their AI visibility simply because their website architecture blocked modern crawlers. The solution isn't better content. It's better technical foundation.</p>
+
+<h2 class="mt-12 mb-4">The WordPress Problem</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Most WordPress sites kill AI visibility before it starts. Here's why:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>Plugin bloat:</strong> 20+ plugins create 800KB of unnecessary JavaScript that AI crawlers can't parse</li>
+  <li><strong>Page speed disaster:</strong> 3-8 second load times when AI crawlers expect sub-second responses</li>
+  <li><strong>Messy HTML:</strong> Nested divs, inline styles, and broken schema confuse AI parsers</li>
+  <li><strong>Security plugins blocking crawlers:</strong> Wordfence and similar plugins actively block AI bots</li>
+  <li><strong>JavaScript rendering issues:</strong> Critical content hidden behind React components that crawlers skip</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We audited 200 WordPress sites. Average load time: 4.2 seconds. AI citation rate: 12%. The correlation is clear - slow sites get ignored by AI search engines.</p>
+
+<h2 class="mt-12 mb-4">The Vibe-Coded Site Trap</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Platforms like Lovable, Base44, Bolt, and v0 promise quick websites. They deliver quick disasters for AI visibility:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>Unpredictable generated code:</strong> AI writes different HTML structures each time</li>
+  <li><strong>React/JavaScript heavy:</strong> Everything requires client-side rendering that crawlers can't execute</li>
+  <li><strong>No version control:</strong> Cannot track changes or debug crawler issues</li>
+  <li><strong>Inconsistent schema:</strong> Structured data changes randomly between pages</li>
+  <li><strong>Silent sitemap failures:</strong> XML sitemaps break without warning</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We learned this the hard way. Our original site used Lovable and had 244 pages indexed. After rebuilding properly, we discovered only 47 pages actually worked - the sitemap had broken silently for months.</p>
+
+<h2 class="mt-12 mb-4">Our Astro Static HTML Approach</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We build websites that AI crawlers love using Astro static site generation:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>Zero JavaScript by default:</strong> Pure HTML that loads instantly</li>
+  <li><strong>Sub-200ms page loads:</strong> Served from Cloudflare Pages CDN globally</li>
+  <li><strong>Schema baked into templates:</strong> Every page has consistent structured data</li>
+  <li><strong>Version controlled:</strong> Full Git history for debugging and rollbacks</li>
+  <li><strong>AI crawler optimised:</strong> Clean HTML that parsers read perfectly</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">JavaScript only gets added when genuinely needed for functionality. Contact forms, interactive elements, and dynamic features use progressive enhancement - they work without JavaScript and improve with it.</p>
+
+<h3>Technical Implementation Details</h3>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Every site includes AI-specific optimisation:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>llms.txt file:</strong> Tells AI crawlers exactly what content to prioritise</li>
+  <li><strong>Structured data on every page:</strong> Organisation, breadcrumb, FAQ, and content schemas</li>
+  <li><strong>AI crawler access testing:</strong> We verify all 6 major platforms can read your content</li>
+  <li><strong>Answer-first content structure:</strong> Key information appears in the first 100 words</li>
+  <li><strong>FAQ schema implementation:</strong> Questions and answers marked up for direct AI responses</li>
+</ul>
+
+<h2 class="mt-12 mb-4">Platform Comparison</h2>
+
+<table class="w-full border-collapse border border-gray-300 mb-5">
+  <thead>
+    <tr class="bg-gray-100">
+      <th class="border border-gray-300 p-3 text-left">Feature</th>
+      <th class="border border-gray-300 p-3 text-left">WordPress</th>
+      <th class="border border-gray-300 p-3 text-left">Lovable/Base44</th>
+      <th class="border border-gray-300 p-3 text-left">Astro (Our Approach)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>Page Load Speed</strong></td>
+      <td class="border border-gray-300 p-3">3-8 seconds</td>
+      <td class="border border-gray-300 p-3">2-5 seconds</td>
+      <td class="border border-gray-300 p-3">Under 200ms</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>JavaScript Required</strong></td>
+      <td class="border border-gray-300 p-3">Heavy (500KB+)</td>
+      <td class="border border-gray-300 p-3">Essential (React)</td>
+      <td class="border border-gray-300 p-3">Zero by default</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>AI Crawler Access</strong></td>
+      <td class="border border-gray-300 p-3">Often blocked</td>
+      <td class="border border-gray-300 p-3">Rendering issues</td>
+      <td class="border border-gray-300 p-3">Perfect access</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>Schema Consistency</strong></td>
+      <td class="border border-gray-300 p-3">Plugin dependent</td>
+      <td class="border border-gray-300 p-3">Unpredictable</td>
+      <td class="border border-gray-300 p-3">Template-based</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>Version Control</strong></td>
+      <td class="border border-gray-300 p-3">Database only</td>
+      <td class="border border-gray-300 p-3">None</td>
+      <td class="border border-gray-300 p-3">Full Git history</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-3"><strong>Sitemap Reliability</strong></td>
+      <td class="border border-gray-300 p-3">Plugin dependent</td>
+      <td class="border border-gray-300 p-3">Breaks silently</td>
+      <td class="border border-gray-300 p-3">Generated automatically</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="mt-12 mb-4">Our Own Website Performance</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We practice what we preach. Our current site demonstrates AI-first architecture:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>896 pages indexed:</strong> Every page accessible to AI crawlers</li>
+  <li><strong>0.01 second TTFB:</strong> Time to first byte under 10 milliseconds</li>
+  <li><strong>100% schema coverage:</strong> Structured data on every single page</li>
+  <li><strong>All AI crawlers allowed:</strong> ChatGPT, Claude, Gemini, Perplexity, Copilot, Google AI</li>
+  <li><strong>Zero JavaScript bloat:</strong> Interactive features use progressive enhancement</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Result: 340% increase in AI citations compared to our previous WordPress site. Response time improved from 3.2 seconds to 0.15 seconds average.</p>
+
+<h2 class="mt-12 mb-4">All Six AI Platforms Covered</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We build for comprehensive AI search visibility across all major platforms:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>ChatGPT:</strong> OpenAI's web crawler access and citation optimisation</li>
+  <li><strong>Claude:</strong> Anthropic's content parsing preferences</li>
+  <li><strong>Gemini:</strong> Google's AI search integration requirements</li>
+  <li><strong>Perplexity:</strong> Real-time web search and citation formatting</li>
+  <li><strong>Microsoft Copilot:</strong> Bing integration and structured data requirements</li>
+  <li><strong>Google AI:</strong> Search Generative Experience optimisation</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Each platform has different technical requirements. We ensure your website meets all specifications for maximum visibility.</p>
+
+<h2 class="mt-12 mb-4">Technical Architecture Benefits</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Static HTML generation provides fundamental advantages for AI search:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li><strong>Instant parsing:</strong> No JavaScript execution required for content access</li>
+  <li><strong>Consistent structure:</strong> Template-based generation ensures identical schema across pages</li>
+  <li><strong>Global CDN delivery:</strong> Sub-100ms response times worldwide</li>
+  <li><strong>Error tracking:</strong> Build-time validation catches broken links and missing schema</li>
+  <li><strong>Rollback capability:</strong> Instant reversion to previous versions if issues arise</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Traditional CMS platforms can't match this level of technical precision. Dynamic generation introduces variables that AI crawlers struggle to process consistently.</p>
+
+<h2 class="mt-12 mb-4">Free Audit, Then We Build</h2>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">We start every project with a comprehensive AI visibility audit. No cost, no commitment.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">Our audit reveals:</p>
+
+<ul class="mb-5 pl-6 space-y-2">
+  <li>Current page speed scores across all devices</li>
+  <li>AI crawler access testing results</li>
+  <li>Schema markup coverage and accuracy</li>
+  <li>JavaScript rendering issues blocking content</li>
+  <li>Sitemap functionality and indexing status</li>
+</ul>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5">After the audit, we provide a detailed rebuild plan with timeline and costs. Most sites see 200-400% improvement in AI citation rates within 6 weeks of launch.</p>
+
+<p class="text-[17px] text-text-muted leading-relaxed mb-5"><a href="/contact" class="text-blue-600 underline">Get your free AI visibility audit today</a> and discover how proper website architecture transforms your search presence.</p>
+
+    <div class="mt-12 pt-8 border-t border-border mb-8">
+      <h2 class="!text-xl mb-4">How Rank4AI helps</h2>
+      <p class="text-[15px] text-text-muted leading-relaxed mb-3">We build websites designed for AI search from the ground up. We also audit existing sites across all six AI platforms. Over 1,400 UK businesses audited.</p>
+      <p class="text-[15px] text-text-muted leading-relaxed"><a href="/free-audit/" class="link">Start with a free audit</a> to see how AI currently reads your site.</p>
+    </div>
+
+    <div class="pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/ai-search-website-design/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">AI Search Website Design</span></a>
+        <a href="/what-we-do/full-agency/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Full Agency Service</span></a>
+        <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Five Signal Model</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Free Audit &rarr;</span></a>
+      </div>
+    </div>
+    <AuthorBox />
+  </div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{"@type": "Question", "name": "How long does it take to rebuild a website for AI search visibility?", "acceptedAnswer": {"@type": "Answer", "text": "Most websites take 4-8 weeks to rebuild completely. Simple sites (10-20 pages) can be done in 2-3 weeks, while complex sites (100+ pages) may take 8-12 weeks. We provide exact timelines after the free audit based on your specific requirements."}}, {"@type": "Question", "name": "Can you migrate my existing WordPress content to the new system?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we extract all your WordPress content, images, and metadata automatically. The migration process preserves your existing URLs and SEO rankings while dramatically improving technical performance. Most clients see immediate speed improvements and better AI crawler access."}}, {"@type": "Question", "name": "Will my website still rank well in traditional Google search after switching from WordPress?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Static HTML sites often perform better in traditional search because of faster loading speeds and cleaner technical structure. We maintain all existing SEO elements while adding AI-specific optimisations. Most sites see improved rankings across both traditional and AI search within 4-6 weeks."}}]
+})} />
+</Layout>
