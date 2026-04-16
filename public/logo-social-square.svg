@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" rx="40" fill="#0a2421"/>
+  <!-- Pentagon spokes -->
+  <line x1="200" y1="200" x2="200" y2="95" stroke="#f0e8d8" stroke-width="1.5" opacity="0.15"/>
+  <line x1="200" y1="200" x2="300" y2="145" stroke="#2bb891" stroke-width="1.5" opacity="0.3"/>
+  <line x1="200" y1="200" x2="262" y2="275" stroke="#f0e8d8" stroke-width="1.5" opacity="0.15"/>
+  <line x1="200" y1="200" x2="138" y2="275" stroke="#2bb891" stroke-width="1.5" opacity="0.3"/>
+  <line x1="200" y1="200" x2="100" y2="145" stroke="#f0e8d8" stroke-width="1.5" opacity="0.15"/>
+  <!-- Pentagon outline -->
+  <polygon points="200,95 300,145 262,275 138,275 100,145" fill="none" stroke="#f0e8d8" stroke-width="0.8" opacity="0.08"/>
+  <!-- Centre -->
+  <circle cx="200" cy="200" r="28" fill="#2bb891"/>
+  <circle cx="200" cy="200" r="13" fill="#0a2421"/>
+  <!-- 5 nodes: cream, teal, cream, teal, cream -->
+  <circle cx="200" cy="95" r="14" fill="#f0e8d8"/>
+  <circle cx="300" cy="145" r="12" fill="#2bb891"/>
+  <circle cx="262" cy="275" r="14" fill="#f0e8d8"/>
+  <circle cx="138" cy="275" r="12" fill="#2bb891"/>
+  <circle cx="100" cy="145" r="14" fill="#f0e8d8"/>
+  <!-- Text -->
+  <text x="200" y="345" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="36" fill="#f0e8d8">Rank<tspan fill="#2bb891">4</tspan>AI</text>
+</svg>

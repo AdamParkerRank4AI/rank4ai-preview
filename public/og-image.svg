@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a2421"/>
+  <!-- Pentagon -->
+  <polygon points="600,140 740,220 690,370 510,370 460,220" fill="none" stroke="#f0e8d8" stroke-width="1" opacity="0.08"/>
+  <line x1="600" y1="260" x2="600" y2="140" stroke="#f0e8d8" stroke-width="1" opacity="0.1"/>
+  <line x1="600" y1="260" x2="740" y2="220" stroke="#2bb891" stroke-width="1" opacity="0.2"/>
+  <line x1="600" y1="260" x2="690" y2="370" stroke="#f0e8d8" stroke-width="1" opacity="0.1"/>
+  <line x1="600" y1="260" x2="510" y2="370" stroke="#2bb891" stroke-width="1" opacity="0.2"/>
+  <line x1="600" y1="260" x2="460" y2="220" stroke="#f0e8d8" stroke-width="1" opacity="0.1"/>
+  <circle cx="600" cy="260" r="24" fill="#2bb891"/>
+  <circle cx="600" cy="260" r="11" fill="#0a2421"/>
+  <circle cx="600" cy="140" r="12" fill="#f0e8d8"/>
+  <circle cx="740" cy="220" r="10" fill="#2bb891"/>
+  <circle cx="690" cy="370" r="12" fill="#f0e8d8"/>
+  <circle cx="510" cy="370" r="10" fill="#2bb891"/>
+  <circle cx="460" cy="220" r="12" fill="#f0e8d8"/>
+  <!-- Text -->
+  <text x="600" y="470" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="56" fill="#f0e8d8">Rank<tspan fill="#2bb891">4</tspan>AI</text>
+  <text x="600" y="520" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="20" fill="#a8b8b5" letter-spacing="4">UK AI SEARCH AGENCY</text>
+  <text x="600" y="570" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="16" fill="#6b8280">www.rank4ai.co.uk</text>
+</svg>
