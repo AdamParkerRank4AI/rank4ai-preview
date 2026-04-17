@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import CopyForAI from '../../components/CopyForAI.astro'
 import Layout from '../../layouts/Layout.astro'
 import library from '../../data/knowledge-library-full.json'
 
@@ -49,6 +50,8 @@ const description = metaDesc || aiSummary || `${name} - AI search visibility inf
         <iframe src={youtubeUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')} class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     )}
+
+    <CopyForAI title={name} content={bodyContent || directAnswer || ''} url={`https://www.rank4ai.co.uk/${slug}/`} />
 
     <!-- Context -->
     <div class="mt-12 pt-8 border-t border-border mb-8">

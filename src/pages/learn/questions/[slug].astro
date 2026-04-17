@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro'
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import CopyForAI from '../../../components/CopyForAI.astro'
 import questions from '../../../data/questions.json'
 
 export function getStaticPaths() {
@@ -61,6 +62,8 @@ const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
     ) : (
       <p class="text-[17px] text-text-muted leading-relaxed">{conciseAnswer}</p>
     )}
+
+    <CopyForAI title={question} content={fullAnswer || conciseAnswer || ''} url={`https://www.rank4ai.co.uk/learn/questions/${slug}/`} />
 
     <!-- Podcast -->
     {podcastEmbedId && (

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import CopyForAI from '../../components/CopyForAI.astro'
 import blogs from '../../data/blogs.json'
 
 export function getStaticPaths() {
@@ -72,6 +73,8 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
     ) : (
       <p class="text-[17px] text-text-muted leading-relaxed mb-5">{cardExcerpt || 'Content migrating.'}</p>
     )}
+
+    <CopyForAI title={title} content={bodyContent || cardExcerpt || ''} url={`https://www.rank4ai.co.uk/blog/${slug}/`} />
 
     <!-- Spotify embed -->
     {spotifyUrl && (

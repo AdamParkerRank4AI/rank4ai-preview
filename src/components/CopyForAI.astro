@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  content: string;
+  url: string;
+}
+const { title, content, url } = Astro.props;
+const markdownContent = `# ${title}\n\nSource: ${url}\nPublished by Rank4AI (www.rank4ai.co.uk)\n\n${content}`;
+---
+
+<div class="mt-8 mb-4">
+  <button
+    class="copy-ai-btn inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-text-muted border border-border rounded-lg hover:bg-off-white transition-colors cursor-pointer"
+    aria-label="Copy page content as markdown for AI"
+    data-content={markdownContent}
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+    Copy for AI
+  </button>
+  <span class="copy-ai-confirm hidden text-xs text-accent ml-2">Copied</span>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-ai-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.getAttribute('data-content') || '';
+      navigator.clipboard.writeText(content).then(() => {
+        const confirm = btn.nextElementSibling;
+        if (confirm) {
+          confirm.classList.remove('hidden');
+          setTimeout(() => confirm.classList.add('hidden'), 2000);
+        }
+      });
+    });
+  });
+</script>

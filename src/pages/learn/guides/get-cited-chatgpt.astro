@@ -199,4 +199,18 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <AuthorBox />
   </div>
 </article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Get Cited by ChatGPT",
+  "description": "Step-by-step guide for getting your UK business recommended by ChatGPT.",
+  "step": [
+    {"@type": "HowToStep", "name": "Submit to Bing", "text": "Go to Bing Webmaster Tools, verify your site, and submit your sitemap. ChatGPT uses Bing for web search."},
+    {"@type": "HowToStep", "name": "Build your entity", "text": "Create consistent entity signals across your website, LinkedIn, directories, and reviews. AI recommends businesses it can describe consistently."},
+    {"@type": "HowToStep", "name": "Build in the Microsoft ecosystem", "text": "Optimise LinkedIn, Bing Places, and GitHub. Microsoft platforms feed directly into ChatGPT and Copilot."},
+    {"@type": "HowToStep", "name": "Build independent citations", "text": "Get listed on Google Business Profile, Trustpilot, industry directories, and professional listings."},
+    {"@type": "HowToStep", "name": "Create citable content", "text": "Publish content with clear definitions, statistics, and step-by-step processes that AI can extract and quote."}
+  ]
+})} />
 </Layout>
