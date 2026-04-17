@@ -14,7 +14,7 @@ export function getStaticPaths() {
     }))
 }
 
-const { name, metaTitle, metaDesc, aiSummary, directAnswer, bodyContent, youtubeUrl } = Astro.props
+const { name, slug: pageSlug, metaTitle, metaDesc, aiSummary, directAnswer, bodyContent, youtubeUrl } = Astro.props
 const title = metaTitle || `${name} | Rank4AI`
 const description = metaDesc || aiSummary || `${name} - AI Marketing Growth from Rank4AI.`
 ---
@@ -51,7 +51,7 @@ const description = metaDesc || aiSummary || `${name} - AI Marketing Growth from
       </div>
     )}
 
-    <CopyForAI title={name} content={bodyContent || directAnswer || ''} url={`https://www.rank4ai.co.uk/${slug}/`} />
+    <CopyForAI title={name} content={bodyContent || directAnswer || ''} url={`https://www.rank4ai.co.uk/${pageSlug}/`} />
 
     <div class="mt-12 pt-8 border-t border-border mb-8">
       <h2 class="!text-xl mb-4">How Rank4AI helps</h2>
