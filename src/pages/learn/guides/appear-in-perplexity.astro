@@ -2,8 +2,24 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Appear in Perplexity AI (UK)",
+  "description": "Six-step process to get a UK business cited as a source in Perplexity AI answers: allow the crawler, understand source selection, optimise content for citation, cover local signals, hit freshness cadence, and monitor results.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Confirm a visibility gap", "text": "Open Perplexity and ask 'recommend a [your service] in [your area]'. Check the citation list at the bottom of the answer. If your domain is not cited, you have a Perplexity visibility gap to close.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#quick-check" },
+    { "@type": "HowToStep", "position": 2, "name": "Allow PerplexityBot in robots.txt", "text": "Ensure PerplexityBot is explicitly allowed and not blocked at the Cloudflare, server, or robots.txt layer. Add an explicit User-agent: PerplexityBot and Allow: / rule.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#technical-requirements" },
+    { "@type": "HowToStep", "position": 3, "name": "Optimise content for citation", "text": "Perplexity favours direct answer paragraphs, comparison tables, and specific data points. Lead with the answer, follow with evidence. Avoid marketing language. Use clear H2/H3 hierarchy and FAQPage schema.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#optimising-content-for-perplexity-citations" },
+    { "@type": "HowToStep", "position": 4, "name": "Cover local and entity signals", "text": "For local queries Perplexity draws on Google Business Profile, Wikidata, and review platforms. Keep NAP consistent, claim your GBP, and maintain current reviews. For entity recognition, keep sameAs links current across LinkedIn, Companies House, and press coverage.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#local-business-optimisation" },
+    { "@type": "HowToStep", "position": 5, "name": "Maintain content freshness", "text": "Perplexity re-indexes cited pages every 2-3 days, the fastest cadence of any major AI engine. Update key pages monthly with genuine new information, not just a date change. Stale pages lose citation position quickly.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#content-freshness-strategy" },
+    { "@type": "HowToStep", "position": 6, "name": "Monitor and iterate", "text": "Re-test your target queries in Perplexity weekly. Track which pages attract citations and which do not. Rewrite non-cited pages using the patterns from cited competitors. Expect measurable gains within 30-60 days once the page pattern is right.", "url": "https://www.rank4ai.co.uk/learn/guides/appear-in-perplexity/#monitoring-your-progress" }
+  ]
+}
 ---
 <Layout title="How to Appear in Perplexity UK | Rank4AI" description="How to get your UK business cited by Perplexity AI. Step-by-step guide from Rank4AI.">
+<script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
     <Breadcrumbs items={[

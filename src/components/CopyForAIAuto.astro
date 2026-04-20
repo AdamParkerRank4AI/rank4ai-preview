@@ -1,0 +1,126 @@
+---
+// Sitewide auto Copy-for-AI. Shows only on pages that contain an <article>.
+// Builds markdown client-side from the article body so it matches what the user reads.
+// Kept separate from CopyForAI.astro (which takes explicit props for dynamic slug routes).
+---
+
+<div data-copy-for-ai-auto-wrap class="hidden max-w-3xl mx-auto px-4 mt-4">
+  <button
+    type="button"
+    class="copy-for-ai-auto-btn inline-flex items-center gap-2 rounded-full border border-border bg-white text-text-muted text-xs font-semibold px-4 py-2 hover:bg-off-white transition-colors"
+    aria-label="Copy this page as markdown for ChatGPT, Claude, Gemini or Perplexity"
+  >
+    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+    </svg>
+    <span class="copy-for-ai-auto-label">Copy for AI</span>
+  </button>
+  <span class="ml-3 text-xs text-text-muted hidden sm:inline">Paste into ChatGPT, Claude, Gemini or Perplexity</span>
+</div>
+
+<script is:inline>
+  (function () {
+    function toMd(root) {
+      var out = [];
+      function inline(node) {
+        var s = '';
+        node.childNodes.forEach(function (c) {
+          if (c.nodeType === 3) { s += c.textContent; return; }
+          if (c.nodeType !== 1) return;
+          var tag = c.tagName;
+          if (tag === 'A') {
+            var txt = inline(c).trim();
+            var href = c.getAttribute('href') || '';
+            try { href = new URL(href, location.href).href; } catch (e) {}
+            s += txt ? '[' + txt + '](' + href + ')' : '';
+          } else if (tag === 'STRONG' || tag === 'B') { s += '**' + inline(c) + '**'; }
+          else if (tag === 'EM' || tag === 'I') { s += '*' + inline(c) + '*'; }
+          else if (tag === 'CODE') { s += '`' + c.textContent + '`'; }
+          else if (tag === 'BR') { s += '\n'; }
+          else { s += inline(c); }
+        });
+        return s;
+      }
+      function walk(el) {
+        el.childNodes.forEach(function (n) {
+          if (n.nodeType !== 1) return;
+          var tag = n.tagName;
+          if (/^H[1-6]$/.test(tag)) {
+            var lv = parseInt(tag.slice(1), 10);
+            out.push('\n' + '#'.repeat(lv) + ' ' + inline(n).trim() + '\n');
+          } else if (tag === 'P') {
+            var t = inline(n).trim(); if (t) out.push(t + '\n');
+          } else if (tag === 'UL' || tag === 'OL') {
+            var i = 1;
+            n.querySelectorAll(':scope > li').forEach(function (li) {
+              out.push((tag === 'OL' ? (i++) + '. ' : '- ') + inline(li).trim());
+            });
+            out.push('');
+          } else if (tag === 'BLOCKQUOTE') {
+            out.push('> ' + inline(n).trim() + '\n');
+          } else if (tag === 'TABLE') {
+            var rows = n.querySelectorAll('tr');
+            rows.forEach(function (r, idx) {
+              var cells = r.querySelectorAll('th,td');
+              out.push('| ' + Array.from(cells).map(function (c) { return inline(c).replace(/\|/g, '\\|').trim(); }).join(' | ') + ' |');
+              if (idx === 0) out.push('| ' + Array.from(cells).map(function () { return '---'; }).join(' | ') + ' |');
+            });
+            out.push('');
+          } else if (tag === 'PRE') {
+            out.push('```\n' + n.textContent + '\n```\n');
+          } else if (['SCRIPT','STYLE','NAV','ASIDE','FORM','BUTTON'].indexOf(tag) !== -1) {
+            return;
+          } else {
+            walk(n);
+          }
+        });
+      }
+      walk(root);
+      return out.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    }
+
+    function build() {
+      var h1 = document.querySelector('h1');
+      var body = document.querySelector('article') || document.querySelector('main');
+      var parts = ['# ' + (h1 ? h1.textContent.trim() : document.title)];
+      parts.push('Source: ' + location.href);
+      parts.push('Retrieved: ' + new Date().toISOString().slice(0,10));
+      parts.push('');
+      if (body) parts.push(toMd(body));
+      parts.push('\n---\nPublished by Rank4AI (www.rank4ai.co.uk).');
+      return parts.join('\n');
+    }
+
+    // Only show on pages with an <article>, and hide if the page already has a .copy-ai-btn
+    var hasArticle = !!document.querySelector('article');
+    var hasExplicit = !!document.querySelector('.copy-ai-btn');
+    if (hasArticle && !hasExplicit) {
+      document.querySelectorAll('[data-copy-for-ai-auto-wrap]').forEach(function (w) {
+        w.classList.remove('hidden');
+      });
+    }
+
+    document.querySelectorAll('.copy-for-ai-auto-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var md = build();
+        var label = btn.querySelector('.copy-for-ai-auto-label');
+        var original = label ? label.textContent : 'Copy for AI';
+        var done = function (ok) {
+          if (label) {
+            label.textContent = ok ? 'Copied' : 'Copy failed';
+            setTimeout(function () { label.textContent = original; }, 2000);
+          }
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(md).then(function () { done(true); }, function () { done(false); });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = md; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(true); } catch (e) { done(false); }
+          document.body.removeChild(ta);
+        }
+      });
+    });
+  })();
+</script>

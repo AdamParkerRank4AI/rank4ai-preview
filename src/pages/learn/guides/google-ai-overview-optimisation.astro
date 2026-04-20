@@ -2,8 +2,23 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Optimise for Google AI Overviews (UK)",
+  "description": "Five-step process to earn citations in Google AI Overviews: rank in the top 10, publish answer-capsule content, use schema and tables, seed the Google ecosystem, and maintain freshness.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Rank in the top 10 first", "text": "AI Overviews draw citations almost exclusively from pages already ranking in Google's top 10. If the target page is on page 2, traditional SEO is the prerequisite: fix topical authority, page speed, and earn the backlinks first." },
+    { "@type": "HowToStep", "position": 2, "name": "Write answer capsules after every heading", "text": "After every H2 and H3, write a 40-60 word self-contained factual block that directly answers the heading. Over 90% of AI Overview citations pull from answer capsules. Lead with the answer, then elaborate." },
+    { "@type": "HowToStep", "position": 3, "name": "Use tables, schema, and specific data", "text": "Comparison tables earn 2.5x citation multipliers. FAQPage schema increases citation rates by 350%. Pages with original data and specific numbers are 4.1x more likely to be cited." },
+    { "@type": "HowToStep", "position": 4, "name": "Seed the Google ecosystem", "text": "Publish content across YouTube, Google Business Profile, Blogger, Google Sites and Maps. Businesses active across these properties receive roughly 40% more AI Overview citations because the content is already inside Google's own surfaces." },
+    { "@type": "HowToStep", "position": 5, "name": "Keep key pages fresh", "text": "76% of pages cited in AI Overviews were updated within the last 30 days. Review core pages monthly. Update statistics, add new examples, refresh quotes, and change the dateModified in schema. Dating alone is not enough, make a genuine content change." }
+  ]
+}
 ---
 <Layout title="Google AI Overview Optimisation UK | Rank4AI" description="How to get your business cited in Google AI Overviews. Practical guide for UK businesses.">
+<script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
     <Breadcrumbs items={[

@@ -1,0 +1,63 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import Layout from '../../../layouts/Layout.astro'
+---
+<Layout title="Oliver Mackman - Operations & Marketing Director, Rank4AI" description="Oliver Mackman is Operations and Marketing Director at Rank4AI. Background in marketing, digital strategy and commercial operations.">
+
+<article class="pt-12 pb-24 reveal">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about/' },
+      { label: 'Team', href: '/about/team/' },
+      { label: 'Oliver Mackman' }
+    ]} />
+
+    <div class="flex items-center gap-5 mb-8 mt-6">
+      <div class="w-20 h-20 rounded-full bg-teal text-text-light flex items-center justify-center text-2xl font-bold flex-shrink-0">OM</div>
+      <div>
+        <h1 class="!text-3xl mb-1">Oliver Mackman</h1>
+        <p class="text-accent font-medium">Operations & Marketing Director</p>
+      </div>
+    </div>
+
+    <h2 class="mt-10 mb-4">Background</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Oliver is the Operations and Marketing Director at Rank4AI. He brings a background in marketing, digital strategy and commercial operations to the team.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">He is hands-on by nature. Comfortable with analytics, tricky technical fixes and the kind of problems most people avoid. He works across client delivery, internal operations and marketing execution.</p>
+
+    <h2 class="mt-10 mb-4">Role at Rank4AI</h2>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Oliver oversees the operational side of Rank4AI. Marketing strategy, content distribution, platform management and client reporting all fall under his remit.</p>
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">He works directly with clients on ecosystem delivery and signal monitoring. No layers. No handoffs.</p>
+
+    <h2 class="mt-10 mb-4">Expertise</h2>
+    <ul class="space-y-2 mb-10">
+      <li class="text-[17px] text-text-muted leading-relaxed">Digital marketing strategy and execution</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Commercial operations and performance tracking</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Analytics, reporting and data interpretation</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Content distribution across multiple platforms</li>
+      <li class="text-[17px] text-text-muted leading-relaxed">Technical problem-solving and platform management</li>
+    </ul>
+
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">Related</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="/about/team/adam-parker/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Adam Parker</span></a>
+        <a href="/about/team/jimmy-connoley/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Jimmy Connoley</span></a>
+        <a href="/what-we-do/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Services</span></a>
+        <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oliver Mackman",
+  "jobTitle": "Operations & Marketing Director",
+  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
+  "description": "Operations and Marketing Director at Rank4AI. Background in marketing, digital strategy and commercial operations.",
+  "url": "https://www.rank4ai.co.uk/about/team/oliver-mackman/"
+})} />
+
+</Layout>
