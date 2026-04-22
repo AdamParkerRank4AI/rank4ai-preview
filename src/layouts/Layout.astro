@@ -100,6 +100,17 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
     "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:30" },
     "sameAs": ["https://x.com/rank4ai","https://www.linkedin.com/company/rank4ai","https://www.instagram.com/rank4ai","https://www.facebook.com/rank4ai","https://www.youtube.com/@Rank4AI","https://github.com/AdamParkerRank4AI","https://medium.com/@info_98087","https://substack.com/@rank4aiuk","https://find-and-update.company-information.service.gov.uk/company/16584507"]
   })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.rank4ai.co.uk/#adam-parker",
+    "name": "Adam Parker",
+    "url": "https://www.rank4ai.co.uk/about/",
+    "jobTitle": "Founder",
+    "worksFor": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
+    "knowsAbout": ["AI search visibility","generative engine optimization","AEO","GEO","ChatGPT optimisation","Perplexity optimisation","entity SEO","AI search agencies UK"],
+    "sameAs": ["https://www.linkedin.com/in/adamparker-rank4ai","https://x.com/rank4ai"]
+  })} />
 
   <!-- GTM (via Partytown) -->
   <script type="text/partytown">
