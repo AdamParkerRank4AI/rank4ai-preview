@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="AI Search Visibility Audit – Free AI Audit | Rank4AI" description="Free AI search visibility audit. We test your business across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.">
 
@@ -54,6 +55,11 @@ import AuthorBox from '../../components/AuthorBox.astro'
   <div class="container-narrow mt-8">
     <AuthorBox />
   </div>
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "What does the AI Visibility Audit measure?", "answer": "We score your business across five signals: Entity Clarity (is your brand unambiguous to AI?), Ecosystem Presence (are you in the sources AI references?), Content Structure (do AI tools understand your content?), Trust Signals (authority, E-E-A-T markers), and Technical Readiness (schema, llms.txt, crawler access). Each signal is scored 0 to 100."}, {"question": "How long does the audit take?", "answer": "Standard audit takes 5 business days. We crawl your site, test your visibility across 6 AI platforms (ChatGPT, Claude, Gemini, Perplexity, Copilot, Google AI Overviews), assess ecosystem presence, and deliver a written report with prioritised actions."}, {"question": "What do I get in the audit report?", "answer": "A 30 to 50 page written report including: Five Signal scorecard, 30-day and 90-day action plan, ecosystem gap analysis, schema recommendations, content restructure guidance, and competitor benchmark against 3 named competitors."}]} />
+    </section>
 </section>
 
 </Layout>

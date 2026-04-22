@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="Contact Rank4AI | AI Search Visibility" description="Contact Rank4AI. Get in touch or book a call. 40 De Vere Road, Colchester, CO3 4EA.">
 
@@ -75,6 +76,12 @@ import Layout from '../../layouts/Layout.astro'
       </div>
     </div>
   </div>
-</section>
+
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "How do I get in touch with Rank4AI?", "answer": "Email info@rank4ai.co.uk for new enquiries or book a call directly via our calendar. Response time is under 4 hours during UK business hours (Monday to Friday, 9:00 to 17:30)."}, {"question": "Do you offer a consultation before I commit?", "answer": "Yes. Every new client gets a free 30-minute discovery call. We review your current AI visibility, discuss your goals, and recommend the right service tier. No pressure to commit on the call."}, {"question": "Where is Rank4AI based?", "answer": "Rank4AI Ltd is registered at 40 De Vere Road, Colchester, Essex, CO3 4EA, United Kingdom. We work remotely with clients across the UK and internationally."}]} />
+    </section>
+  </section>
 
 </Layout>

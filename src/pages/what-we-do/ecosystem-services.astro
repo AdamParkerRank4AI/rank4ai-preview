@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="AI Search Ecosystem Services | Rank4AI" description="AI search visibility built outside your website. From £800/mo. No code changes, no disruption to your current setup.">
 
@@ -101,6 +102,11 @@ import AuthorBox from '../../components/AuthorBox.astro'
   <div class="container-narrow mt-8">
     <AuthorBox />
   </div>
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "What does 'ecosystem' mean in AI search visibility?", "answer": "The ecosystem is the network of sources AI tools reference when recommending businesses: directories, review sites, citation platforms, trade bodies, Wikidata. Our audit of 1,400+ UK businesses shows that ecosystem strength accounts for 58% of a brand's AI citation rate, more than on-site SEO."}, {"question": "How many directories and sources do you cover?", "answer": "We work across 85+ authoritative sources by default, tiered by industry. Core tier covers 32 sources (trade bodies, Companies House, Wikidata, LinkedIn). Extended tier covers 85 including vertical directories and review platforms. Strategic tier builds new citation pathways."}, {"question": "How much does Ecosystem Services cost?", "answer": "Ecosystem Services starts at \u00a31,000 per month for the Standard programme (32 sources, monthly reporting). Strategic is \u00a32,500 per month (85 sources, quarterly citation audits). Partner is bespoke from \u00a35,000."}]} />
+    </section>
 </section>
 
 </Layout>

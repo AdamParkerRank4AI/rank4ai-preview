@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import sectors from '../../data/sectors.json'
 import cities from '../../data/cities.json'
+import FAQ from '../../components/FAQ.astro'
 
 const mainSectors = sectors.filter((s: any) => ['professional-services','ecommerce','local-business','saas','b2b','retail'].includes(s.slug))
 const professions = [
@@ -80,5 +81,11 @@ const professions = [
     <h2 class="mb-4">Find out if AI can see your business</h2>
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
-</section>
+
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "Who does Rank4AI work with?", "answer": "UK businesses across 12+ sectors: professional services (legal, financial, accountancy), property and estate agents, healthcare, education, hospitality, recruitment, technology, marketing agencies, tradespeople, retail, restaurants, and B2B services."}, {"question": "Do you specialise in any particular industry?", "answer": "Our depth is in regulated professional services: solicitors, financial advisors, accountants, healthcare providers. These sectors have 3x higher AI citation value than unregulated services because buyers specifically ask AI tools for qualified providers."}, {"question": "Can you help local businesses or only national brands?", "answer": "Both. We have dedicated programmes for local businesses (single location, local search focus) and national brands (multi-location, brand entity work). Local starts at \u00a31,000 per month, national from \u00a32,500."}]} />
+    </section>
+  </section>
 </Layout>
