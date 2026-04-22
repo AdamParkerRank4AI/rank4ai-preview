@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro'
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
 import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 import CopyForAI from '../../../components/CopyForAI.astro'
 import questions from '../../../data/questions.json'
 
@@ -20,6 +21,8 @@ const pageDesc = metaDesc || conciseAnswer || `${question} - answered by Rank4AI
 const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
 ---
 <Layout title={pageTitle} description={pageDesc}>
+
+<SpeakableSchema title={question} description={pageDesc} dateModified={updatedAt} url={`https://www.rank4ai.co.uk/learn/questions/${slug}/`} />
 
 <article class="pt-12 pb-24">
   <div class="container-narrow">

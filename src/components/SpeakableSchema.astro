@@ -15,7 +15,7 @@ interface Props {
 }
 
 const { title, description, dateModified = '2026-04-07', url } = Astro.props;
-const siteUrl = 'https://rank4ai.co.uk';
+const siteUrl = 'https://www.rank4ai.co.uk';
 const pageUrl = url || new URL(Astro.url.pathname, siteUrl).href;
 
 const articleSchema = {
@@ -35,7 +35,7 @@ const articleSchema = {
     "jobTitle": "Founder & AI Search Visibility Specialist",
     "description": "Founder of Rank4AI, helping businesses improve their visibility across ChatGPT, Gemini, Perplexity, and AI Overviews."
   },
-  "publisher": { "@id": siteUrl + "/#organization" },
+  "publisher": { "@id": siteUrl + "/#localbusiness" },
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": [".answer-capsule", ".key-takeaway"]
