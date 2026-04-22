@@ -1,0 +1,115 @@
+---
+/**
+ * AutoRelated: auto-discovered same-section links.
+ *
+ * Zero curation. Picks up to 6 sibling pages from the same URL-prefix section,
+ * excluding the current page and hub/index pages. Renders only if the page
+ * belongs to a known content section.
+ *
+ * Purpose: close the "orphan page" gap. Crawlers and AI agents now discover
+ * sibling pages via at least one visible inbound link.
+ */
+
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+// Sections that are "browseable" and benefit from related links
+const SECTIONS: Record<string, string> = {
+  '/learn/questions/': 'Related questions',
+  '/learn/guides/': 'Related guides',
+  '/learn/glossary/': 'Related terms',
+  '/learn/tools/': 'Related tools',
+  '/learn/': 'More from Learn',
+  '/research/stats/': 'Related statistics',
+  '/research/rankings/': 'Related rankings',
+  '/research/weekly-intelligence/': 'Related briefings',
+  '/research/': 'More from Research',
+  '/blog/': 'More from the Blog',
+  '/ai-search/': 'Related AI search topics',
+  '/ai-seo/': 'Related AI SEO topics',
+  '/who-we-help/': 'Who else we help',
+  '/services/': 'Related services',
+  '/what-we-do/': 'More of what we do',
+  '/about/': 'More about us',
+};
+
+function matchSection(path: string): [string, string] | null {
+  const keys = Object.keys(SECTIONS).sort((a, b) => b.length - a.length); // longest prefix wins
+  for (const k of keys) if (path.startsWith(k)) return [k, SECTIONS[k]];
+  return null;
+}
+
+function isHub(path: string, section: string): boolean {
+  // Hub / index page = path equals section prefix (ends with /)
+  return path === section;
+}
+
+function slugToTitle(path: string): string {
+  const last = path.replace(/\/$/, '').split('/').pop() || '';
+  return last.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const matched = matchSection(currentPath);
+let items: { href: string; title: string }[] = [];
+let heading = '';
+
+if (matched && !isHub(currentPath, matched[0])) {
+  const [sectionPrefix, label] = matched;
+  heading = label;
+
+  // Build-time glob of all .astro pages under src/pages
+  const pages = import.meta.glob('/src/pages/**/*.astro', { eager: true }) as Record<string, any>;
+
+  const candidates: { href: string; title: string }[] = [];
+  for (const filePath of Object.keys(pages)) {
+    // Skip dynamic route files — they render from Supabase/content at build, not from filenames
+    if (filePath.includes('[') || filePath.includes(']')) continue;
+    // filePath like '/src/pages/learn/questions/what-is-x.astro'
+    let href = filePath.replace('/src/pages', '').replace(/\.astro$/, '');
+    if (href.endsWith('/index')) href = href.replace(/\/index$/, '/');
+    if (!href.endsWith('/')) href = href + '/';
+    if (!href.startsWith(sectionPrefix)) continue;
+    if (href === currentPath) continue;
+    if (isHub(href, sectionPrefix)) continue;
+    // Also skip sub-hub index pages
+    const mod = pages[filePath];
+    const frontmatter = mod?.frontmatter || {};
+    const title = frontmatter.title || slugToTitle(href);
+    candidates.push({ href, title });
+  }
+
+  // Deterministic pseudo-random order seeded by currentPath so related feels
+  // consistent per page across builds (same page, same related set)
+  let seed = 0;
+  for (let i = 0; i < currentPath.length; i++) seed = (seed * 31 + currentPath.charCodeAt(i)) >>> 0;
+  candidates.sort((a, b) => {
+    const ha = (seed ^ a.href.length) >>> 0;
+    const hb = (seed ^ b.href.length) >>> 0;
+    return (ha - hb);
+  });
+  // Additional shuffle by hashing href so order isn't just length-based
+  candidates.sort((a, b) => {
+    let ha = seed, hb = seed;
+    for (const c of a.href) ha = (ha * 17 + c.charCodeAt(0)) >>> 0;
+    for (const c of b.href) hb = (hb * 17 + c.charCodeAt(0)) >>> 0;
+    return ha - hb;
+  });
+
+  items = candidates.slice(0, 6);
+}
+---
+
+{items.length > 0 && (
+  <nav class="border-t border-border pt-8 mt-12 max-w-4xl mx-auto px-4" aria-label={heading}>
+    <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-3">{heading}</p>
+    <div class="grid sm:grid-cols-2 gap-2">
+      {items.map(item => (
+        <a href={item.href} class="text-sm text-teal hover:underline transition-colors py-1 block">
+          {item.title} →
+        </a>
+      ))}
+    </div>
+  </nav>
+)}
