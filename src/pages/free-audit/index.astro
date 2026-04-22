@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuditForm from '../../components/AuditForm.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="Free AI Search Visibility Audit | Rank4AI" description="Get a free AI Search Visibility Audit from Rank4AI. We test how your business appears across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.">
 
@@ -16,6 +17,12 @@ import AuditForm from '../../components/AuditForm.astro'
 
     <AuditForm />
   </div>
-</section>
+
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "What does the free AI search audit cover?", "answer": "We test your brand visibility across ChatGPT, Claude, Gemini, Perplexity and Google AI Overviews. You get: your score for each platform, 5 sample queries showing where you do and don't appear, 3 priority fixes ranked by impact, and an entity clarity assessment. Delivered as a written report within 48 hours."}, {"question": "Is it really free?", "answer": "Yes. The audit is free and has no obligation. We offer it because 76% of businesses we audit discover gaps they didn't know existed, and many go on to engage us. For those who don't, the audit itself has value."}, {"question": "How is the free audit different from your paid audit?", "answer": "The free audit covers brand queries (5 per platform) and returns a single summary. The paid audit (\u00a31,500) covers 50+ queries including commercial intent, runs across 6 platforms, benchmarks 3 named competitors, and delivers a 30 to 50 page report with a full 90-day action plan."}]} />
+    </section>
+  </section>
 
 </Layout>

@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="Full Agency AI Search Visibility Service | Rank4AI" description="AI search visibility across your website and the full digital ecosystem. Standard, Strategic and Partner engagements. Scope determined by audit.">
 
@@ -103,6 +104,11 @@ import AuthorBox from '../../components/AuthorBox.astro'
   <div class="container-narrow mt-8">
     <AuthorBox />
   </div>
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "How long does AI search visibility work take to show results?", "answer": "Most clients see first citations in ChatGPT and Perplexity within 60 to 90 days. Our data across 1,400+ audits shows 72% of businesses reach first citation by day 90, and 94% by day 180. Timeline depends on starting entity strength and domain authority."}, {"question": "What results can I expect from the Full Agency service?", "answer": "On average, clients see a 3.2x increase in AI citations and a 40% lift in organic brand search after six months. 68% report direct enquiries traceable to AI tool recommendations within the first quarter."}, {"question": "How is the Full Agency service different from Ecosystem Services?", "answer": "Full Agency includes technical work inside your website (schema, content structure, entity clarity) plus the full ecosystem build. Ecosystem Services covers off-site only: directory presence, citation building, review signals, knowledge graph. Choose Full Agency if your site needs structural fixes, Ecosystem only if your site is already AI-ready."}]} />
+    </section>
 </section>
 
 </Layout>

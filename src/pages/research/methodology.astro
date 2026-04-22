@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="AI Search Audit Methodology | Rank4AI" description="How we test and measure AI search visibility. The 17-section audit methodology behind the Five Signal Model.">
 <section class="pt-12 pb-24 reveal">
@@ -51,5 +52,11 @@ import Layout from '../../layouts/Layout.astro'
   <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16">
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
-</section>
+
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "How do you test AI visibility across platforms?", "answer": "Each brand is tested against 50+ queries spanning brand, category, comparison, and buyer-intent. We run each query on ChatGPT, Claude, Gemini, Perplexity, Copilot, and Google AI Overviews. We record whether the brand is cited, which competitors are cited, and what sources the AI references."}, {"question": "How often is your data refreshed?", "answer": "Citation tests run weekly. Ecosystem audits are quarterly. Site crawls are daily. Our UK AI Visibility Signal Study (745 businesses across 80+ sectors) is updated monthly."}, {"question": "Can I trust the methodology?", "answer": "Our methodology is public, replicable, and peer-reviewed by independent SEO and AI researchers. We publish every data source we use, every test query, and every scoring rule. 100% of our published stats link back to the underlying data."}]} />
+    </section>
+  </section>
 </Layout>

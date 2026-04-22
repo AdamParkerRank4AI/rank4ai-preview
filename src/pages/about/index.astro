@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="About Rank4AI – UK AI Search Agency" description="UK AI search agency helping businesses get recommended by ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.">
 
@@ -81,6 +82,12 @@ import Layout from '../../layouts/Layout.astro'
     <p class="text-[17px] text-text-muted mb-10 max-w-[500px] mx-auto">Every engagement begins with the AI Search Visibility Audit.</p>
     <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
   </div>
-</section>
+
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "What makes Rank4AI different from traditional SEO agencies?", "answer": "We focus on AI search visibility, not traditional Google rankings. 94% of UK SEO agencies still optimise for keywords. We optimise for entity recognition across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI Overviews. Our Five Signal Model is built on 1,400+ UK business audits."}, {"question": "Who is Rank4AI for?", "answer": "UK businesses that want to be recommended when buyers ask AI tools for help. Typical clients are professional services (legal, financial, property), B2B services, and local specialist businesses. Minimum engagement is \u00a31,000 per month."}, {"question": "Where is Rank4AI based?", "answer": "Rank4AI Ltd is based in Colchester, Essex. We serve UK businesses nationwide, with heavier presence in London, Manchester, Birmingham, and the South East."}]} />
+    </section>
+  </section>
 
 </Layout>

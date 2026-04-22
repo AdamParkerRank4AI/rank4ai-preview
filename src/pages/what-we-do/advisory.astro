@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="AI Search Advisory & Consultancy | Rank4AI" description="Senior-level AI search strategy and consultancy. We advise, you implement. £1,000 to £3,000 per month.">
 
@@ -83,6 +84,11 @@ import AuthorBox from '../../components/AuthorBox.astro'
 
     <AuthorBox />
   </div>
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "When should I choose Advisory over Full Agency?", "answer": "Advisory suits teams with existing marketing or SEO capability who need strategic direction, not execution. Choose Advisory if your team can implement; choose Full Agency if you need us to do the work."}, {"question": "What does an Advisory engagement include?", "answer": "Monthly strategy calls (2 hours), quarterly audit refresh, access to our methodology, Slack channel support, and a tailored 90-day roadmap. Deliverables include: entity strategy document, citation priority list, content calendar, and ecosystem mapping."}, {"question": "How much does Advisory cost?", "answer": "Advisory starts at \u00a31,000 per month for Standard (monthly call + quarterly audit). Strategic is \u00a32,000 per month (fortnightly calls + monthly audit). Partner-level \u00a33,000 includes hands-on workshops."}]} />
+    </section>
 
   <div class="bg-off-white border-t border-border text-center py-24 px-10 mt-16">
     <h2 class="mb-4">Start with the audit</h2>

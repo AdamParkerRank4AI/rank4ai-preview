@@ -2,6 +2,7 @@
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
 import AuthorBox from '../../components/AuthorBox.astro'
+import FAQ from '../../components/FAQ.astro'
 ---
 <Layout title="AI Search Visibility Pricing | Rank4AI" description="AI search visibility pricing. Ecosystem from £800/mo, full agency from £1,500/mo, advisory from £1,000/mo. Starts with a free audit.">
 
@@ -135,6 +136,11 @@ import AuthorBox from '../../components/AuthorBox.astro'
   <div class="container-narrow mt-8">
     <AuthorBox />
   </div>
+
+    <section class="mt-16 pt-12 border-t border-gray-200">
+      <h2 class="mb-6">Frequently asked questions</h2>
+      <FAQ items={[{"question": "How much does AI search visibility work cost?", "answer": "Full Agency starts at \u00a31,500 per month. Ecosystem Services starts at \u00a31,000 per month. Advisory starts at \u00a31,000 per month. The AI Visibility Audit is \u00a31,500 one-off. Most engagements are 6 months minimum to see compounding results."}, {"question": "Why does pricing start at \u00a31,000 per month?", "answer": "At that level we can meaningfully move 2 or 3 Five Signal scores per month. Below it, the work becomes surface-level and the results don't stick. 89% of our clients at the \u00a31,000+ tier see measurable AI citation lift within 90 days."}, {"question": "Do you offer one-off projects or only retainers?", "answer": "The AI Visibility Audit (\u00a31,500) is one-off. Everything else is monthly retainer with a 3-month minimum, ideally 6. AI search moves slowly; compounding signals need time. If you need one-off strategy, book Advisory instead."}]} />
+    </section>
 </section>
 
 </Layout>
