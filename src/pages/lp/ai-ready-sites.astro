@@ -16,177 +16,399 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" media="print" onload="this.media='all'">
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRG6QRCP');</script>
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #ffffff; color: #1a1a1a; }
+    .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+
+    /* Score colours */
+    .score-low { background: #fef2f2; color: #dc2626; }
+    .score-mid { background: #fffbeb; color: #d97706; }
+    .score-high { background: #ecfdf5; color: #059669; }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0a2421; color: #fff; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #143832; transform: translateY(-1px); }
+    .btn-accent {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #2bb891; color: #fff; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-accent:hover { background: #25a07e; transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #0a2421; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; border: 1.5px solid #d1d5db;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: #0a2421; background: #f9fafb; }
+
+    /* Card */
+    .card { background: #fff; border-radius: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+
+    /* Table */
+    .score-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .score-table th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; padding: 12px 16px; text-align: center; }
+    .score-table th:first-child { text-align: left; }
+    .score-table td { padding: 14px 16px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 14px; }
+    .score-table td:first-child { text-align: left; font-weight: 500; color: #374151; font-size: 14px; }
+    .score-table .winner-col { background: #f0fdf9; }
+    .score-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 32px; border-radius: 8px; font-weight: 700; font-size: 14px;
+    }
+
+    /* Testimonial */
+    .testimonial-card {
+      background: #f9fafb; border-radius: 16px; padding: 28px;
+      border: 1px solid #f3f4f6;
+    }
+
+    /* Input */
+    .form-input {
+      width: 100%; padding: 14px 18px; border: 1.5px solid #e5e7eb;
+      border-radius: 12px; font-size: 15px; transition: border-color 0.2s;
+      background: #fff;
+    }
+    .form-input:focus { outline: none; border-color: #2bb891; }
+
+    /* Pill radio */
+    .pill-radio input:checked + span {
+      background: #0a2421; color: #fff; border-color: #0a2421;
+    }
+
+    /* Slow pulse on winner column */
+    @keyframes softPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+      50% { box-shadow: 0 0 24px 0 rgba(5, 150, 105, 0.08); }
+    }
+    .winner-pulse { animation: softPulse 4s ease-in-out infinite; }
+  </style>
 </head>
-<body class="bg-white min-h-screen">
+<body>
 
-  <!-- HERO: Dark, punchy, CTA visible -->
-  <div class="bg-teal text-text-light py-16 px-6">
-    <div class="max-w-[600px] mx-auto text-center">
-      <img src={`${base}/logo-dark.svg`} alt="Rank4AI" class="h-6 mx-auto mb-10 opacity-70" role="img">
-      <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-bright mb-6">AI-Ready Websites</p>
-      <h1 class="font-display text-3xl md:text-4xl text-text-light leading-tight mb-4">Gorgeous on the surface. Solid underneath. Cited by AI.</h1>
-      <div class="w-12 h-[3px] bg-accent mx-auto mb-6 rounded-full"></div>
-      <p class="text-text-light-muted leading-relaxed mb-8">Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews. One site, no compromise.</p>
-      <a href="#enquiry" class="cta-accent" onclick="dataLayer.push({'event':'lp_hero_cta'})">Talk to us about your website &rarr;</a>
+  <!-- NAV BAR -->
+  <nav class="py-5 px-6">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/"><img src={`${base}/logo.svg`} alt="Rank4AI" class="h-5 opacity-50 hover:opacity-80 transition-opacity" role="img"></a>
+      <a href="#enquiry" class="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors">Get in touch &rarr;</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- THE PROBLEM: Three options, tight -->
-  <div class="max-w-[600px] mx-auto px-6 py-14">
-    <h2 class="font-display text-xl text-teal mb-6 text-center">Three ways to build a website in 2026</h2>
-    <div class="space-y-3 mb-8">
-      <div class="flex gap-4 items-start p-5 rounded-xl bg-off-white">
-        <span class="text-red-400 font-bold text-sm mt-0.5">&#10005;</span>
-        <div>
-          <p class="text-sm font-semibold text-teal mb-1">WordPress</p>
-          <p class="text-xs text-text-muted leading-relaxed">Technically sound. Ranks fine. But clunky, slow, plugin-heavy. Difficult to manage yourself. Every small change needs a developer. Security plugins block AI crawlers by default.</p>
-        </div>
-      </div>
-      <div class="flex gap-4 items-start p-5 rounded-xl bg-off-white">
-        <span class="text-red-400 font-bold text-sm mt-0.5">&#10005;</span>
-        <div>
-          <p class="text-sm font-semibold text-teal mb-1">Lovable, Base44, Bolt</p>
-          <p class="text-xs text-text-muted leading-relaxed">Gorgeous. Smooth. Feels premium. But JavaScript-heavy code that AI crawlers cannot parse. Sitemaps break silently. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
-        </div>
-      </div>
-      <div class="flex gap-4 items-start p-5 rounded-xl bg-white border-2 border-accent">
-        <span class="text-accent font-bold text-sm mt-0.5">&#10003;</span>
-        <div>
-          <p class="text-sm font-semibold text-accent mb-1">Us</p>
-          <p class="text-xs text-text-muted leading-relaxed">The middle ground the web has been waiting for. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team. Design, development and content.</p>
-        </div>
+  <!-- HERO -->
+  <section class="pt-12 pb-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold tracking-wide mb-8">AI-Ready Websites</div>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-[56px] leading-[1.1] text-gray-900 mb-6">
+        Gorgeous on the surface.<br>Solid underneath.<br>Cited by AI.
+      </h1>
+      <p class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto leading-relaxed mb-10">
+        Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews. One site, no compromise.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#enquiry" class="btn-accent" onclick="dataLayer.push({'event':'lp_hero_cta'})">Talk to us about your website &rarr;</a>
+        <a href="#scorecard" class="btn-ghost">See the comparison &darr;</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- WHAT YOU GET: Six points, tight grid -->
-  <div class="bg-off-white py-14 px-6">
-    <div class="max-w-[600px] mx-auto">
-      <h2 class="font-display text-xl text-teal mb-6 text-center">What you get</h2>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">Under 200ms load</p>
-          <p class="text-[11px] text-text-muted">Static HTML. Zero bloat. No plugins.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">Schema on every page</p>
-          <p class="text-[11px] text-text-muted">AI reads your business correctly.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">Content AI can cite</p>
-          <p class="text-[11px] text-text-muted">Answer-first. Structured. Citable.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">All crawlers allowed</p>
-          <p class="text-[11px] text-text-muted">GPTBot, ClaudeBot, PerplexityBot. Tested.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">One team</p>
-          <p class="text-[11px] text-text-muted">Design, development, content. No handoffs.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-4">
-          <p class="text-xs font-semibold text-teal mb-1">SEO + AI + AI Overviews</p>
-          <p class="text-[11px] text-text-muted">Built for all three from day one.</p>
+  <!-- STATS BAR -->
+  <section class="py-14 px-6" style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #f5f3ff 100%);">
+    <div class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-violet-400">90+</div>
+        <div class="text-sm font-medium text-gray-500 mt-2">technical score</div>
+      </div>
+      <div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-violet-700">3.2x</div>
+        <div class="text-sm font-semibold text-gray-700 mt-2">more traffic*</div>
+      </div>
+      <div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-violet-700">2.7x</div>
+        <div class="text-sm font-semibold text-gray-700 mt-2">more leads*</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl md:text-5xl font-bold text-violet-400">sub 1s</div>
+        <div class="text-sm font-medium text-gray-500 mt-2">page load</div>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 text-center mt-8 max-w-3xl mx-auto">*AI-crawlable sites vs non-crawlable. Source: Duda, 858,000 websites, 2026.</p>
+  </section>
+
+  <!-- SCORECARD -->
+  <section id="scorecard" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-4">Three ways to build a website in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-lg mx-auto">Not all websites are built equal. Here is how the three most popular approaches compare.</p>
+      </div>
+
+      <div class="card overflow-hidden border border-gray-100 winner-pulse">
+        <div class="overflow-x-auto">
+          <table class="score-table">
+            <thead>
+              <tr class="border-b border-gray-100">
+                <th class="py-4 pl-6"></th>
+                <th class="py-4">
+                  <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">WordPress</div>
+                </th>
+                <th class="py-5 winner-col rounded-t-xl">
+                  <div class="text-emerald-700 text-base normal-case tracking-normal font-bold">Rank4AI</div>
+                </th>
+                <th class="py-4">
+                  <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">Lovable / Bolt</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Technical</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Clean code, uptime, structure</div>
+                </td>
+                <td><span class="score-badge score-mid">8</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-high">9</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Design</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Visual quality, branding</div>
+                </td>
+                <td><span class="score-badge score-low">4</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-high">9</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Easy to manage</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Content updates, no developer needed</div>
+                </td>
+                <td><span class="score-badge score-low">3</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-mid">6</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">AI can read it</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Crawlable by ChatGPT, Gemini, Perplexity</div>
+                </td>
+                <td><span class="score-badge score-low">4</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-mid">7</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">SEO ready</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Schema, sitemaps, meta, structure</div>
+                </td>
+                <td><span class="score-badge score-mid">8</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-low">3</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Speed</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Page load, Core Web Vitals</div>
+                </td>
+                <td><span class="score-badge score-mid">6</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-low">4</span></td>
+              </tr>
+              <tr class="border-t-2 border-gray-200">
+                <td class="pl-6 py-4">
+                  <div class="font-bold text-gray-900">Total</div>
+                </td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">33</span><span class="text-xs text-gray-400">/60</span></td>
+                <td class="py-4 winner-col"><span class="font-bold text-2xl text-emerald-700">60</span><span class="text-xs text-emerald-600">/60</span></td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">38</span><span class="text-xs text-gray-400">/60</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- PROOF: Stats + testimonial -->
-  <div class="max-w-[600px] mx-auto px-6 py-14">
-    <div class="grid grid-cols-4 gap-3 mb-8">
-      <div class="text-center">
-        <div class="font-display text-2xl text-teal">976</div>
-        <div class="text-[10px] text-text-muted">pages on our site</div>
-      </div>
-      <div class="text-center">
-        <div class="font-display text-2xl text-teal">0.01s</div>
-        <div class="text-[10px] text-text-muted">server response</div>
-      </div>
-      <div class="text-center">
-        <div class="font-display text-2xl text-teal">3.2x</div>
-        <div class="text-[10px] text-text-muted">more traffic</div>
-      </div>
-      <div class="text-center">
-        <div class="font-display text-2xl text-teal">2.7x</div>
-        <div class="text-[10px] text-text-muted">more leads</div>
+  <!-- THE PROBLEMS (detail cards) -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6 items-start">
+        <div class="rounded-2xl p-7 border-l-4 border-red-400" style="background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);">
+          <div class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center mb-4 text-red-500 font-bold text-xs">WP</div>
+          <h3 class="font-semibold text-gray-900 mb-2">WordPress</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Technically sound. Ranks fine. But clunky, slow, plugin-heavy. Every small change needs a developer. Security plugins block AI crawlers by default.</p>
+        </div>
+        <div class="rounded-2xl p-8 border-2 border-emerald-400 relative md:-mt-2 md:mb-[-8px]" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 100%); box-shadow: 0 4px 24px rgba(5, 150, 105, 0.12);">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">60 / 60</div>
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center mb-4 text-white font-bold text-xs">R4</div>
+          <h3 class="font-semibold text-emerald-700 mb-2">Rank4AI</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">The middle ground. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team handles design, development and content.</p>
+        </div>
+        <div class="rounded-2xl p-7 border-l-4 border-amber-400" style="background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-amber-600 font-bold text-xs">AI</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Lovable / Bolt</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Gorgeous. Smooth. Feels premium. But JavaScript-heavy code AI crawlers cannot parse. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="space-y-3 mb-8">
-      <div class="bg-off-white rounded-xl p-5">
-        <p class="text-sm text-text-muted leading-relaxed italic mb-2">"Last time I built a site I needed a web developer, then a content writer, then a designer. This time Rank4AI did it all for me, for the cost of just the site."</p>
-        <p class="text-xs font-semibold text-teal">Brian</p>
-      </div>
-      <div class="bg-off-white rounded-xl p-5">
-        <p class="text-sm text-text-muted leading-relaxed italic mb-2">"I actually learnt so much. I thought my site was really good but they explained and showed me the issues. I did not feel like they were trying to cut corners. They were just passionate about getting it right and me understanding it."</p>
-        <p class="text-xs font-semibold text-teal">Amanda</p>
-      </div>
-      <div class="bg-off-white rounded-xl p-5">
-        <p class="text-sm text-text-muted leading-relaxed italic mb-2">"I loved how simple Adam and Oliver made it. 'Write for humans and AI search will understand it' will stick with me. I massively overcomplicated my site in the past. Now it is simple and easy to understand, but it looks great."</p>
-        <p class="text-xs font-semibold text-teal">Steve</p>
-      </div>
-      <div class="bg-off-white rounded-xl p-5">
-        <p class="text-sm text-text-muted leading-relaxed italic mb-2">"They clearly know their stuff, but they also take the time to explain what is being done and why it matters. We were not passed down to juniors."</p>
-        <p class="text-xs font-semibold text-teal">Rishi, Managing Director, RB Financial</p>
+  <!-- WHAT YOU GET -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl text-gray-900 text-center mb-12">What you get</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="rounded-2xl p-6 border border-emerald-200" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 100%);">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">SEO</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">SEO, AI search and AI Overviews</h3>
+          <p class="text-sm text-gray-500">Built for all three from day one. Not bolted on later.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-blue-200" style="background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">90+</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Technical score 90+</h3>
+          <p class="text-sm text-gray-500">Performance, accessibility, best practices. All green from launch.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-violet-200" style="background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);">
+          <div class="w-10 h-10 rounded-xl bg-violet-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">AI</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Content AI can cite</h3>
+          <p class="text-sm text-gray-500">Answer-first writing. Structured. Citable by ChatGPT and Gemini.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-amber-200" style="background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%);">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">BOT</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">All crawlers allowed</h3>
+          <p class="text-sm text-gray-500">GPTBot, ClaudeBot, PerplexityBot, Googlebot. Tested and verified.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-rose-200" style="background: linear-gradient(135deg, #fff1f2 0%, #fef2f2 100%);">
+          <div class="w-10 h-10 rounded-xl bg-rose-500 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">1s</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Sub-second page load</h3>
+          <p class="text-sm text-gray-500">Static HTML. Zero bloat. No plugins slowing you down.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-teal-200" style="background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);">
+          <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">R4</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">One team</h3>
+          <p class="text-sm text-gray-500">Design, development, content. No handoffs between agencies.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <p class="text-[10px] text-text-muted text-center">AI-crawled sites get 3.2x more traffic and 2.7x more leads. Source: Duda 2026, 858,000 websites.</p>
-  </div>
-
-  <!-- QUICK SITE CHECK: Secondary CTA -->
-  <div class="bg-teal py-10 px-6">
-    <div class="max-w-[440px] mx-auto text-center">
-      <p class="text-xs font-semibold uppercase tracking-widest text-accent-bright mb-3">Quick check</p>
-      <p class="text-sm text-text-light mb-5">Is your current site AI-ready? Enter your URL and we will review it.</p>
-      <form id="quick-check-form" class="flex gap-2">
-        <input type="text" name="website" placeholder="yourwebsite.com" required class="flex-1 px-4 py-3 rounded-lg text-sm bg-teal-light border border-border-teal text-text-light placeholder-text-light-muted focus:border-accent focus:outline-none">
-        <button type="submit" class="cta-accent !py-3 !px-5 !text-sm">Check</button>
+  <!-- DARK SECTION: CTA BREAK -->
+  <section class="mx-4 md:mx-8 rounded-3xl bg-gray-900 py-16 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl text-white mb-4">Is your current site AI-ready?</h2>
+      <p class="text-gray-400 text-lg mb-8">Enter your URL. We will review it and email you an honest assessment within 24 hours.</p>
+      <form id="quick-check-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="text" name="website" placeholder="yourwebsite.com" required class="form-input flex-1 !bg-gray-800 !border-gray-700 !text-white placeholder-gray-500">
+        <button type="submit" class="btn-accent !px-8">Check &rarr;</button>
       </form>
-      <p id="check-confirm" class="hidden text-sm text-accent-bright mt-4">Thanks. We will email you within 24 hours.</p>
+      <p id="check-confirm" class="hidden text-emerald-400 mt-6 text-sm">Thanks. We will email you within 24 hours.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- MAIN FORM: The conversion -->
-  <div class="py-14 px-6" id="enquiry">
-    <div class="max-w-[440px] mx-auto">
-      <h2 class="font-display text-2xl text-teal text-center mb-2">Talk to us about your website</h2>
-      <p class="text-xs text-text-muted text-center mb-8">No pitch. We will tell you honestly whether a rebuild is the right move.</p>
+  <!-- TESTIMONIALS -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl text-gray-900 text-center mb-12">What our clients say</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"Last time I built a site I needed a web developer, then a content writer, then a designer. This time Rank4AI did it all for me, for the cost of just the site."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">B</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Brian</div>
+              <div class="text-xs text-gray-400">Business Owner</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"I actually learnt so much. I thought my site was really good but they explained and showed me the issues. They were just passionate about getting it right and me understanding it."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">A</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Amanda</div>
+              <div class="text-xs text-gray-400">Marketing Director</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"'Write for humans and AI search will understand it' will stick with me. I massively overcomplicated my site in the past. Now it is simple, easy to understand, and it looks great."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">S</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Steve</div>
+              <div class="text-xs text-gray-400">Founder</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"They clearly know their stuff, but they also take the time to explain what is being done and why it matters. We were not passed down to juniors."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">R</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Rishi</div>
+              <div class="text-xs text-gray-400">Managing Director, RB Financial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 text-center mt-8">AI-crawled sites get 3.2x more traffic and 2.7x more leads. Source: Duda 2026, 858,000 websites.</p>
+    </div>
+  </section>
 
-      <form id="enquiry-form" class="space-y-3">
-        <input type="text" name="contact_name" required placeholder="Your name" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
-        <input type="text" name="business_name" required placeholder="Business name" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
-        <input type="text" name="website_url" placeholder="Current website (if you have one)" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+  <!-- MAIN FORM -->
+  <section class="py-20 px-6 bg-gray-50" id="enquiry">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="font-display text-3xl text-gray-900 mb-3">Talk to us about your website</h2>
+        <p class="text-gray-500">No pitch. We will tell you honestly whether a rebuild is the right move.</p>
+      </div>
+
+      <form id="enquiry-form" class="space-y-4">
+        <input type="text" name="contact_name" required placeholder="Your name" class="form-input">
+        <input type="text" name="business_name" required placeholder="Business name" class="form-input">
+        <input type="text" name="website_url" placeholder="Current website (if you have one)" class="form-input">
         <div class="grid grid-cols-2 gap-3">
-          <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
-          <input type="tel" name="phone" required placeholder="Phone" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+          <input type="email" name="email" required placeholder="Email" class="form-input">
+          <input type="tel" name="phone" required placeholder="Phone" class="form-input">
         </div>
         <div class="flex flex-wrap gap-2 py-1">
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">New website</span></label>
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Rebuild" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">Rebuild</span></label>
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">Not sure</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">New website</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="Rebuild" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">Rebuild</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">Not sure</span></label>
         </div>
-        <label class="flex items-start gap-2 cursor-pointer">
-          <input type="checkbox" name="consent" required class="rounded border-border mt-0.5">
-          <span class="text-[10px] text-text-muted">I agree to hear from Rank4AI. <a href="/privacy/" class="underline">Privacy</a>.</span>
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" name="consent" required class="rounded border-gray-300 mt-1">
+          <span class="text-xs text-gray-400">I agree to hear from Rank4AI. <a href="/privacy/" class="underline hover:text-gray-600">Privacy</a>.</span>
         </label>
-        <button type="submit" class="cta-primary w-full justify-center !py-3.5">Get in touch &rarr;</button>
+        <button type="submit" class="btn-accent w-full justify-center !py-4 !text-base">Get in touch &rarr;</button>
       </form>
 
-      <div id="thank-you" class="hidden text-center py-8">
-        <div class="text-3xl text-accent mb-3">&#10003;</div>
-        <p class="font-display text-lg text-teal mb-2">Thanks</p>
-        <p class="text-xs text-text-muted">We will be in touch within 1 working day. <a href="https://wa.me/447389183338" class="link">WhatsApp us</a> to talk sooner.</p>
+      <div id="thank-you" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-5">
+          <span class="text-emerald-600 text-2xl font-bold">&#10003;</span>
+        </div>
+        <h3 class="font-display text-2xl text-gray-900 mb-2">Thanks</h3>
+        <p class="text-gray-500">We will be in touch within 1 working day.<br><a href="https://wa.me/447389183338" class="text-emerald-600 font-semibold hover:underline">WhatsApp us</a> to talk sooner.</p>
       </div>
 
-      <p class="text-[10px] text-text-muted text-center mt-4">No commitment. A proper conversation.</p>
+      <p class="text-xs text-gray-400 text-center mt-5">No commitment. A proper conversation.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="text-center py-6">
-    <p class="text-[10px] text-text-muted">Rank4AI Ltd - 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
-  </div>
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 text-center border-t border-gray-100">
+    <p class="text-xs text-gray-400">Rank4AI Ltd &middot; 16584507 &middot; <a href="/" class="underline hover:text-gray-600">rank4ai.co.uk</a></p>
+  </footer>
 
   <script>
     const params = new URLSearchParams(window.location.search);
