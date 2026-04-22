@@ -7,12 +7,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Ready Websites | Looks Like Lovable. Ranks Like WordPress. Cited by ChatGPT. | Rank4AI</title>
-  <meta name="description" content="Beautiful websites that Google can rank and ChatGPT can quote. Built for SEO, AI search and AI Overviews from day one.">
+  <title>AI-Ready Websites | Rank4AI</title>
+  <meta name="description" content="Beautiful websites that Google can rank and ChatGPT can quote. Built for SEO, AI search and AI Overviews.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
   <link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon.ico`}>
-  <!-- GTM for conversion tracking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" media="print" onload="this.media='all'">
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -23,351 +25,226 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 </head>
 <body class="bg-white min-h-screen">
 
-  <!-- HERO -->
-  <div class="bg-teal text-text-light py-20 px-6">
-    <div class="max-w-[640px] mx-auto text-center">
-      <img src={`${base}/logo-dark.svg`} alt="Rank4AI" class="h-7 mx-auto mb-12 opacity-80" role="img">
+  <!-- ABOVE THE FOLD: Headline + Form -->
+  <div class="bg-teal text-text-light min-h-screen flex items-center py-12 px-6">
+    <div class="max-w-[960px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-bright mb-8">AI-Ready Websites</p>
+      <!-- LEFT: Message -->
+      <div>
+        <img src={`${base}/logo-dark.svg`} alt="Rank4AI" class="h-6 mb-8 opacity-70" role="img">
+        <h1 class="font-display text-3xl md:text-4xl text-text-light leading-tight mb-5">Gorgeous on the surface. Solid underneath. Cited by AI.</h1>
+        <div class="w-12 h-[3px] bg-accent rounded-full mb-6"></div>
+        <p class="text-text-light-muted leading-relaxed mb-6">Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews. One site, no compromise.</p>
 
-      <h1 class="font-display text-3xl md:text-[2.75rem] text-text-light leading-tight mb-6">Looks like Lovable. Ranks like WordPress. Cited by ChatGPT.</h1>
-
-      <div class="w-16 h-[3px] bg-accent mx-auto mb-8 rounded-full"></div>
-
-      <p class="text-[17px] text-text-light-muted leading-relaxed mb-4">Three ways to build a website in 2026.</p>
-      <p class="text-[17px] text-text-light-muted leading-relaxed mb-4">WordPress. Solid. Clunky. Slow.</p>
-      <p class="text-[17px] text-text-light-muted leading-relaxed mb-4">Lovable and Base44. Beautiful. Hollow where it counts.</p>
-      <p class="text-[17px] text-accent-bright leading-relaxed font-medium mb-10">Us. The rigour of a proper build. The polish of vibe code. Written so AI search actually quotes you.</p>
-
-      <a href="#get-audit" class="cta-accent" id="hero-cta" onclick="dataLayer.push({'event':'lp_hero_cta_click'})">Get a Free AI Search Audit &rarr;</a>
-    </div>
-  </div>
-
-  <!-- THE THREE-WAY SPLIT -->
-  <div class="max-w-[640px] mx-auto px-6 py-16">
-    <h2 class="font-display text-2xl text-teal mb-8 text-center">The problem with every other option</h2>
-
-    <div class="space-y-4 mb-12">
-      <div class="bg-off-white rounded-xl p-6 border-l-3 border-red-400">
-        <p class="text-sm font-semibold text-teal mb-2">WordPress</p>
-        <p class="text-sm text-text-muted">Technically sound. Ranks fine. But clunky, slow, plugin-heavy, a pain to run. Security plugins block AI crawlers by default. Most WordPress sites are invisible to ChatGPT.</p>
-      </div>
-      <div class="bg-off-white rounded-xl p-6 border-l-3 border-red-400">
-        <p class="text-sm font-semibold text-teal mb-2">Lovable, Base44, Bolt</p>
-        <p class="text-sm text-text-muted">Gorgeous. Smooth. Vibe-coded sites that feel premium. Hollow underneath. JavaScript-heavy code that AI crawlers cannot parse. Sitemaps break silently. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
-      </div>
-      <div class="bg-off-white rounded-xl p-6 border-l-3 border-accent">
-        <p class="text-sm font-semibold text-accent mb-2">Rank4AI</p>
-        <p class="text-sm text-text-muted">The middle ground. Hand built for speed and structure. Designed to feel like a premium product. Written so AI search can quote you. Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews. One site, no compromise.</p>
-      </div>
-    </div>
-
-    <!-- QUICK SITE CHECK - Secondary CTA -->
-    <div class="bg-teal rounded-xl p-8 text-center mb-12" id="quick-check">
-      <p class="text-xs font-semibold uppercase tracking-widest text-accent-bright mb-3">Quick check</p>
-      <h3 class="font-display text-xl text-text-light mb-4">Is your current site AI-ready?</h3>
-      <p class="text-sm text-text-light-muted mb-6">Enter your website. We will review how AI platforms currently read it and send you a summary.</p>
-      <form id="quick-check-form" class="flex flex-col sm:flex-row gap-3 max-w-[440px] mx-auto">
-        <input type="text" name="website" placeholder="yourwebsite.com" required class="flex-1 px-4 py-3 rounded-lg text-sm bg-teal-light border border-border-teal text-text-light placeholder-text-light-muted focus:border-accent focus:outline-none">
-        <button type="submit" class="cta-accent !py-3 !px-6 !text-sm whitespace-nowrap" onclick="dataLayer.push({'event':'lp_quick_check_submit'})">Check my site</button>
-      </form>
-      <p id="quick-check-confirm" class="hidden text-sm text-accent-bright mt-4">Thanks. We are reviewing your site and will email you within 24 hours.</p>
-    </div>
-  </div>
-
-  <!-- WHAT WE BUILD -->
-  <div class="bg-off-white py-16 px-6">
-    <div class="max-w-[640px] mx-auto">
-      <h2 class="font-display text-2xl text-teal mb-8 text-center">What we build differently</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">Static HTML</p>
-          <p class="text-xs text-text-muted">Zero bloat. Pages load in under 200ms. No plugins. No JavaScript frameworks for AI to struggle with.</p>
+        <div class="flex items-center gap-6 text-text-light-muted text-xs mb-6">
+          <span>976 pages on our own site</span>
+          <span>0.01s load time</span>
+          <span>100% schema</span>
         </div>
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">Schema on every page</p>
-          <p class="text-xs text-text-muted">AI reads your business correctly. Organisation, LocalBusiness, FAQPage, Article, Person markup baked in.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">Content for AI extraction</p>
-          <p class="text-xs text-text-muted">Answer-first structure. Citable definitions. Clear headings. The content AI platforms actually quote.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">All crawlers allowed</p>
-          <p class="text-xs text-text-muted">GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot. Tested. Not blocked by security plugins.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">One team</p>
-          <p class="text-xs text-text-muted">Design, development and content. No handoffs between three people who don't talk to each other.</p>
-        </div>
-        <div class="bg-white-pure rounded-xl p-5 shadow-sm">
-          <p class="text-sm font-semibold text-teal mb-2">SEO + AI + AI Overviews</p>
-          <p class="text-xs text-text-muted">Built for all three from day one. Not retrofitted. Not bolted on. Architected.</p>
+
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-teal-mid text-text-light flex items-center justify-center text-xs font-bold">RB</div>
+          <p class="text-xs text-text-light-muted italic">"They clearly know their stuff. A breath of fresh air." - Rishi, RB Financial</p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- PROOF -->
-  <div class="max-w-[640px] mx-auto px-6 py-16">
-    <h2 class="font-display text-2xl text-teal mb-8 text-center">Our own site. Built this way.</h2>
+      <!-- RIGHT: Form -->
+      <div class="bg-white-pure rounded-2xl p-8 shadow-xl">
+        <h2 class="font-display text-xl text-teal mb-2">Talk to us about your website</h2>
+        <p class="text-xs text-text-muted mb-6">No pitch. No pressure. We will tell you honestly whether a rebuild is the right move.</p>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
-        <div class="font-display text-3xl text-teal mb-1">976</div>
-        <div class="text-[11px] text-text-muted">pages live</div>
-      </div>
-      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
-        <div class="font-display text-3xl text-teal mb-1">0.01s</div>
-        <div class="text-[11px] text-text-muted">server response</div>
-      </div>
-      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
-        <div class="font-display text-3xl text-teal mb-1">100%</div>
-        <div class="text-[11px] text-text-muted">schema coverage</div>
-      </div>
-      <div class="bg-off-white rounded-xl pt-6 pb-4 px-4 text-center">
-        <div class="font-display text-3xl text-teal mb-1">3.2x</div>
-        <div class="text-[11px] text-text-muted">more traffic when AI crawled</div>
-      </div>
-    </div>
-
-    <div class="bg-off-white rounded-xl p-6 mb-10">
-      <p class="text-sm text-text-muted leading-relaxed italic mb-4">"What stood out straight away was how down to earth the team are. They clearly know their stuff, but they also take the time to explain what is being done and why it matters. Unlike traditional agencies, we were not passed down to juniors."</p>
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-teal text-text-light flex items-center justify-center text-xs font-bold">RB</div>
-        <div>
-          <p class="text-sm font-semibold text-teal">Rishi Bansropun</p>
-          <p class="text-xs text-text-muted">Managing Director, RB Financial</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="text-center text-sm text-text-muted mb-2">1,400+ UK businesses audited across six AI platforms.</p>
-    <p class="text-center text-xs text-text-muted">AI-crawled sites get 3.2x more traffic, 2.7x more form submissions, 2.5x more calls. (Source: Duda 2026, 858,000 websites)</p>
-  </div>
-
-  <!-- MAIN FORM - Website Enquiry -->
-  <div class="bg-off-white py-16 px-6" id="get-audit">
-    <div class="max-w-[480px] mx-auto">
-      <h2 class="font-display text-2xl text-teal text-center mb-2">Talk to us about your website</h2>
-      <p class="text-sm text-text-muted text-center mb-8">No pitch. No pressure. We will explain what AI-ready means and whether a rebuild is the right move for you.</p>
-
-      <form id="website-enquiry-form" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">Your name</label>
-          <input type="text" name="contact_name" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">Business name</label>
-          <input type="text" name="business_name" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">Current website (if you have one)</label>
-          <input type="text" name="website_url" class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none" placeholder="yourwebsite.com">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">Email</label>
-          <input type="email" name="email" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none" placeholder="you@business.com">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">Phone</label>
-          <input type="tel" name="phone" required class="w-full px-4 py-3 border border-border rounded-lg bg-white-pure text-sm focus:border-accent focus:outline-none" placeholder="07XXX XXXXXX">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-teal mb-1.5">What are you looking for?</label>
-          <div class="flex flex-wrap gap-2 mt-2">
-            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal">New website</span></label>
-            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Website rebuild" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal">Website rebuild</span></label>
-            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure yet" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal">Not sure yet</span></label>
+        <form id="enquiry-form" class="space-y-4">
+          <div>
+            <input type="text" name="contact_name" required placeholder="Your name" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
           </div>
+          <div>
+            <input type="text" name="business_name" required placeholder="Business name" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+          </div>
+          <div>
+            <input type="text" name="website_url" placeholder="Current website (if you have one)" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+            <input type="tel" name="phone" required placeholder="Phone" class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:border-accent focus:outline-none">
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">New website</span></label>
+            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Rebuild" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">Rebuild</span></label>
+            <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure" class="sr-only peer"><span class="inline-block px-4 py-2 border border-border rounded-full text-xs font-medium text-text-muted peer-checked:bg-teal peer-checked:text-text-light peer-checked:border-teal transition-all">Not sure</span></label>
+          </div>
+          <label class="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" name="consent" required class="rounded border-border mt-0.5">
+            <span class="text-[10px] text-text-muted leading-relaxed">I agree to hear from Rank4AI. <a href="/privacy/" class="underline">Privacy Policy</a>.</span>
+          </label>
+          <button type="submit" class="cta-primary w-full justify-center">Get in touch &rarr;</button>
+        </form>
+
+        <div id="thank-you" class="hidden text-center py-6">
+          <div class="text-3xl text-accent mb-3">&#10003;</div>
+          <p class="font-display text-lg text-teal mb-2">Thanks</p>
+          <p class="text-xs text-text-muted">We will be in touch within 1 working day. <a href="https://wa.me/447389183338" class="link">WhatsApp us</a> to talk sooner.</p>
         </div>
-        <label class="flex items-start gap-3 cursor-pointer mt-4">
-          <input type="checkbox" name="consent" required class="rounded border-border mt-0.5">
-          <span class="text-xs text-text-muted leading-relaxed">I agree to receive communications from Rank4AI. You can unsubscribe at any time. <a href="/privacy/" class="link">Privacy Policy</a>.</span>
-        </label>
-        <button type="submit" class="cta-primary w-full justify-center mt-4" id="enquiry-submit-btn" onclick="dataLayer.push({'event':'lp_website_enquiry_submit'})">Get in touch &rarr;</button>
-      </form>
-
-      <div id="enquiry-thank-you" class="hidden text-center py-8">
-        <div class="text-4xl mb-4 text-accent">&#10003;</div>
-        <h3 class="font-display text-xl text-teal mb-3">Thanks</h3>
-        <p class="text-sm text-text-muted">We will be in touch within 1 working day to discuss your project. If you want to talk sooner, <a href="https://wa.me/447389183338" class="link">message us on WhatsApp</a>.</p>
       </div>
-
-      <p class="text-xs text-text-muted text-center mt-4">No commitment. A proper conversation about what your site needs.</p>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="max-w-[640px] mx-auto px-6 py-8 text-center">
+  <!-- BELOW THE FOLD: Why (for scrollers) -->
+  <div class="max-w-[720px] mx-auto px-6 py-16">
+
+    <h2 class="font-display text-2xl text-teal mb-8 text-center">Why most websites fail at AI search</h2>
+
+    <div class="space-y-3 mb-12">
+      <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white">
+        <span class="text-red-400 font-bold text-lg leading-none mt-0.5">x</span>
+        <div>
+          <p class="text-sm font-semibold text-teal">WordPress</p>
+          <p class="text-xs text-text-muted">Solid but clunky. Slow. Plugin-heavy. Security plugins block AI crawlers.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white">
+        <span class="text-red-400 font-bold text-lg leading-none mt-0.5">x</span>
+        <div>
+          <p class="text-sm font-semibold text-teal">Lovable, Base44, Bolt</p>
+          <p class="text-xs text-text-muted">Beautiful. Hollow. JavaScript AI crawlers cannot parse. Sitemaps break silently.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start p-4 rounded-lg bg-off-white border border-accent">
+        <span class="text-accent font-bold text-lg leading-none mt-0.5">&#10003;</span>
+        <div>
+          <p class="text-sm font-semibold text-accent">Rank4AI</p>
+          <p class="text-xs text-text-muted">The middle ground. Hand built for speed and structure. Designed to feel premium. Written so AI search quotes you.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick site check -->
+    <div class="bg-teal rounded-xl p-6 text-center mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent-bright mb-3">Quick check</p>
+      <p class="text-sm text-text-light mb-4">Enter your website. We will review how AI reads it.</p>
+      <form id="quick-check-form" class="flex flex-col sm:flex-row gap-3 max-w-[400px] mx-auto">
+        <input type="text" name="website" placeholder="yourwebsite.com" required class="flex-1 px-4 py-3 rounded-lg text-sm bg-teal-light border border-border-teal text-text-light placeholder-text-light-muted focus:border-accent focus:outline-none">
+        <button type="submit" class="cta-accent !py-3 !px-5 !text-sm whitespace-nowrap">Check</button>
+      </form>
+      <p id="check-confirm" class="hidden text-sm text-accent-bright mt-4">Thanks. We will email you within 24 hours.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="text-center">
+        <div class="font-display text-2xl text-teal">3.2x</div>
+        <div class="text-[10px] text-text-muted">more traffic when AI crawled</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-2xl text-teal">2.7x</div>
+        <div class="text-[10px] text-text-muted">more form submissions</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-2xl text-teal">2.5x</div>
+        <div class="text-[10px] text-text-muted">more calls</div>
+      </div>
+    </div>
+
+    <p class="text-center text-[10px] text-text-muted">Source: Duda 2026 AI Visibility Report, 858,000 websites</p>
+  </div>
+
+  <div class="text-center py-6 px-6">
     <p class="text-xs text-text-muted">Rank4AI Ltd - Company 16584507 - <a href="/" class="underline">rank4ai.co.uk</a></p>
   </div>
 
-  <!-- QUICK CHECK FORM HANDLER -->
   <script>
-    // Quick check form - writes to Supabase with source tag
-    document.getElementById('quick-check-form')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const form = e.target as HTMLFormElement;
-      const website = (form.querySelector('input[name="website"]') as HTMLInputElement).value;
-
-      // Write to Supabase conversations table with source tracking
-      try {
-        await fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
-          method: 'POST',
-          headers: {
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            company_name: website,
-            contact_name: 'Quick Check',
-            website_url: website,
-            source: 'lp_ai_ready_sites_quick_check',
-            current_stage: 'new',
-            audit_status: 'pending',
-            notes: 'Quick site check from AI-Ready Sites landing page. Review site and email summary.',
-            consent: true,
-          }),
-        });
-
-        // Also send email notification
-        const emailData = new FormData();
-        emailData.append('_subject', 'QUICK CHECK: AI-Ready Sites LP');
-        emailData.append('Website', website);
-        emailData.append('Source', 'LP: AI-Ready Sites - Quick Check');
-        emailData.append('_captcha', 'false');
-        emailData.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
-        fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
-
-        // GTM conversion event
-        (window as any).dataLayer?.push({
-          'event': 'lp_quick_check_conversion',
-          'website_checked': website
-        });
-
-      } catch (err) {
-        console.error('Quick check error:', err);
-      }
-
-      // Show confirmation
-      document.getElementById('quick-check-confirm')?.classList.remove('hidden');
-      form.classList.add('hidden');
-    });
-
-    // Track page source from URL params
+    // Source tracking
     const params = new URLSearchParams(window.location.search);
-    const source = params.get('utm_source') || params.get('source') || 'direct';
+    const source = params.get('utm_source') || 'direct';
     const medium = params.get('utm_medium') || 'organic';
     const campaign = params.get('utm_campaign') || '';
+    const fullSource = `lp_ai_ready_sites|${source}|${medium}|${campaign}`;
 
-    // Store source for the main audit form
-    sessionStorage.setItem('lp_source', `lp_ai_ready_sites|${source}|${medium}|${campaign}`);
+    const SB_URL = 'https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations';
+    const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM';
+    const SB_HEADERS = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
 
-    // Override the audit form source field
-    const sourceField = document.querySelector('input[name="source"]') as HTMLInputElement;
-    if (sourceField) {
-      sourceField.value = `lp_ai_ready_sites|${source}|${medium}|${campaign}`;
-    }
-
-    // Drop-off tracking - if they scroll past quick check but don't convert
-    let hasScrolledPastCheck = false;
-    const quickCheck = document.getElementById('quick-check');
-    if (quickCheck) {
-      const dropObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting && hasScrolledPastCheck) {
-            // They saw the quick check and scrolled past without converting
-            (window as any).dataLayer?.push({'event': 'lp_scroll_past_quick_check'});
-            dropObserver.disconnect();
-          }
-          if (entry.isIntersecting) {
-            hasScrolledPastCheck = true;
-            (window as any).dataLayer?.push({'event': 'lp_view_quick_check'});
-          }
-        });
-      }, { threshold: 0.5 });
-      dropObserver.observe(quickCheck);
-    }
-
-    // Website enquiry form handler
-    document.getElementById('website-enquiry-form')?.addEventListener('submit', async (e) => {
+    // Main enquiry form
+    document.getElementById('enquiry-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const form = e.target as HTMLFormElement;
       const fd = new FormData(form);
-
       const enquiryType = fd.get('enquiry_type') || 'Not specified';
 
       try {
-        // Write to Supabase
-        await fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
-          method: 'POST',
-          headers: {
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            company_name: fd.get('business_name'),
-            contact_name: fd.get('contact_name'),
-            email: fd.get('email'),
-            phone: fd.get('phone'),
-            website_url: fd.get('website_url') || null,
-            source: `lp_ai_ready_sites|${source}|${medium}|${campaign}`,
-            current_stage: 'new',
-            audit_status: 'pending',
-            notes: `Website enquiry from AI-Ready Sites LP. Type: ${enquiryType}`,
-            goals: enquiryType,
-            consent: true,
-          }),
-        });
+        await fetch(SB_URL, { method: 'POST', headers: SB_HEADERS, body: JSON.stringify({
+          company_name: fd.get('business_name'), contact_name: fd.get('contact_name'),
+          email: fd.get('email'), phone: fd.get('phone'), website_url: fd.get('website_url') || null,
+          source: fullSource, current_stage: 'new', audit_status: 'pending',
+          notes: `Website enquiry. Type: ${enquiryType}`, goals: enquiryType, consent: true,
+        })});
 
-        // Email notification
         const emailData = new FormData();
-        emailData.append('_subject', 'WEBSITE ENQUIRY: AI-Ready Sites LP');
+        emailData.append('_subject', `WEBSITE ENQUIRY: ${fd.get('business_name')}`);
         emailData.append('Name', fd.get('contact_name') as string);
         emailData.append('Business', fd.get('business_name') as string);
         emailData.append('Website', fd.get('website_url') as string || 'None');
         emailData.append('Email', fd.get('email') as string);
         emailData.append('Phone', fd.get('phone') as string);
         emailData.append('Type', enquiryType as string);
-        emailData.append('Source', 'LP: AI-Ready Sites');
+        emailData.append('Source', fullSource);
         emailData.append('_captcha', 'false');
         emailData.append('_template', 'table');
         emailData.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
         fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
 
-        // GTM conversion
-        (window as any).dataLayer?.push({
-          'event': 'lp_website_enquiry_conversion',
-          'enquiry_type': enquiryType,
-          'source': source
-        });
+        (window as any).dataLayer?.push({ 'event': 'lp_website_enquiry_conversion', 'enquiry_type': enquiryType });
+      } catch (err) { console.error(err); }
 
-      } catch (err) {
-        console.error('Enquiry error:', err);
-      }
-
-      // Show thank you
       form.classList.add('hidden');
-      document.getElementById('enquiry-thank-you')?.classList.remove('hidden');
+      document.getElementById('thank-you')?.classList.remove('hidden');
     });
 
-    // Track main form view
-    const mainForm = document.getElementById('get-audit');
-    if (mainForm) {
-      const formObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            (window as any).dataLayer?.push({'event': 'lp_view_main_form'});
-            formObserver.disconnect();
-          }
-        });
-      }, { threshold: 0.3 });
-      formObserver.observe(mainForm);
-    }
+    // Quick check form
+    document.getElementById('quick-check-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target as HTMLFormElement;
+      const website = (form.querySelector('input[name="website"]') as HTMLInputElement).value;
+
+      try {
+        await fetch(SB_URL, { method: 'POST', headers: SB_HEADERS, body: JSON.stringify({
+          company_name: website, contact_name: 'Quick Check', website_url: website,
+          source: 'lp_ai_ready_sites_quick_check', current_stage: 'new', audit_status: 'pending',
+          notes: 'Quick site check from AI-Ready Sites LP.', consent: true,
+        })});
+
+        const emailData = new FormData();
+        emailData.append('_subject', `QUICK CHECK: ${website}`);
+        emailData.append('Website', website);
+        emailData.append('Source', 'LP Quick Check');
+        emailData.append('_captcha', 'false');
+        emailData.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
+        fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
+
+        (window as any).dataLayer?.push({ 'event': 'lp_quick_check_conversion', 'website': website });
+      } catch (err) { console.error(err); }
+
+      form.classList.add('hidden');
+      document.getElementById('check-confirm')?.classList.remove('hidden');
+    });
+
+    // Drop-off: beacon if they start form but don't submit
+    let formStarted = false;
+    document.querySelectorAll('#enquiry-form input').forEach(input => {
+      input.addEventListener('focus', () => {
+        if (!formStarted) {
+          formStarted = true;
+          (window as any).dataLayer?.push({ 'event': 'lp_form_started' });
+        }
+      });
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (formStarted && !document.getElementById('thank-you')?.classList.contains('hidden') === false) {
+        fetch(SB_URL, { method: 'POST', keepalive: true, headers: SB_HEADERS, body: JSON.stringify({
+          company_name: 'DROP-OFF', source: fullSource, current_stage: 'new',
+          notes: 'Started form but did not submit. AI-Ready Sites LP.', consent: true,
+        })});
+      }
+    });
   </script>
 
 </body>
