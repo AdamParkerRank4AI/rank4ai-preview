@@ -8,195 +8,398 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-Ready Websites | Rank4AI</title>
-  <meta name="description" content="Beautiful websites that rank on Google and get cited by ChatGPT.">
+  <meta name="description" content="Beautiful websites that Google can rank and ChatGPT can quote. Built for SEO, AI search and AI Overviews.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
+  <link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon.ico`}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" media="print" onload="this.media='all'">
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRG6QRCP');</script>
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #ffffff; color: #1a1a1a; }
+    .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+
+    /* Score colours */
+    .score-low { background: #fef2f2; color: #dc2626; }
+    .score-mid { background: #fffbeb; color: #d97706; }
+    .score-high { background: #ecfdf5; color: #059669; }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0a2421; color: #fff; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #143832; transform: translateY(-1px); }
+    .btn-accent {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #2bb891; color: #fff; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-accent:hover { background: #25a07e; transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #0a2421; font-weight: 600; font-size: 15px;
+      padding: 16px 32px; border-radius: 12px; border: 1.5px solid #d1d5db;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: #0a2421; background: #f9fafb; }
+
+    /* Card */
+    .card { background: #fff; border-radius: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+
+    /* Table */
+    .score-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .score-table th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; padding: 12px 16px; text-align: center; }
+    .score-table th:first-child { text-align: left; }
+    .score-table td { padding: 14px 16px; border-top: 1px solid #f3f4f6; text-align: center; font-size: 14px; }
+    .score-table td:first-child { text-align: left; font-weight: 500; color: #374151; font-size: 14px; }
+    .score-table .winner-col { background: #f0fdf9; }
+    .score-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 32px; border-radius: 8px; font-weight: 700; font-size: 14px;
+    }
+
+    /* Testimonial */
+    .testimonial-card {
+      background: #f9fafb; border-radius: 16px; padding: 28px;
+      border: 1px solid #f3f4f6;
+    }
+
+    /* Input */
+    .form-input {
+      width: 100%; padding: 14px 18px; border: 1.5px solid #e5e7eb;
+      border-radius: 12px; font-size: 15px; transition: border-color 0.2s;
+      background: #fff;
+    }
+    .form-input:focus { outline: none; border-color: #2bb891; }
+
+    /* Pill radio */
+    .pill-radio input:checked + span {
+      background: #0a2421; color: #fff; border-color: #0a2421;
+    }
+  </style>
 </head>
-<body class="min-h-screen" style="background: #0a2421;">
+<body>
 
-  <!-- HERO: Tight, punchy -->
-  <div class="py-12 px-6 text-center" style="background: #0a2421;">
-    <div class="max-w-[560px] mx-auto">
-      <img src={`${base}/logo-dark.svg`} alt="Rank4AI" class="h-5 mx-auto mb-8 opacity-50" role="img">
-      <h1 class="font-display text-3xl md:text-[2.5rem] leading-tight mb-4" style="color: #f5f2eb;">Gorgeous on the surface.<br>Solid underneath.<br><span style="color: #2bb891;">Cited by AI.</span></h1>
-      <p class="text-sm mb-8" style="color: #95a8a5;">Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews.</p>
-      <a href="#enquiry" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-sm transition-all" style="background: linear-gradient(135deg, #3de8b6, #2bb891); color: #0a2421;" onclick="dataLayer.push({'event':'lp_hero_cta'})">Talk to us about your website &rarr;</a>
+  <!-- NAV BAR -->
+  <nav class="py-5 px-6">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/"><img src={`${base}/logo.svg`} alt="Rank4AI" class="h-5 opacity-50 hover:opacity-80 transition-opacity" role="img"></a>
+      <a href="#enquiry" class="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors">Get in touch &rarr;</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- SCORECARD: The comparison -->
-  <div class="py-14 px-6" style="background: #f8f6f1;">
-    <div class="max-w-[600px] mx-auto">
-      <h2 class="font-display text-xl text-center mb-8" style="color: #0a2421;">Three ways to build a website</h2>
-
-      <!-- Scorecard table -->
-      <div class="rounded-2xl overflow-hidden border shadow-lg mb-8" style="border-color: #ddd8ce;">
-        <!-- Header -->
-        <div class="grid grid-cols-4 text-center text-xs font-semibold py-3" style="background: #0a2421; color: #95a8a5;">
-          <div></div>
-          <div>WordPress</div>
-          <div>Lovable / Bolt</div>
-          <div style="color: #2bb891;">Rank4AI</div>
-        </div>
-
-        <!-- Technical -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3 border-b" style="background: #fff; border-color: #eee;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">Technical</div>
-          <div class="font-display text-2xl" style="color: #e8a838;">7</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">4</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- Design -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3 border-b" style="background: #fff; border-color: #eee;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">Design</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">4</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">9</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- Easy to manage -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3 border-b" style="background: #fff; border-color: #eee;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">Easy to manage</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">3</div>
-          <div class="font-display text-2xl" style="color: #e8a838;">6</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- AI can read it -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3 border-b" style="background: #fff; border-color: #eee;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">AI can read it</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">3</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">2</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- SEO ready -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3 border-b" style="background: #fff; border-color: #eee;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">SEO ready</div>
-          <div class="font-display text-2xl" style="color: #e8a838;">7</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">3</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- Speed -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3" style="background: #fff;">
-          <div class="text-xs font-semibold text-left" style="color: #0a2421;">Speed</div>
-          <div class="font-display text-2xl" style="color: #d94f4f;">4</div>
-          <div class="font-display text-2xl" style="color: #e8a838;">7</div>
-          <div class="font-display text-2xl" style="color: #2bb891;">10</div>
-        </div>
-
-        <!-- Total -->
-        <div class="grid grid-cols-4 items-center text-center py-3 px-3" style="background: #0a2421;">
-          <div class="text-xs font-bold text-left" style="color: #f5f2eb;">Total</div>
-          <div class="font-display text-xl" style="color: #e8a838;">28/60</div>
-          <div class="font-display text-xl" style="color: #d94f4f;">31/60</div>
-          <div class="font-display text-xl" style="color: #2bb891;">60/60</div>
-        </div>
-      </div>
-
-      <p class="text-xs text-center" style="color: #6b8280;">WordPress is solid but hard to manage. Lovable looks great but AI cannot read it. We do both, properly.</p>
-    </div>
-  </div>
-
-  <!-- REVIEWS -->
-  <div class="py-14 px-6" style="background: #fff;">
-    <div class="max-w-[600px] mx-auto">
-      <div class="space-y-3">
-        <div class="rounded-xl p-5" style="background: #f5f3ee;">
-          <p class="text-sm italic leading-relaxed mb-2" style="color: #3a524f;">"Last time I built a site I needed a web developer, then a content writer, then a designer. This time Rank4AI did it all for me, for the cost of just the site."</p>
-          <p class="text-xs font-semibold" style="color: #0a2421;">Brian</p>
-        </div>
-        <div class="rounded-xl p-5" style="background: #f5f3ee;">
-          <p class="text-sm italic leading-relaxed mb-2" style="color: #3a524f;">"I actually learnt so much. I thought my site was really good but they explained and showed me the issues. They were just passionate about getting it right and me understanding it."</p>
-          <p class="text-xs font-semibold" style="color: #0a2421;">Amanda</p>
-        </div>
-        <div class="rounded-xl p-5" style="background: #f5f3ee;">
-          <p class="text-sm italic leading-relaxed mb-2" style="color: #3a524f;">"I loved how simple Adam and Oliver made it. 'Write for humans and AI search will understand it' will stick with me. Now my site is simple and easy to understand, but it looks great."</p>
-          <p class="text-xs font-semibold" style="color: #0a2421;">Steve</p>
-        </div>
-        <div class="rounded-xl p-5" style="background: #f5f3ee;">
-          <p class="text-sm italic leading-relaxed mb-2" style="color: #3a524f;">"They clearly know their stuff, but they also take the time to explain what is being done and why. We were not passed down to juniors."</p>
-          <p class="text-xs font-semibold" style="color: #0a2421;">Rishi, RB Financial</p>
-        </div>
+  <!-- HERO -->
+  <section class="pt-12 pb-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold tracking-wide mb-8">AI-Ready Websites</div>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-[56px] leading-[1.1] text-gray-900 mb-6">
+        Gorgeous on the surface.<br>Solid underneath.<br>Cited by AI.
+      </h1>
+      <p class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto leading-relaxed mb-10">
+        Ranked on Google. Quoted by ChatGPT. Shown in AI Overviews. One site, no compromise.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#enquiry" class="btn-accent" onclick="dataLayer.push({'event':'lp_hero_cta'})">Talk to us about your website &rarr;</a>
+        <a href="#scorecard" class="btn-ghost">See the comparison &darr;</a>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- STATS BAR -->
-  <div class="py-8 px-6" style="background: #0a2421;">
-    <div class="max-w-[500px] mx-auto grid grid-cols-3 gap-4 text-center">
+  <section class="border-y border-gray-100 py-10 px-6">
+    <div class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div>
-        <div class="font-display text-2xl" style="color: #2bb891;">3.2x</div>
-        <div class="text-[10px]" style="color: #95a8a5;">more traffic</div>
+        <div class="font-display text-3xl text-gray-900">976</div>
+        <div class="text-sm text-gray-400 mt-1">pages on our site</div>
       </div>
       <div>
-        <div class="font-display text-2xl" style="color: #2bb891;">2.7x</div>
-        <div class="text-[10px]" style="color: #95a8a5;">more leads</div>
+        <div class="font-display text-3xl text-gray-900">0.01s</div>
+        <div class="text-sm text-gray-400 mt-1">server response</div>
       </div>
       <div>
-        <div class="font-display text-2xl" style="color: #2bb891;">2.5x</div>
-        <div class="text-[10px]" style="color: #95a8a5;">more calls</div>
+        <div class="font-display text-3xl text-gray-900">3.2x</div>
+        <div class="text-sm text-gray-400 mt-1">more traffic</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl text-gray-900">2.7x</div>
+        <div class="text-sm text-gray-400 mt-1">more leads</div>
       </div>
     </div>
-    <p class="text-center mt-3" style="color: #6b8280; font-size: 9px;">Sites crawled by AI. Source: Duda 2026, 858,000 websites.</p>
-  </div>
+  </section>
 
-  <!-- QUICK CHECK -->
-  <div class="py-10 px-6" style="background: #f5f3ee;">
-    <div class="max-w-[420px] mx-auto text-center">
-      <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color: #2bb891;">Quick check</p>
-      <p class="text-sm mb-5" style="color: #3a524f;">Is your current site AI-ready? Enter your URL.</p>
-      <form id="quick-check-form" class="flex gap-2">
-        <input type="text" name="website" placeholder="yourwebsite.com" required class="flex-1 px-4 py-3 rounded-lg text-sm border focus:outline-none" style="border-color: #b5c8c3; background: #fff;">
-        <button type="submit" class="px-5 py-3 rounded-lg text-sm font-semibold" style="background: #0a2421; color: #f5f2eb;">Check</button>
+  <!-- SCORECARD -->
+  <section id="scorecard" class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-4">Three ways to build a website in 2026</h2>
+        <p class="text-gray-500 text-lg max-w-lg mx-auto">Not all websites are built equal. Here is how the three most popular approaches compare.</p>
+      </div>
+
+      <div class="card overflow-hidden border border-gray-100">
+        <div class="overflow-x-auto">
+          <table class="score-table">
+            <thead>
+              <tr class="border-b border-gray-100">
+                <th class="py-4 pl-6"></th>
+                <th class="py-4">
+                  <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">WordPress</div>
+                </th>
+                <th class="py-4">
+                  <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">Lovable / Bolt</div>
+                </th>
+                <th class="py-4 winner-col rounded-t-xl">
+                  <div class="text-emerald-700 text-sm normal-case tracking-normal font-bold">Rank4AI</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Technical</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Speed, clean code, uptime</div>
+                </td>
+                <td><span class="score-badge score-mid">7</span></td>
+                <td><span class="score-badge score-low">4</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Design</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Visual quality, branding</div>
+                </td>
+                <td><span class="score-badge score-low">4</span></td>
+                <td><span class="score-badge score-high">9</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Easy to manage</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Content updates, no developer needed</div>
+                </td>
+                <td><span class="score-badge score-low">3</span></td>
+                <td><span class="score-badge score-mid">6</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">AI can read it</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Crawlable by ChatGPT, Gemini, Perplexity</div>
+                </td>
+                <td><span class="score-badge score-low">3</span></td>
+                <td><span class="score-badge score-low">2</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">SEO ready</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Schema, sitemaps, meta, structure</div>
+                </td>
+                <td><span class="score-badge score-mid">7</span></td>
+                <td><span class="score-badge score-low">3</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr>
+                <td class="pl-6">
+                  <div class="font-semibold">Speed</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Page load, Core Web Vitals</div>
+                </td>
+                <td><span class="score-badge score-low">4</span></td>
+                <td><span class="score-badge score-mid">7</span></td>
+                <td class="winner-col"><span class="score-badge score-high">10</span></td>
+              </tr>
+              <tr class="border-t-2 border-gray-200">
+                <td class="pl-6 py-4">
+                  <div class="font-bold text-gray-900">Total</div>
+                </td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">28</span><span class="text-xs text-gray-400">/60</span></td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">31</span><span class="text-xs text-gray-400">/60</span></td>
+                <td class="py-4 winner-col"><span class="font-bold text-lg text-emerald-700">60</span><span class="text-xs text-emerald-600">/60</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEMS (detail cards) -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-7 border border-gray-100">
+          <div class="text-2xl mb-4">&#9888;&#65039;</div>
+          <h3 class="font-semibold text-gray-900 mb-2">WordPress</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Technically sound. Ranks fine. But clunky, slow, plugin-heavy. Every small change needs a developer. Security plugins block AI crawlers by default.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-7 border border-gray-100">
+          <div class="text-2xl mb-4">&#9888;&#65039;</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Lovable / Bolt</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Gorgeous. Smooth. Feels premium. But JavaScript-heavy code AI crawlers cannot parse. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-7 border border-emerald-200" style="background: linear-gradient(135deg, #f0fdf9 0%, #ffffff 100%);">
+          <div class="text-2xl mb-4">&#10003;&#65039;</div>
+          <h3 class="font-semibold text-emerald-700 mb-2">Rank4AI</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">The middle ground. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team handles design, development and content.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl text-gray-900 text-center mb-12">What you get</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#9889;</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Under 200ms load</h3>
+          <p class="text-sm text-gray-500">Static HTML. Zero bloat. No plugins slowing you down.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">{ }</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Schema on every page</h3>
+          <p class="text-sm text-gray-500">AI reads your business correctly. Every time.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#8220;&#8221;</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Content AI can cite</h3>
+          <p class="text-sm text-gray-500">Answer-first writing. Structured. Citable by ChatGPT and Gemini.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#128270;</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">All crawlers allowed</h3>
+          <p class="text-sm text-gray-500">GPTBot, ClaudeBot, PerplexityBot, Googlebot. Tested and verified.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#9733;</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">One team</h3>
+          <p class="text-sm text-gray-500">Design, development, content. No handoffs between agencies.</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#127919;</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">SEO + AI + AI Overviews</h3>
+          <p class="text-sm text-gray-500">Built for all three from day one. Not bolted on later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK SECTION: CTA BREAK -->
+  <section class="mx-4 md:mx-8 rounded-3xl bg-gray-900 py-16 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl text-white mb-4">Is your current site AI-ready?</h2>
+      <p class="text-gray-400 text-lg mb-8">Enter your URL. We will review it and email you an honest assessment within 24 hours.</p>
+      <form id="quick-check-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="text" name="website" placeholder="yourwebsite.com" required class="form-input flex-1 !bg-gray-800 !border-gray-700 !text-white placeholder-gray-500">
+        <button type="submit" class="btn-accent !px-8">Check &rarr;</button>
       </form>
-      <p id="check-confirm" class="hidden text-sm mt-4" style="color: #2bb891;">Thanks. We will email you within 24 hours.</p>
+      <p id="check-confirm" class="hidden text-emerald-400 mt-6 text-sm">Thanks. We will email you within 24 hours.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- FORM -->
-  <div class="py-14 px-6" style="background: #fff;" id="enquiry">
-    <div class="max-w-[420px] mx-auto">
-      <h2 class="font-display text-2xl text-center mb-2" style="color: #0a2421;">Talk to us about your website</h2>
-      <p class="text-xs text-center mb-8" style="color: #6b8280;">No pitch. We will tell you honestly whether a rebuild is right.</p>
+  <!-- TESTIMONIALS -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-3xl text-gray-900 text-center mb-12">What our clients say</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"Last time I built a site I needed a web developer, then a content writer, then a designer. This time Rank4AI did it all for me, for the cost of just the site."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">B</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Brian</div>
+              <div class="text-xs text-gray-400">Business Owner</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"I actually learnt so much. I thought my site was really good but they explained and showed me the issues. They were just passionate about getting it right and me understanding it."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">A</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Amanda</div>
+              <div class="text-xs text-gray-400">Marketing Director</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"'Write for humans and AI search will understand it' will stick with me. I massively overcomplicated my site in the past. Now it is simple, easy to understand, and it looks great."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">S</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Steve</div>
+              <div class="text-xs text-gray-400">Founder</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="flex gap-1 mb-4 text-amber-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-600 leading-relaxed mb-5">"They clearly know their stuff, but they also take the time to explain what is being done and why it matters. We were not passed down to juniors."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">R</div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm">Rishi</div>
+              <div class="text-xs text-gray-400">Managing Director, RB Financial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 text-center mt-8">AI-crawled sites get 3.2x more traffic and 2.7x more leads. Source: Duda 2026, 858,000 websites.</p>
+    </div>
+  </section>
 
-      <form id="enquiry-form" class="space-y-3">
-        <input type="text" name="contact_name" required placeholder="Your name" class="w-full px-4 py-3 border rounded-lg text-sm focus:outline-none" style="border-color: #b5c8c3;">
-        <input type="text" name="business_name" required placeholder="Business name" class="w-full px-4 py-3 border rounded-lg text-sm focus:outline-none" style="border-color: #b5c8c3;">
-        <input type="text" name="website_url" placeholder="Current website (if any)" class="w-full px-4 py-3 border rounded-lg text-sm focus:outline-none" style="border-color: #b5c8c3;">
+  <!-- MAIN FORM -->
+  <section class="py-20 px-6 bg-gray-50" id="enquiry">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="font-display text-3xl text-gray-900 mb-3">Talk to us about your website</h2>
+        <p class="text-gray-500">No pitch. We will tell you honestly whether a rebuild is the right move.</p>
+      </div>
+
+      <form id="enquiry-form" class="space-y-4">
+        <input type="text" name="contact_name" required placeholder="Your name" class="form-input">
+        <input type="text" name="business_name" required placeholder="Business name" class="form-input">
+        <input type="text" name="website_url" placeholder="Current website (if you have one)" class="form-input">
         <div class="grid grid-cols-2 gap-3">
-          <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 border rounded-lg text-sm focus:outline-none" style="border-color: #b5c8c3;">
-          <input type="tel" name="phone" required placeholder="Phone" class="w-full px-4 py-3 border rounded-lg text-sm focus:outline-none" style="border-color: #b5c8c3;">
+          <input type="email" name="email" required placeholder="Email" class="form-input">
+          <input type="tel" name="phone" required placeholder="Phone" class="form-input">
         </div>
         <div class="flex flex-wrap gap-2 py-1">
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only peer"><span class="inline-block px-4 py-2 border rounded-full text-xs font-medium peer-checked:text-white transition-all" style="border-color: #b5c8c3; color: #3a524f;" onchange="this.parentElement.querySelector('span').style.background='#0a2421'">New website</span></label>
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Rebuild" class="sr-only peer"><span class="inline-block px-4 py-2 border rounded-full text-xs font-medium peer-checked:text-white transition-all" style="border-color: #b5c8c3; color: #3a524f;">Rebuild</span></label>
-          <label class="cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure" class="sr-only peer"><span class="inline-block px-4 py-2 border rounded-full text-xs font-medium peer-checked:text-white transition-all" style="border-color: #b5c8c3; color: #3a524f;">Not sure</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="New website" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">New website</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="Rebuild" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">Rebuild</span></label>
+          <label class="pill-radio cursor-pointer"><input type="radio" name="enquiry_type" value="Not sure" class="sr-only"><span class="inline-block px-5 py-2.5 border border-gray-200 rounded-full text-sm font-medium text-gray-500 transition-all">Not sure</span></label>
         </div>
-        <label class="flex items-start gap-2 cursor-pointer">
-          <input type="checkbox" name="consent" required class="rounded mt-0.5" style="border-color: #b5c8c3;">
-          <span style="font-size: 10px; color: #6b8280;">I agree to hear from Rank4AI. <a href="/privacy/" class="underline">Privacy</a>.</span>
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" name="consent" required class="rounded border-gray-300 mt-1">
+          <span class="text-xs text-gray-400">I agree to hear from Rank4AI. <a href="/privacy/" class="underline hover:text-gray-600">Privacy</a>.</span>
         </label>
-        <button type="submit" class="w-full py-3.5 rounded-lg font-semibold text-sm" style="background: #0a2421; color: #f5f2eb;">Get in touch &rarr;</button>
+        <button type="submit" class="btn-accent w-full justify-center !py-4 !text-base">Get in touch &rarr;</button>
       </form>
 
-      <div id="thank-you" class="hidden text-center py-8">
-        <div class="text-3xl mb-3" style="color: #2bb891;">&#10003;</div>
-        <p class="font-display text-lg mb-2" style="color: #0a2421;">Thanks</p>
-        <p class="text-xs" style="color: #6b8280;">We will be in touch within 1 working day. <a href="https://wa.me/447389183338" style="color: #2bb891;">WhatsApp us</a> to talk sooner.</p>
+      <div id="thank-you" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-5">
+          <span class="text-emerald-600 text-2xl font-bold">&#10003;</span>
+        </div>
+        <h3 class="font-display text-2xl text-gray-900 mb-2">Thanks</h3>
+        <p class="text-gray-500">We will be in touch within 1 working day.<br><a href="https://wa.me/447389183338" class="text-emerald-600 font-semibold hover:underline">WhatsApp us</a> to talk sooner.</p>
       </div>
-    </div>
-  </div>
 
-  <div class="text-center py-6" style="background: #0a2421;">
-    <p style="font-size: 10px; color: #6b8280;">Rank4AI Ltd - 16584507 - <a href="/" class="underline" style="color: #6b8280;">rank4ai.co.uk</a></p>
-  </div>
+      <p class="text-xs text-gray-400 text-center mt-5">No commitment. A proper conversation.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 text-center border-t border-gray-100">
+    <p class="text-xs text-gray-400">Rank4AI Ltd &middot; 16584507 &middot; <a href="/" class="underline hover:text-gray-600">rank4ai.co.uk</a></p>
+  </footer>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -204,6 +407,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
     const medium = params.get('utm_medium') || 'organic';
     const campaign = params.get('utm_campaign') || '';
     const fullSource = `lp_ai_ready_sites|${source}|${medium}|${campaign}`;
+
     const SB_URL = 'https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations';
     const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM';
     const SB_H = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
@@ -228,7 +432,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         ed.append('Email', fd.get('email') as string);
         ed.append('Phone', fd.get('phone') as string);
         ed.append('Type', enquiryType as string);
-        ed.append('_captcha', 'false'); ed.append('_template', 'table');
+        ed.append('_captcha', 'false');
+        ed.append('_template', 'table');
         ed.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
         fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: ed });
         (window as any).dataLayer?.push({ 'event': 'lp_website_enquiry_conversion', 'enquiry_type': enquiryType });
@@ -245,11 +450,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         await fetch(SB_URL, { method: 'POST', headers: SB_H, body: JSON.stringify({
           company_name: website, contact_name: 'Quick Check', website_url: website,
           source: 'lp_ai_ready_sites_quick_check', current_stage: 'new', audit_status: 'pending',
-          notes: 'Quick site check from LP.', consent: true,
+          notes: 'Quick site check from AI-Ready Sites LP.', consent: true,
         })});
         const ed = new FormData();
         ed.append('_subject', `QUICK CHECK: ${website}`);
-        ed.append('Website', website); ed.append('_captcha', 'false');
+        ed.append('Website', website);
+        ed.append('_captcha', 'false');
         ed.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
         fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: ed });
         (window as any).dataLayer?.push({ 'event': 'lp_quick_check_conversion' });
@@ -258,27 +464,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
       document.getElementById('check-confirm')?.classList.remove('hidden');
     });
 
-    // Radio pill styling
-    document.querySelectorAll('#enquiry-form input[type="radio"]').forEach(r => {
-      r.addEventListener('change', () => {
-        document.querySelectorAll('#enquiry-form input[type="radio"]').forEach(rb => {
-          const span = rb.parentElement?.querySelector('span');
-          if (span) { span.style.background = ''; span.style.color = '#3a524f'; span.style.borderColor = '#b5c8c3'; }
-        });
-        const span = r.parentElement?.querySelector('span');
-        if (span) { span.style.background = '#0a2421'; span.style.color = '#fff'; span.style.borderColor = '#0a2421'; }
-      });
-    });
-
-    // Drop-off
+    // Drop-off tracking
     let started = false;
     document.querySelectorAll('#enquiry-form input').forEach(i => {
-      i.addEventListener('focus', () => { if (!started) { started = true; (window as any).dataLayer?.push({'event':'lp_form_started'}); }});
+      i.addEventListener('focus', () => {
+        if (!started) { started = true; (window as any).dataLayer?.push({ 'event': 'lp_form_started' }); }
+      });
     });
     window.addEventListener('beforeunload', () => {
       if (started && document.getElementById('thank-you')?.classList.contains('hidden')) {
         fetch(SB_URL, { method: 'POST', keepalive: true, headers: SB_H, body: JSON.stringify({
-          company_name: 'DROP-OFF', source: fullSource, current_stage: 'new', notes: 'Form started, not submitted.', consent: true,
+          company_name: 'DROP-OFF', source: fullSource, current_stage: 'new',
+          notes: 'Started form but did not submit.', consent: true,
         })});
       }
     });
