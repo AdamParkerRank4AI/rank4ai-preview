@@ -434,7 +434,7 @@
     // Collect goals
     const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(c => (c as HTMLInputElement).value);
 
-    // Write to Supabase — columns must match the conversations table
+    // Write to Supabase, columns must match the conversations table
     const supabasePayload = {
       company_name: fd.get('business_name'),
       contact_name: fd.get('business_name'),

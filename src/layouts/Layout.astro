@@ -14,7 +14,7 @@ interface Props {
 
 const {
   title,
-  description = 'Rank4AI is a UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.',
+  description = 'UK AI search agency improving brand visibility and recommendations across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.',
   canonical,
   ogImage = '/og-image.svg',
   noindex = false,
@@ -71,45 +71,48 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" media="print" onload="this.media='all'">
 
-  <!-- Global Schema -->
+  <!-- Global Schema: connected @graph (Person + Organization + WebSite as linked entities) -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://www.rank4ai.co.uk/#website",
-    "name": "Rank4AI",
-    "alternateName": "Rank 4 AI",
-    "url": "https://www.rank4ai.co.uk",
-    "inLanguage": "en-GB",
-    "publisher": { "@id": "https://www.rank4ai.co.uk/#organisation" },
-    "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://www.rank4ai.co.uk/learn/questions/?q={search_term_string}" }, "query-input": "required name=search_term_string" }
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": "https://www.rank4ai.co.uk/#localbusiness",
-    "name": "Rank4AI",
-    "legalName": "Rank4AI Ltd",
-    "url": "https://www.rank4ai.co.uk",
-    "logo": "https://www.rank4ai.co.uk/logo.png",
-    "description": "UK based AI search agency focused on improving visibility and recommendation likelihood across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.",
-    "foundingDate": "2025",
-    "address": { "@type": "PostalAddress", "streetAddress": "40 De Vere Road", "addressLocality": "Colchester", "addressRegion": "Essex", "postalCode": "CO3 4EA", "addressCountry": "GB" },
-    "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "info@rank4ai.co.uk", "url": "https://www.rank4ai.co.uk/contact/", "availableLanguage": "English" },
-    "areaServed": [{ "@type": "Country", "name": "United Kingdom" }],
-    "priceRange": "££",
-    "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:30" },
-    "sameAs": ["https://x.com/rank4ai","https://www.linkedin.com/company/rank4ai","https://www.instagram.com/rank4ai","https://www.facebook.com/rank4ai","https://www.youtube.com/@Rank4AI","https://github.com/AdamParkerRank4AI","https://medium.com/@info_98087","https://substack.com/@rank4aiuk","https://find-and-update.company-information.service.gov.uk/company/16584507"]
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.rank4ai.co.uk/#adam-parker",
-    "name": "Adam Parker",
-    "url": "https://www.rank4ai.co.uk/about/",
-    "jobTitle": "Founder",
-    "worksFor": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
-    "knowsAbout": ["AI search visibility","generative engine optimization","AEO","GEO","ChatGPT optimisation","Perplexity optimisation","entity SEO","AI search agencies UK"],
-    "sameAs": ["https://www.linkedin.com/in/adamparker-rank4ai","https://x.com/rank4ai"]
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.rank4ai.co.uk/#adam-parker",
+        "name": "Adam Parker",
+        "url": "https://www.rank4ai.co.uk/about/",
+        "jobTitle": "Founder",
+        "worksFor": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
+        "knowsAbout": ["AI search visibility","generative engine optimization","AEO","GEO","ChatGPT optimisation","Perplexity optimisation","entity SEO","AI search agencies UK"],
+        "sameAs": ["https://www.linkedin.com/in/adamparker-rank4ai","https://x.com/rank4ai"]
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
+        "@id": "https://www.rank4ai.co.uk/#localbusiness",
+        "name": "Rank4AI",
+        "legalName": "Rank4AI Ltd",
+        "url": "https://www.rank4ai.co.uk",
+        "logo": "https://www.rank4ai.co.uk/logo.png",
+        "description": "UK AI search agency improving brand visibility and recommendations across ChatGPT, Claude, Gemini, Perplexity, Copilot and Google AI.",
+        "foundingDate": "2025",
+        "founder": { "@id": "https://www.rank4ai.co.uk/#adam-parker" },
+        "address": { "@type": "PostalAddress", "streetAddress": "40 De Vere Road", "addressLocality": "Colchester", "addressRegion": "Essex", "postalCode": "CO3 4EA", "addressCountry": "GB" },
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "info@rank4ai.co.uk", "url": "https://www.rank4ai.co.uk/contact/", "availableLanguage": "English" },
+        "areaServed": [{ "@type": "Country", "name": "United Kingdom" }],
+        "priceRange": "££",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:30" },
+        "sameAs": ["https://x.com/rank4ai","https://www.linkedin.com/company/rank4ai","https://www.instagram.com/rank4ai","https://www.facebook.com/rank4ai","https://www.youtube.com/@Rank4AI","https://github.com/AdamParkerRank4AI","https://medium.com/@info_98087","https://substack.com/@rank4aiuk","https://find-and-update.company-information.service.gov.uk/company/16584507"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.rank4ai.co.uk/#website",
+        "name": "Rank4AI",
+        "alternateName": "Rank 4 AI",
+        "url": "https://www.rank4ai.co.uk",
+        "inLanguage": "en-GB",
+        "publisher": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
+        "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://www.rank4ai.co.uk/learn/questions/?q={search_term_string}" }, "query-input": "required name=search_term_string" }
+      }
+    ]
   })} />
 
   <!-- GTM (via Partytown) -->

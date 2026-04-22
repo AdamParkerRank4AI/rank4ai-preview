@@ -1,5 +1,5 @@
 ---
-// AI Conversation Example — scroll-triggered, auto-rotating chat simulation
+// AI Conversation Example, scroll-triggered, auto-rotating chat simulation
 // Shows how AI platforms recommend businesses
 const exchanges = [
   {
@@ -313,7 +313,7 @@ const exchanges = [
     rotationTimer = setInterval(rotateToNext, 8000);
   }
 
-  // IntersectionObserver — trigger once when 30% visible
+  // IntersectionObserver, trigger once when 30% visible
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !hasTriggered) {
