@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && node scripts/deploy.cjs",
+    "index": "node scripts/deploy.cjs",
+    "indexnow": "node scripts/indexnow-submit.cjs"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.6",
