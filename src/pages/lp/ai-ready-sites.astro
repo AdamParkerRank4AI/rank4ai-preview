@@ -81,6 +81,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
     .pill-radio input:checked + span {
       background: #0a2421; color: #fff; border-color: #0a2421;
     }
+
+    /* Slow pulse on winner column */
+    @keyframes softPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+      50% { box-shadow: 0 0 24px 0 rgba(5, 150, 105, 0.08); }
+    }
+    .winner-pulse { animation: softPulse 4s ease-in-out infinite; }
   </style>
 </head>
 <body>
@@ -111,26 +118,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   </section>
 
   <!-- STATS BAR -->
-  <section class="border-y border-gray-100 py-10 px-6">
+  <section class="py-14 px-6" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 50%, #eff6ff 100%);">
     <div class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div>
-        <div class="font-display text-3xl text-emerald-600">3.2x</div>
-        <div class="text-sm text-gray-400 mt-1">more traffic*</div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-emerald-600">3.2x</div>
+        <div class="text-sm font-semibold text-gray-600 mt-2">more traffic*</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-emerald-600">2.7x</div>
-        <div class="text-sm text-gray-400 mt-1">more leads*</div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-emerald-600">2.7x</div>
+        <div class="text-sm font-semibold text-gray-600 mt-2">more leads*</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-emerald-600">90+</div>
-        <div class="text-sm text-gray-400 mt-1">technical score</div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-blue-600">90+</div>
+        <div class="text-sm font-semibold text-gray-600 mt-2">technical score</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-emerald-600">sub 1s</div>
-        <div class="text-sm text-gray-400 mt-1">page load</div>
+        <div class="font-display text-5xl md:text-6xl font-bold text-violet-600">sub 1s</div>
+        <div class="text-sm font-semibold text-gray-600 mt-2">page load</div>
       </div>
     </div>
-    <p class="text-[11px] text-gray-300 text-center mt-6 max-w-3xl mx-auto">*AI-crawlable sites vs non-crawlable. Source: Duda, 858,000 websites, 2026.</p>
+    <p class="text-xs text-gray-400 text-center mt-8 max-w-3xl mx-auto">*AI-crawlable sites vs non-crawlable. Source: Duda, 858,000 websites, 2026.</p>
   </section>
 
   <!-- SCORECARD -->
@@ -141,7 +148,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         <p class="text-gray-500 text-lg max-w-lg mx-auto">Not all websites are built equal. Here is how the three most popular approaches compare.</p>
       </div>
 
-      <div class="card overflow-hidden border border-gray-100">
+      <div class="card overflow-hidden border border-gray-100 winner-pulse">
         <div class="overflow-x-auto">
           <table class="score-table">
             <thead>
@@ -150,11 +157,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                 <th class="py-4">
                   <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">WordPress</div>
                 </th>
+                <th class="py-5 winner-col rounded-t-xl">
+                  <div class="text-emerald-700 text-base normal-case tracking-normal font-bold">Rank4AI</div>
+                </th>
                 <th class="py-4">
                   <div class="text-gray-900 text-sm normal-case tracking-normal font-semibold">Lovable / Bolt</div>
-                </th>
-                <th class="py-4 winner-col rounded-t-xl">
-                  <div class="text-emerald-700 text-sm normal-case tracking-normal font-bold">Rank4AI</div>
                 </th>
               </tr>
             </thead>
@@ -162,11 +169,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               <tr>
                 <td class="pl-6">
                   <div class="font-semibold">Technical</div>
-                  <div class="text-xs text-gray-400 mt-0.5">Speed, clean code, uptime</div>
+                  <div class="text-xs text-gray-400 mt-0.5">Clean code, uptime, structure</div>
                 </td>
-                <td><span class="score-badge score-mid">7</span></td>
-                <td><span class="score-badge score-low">4</span></td>
+                <td><span class="score-badge score-mid">8</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-high">9</span></td>
               </tr>
               <tr>
                 <td class="pl-6">
@@ -174,8 +181,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                   <div class="text-xs text-gray-400 mt-0.5">Visual quality, branding</div>
                 </td>
                 <td><span class="score-badge score-low">4</span></td>
-                <td><span class="score-badge score-high">9</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-high">9</span></td>
               </tr>
               <tr>
                 <td class="pl-6">
@@ -183,43 +190,43 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                   <div class="text-xs text-gray-400 mt-0.5">Content updates, no developer needed</div>
                 </td>
                 <td><span class="score-badge score-low">3</span></td>
-                <td><span class="score-badge score-mid">6</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-mid">6</span></td>
               </tr>
               <tr>
                 <td class="pl-6">
                   <div class="font-semibold">AI can read it</div>
                   <div class="text-xs text-gray-400 mt-0.5">Crawlable by ChatGPT, Gemini, Perplexity</div>
                 </td>
-                <td><span class="score-badge score-low">3</span></td>
-                <td><span class="score-badge score-low">2</span></td>
+                <td><span class="score-badge score-low">4</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-mid">7</span></td>
               </tr>
               <tr>
                 <td class="pl-6">
                   <div class="font-semibold">SEO ready</div>
                   <div class="text-xs text-gray-400 mt-0.5">Schema, sitemaps, meta, structure</div>
                 </td>
-                <td><span class="score-badge score-mid">7</span></td>
-                <td><span class="score-badge score-low">3</span></td>
+                <td><span class="score-badge score-mid">8</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-low">3</span></td>
               </tr>
               <tr>
                 <td class="pl-6">
                   <div class="font-semibold">Speed</div>
                   <div class="text-xs text-gray-400 mt-0.5">Page load, Core Web Vitals</div>
                 </td>
-                <td><span class="score-badge score-low">4</span></td>
-                <td><span class="score-badge score-mid">7</span></td>
+                <td><span class="score-badge score-mid">6</span></td>
                 <td class="winner-col"><span class="score-badge score-high">10</span></td>
+                <td><span class="score-badge score-low">4</span></td>
               </tr>
               <tr class="border-t-2 border-gray-200">
                 <td class="pl-6 py-4">
                   <div class="font-bold text-gray-900">Total</div>
                 </td>
-                <td class="py-4"><span class="font-bold text-lg text-gray-500">28</span><span class="text-xs text-gray-400">/60</span></td>
-                <td class="py-4"><span class="font-bold text-lg text-gray-500">31</span><span class="text-xs text-gray-400">/60</span></td>
-                <td class="py-4 winner-col"><span class="font-bold text-lg text-emerald-700">60</span><span class="text-xs text-emerald-600">/60</span></td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">33</span><span class="text-xs text-gray-400">/60</span></td>
+                <td class="py-4 winner-col"><span class="font-bold text-2xl text-emerald-700">60</span><span class="text-xs text-emerald-600">/60</span></td>
+                <td class="py-4"><span class="font-bold text-lg text-gray-500">38</span><span class="text-xs text-gray-400">/60</span></td>
               </tr>
             </tbody>
           </table>
@@ -231,21 +238,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   <!-- THE PROBLEMS (detail cards) -->
   <section class="py-16 px-6 bg-gray-50">
     <div class="max-w-3xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 items-start">
         <div class="rounded-2xl p-7 border-l-4 border-red-400" style="background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);">
           <div class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center mb-4 text-red-500 font-bold text-xs">WP</div>
           <h3 class="font-semibold text-gray-900 mb-2">WordPress</h3>
           <p class="text-sm text-gray-500 leading-relaxed">Technically sound. Ranks fine. But clunky, slow, plugin-heavy. Every small change needs a developer. Security plugins block AI crawlers by default.</p>
         </div>
+        <div class="rounded-2xl p-8 border-2 border-emerald-400 relative md:-mt-2 md:mb-[-8px]" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 100%); box-shadow: 0 4px 24px rgba(5, 150, 105, 0.12);">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Recommended</div>
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center mb-4 text-white font-bold text-xs">R4</div>
+          <h3 class="font-semibold text-emerald-700 mb-2">Rank4AI</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">The middle ground. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team handles design, development and content.</p>
+        </div>
         <div class="rounded-2xl p-7 border-l-4 border-amber-400" style="background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);">
           <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-amber-600 font-bold text-xs">AI</div>
           <h3 class="font-semibold text-gray-900 mb-2">Lovable / Bolt</h3>
           <p class="text-sm text-gray-500 leading-relaxed">Gorgeous. Smooth. Feels premium. But JavaScript-heavy code AI crawlers cannot parse. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
-        </div>
-        <div class="rounded-2xl p-7 border-l-4 border-emerald-500" style="background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);">
-          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-xs">R4</div>
-          <h3 class="font-semibold text-emerald-700 mb-2">Rank4AI</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">The middle ground. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team handles design, development and content.</p>
         </div>
       </div>
     </div>
