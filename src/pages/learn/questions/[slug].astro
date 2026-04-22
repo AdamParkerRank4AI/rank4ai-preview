@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro'
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
 import CopyForAI from '../../../components/CopyForAI.astro'
 import questions from '../../../data/questions.json'
 
@@ -64,6 +65,8 @@ const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
     )}
 
     <CopyForAI title={question} content={fullAnswer || conciseAnswer || ''} url={`https://www.rank4ai.co.uk/learn/questions/${slug}/`} />
+
+    <AIReadinessBlock currentPath={`/learn/questions/${slug}/`} />
 
     <!-- Podcast -->
     {podcastEmbedId && (

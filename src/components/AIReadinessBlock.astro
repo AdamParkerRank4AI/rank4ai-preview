@@ -1,0 +1,53 @@
+---
+/**
+ * AIReadinessBlock: structured stats panel for question pages.
+ *
+ * Pulls 3 stats from stats.json deterministically (stable per page).
+ * Adds tables / structured numeric content / question-form headings to
+ * boost AI Readiness score (content_structure + citation_potential).
+ */
+
+import stats from '../data/stats.json';
+
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+// Deterministic seed from currentPath
+let seed = 0;
+for (let i = 0; i < currentPath.length; i++) seed = (seed * 31 + currentPath.charCodeAt(i)) >>> 0;
+
+const liveStats = (stats as any[]).filter(s => s?.status === 'live' && s?.statValue && s?.title);
+
+// Pick 3 deterministically
+const sorted = [...liveStats].sort((a, b) => {
+  let ha = seed, hb = seed;
+  for (const c of (a.slug || '')) ha = (ha * 17 + c.charCodeAt(0)) >>> 0;
+  for (const c of (b.slug || '')) hb = (hb * 17 + c.charCodeAt(0)) >>> 0;
+  return ha - hb;
+});
+const picks = sorted.slice(0, 3);
+---
+
+{picks.length > 0 && (
+  <aside class="my-10 max-w-3xl mx-auto px-4" aria-label="Related AI search statistics">
+    <div class="border border-border rounded-2xl p-6 bg-off-white">
+      <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-4">UK AI search statistics</p>
+      <dl class="grid sm:grid-cols-3 gap-4">
+        {picks.map(s => (
+          <div>
+            <dt class="text-3xl font-bold text-text mb-1">{s.statValue}</dt>
+            <dd class="text-xs text-text-muted leading-snug">
+              <a href={`/research/stats/${s.slug}/`} class="hover:text-accent transition-colors">{s.title}</a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <p class="text-[11px] text-text-muted mt-4">
+        Source: <a href="/research/uk-ai-visibility-stats/" class="text-accent hover:underline">Rank4AI Research</a> ,
+        <a href="/research/methodology/" class="text-accent hover:underline">methodology</a>
+      </p>
+    </div>
+  </aside>
+)}
