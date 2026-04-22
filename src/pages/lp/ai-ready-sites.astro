@@ -114,22 +114,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   <section class="border-y border-gray-100 py-10 px-6">
     <div class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div>
-        <div class="font-display text-3xl text-gray-900">976</div>
-        <div class="text-sm text-gray-400 mt-1">pages on our site</div>
+        <div class="font-display text-3xl text-emerald-600">3.2x</div>
+        <div class="text-sm text-gray-400 mt-1">more traffic*</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-gray-900">0.01s</div>
-        <div class="text-sm text-gray-400 mt-1">server response</div>
+        <div class="font-display text-3xl text-emerald-600">2.7x</div>
+        <div class="text-sm text-gray-400 mt-1">more leads*</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-gray-900">3.2x</div>
-        <div class="text-sm text-gray-400 mt-1">more traffic</div>
+        <div class="font-display text-3xl text-emerald-600">90+</div>
+        <div class="text-sm text-gray-400 mt-1">technical score</div>
       </div>
       <div>
-        <div class="font-display text-3xl text-gray-900">2.7x</div>
-        <div class="text-sm text-gray-400 mt-1">more leads</div>
+        <div class="font-display text-3xl text-emerald-600">sub 1s</div>
+        <div class="text-sm text-gray-400 mt-1">page load</div>
       </div>
     </div>
+    <p class="text-[11px] text-gray-300 text-center mt-6 max-w-3xl mx-auto">*AI-crawlable sites vs non-crawlable. Source: Duda, 858,000 websites, 2026.</p>
   </section>
 
   <!-- SCORECARD -->
@@ -231,18 +232,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   <section class="py-16 px-6 bg-gray-50">
     <div class="max-w-3xl mx-auto">
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-7 border border-gray-100">
-          <div class="text-2xl mb-4">&#9888;&#65039;</div>
+        <div class="rounded-2xl p-7 border-l-4 border-red-400" style="background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);">
+          <div class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center mb-4 text-red-500 font-bold text-xs">WP</div>
           <h3 class="font-semibold text-gray-900 mb-2">WordPress</h3>
           <p class="text-sm text-gray-500 leading-relaxed">Technically sound. Ranks fine. But clunky, slow, plugin-heavy. Every small change needs a developer. Security plugins block AI crawlers by default.</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 border border-gray-100">
-          <div class="text-2xl mb-4">&#9888;&#65039;</div>
+        <div class="rounded-2xl p-7 border-l-4 border-amber-400" style="background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-amber-600 font-bold text-xs">AI</div>
           <h3 class="font-semibold text-gray-900 mb-2">Lovable / Bolt</h3>
           <p class="text-sm text-gray-500 leading-relaxed">Gorgeous. Smooth. Feels premium. But JavaScript-heavy code AI crawlers cannot parse. We rebuilt our own site after Lovable. 244 pages dropped to 47 overnight.</p>
         </div>
-        <div class="bg-white rounded-2xl p-7 border border-emerald-200" style="background: linear-gradient(135deg, #f0fdf9 0%, #ffffff 100%);">
-          <div class="text-2xl mb-4">&#10003;&#65039;</div>
+        <div class="rounded-2xl p-7 border-l-4 border-emerald-500" style="background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-xs">R4</div>
           <h3 class="font-semibold text-emerald-700 mb-2">Rank4AI</h3>
           <p class="text-sm text-gray-500 leading-relaxed">The middle ground. The rigour of WordPress. The polish of Lovable. Written so AI search actually quotes you. One team handles design, development and content.</p>
         </div>
@@ -255,35 +256,35 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
     <div class="max-w-3xl mx-auto">
       <h2 class="font-display text-3xl text-gray-900 text-center mb-12">What you get</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#9889;</div>
-          <h3 class="font-semibold text-gray-900 mb-1.5">Under 200ms load</h3>
-          <p class="text-sm text-gray-500">Static HTML. Zero bloat. No plugins slowing you down.</p>
+        <div class="rounded-2xl p-6 border border-emerald-200" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf9 100%);">
+          <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">SEO</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">SEO, AI search and AI Overviews</h3>
+          <p class="text-sm text-gray-500">Built for all three from day one. Not bolted on later.</p>
         </div>
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">{ }</div>
-          <h3 class="font-semibold text-gray-900 mb-1.5">Schema on every page</h3>
-          <p class="text-sm text-gray-500">AI reads your business correctly. Every time.</p>
+        <div class="rounded-2xl p-6 border border-blue-200" style="background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">90+</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Technical score 90+</h3>
+          <p class="text-sm text-gray-500">Performance, accessibility, best practices. All green from launch.</p>
         </div>
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#8220;&#8221;</div>
+        <div class="rounded-2xl p-6 border border-violet-200" style="background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);">
+          <div class="w-10 h-10 rounded-xl bg-violet-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">AI</div>
           <h3 class="font-semibold text-gray-900 mb-1.5">Content AI can cite</h3>
           <p class="text-sm text-gray-500">Answer-first writing. Structured. Citable by ChatGPT and Gemini.</p>
         </div>
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#128270;</div>
+        <div class="rounded-2xl p-6 border border-amber-200" style="background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%);">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">BOT</div>
           <h3 class="font-semibold text-gray-900 mb-1.5">All crawlers allowed</h3>
           <p class="text-sm text-gray-500">GPTBot, ClaudeBot, PerplexityBot, Googlebot. Tested and verified.</p>
         </div>
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#9733;</div>
+        <div class="rounded-2xl p-6 border border-rose-200" style="background: linear-gradient(135deg, #fff1f2 0%, #fef2f2 100%);">
+          <div class="w-10 h-10 rounded-xl bg-rose-500 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">1s</div>
+          <h3 class="font-semibold text-gray-900 mb-1.5">Sub-second page load</h3>
+          <p class="text-sm text-gray-500">Static HTML. Zero bloat. No plugins slowing you down.</p>
+        </div>
+        <div class="rounded-2xl p-6 border border-teal-200" style="background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);">
+          <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center mb-4 text-white font-bold text-[11px] tracking-wide">R4</div>
           <h3 class="font-semibold text-gray-900 mb-1.5">One team</h3>
           <p class="text-sm text-gray-500">Design, development, content. No handoffs between agencies.</p>
-        </div>
-        <div class="bg-gray-50 rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 font-bold text-sm">&#127919;</div>
-          <h3 class="font-semibold text-gray-900 mb-1.5">SEO + AI + AI Overviews</h3>
-          <p class="text-sm text-gray-500">Built for all three from day one. Not bolted on later.</p>
         </div>
       </div>
     </div>
