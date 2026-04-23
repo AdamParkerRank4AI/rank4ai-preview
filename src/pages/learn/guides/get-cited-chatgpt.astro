@@ -2,8 +2,12 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 ---
 <Layout title="How to Get Cited by ChatGPT | Rank4AI" description="Practical strategies for getting your UK business cited by ChatGPT. Step-by-step guide covering Bing submission, entity signals, and ecosystem building.">
+<SpeakableSchema title="Guide" description="" url="https://www.rank4ai.co.uk/learn/guides/get-cited-chatgpt/" />
+
 <article class="pt-12 pb-24">
   <div class="container-narrow">
     <Breadcrumbs items={[
@@ -213,4 +217,6 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     {"@type": "HowToStep", "name": "Create citable content", "text": "Publish content with clear definitions, statistics, and step-by-step processes that AI can extract and quote."}
   ]
 })} />
+
+<AIReadinessBlock currentPath="/learn/guides/get-cited-chatgpt/" />
 </Layout>

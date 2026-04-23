@@ -2,6 +2,8 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -18,6 +20,8 @@ const howToSchema = {
 }
 ---
 <Layout title="Google AI Overview Optimisation UK | Rank4AI" description="How to get your business cited in Google AI Overviews. Practical guide for UK businesses.">
+<SpeakableSchema title="Guide" description="" url="https://www.rank4ai.co.uk/learn/guides/google-ai-overview-optimisation/" />
+
 <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
@@ -223,4 +227,6 @@ const howToSchema = {
     <AuthorBox />
   </div>
 </section>
+
+<AIReadinessBlock currentPath="/learn/guides/google-ai-overview-optimisation/" />
 </Layout>

@@ -2,8 +2,12 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 ---
 <Layout title="AI Search Visibility for B2B UK | Rank4AI" description="How B2B businesses can get recommended by ChatGPT, Claude and Google AI. UK guide from Rank4AI.">
+<SpeakableSchema title="Guide" description="" url="https://www.rank4ai.co.uk/learn/guides/ai-search-b2b/" />
+
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
     <Breadcrumbs items={[
@@ -197,4 +201,6 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <AuthorBox />
   </div>
 </section>
+
+<AIReadinessBlock currentPath="/learn/guides/ai-search-b2b/" />
 </Layout>

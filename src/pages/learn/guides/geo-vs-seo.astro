@@ -2,8 +2,12 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 ---
 <Layout title="GEO vs SEO – Complete Comparison | Rank4AI" description="What is the difference between GEO and SEO? Generative Engine Optimisation vs Search Engine Optimisation explained.">
+<SpeakableSchema title="Guide" description="" url="https://www.rank4ai.co.uk/learn/guides/geo-vs-seo/" />
+
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
     <Breadcrumbs items={[
@@ -173,4 +177,6 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <AuthorBox />
   </div>
 </section>
+
+<AIReadinessBlock currentPath="/learn/guides/geo-vs-seo/" />
 </Layout>

@@ -2,8 +2,12 @@
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
 ---
 <Layout title="Structured Data for AI Search | Rank4AI" description="How structured data and schema markup drive AI search visibility. Content with proper schema has 2.5x higher citation chance.">
+<SpeakableSchema title="Guide" description="" url="https://www.rank4ai.co.uk/learn/guides/structured-data-for-ai/" />
+
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
     <Breadcrumbs items={[
@@ -199,4 +203,6 @@ import AuthorBox from '../../../components/AuthorBox.astro'
     <AuthorBox />
   </div>
 </section>
+
+<AIReadinessBlock currentPath="/learn/guides/structured-data-for-ai/" />
 </Layout>
