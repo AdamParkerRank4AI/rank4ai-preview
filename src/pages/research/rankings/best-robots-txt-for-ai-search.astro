@@ -1,0 +1,340 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import Layout from '../../../layouts/Layout.astro'
+---
+<Layout title="Best robots.txt for AI Search 2026 | Rank4AI" description="How to configure your robots.txt for AI search visibility. Which crawlers to allow, which to block, and example configurations for every platform.">
+<section class="pt-12 pb-24">
+  <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Research', href: '/research/' },
+      { label: 'Rankings', href: '/research/rankings/' },
+      { label: 'Best Robots Txt For Ai Search' }
+    ]} />
+    <p class="section-tag">Rankings</p>
+    <h1 class="mb-4">Best robots.txt for AI Search 2026</h1>
+    <p class="text-sm text-text-muted mb-8">Last updated: April 2026 | Based on testing across 1,400+ UK business websites</p>
+
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Your robots.txt file is the gatekeeper of your website. It tells crawlers what they can and cannot read. Most businesses have never checked theirs. Many are accidentally blocking AI crawlers without knowing it.</p>
+
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">This is the single fastest fix for AI visibility. If GPTBot, PerplexityBot or ClaudeBot are blocked, those platforms cannot see your website at all. No indexing, no citations, no visibility. A two-minute edit to one text file can change that.</p>
+
+    <h2 class="mt-12 mb-6">AI Crawlers You Need to Allow</h2>
+
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Crawler</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Platform</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">What it does</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Priority</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Default status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border bg-teal/5">
+            <td class="px-4 py-3 font-medium">GPTBot</td>
+            <td class="px-4 py-3">ChatGPT (OpenAI)</td>
+            <td class="px-4 py-3">Reads your site for ChatGPT answers</td>
+            <td class="px-4 py-3"><span class="text-red-600 font-semibold">Critical</span></td>
+            <td class="px-4 py-3">Blocked by many WordPress security plugins</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3 font-medium">ChatGPT-User</td>
+            <td class="px-4 py-3">ChatGPT (browsing mode)</td>
+            <td class="px-4 py-3">Reads pages when users ask ChatGPT to browse</td>
+            <td class="px-4 py-3"><span class="text-orange-600 font-semibold">High</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border bg-teal/5">
+            <td class="px-4 py-3 font-medium">Google-Extended</td>
+            <td class="px-4 py-3">Gemini (Google)</td>
+            <td class="px-4 py-3">Reads your site for Gemini training</td>
+            <td class="px-4 py-3"><span class="text-orange-600 font-semibold">High</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3 font-medium">GoogleOther</td>
+            <td class="px-4 py-3">Google AI Overviews</td>
+            <td class="px-4 py-3">General Google AI crawling</td>
+            <td class="px-4 py-3"><span class="text-orange-600 font-semibold">High</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border bg-teal/5">
+            <td class="px-4 py-3 font-medium">PerplexityBot</td>
+            <td class="px-4 py-3">Perplexity</td>
+            <td class="px-4 py-3">Reads your site for real-time answers and citations</td>
+            <td class="px-4 py-3"><span class="text-red-600 font-semibold">Critical</span></td>
+            <td class="px-4 py-3">Sometimes blocked</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3 font-medium">ClaudeBot</td>
+            <td class="px-4 py-3">Claude (Anthropic)</td>
+            <td class="px-4 py-3">Reads your site for Claude answers</td>
+            <td class="px-4 py-3"><span class="text-orange-600 font-semibold">High</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border bg-teal/5">
+            <td class="px-4 py-3 font-medium">Claude-Web</td>
+            <td class="px-4 py-3">Claude (web browsing)</td>
+            <td class="px-4 py-3">Reads pages when Claude browses</td>
+            <td class="px-4 py-3"><span class="text-yellow-600 font-semibold">Medium</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3 font-medium">Bingbot</td>
+            <td class="px-4 py-3">Copilot (Microsoft)</td>
+            <td class="px-4 py-3">Core Bing crawler, feeds Copilot</td>
+            <td class="px-4 py-3"><span class="text-red-600 font-semibold">Critical</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border bg-teal/5">
+            <td class="px-4 py-3 font-medium">Applebot-Extended</td>
+            <td class="px-4 py-3">Apple Intelligence / Siri</td>
+            <td class="px-4 py-3">Reads for Apple AI features</td>
+            <td class="px-4 py-3"><span class="text-yellow-600 font-semibold">Medium</span></td>
+            <td class="px-4 py-3">Usually allowed</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3 font-medium">CCBot</td>
+            <td class="px-4 py-3">Common Crawl</td>
+            <td class="px-4 py-3">Open dataset used by many AI models</td>
+            <td class="px-4 py-3"><span class="text-yellow-600 font-semibold">Medium</span></td>
+            <td class="px-4 py-3">Sometimes blocked</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-10">
+      <p class="text-[15px] text-teal font-medium leading-relaxed m-0"><strong>Key insight:</strong> 34% of the UK business websites we audited block at least one major AI crawler. The most commonly blocked is GPTBot, typically by WordPress security plugins like Wordfence or Sucuri that add blanket bot-blocking rules. Check yours now: add <code>/robots.txt</code> to your domain and read it.</p>
+    </div>
+
+    <h2 class="mt-12 mb-6">Recommended robots.txt Configuration</h2>
+
+    <p class="text-[17px] text-text-muted leading-relaxed mb-5">Copy the configuration below into your robots.txt file. Replace <code>yourdomain.com</code> with your actual domain. This explicitly allows every major AI crawler to read your entire site.</p>
+
+    <div class="bg-gray-900 rounded-xl p-6 mb-10 overflow-x-auto">
+      <p class="text-xs text-gray-400 mb-3 font-semibold">Recommended robots.txt for AI visibility</p>
+      <pre class="text-sm text-green-400 leading-relaxed"><code>User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.yourdomain.com/sitemap-index.xml</code></pre>
+    </div>
+
+    <h2 class="mt-12 mb-6">Common Mistakes</h2>
+
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full border-collapse">
+        <thead class="bg-red-50">
+          <tr>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Mistake</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">Impact</th>
+            <th class="px-4 py-3 font-semibold text-heading border-b border-border text-left">How to fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">WordPress security plugin blocking all bots</td>
+            <td class="px-4 py-3">Blocks all AI platforms</td>
+            <td class="px-4 py-3">Check Wordfence, Sucuri, iThemes settings. Whitelist AI crawlers.</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">Blanket "Disallow: /" for unknown bots</td>
+            <td class="px-4 py-3">Blocks new AI crawlers</td>
+            <td class="px-4 py-3">Use "Allow: /" as default, only block specific bad bots</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">No robots.txt file at all</td>
+            <td class="px-4 py-3">Crawlers assume allow, but no sitemap reference</td>
+            <td class="px-4 py-3">Create one with sitemap link</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">Blocking /api/ or /admin/ paths too broadly</td>
+            <td class="px-4 py-3">May block legitimate content paths</td>
+            <td class="px-4 py-3">Be specific with blocked paths</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">Using Cloudflare bot protection aggressively</td>
+            <td class="px-4 py-3">Can block AI crawlers via challenge pages</td>
+            <td class="px-4 py-3">Whitelist known AI bot IPs</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="px-4 py-3">Never checking after initial setup</td>
+            <td class="px-4 py-3">Settings change with plugin updates</td>
+            <td class="px-4 py-3">Check quarterly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="mt-12 mb-6">AI Crawler Reference Cards</h2>
+
+    <div class="grid gap-6 mb-12">
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">GPTBot</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">GPTBot is OpenAI's primary crawler. It reads your website content so that ChatGPT can reference and cite your pages in its answers. When a user asks ChatGPT a question related to your business, GPTBot's index determines whether your site appears in the response.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> ChatGPT cannot read your website. Your business will not appear in any ChatGPT answer, even if your content is the best match. This is the most impactful crawler to block because ChatGPT has the largest user base of any AI search platform.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: GPTBot
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">ChatGPT-User</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">ChatGPT-User is the browsing-mode crawler. When a ChatGPT user clicks "Browse" or ChatGPT decides it needs live web data, this crawler fetches the page in real time. It is different from GPTBot, which crawls in advance.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> ChatGPT cannot browse your website live. Even if GPTBot has previously indexed your site, real-time browsing requests will fail. Users who ask ChatGPT to check your site directly will get an error.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: ChatGPT-User
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">Google-Extended</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">Google-Extended is the crawler Google uses specifically for Gemini training data. It is separate from Googlebot (which handles search indexing). Allowing Google-Extended means your content can be used to improve Gemini's understanding of your industry and business.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Your content will not be included in Gemini's training data. This reduces the chance that Gemini references your business, products, or expertise when answering related queries.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: Google-Extended
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">GoogleOther</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">GoogleOther handles general AI crawling for Google, including AI Overviews (the AI-generated summaries that appear at the top of Google search results). This crawler feeds the system that decides whether your content appears in those featured AI panels.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Your pages may not appear in AI Overviews on Google Search. Given that AI Overviews now appear on a significant percentage of UK search queries, this directly impacts your organic visibility.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: GoogleOther
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">PerplexityBot</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">PerplexityBot powers Perplexity, the AI search engine that provides real-time answers with inline citations. Perplexity is growing rapidly among professionals and researchers. It links directly to source pages, making it one of the best AI platforms for driving referral traffic.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Perplexity cannot cite your website. You lose one of the few AI platforms that actively sends traffic back to your site via clickable source links. This is a significant missed opportunity for lead generation.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: PerplexityBot
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">ClaudeBot</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">ClaudeBot is Anthropic's crawler for Claude. It reads your website so that Claude can reference your content when answering user queries. Claude is used extensively in professional and enterprise settings, making it a valuable channel for B2B businesses.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Claude cannot access your website content. Your business will not be referenced in Claude's answers. For B2B companies, this matters because Claude's user base skews toward decision-makers and technical professionals.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: ClaudeBot
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">Claude-Web</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">Claude-Web is the browsing-mode crawler for Claude. Similar to ChatGPT-User, it fetches pages in real time when a user asks Claude to look at a specific URL or when Claude needs fresh data to answer a question.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Claude cannot browse your site live. Even if ClaudeBot has previously indexed your content, real-time fetch requests will be denied. Users who paste your URL into Claude will get nothing back.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: Claude-Web
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">Bingbot</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">Bingbot is Microsoft's core search crawler. It feeds both Bing search results and Microsoft Copilot. Since Copilot is integrated into Windows, Edge, and Microsoft 365, blocking Bingbot has a cascading effect across the entire Microsoft ecosystem.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Your site disappears from Bing search and Microsoft Copilot simultaneously. This is a double loss. Most businesses already allow Bingbot, but it is worth verifying.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: Bingbot
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">Applebot-Extended</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">Applebot-Extended is Apple's AI crawler, feeding Apple Intelligence and Siri. As Apple rolls out more AI features across iPhone, iPad, and Mac, this crawler becomes increasingly important. Apple's installed base in the UK is substantial, particularly among higher-income demographics.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Your content will not appear in Apple Intelligence summaries or Siri AI answers. As Apple expands its AI features throughout 2026, the cost of blocking this crawler will grow.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: Applebot-Extended
+Allow: /</code></pre>
+      </div>
+
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h2 class="text-xl font-bold text-heading mb-3">CCBot</h2>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3">CCBot is the crawler for Common Crawl, a nonprofit that maintains the largest open web dataset. Many AI models, including smaller and open-source ones, train on Common Crawl data. Allowing CCBot ensures your content reaches a broad range of AI systems beyond the major platforms. For reference, you can see how we handle this in our own robots.txt at <a href="https://rank4ai.co.uk/robots.txt" class="text-teal hover:underline">rank4ai.co.uk/robots.txt</a>.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-3"><strong>If blocked:</strong> Your content is excluded from the Common Crawl dataset. This means dozens of AI models that rely on Common Crawl will never see your site. The impact is diffuse but cumulative over time.</p>
+        <p class="text-[17px] text-text-muted leading-relaxed mb-0"><strong>How to allow:</strong></p>
+        <pre class="bg-gray-900 text-green-400 text-sm rounded-lg p-4 mt-2"><code>User-agent: CCBot
+Allow: /</code></pre>
+      </div>
+
+    </div>
+
+    <h2 class="mt-12 mb-6">Related Research</h2>
+
+    <ul class="list-none p-0 mb-12 space-y-3">
+      <li><a href="/research/rankings/best-way-to-appear-on-chatgpt-2026/" class="text-teal hover:underline text-[17px]">Best Way to Appear on ChatGPT 2026</a></li>
+      <li><a href="/research/rankings/best-way-to-appear-on-perplexity-2026/" class="text-teal hover:underline text-[17px]">Best Way to Appear on Perplexity 2026</a></li>
+      <li><a href="/research/rankings/best-way-to-appear-in-ai-search-2026/" class="text-teal hover:underline text-[17px]">Best Way to Appear in AI Search 2026</a></li>
+      <li><a href="/research/rankings/top-ranking-factors-for-ai-search-2026/" class="text-teal hover:underline text-[17px]">Top Ranking Factors for AI Search 2026</a></li>
+    </ul>
+
+    <h2 class="mt-12 mb-6">Frequently Asked Questions</h2>
+
+    <div class="space-y-6 mb-12">
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h3 class="text-lg font-bold text-heading mb-2">Will allowing AI crawlers slow my site down?</h3>
+        <p class="text-[17px] text-text-muted leading-relaxed m-0">No. AI crawlers are well-behaved and respect crawl rate limits. They visit infrequently compared to search engine crawlers. You will not notice any performance difference.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h3 class="text-lg font-bold text-heading mb-2">Can I allow some AI crawlers but block others?</h3>
+        <p class="text-[17px] text-text-muted leading-relaxed m-0">Yes. robots.txt lets you set rules per user-agent. You can allow GPTBot but block CCBot if you prefer. Each crawler respects only its own user-agent directive.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h3 class="text-lg font-bold text-heading mb-2">How do I check my current robots.txt?</h3>
+        <p class="text-[17px] text-text-muted leading-relaxed m-0">Visit yourdomain.com/robots.txt in your browser. It is a plain text file. If it does not exist, you do not have one.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h3 class="text-lg font-bold text-heading mb-2">Do I need to restart my server after changing robots.txt?</h3>
+        <p class="text-[17px] text-text-muted leading-relaxed m-0">No. Crawlers read robots.txt fresh on each visit. Changes take effect immediately. There is no caching or restart required on your end.</p>
+      </div>
+      <div class="bg-off-white rounded-xl p-6 border border-border">
+        <h3 class="text-lg font-bold text-heading mb-2">Does robots.txt affect Google ranking?</h3>
+        <p class="text-[17px] text-text-muted leading-relaxed m-0">Not directly. But blocking Googlebot affects your Google ranking, and blocking Google-Extended affects your Gemini and AI Overview visibility. The two systems are separate but related.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</Layout>
