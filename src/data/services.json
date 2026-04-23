@@ -1,0 +1,66 @@
+{
+  "services": [
+    {
+      "id": "ecosystem",
+      "name": "Ecosystem Services",
+      "tagline": "No site work — wider web presence",
+      "from": "£800/month",
+      "best_for": "Businesses where the website is fine, but presence on Google, Bing, AI platforms and the wider web is weak",
+      "includes": [
+        "AI Visibility Audit",
+        "Google + Microsoft + Bing ecosystem",
+        "Directory + review + citation alignment",
+        "All six AI platforms covered",
+        "Site asset pack (no site changes)",
+        "Monthly visibility report"
+      ],
+      "tiers": [
+        { "name": "Google Foundation", "price": "£800/mo" },
+        { "name": "Core Ecosystem", "price": "£1,300/mo" },
+        { "name": "Full Ecosystem", "price": "£2,500/mo" }
+      ],
+      "url": "/what-we-do/ecosystem-services/"
+    },
+    {
+      "id": "full-agency",
+      "name": "Full Agency",
+      "tagline": "Includes site work",
+      "from": "£1,500/month",
+      "best_for": "Businesses that need site changes plus ecosystem work — the most common starting point",
+      "includes": [
+        "Everything in Ecosystem Services",
+        "On-site optimisation (schema, structure, content)",
+        "AI search visibility for site pages",
+        "80–200+ active touchpoints",
+        "Priority audit-driven scope",
+        "Monthly performance reporting"
+      ],
+      "tiers": [
+        { "name": "Entry", "price": "From £800/mo (Ecosystem only)" },
+        { "name": "Standard", "price": "£1,500–2,500/mo" },
+        { "name": "Strategic", "price": "£3,000–5,000/mo" }
+      ],
+      "url": "/what-we-do/full-agency/"
+    },
+    {
+      "id": "advisory",
+      "name": "Advisory & Consultancy",
+      "tagline": "We advise, you implement",
+      "from": "£1,000/month",
+      "best_for": "In-house teams or agencies that want expert guidance without us doing the implementation work",
+      "includes": [
+        "AI Visibility Audit",
+        "Strategy and roadmap definition",
+        "Monthly review sessions",
+        "On-call advisory access",
+        "Best-practice playbooks",
+        "Quarterly visibility checks"
+      ],
+      "tiers": [
+        { "name": "Advisory", "price": "From £1,000/mo" },
+        { "name": "Strategic Advisory", "price": "£2,000–3,000/mo" }
+      ],
+      "url": "/what-we-do/advisory/"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+---
+/**
+ * ServiceComparisonTable: side-by-side comparison of the 3 Rank4AI service paths.
+ *
+ * Renders as a real <table> for AI-citation friendliness (rows are quotable).
+ * Reads from src/data/services.json — single source of truth for pricing + features.
+ *
+ * Optional `excludeId` prop hides one service (use on that service's own page).
+ */
+
+import services from '../data/services.json';
+
+interface Props {
+  excludeId?: string;
+  heading?: string;
+}
+const { excludeId, heading = 'Compare Rank4AI services' } = Astro.props;
+
+const visible = services.services.filter(s => s.id !== excludeId);
+---
+
+{visible.length > 0 && (
+  <section class="my-12 max-w-6xl mx-auto px-4" aria-label={heading}>
+    <h2 class="text-2xl font-bold text-text mb-2">{heading}</h2>
+    <p class="text-sm text-text-muted mb-6">Three paths to AI search visibility. Pick the one that matches where you are now.</p>
+
+    <div class="overflow-x-auto border border-border rounded-2xl bg-white">
+      <table class="w-full text-sm">
+        <thead class="bg-off-white">
+          <tr class="text-left">
+            <th class="p-4 font-semibold text-text">Service</th>
+            <th class="p-4 font-semibold text-text">From</th>
+            <th class="p-4 font-semibold text-text">Best for</th>
+            <th class="p-4 font-semibold text-text">Pricing tiers</th>
+            <th class="p-4 font-semibold text-text"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {visible.map(s => (
+            <tr class="border-t border-border align-top">
+              <td class="p-4">
+                <p class="font-semibold text-teal">{s.name}</p>
+                <p class="text-xs text-text-muted mt-1">{s.tagline}</p>
+              </td>
+              <td class="p-4 font-medium text-text whitespace-nowrap">{s.from}</td>
+              <td class="p-4 text-text-muted">{s.best_for}</td>
+              <td class="p-4">
+                <ul class="text-xs text-text-muted space-y-1">
+                  {s.tiers.map(t => (
+                    <li><span class="text-text font-medium">{t.name}</span>: {t.price}</li>
+                  ))}
+                </ul>
+              </td>
+              <td class="p-4 whitespace-nowrap">
+                <a href={s.url} class="text-teal text-xs font-medium hover:underline">Details →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-text-muted mt-3">All engagements start with a free <a href="/free-audit/" class="text-teal hover:underline">AI Visibility Audit</a>.</p>
+  </section>
+)}
