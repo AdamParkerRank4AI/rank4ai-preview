@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro'
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import AuthorBox from '../../../components/AuthorBox.astro'
+import SpeakableSchema from '../../../components/SpeakableSchema.astro'
+import AIReadinessBlock from '../../../components/AIReadinessBlock.astro'
 import stats from '../../../data/stats.json'
 
 export function getStaticPaths() {
@@ -16,6 +18,8 @@ const pageTitle = `${title} | Rank4AI`
 const pageDesc = summary || `${title} – AI search visibility research from Rank4AI.`
 ---
 <Layout title={pageTitle} description={pageDesc}>
+
+<SpeakableSchema title={title} description={pageDesc} url={`https://www.rank4ai.co.uk/research/stats/${slug}/`} />
 
 <article class="pt-12 pb-24">
   <div class="container-narrow">
