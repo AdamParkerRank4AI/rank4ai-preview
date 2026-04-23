@@ -2,12 +2,18 @@
 /**
  * AutoRelated: auto-discovered same-section links.
  *
- * Zero curation. Picks up to 6 sibling pages from the same URL-prefix section,
- * excluding the current page and hub/index pages. Renders only if the page
- * belongs to a known content section.
+ * Picks up to 6 sibling pages from the same URL-prefix section.
+ * Sources:
+ *   1) static .astro pages (file-system glob, excludes dynamic [slug] routes + hubs)
+ *   2) dynamic-route data files (questions.json, blogs.json, stats.json) — fills
+ *      sections that have NO static pages so AutoRelated still has candidates.
  *
  * Closes the orphan-page gap surfaced by dashboard crawl.
  */
+
+import questions from '../data/questions.json';
+import blogs from '../data/blogs.json';
+import stats from '../data/stats.json';
 
 interface Props {
   currentPath: string;
@@ -31,6 +37,25 @@ const SECTIONS: Record<string, string> = {
   '/services/': 'Related services',
   '/what-we-do/': 'More of what we do',
   '/about/': 'More about us',
+};
+
+// Map section prefix → data source (for dynamic-route sections)
+const DATA_SOURCES: Record<string, { items: any[]; pathFn: (item: any) => string; titleFn: (item: any) => string }> = {
+  '/learn/questions/': {
+    items: questions as any[],
+    pathFn: (q) => `/learn/questions/${q.slug}/`,
+    titleFn: (q) => q.question || q.title || q.slug,
+  },
+  '/blog/': {
+    items: blogs as any[],
+    pathFn: (b) => `/blog/${b.slug}/`,
+    titleFn: (b) => b.title || b.slug,
+  },
+  '/research/stats/': {
+    items: stats as any[],
+    pathFn: (s) => `/research/stats/${s.slug}/`,
+    titleFn: (s) => s.title || s.slug,
+  },
 };
 
 function matchSection(path: string): [string, string] | null {
@@ -59,6 +84,7 @@ if (matched && !isHub(currentPath, matched[0])) {
   const pages = import.meta.glob('/src/pages/**/*.astro', { eager: true }) as Record<string, any>;
   const candidates: { href: string; title: string }[] = [];
 
+  // 1) Static .astro pages
   for (const filePath of Object.keys(pages)) {
     if (filePath.includes('[') || filePath.includes(']')) continue;
     let href = filePath.replace('/src/pages', '').replace(/\.astro$/, '');
@@ -71,6 +97,19 @@ if (matched && !isHub(currentPath, matched[0])) {
     const frontmatter = mod?.frontmatter || {};
     const title = frontmatter.title || slugToTitle(href);
     candidates.push({ href, title });
+  }
+
+  // 2) Dynamic-route data sources for this section
+  const ds = DATA_SOURCES[sectionPrefix];
+  if (ds) {
+    for (const item of ds.items) {
+      if (!item?.slug) continue;
+      if (item.status && item.status !== 'live') continue;
+      const href = ds.pathFn(item);
+      if (href === currentPath) continue;
+      if (candidates.some(c => c.href === href)) continue;
+      candidates.push({ href, title: ds.titleFn(item) });
+    }
   }
 
   let seed = 0;
