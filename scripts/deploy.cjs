@@ -119,6 +119,19 @@ async function submitGoogleIndexing() {
 }
 
 // ─────────────────────────────────────────
+// Step 4: Cloudflare Cache Purge
+// ─────────────────────────────────────────
+async function purgeCache() {
+  try {
+    const { main } = require('./purge-cf-cache.cjs');
+    return await main();
+  } catch (e) {
+    console.log(`  Cache purge: ${e.message}`);
+    return { purged: false, skipped: true };
+  }
+}
+
+// ─────────────────────────────────────────
 // Main Pipeline
 // ─────────────────────────────────────────
 async function main() {
@@ -146,6 +159,10 @@ async function main() {
   console.log('\nStep 3: Google Indexing API');
   const googleResults = await submitGoogleIndexing();
 
+  // Step 4: Cloudflare Cache Purge
+  console.log('\nStep 4: Cloudflare Cache Purge');
+  const purgeResults = await purgeCache();
+
   // Log
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   const log = loadLog();
@@ -155,7 +172,8 @@ async function main() {
     duration: `${duration}s`,
     sitemapPing: pingResults,
     indexNow: indexNowResults,
-    googleIndexing: googleResults
+    googleIndexing: googleResults,
+    cachePurge: purgeResults,
   });
   saveLog(log);
 
