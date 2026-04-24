@@ -34,10 +34,13 @@
 3. Author rotation per blog/Q&A piece — never duplicate same author across consecutive auto-publishes
 4. Supabase pages table mirrors live URLs (used by dashboard)
 
-## Known Gaps (matches fleet baseline as of 22 Apr 2026)
-- **No `npm run deploy` script** — manual build + push only. Market Invoice has a unified pipeline (`scripts/deploy.cjs`) — port that here.
-- **No `google-indexing-submit.cjs`** — pages not auto-submitted to Google Indexing API
-- **No `indexnow-submit.cjs`** — IndexNow key file present but no submitter script
+## Deploy pipeline (matches MI baseline as of 24 Apr 2026)
+- `npm run deploy` → `npm run build && node scripts/deploy.cjs`
+- `npm run index` → `node scripts/deploy.cjs` (skip build, just ping)
+- `npm run indexnow` → `node scripts/indexnow-submit.cjs` (Bing/ChatGPT only)
+- `scripts/deploy.cjs`: sitemap ping → IndexNow → Google Indexing API → CF cache purge → logs to `deploy-log.json`
+- `scripts/google-indexing-submit.cjs`: service account at `~/google-indexing-credentials.json`, 200/day cap
+- `scripts/purge-cf-cache.cjs`: zone `0f96cd18076e983f2ead742c0b454836`, requires `CF_TOKEN_RANK4AI`
 
 ## Plans & Databases (iCloud)
 - Master content/strategy: `iCloud/claude/astro/rank4ai/`
