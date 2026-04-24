@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+
+const title = "Editorial Policy: How Rank4AI Researches and Writes | Rank4AI";
+const description = "How Rank4AI researches, fact-checks, and updates content on AI search visibility. Source standards, UK focus, corrections policy, and authorship rules.";
+---
+
+<Layout title={title} description={description}>
+  <article class="pt-12 pb-24">
+    <div class="container-narrow">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about/' },
+        { label: 'Editorial Policy' }
+      ]} />
+
+      <p class="section-tag">About</p>
+      <h1 class="mb-6">Editorial Policy</h1>
+
+      <p class="text-[17px] text-text-muted leading-relaxed mb-8">
+        Rank4AI publishes research, analysis, and practical guidance on AI search visibility for UK businesses. This page explains how we research our content, how we fact-check, how we handle sources, and how we correct errors.
+      </p>
+
+      <h2 class="mt-12 mb-4">Source Standards</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        Every statistic, claim, or data point we publish is drawn from one of the following categories of source:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-[17px] text-text-muted mb-6">
+        <li>Primary research we have conducted (our own crawls, audits, or tracked citation data)</li>
+        <li>Peer-reviewed academic research (ArXiv, ICLR, Princeton, Stanford)</li>
+        <li>Platform disclosures from OpenAI, Anthropic, Google, Perplexity, Microsoft</li>
+        <li>Industry research from named organisations (Statcounter, Similarweb, Semrush, Ahrefs)</li>
+        <li>UK government data (Companies House, ONS, FCA register)</li>
+      </ul>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        We do not cite anonymous blog posts, AI-generated content, or unsourced social media claims as evidence.
+      </p>
+
+      <h2 class="mt-12 mb-4">Fact-Checking</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        Every claim with a specific number, date, or named entity is verified against the primary source before publication. Where sources disagree, we note the disagreement rather than pick a single figure. When a citation is behind a paywall or login, we link to the public summary and note the gate.
+      </p>
+
+      <h2 class="mt-12 mb-4">UK Focus</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        Rank4AI writes for UK businesses. We use British English, UK examples, UK regulators (FCA, ICO, Companies House), and UK place names. Where data is US-only, we flag the limitation and note whether the finding is likely to apply in the UK context. We do not republish US-centric content without review.
+      </p>
+
+      <h2 class="mt-12 mb-4">Authorship</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        Every article and guide is bylined to a named member of our team: Adam Parker, Jimmy Connoley, or Oliver Mackman. Every byline links to a full author profile with credentials and sameAs references. We do not publish anonymous or AI-only-generated content without human review and a human byline.
+      </p>
+
+      <h2 class="mt-12 mb-4">Use of AI in Our Workflow</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        We use AI tools (including Claude) for research synthesis, first drafts, and proofing, but every published piece is reviewed and edited by a human author before it goes live. AI-generated claims are verified against primary sources before publication. We do not publish unedited AI output.
+      </p>
+
+      <h2 class="mt-12 mb-4">Update Schedule</h2>
+      <ul class="list-disc pl-6 space-y-2 text-[17px] text-text-muted mb-6">
+        <li><strong>Monthly:</strong> Stats pages reviewed; "Last updated" dates refreshed where data has moved</li>
+        <li><strong>Quarterly:</strong> Pillar guides reassessed against platform changes (AI Overviews, Perplexity, ChatGPT)</li>
+        <li><strong>As needed:</strong> Immediate updates when platforms announce significant changes (policy, UI, citation behaviour)</li>
+      </ul>
+
+      <h2 class="mt-12 mb-4">Corrections</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        If you believe any information on this site is inaccurate, please contact <strong>info@rank4ai.co.uk</strong>. We investigate every report. Verified errors are corrected within 48 hours and, where the correction is material, the page carries a visible "Corrected DD Month YYYY" note in the update history.
+      </p>
+
+      <h2 class="mt-12 mb-4">Sponsorships and Commercial Relationships</h2>
+      <p class="text-[17px] text-text-muted leading-relaxed mb-4">
+        Rank4AI is an AI search visibility agency. We charge retainer fees for services listed on our <a href="/what-we-do/pricing/" class="link">pricing page</a>. We do not accept sponsored posts, paid guest posts, or pay-for-placement coverage in our research or comparison content. Tool mentions, platform descriptions, and agency references in our editorial content are based on our independent assessment, not commercial arrangements.
+      </p>
+
+      <AuthorBox />
+    </div>
+  </article>
+</Layout>
