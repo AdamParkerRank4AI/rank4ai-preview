@@ -1,6 +1,9 @@
 ---
 import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Layout from '../../layouts/Layout.astro'
+import library from '../../data/knowledge-library-full.json'
+
+const children = library.filter((p: any) => p.url.startsWith('/ai-seo/') && p.url !== '/ai-seo/').sort((a: any, b: any) => a.name.localeCompare(b.name))
 ---
 <Layout title="AI SEO meaning and structure | Rank4AI" description="Defines AI SEO and clarifies common misunderstandings. Explains how it relates to AI search visibility, interpretation stability, and answer generation.">
 <section class="pt-12 pb-24">
@@ -17,15 +20,26 @@ import Layout from '../../layouts/Layout.astro'
     <div class="prose max-w-none text-[17px] text-text-muted leading-relaxed" set:html='# AI SEO meaning and structure\n\nPrimary question: What is AI SEO, and what should it include\n\nAI SEO is a term used to describe optimisation for AI generated answers rather than traditional search rankings. It does not replace SEO, but it shifts focus toward interpretation stability and entity clarity.\n\nAI systems reuse information when subject definitions are clear, authority is reinforced, and signals remain consistent across pages and platforms.\n\nThis page defines AI SEO in practical terms, separates it from legacy assumptions, and explains how it connects to AI visibility and citation behaviour.\n\n## Definition\n\nAI SEO is the practice of improving how often your organisation is discovered, understood, cited, and recommended by AI systems. It focuses on meaning clarity, entity consistency, answer readiness, and verifiable signals across your site and your wider presence.\n\n## Includes\n\n- Clear entity definition: who you are, what you do, where you operate\n- Clean subject structure: a few authority pages that define meaning\n- Support content that deepens understanding without drifting into sales\n- Intent pages that capture phrases people actually search\n- Answer blocks that state the point early, then explain it\n- Consistency across public profiles so AI can reconcile facts\n- Structured data that confirms relationships and context\n\n## Excludes\n\n- ✕Keyword stuffing or writing for bots only\n- ✕Making claims you cannot support with evidence\n- ✕Creating hundreds of near duplicate pages that confuse meaning\n- ✕Assuming AI systems work like Google rankings\n\n## Cluster navigation\n\n### Authority support, Layer 3a\n\n- [What AI SEO means in plain English](https://www.rank4ai.co.uk/ai-seo/what-ai-seo-means)\n- [AI SEO vs GEO](https://www.rank4ai.co.uk/ai-seo/ai-seo-vs-geo)\n- [AI SEO vs traditional SEO](https://www.rank4ai.co.uk/ai-seo/ai-seo-vs-traditional-seo)\n- [Common mistakes people make with AI SEO](https://www.rank4ai.co.uk/ai-seo/common-mistakes-ai-seo)\n- [How to talk abo' />
   </div>
 
-    <!-- Internal links -->
+    <!-- All AI SEO topics -->
+    <div class="mt-12 pt-8 border-t border-border">
+      <h2 class="!text-xl mb-4">All AI SEO Topics ({children.length})</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {children.map((c: any) => (
+          <a href={c.url} class="block py-2 px-3 rounded-lg hover:bg-off-white transition-colors text-[15px] text-text hover:text-accent leading-relaxed">
+            {c.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Related hubs -->
     <div class="mt-12 pt-8 border-t border-border">
       <h2 class="!text-xl mb-4">Related</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <a href="/what-we-do/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Services</span></a>
+        <a href="/what-we-do/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Our Services</span></a>
         <a href="/learn/guides/complete-guide-ai-search/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Complete AI Search Guide</span></a>
         <a href="/about/five-signal-framework/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">The Five Signal Model</span></a>
         <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
-
       </div>
     </div>
   </div>

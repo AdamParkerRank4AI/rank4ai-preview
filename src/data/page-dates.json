@@ -3,6 +3,10 @@
     "added": "2026-04-15",
     "updated": "2026-04-15"
   },
+  "/about/editorial-policy/": {
+    "added": "2026-04-24",
+    "updated": "2026-04-24"
+  },
   "/about/five-signal-framework/": {
     "added": "2026-04-10",
     "updated": "2026-04-13"
@@ -837,7 +841,7 @@
   },
   "/services/chatgpt-optimisation/": {
     "added": "2026-04-17",
-    "updated": "2026-04-17"
+    "updated": "2026-04-24"
   },
   "/services/claude-optimisation/": {
     "added": "2026-04-17",
@@ -845,7 +849,7 @@
   },
   "/services/perplexity-optimisation/": {
     "added": "2026-04-17",
-    "updated": "2026-04-17"
+    "updated": "2026-04-24"
   },
   "/sitemap/": {
     "added": "2026-04-10",
