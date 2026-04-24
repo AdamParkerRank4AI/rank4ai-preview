@@ -7,12 +7,15 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/build-page-dates.cjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "npm run build && node scripts/deploy.cjs",
     "index": "node scripts/deploy.cjs",
-    "indexnow": "node scripts/indexnow-submit.cjs"
+    "indexnow": "node scripts/indexnow-submit.cjs",
+    "google-index": "node scripts/google-indexing-submit.cjs",
+    "page-dates": "node scripts/build-page-dates.cjs"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.6",
