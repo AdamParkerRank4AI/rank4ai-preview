@@ -1,0 +1,8 @@
+{
+  "_comment": "Manual override for published/updated dates per page URL. Takes precedence over git-derived dates in page-dates.json. Set 'updated' to null to hide the 'Updated' badge entirely. Format: YYYY-MM-DD.",
+  "_example": {
+    "/blog/some-post/": { "added": "2026-04-08", "updated": "2026-04-22" },
+    "/some-page/": { "added": "2026-03-15", "updated": null }
+  },
+  "overrides": {}
+}

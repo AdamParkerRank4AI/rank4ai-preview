@@ -12,3 +12,12 @@
 /ai-search-visibility/* /ai-search/:splat 301
 /why-ai-search-matters /about/ 301
 /start-here /free-audit/ 301
+
+# Orphaned hub slugs referenced from auto-generated pages
+/learn/guides/ai-marketing-growth/ /ai-marketing-growth/ 301
+/learn/guides/ai-marketing-growth /ai-marketing-growth/ 301
+/learn/guides/ai-search-comparisons/ /ai-search/comparisons/ 301
+/learn/guides/ai-search-comparisons /ai-search/comparisons/ 301
+/learn/guides/technical-ai-optimisation/ /ai-seo/technical/ 301
+/learn/guides/technical-ai-optimisation /ai-seo/technical/ 301
+/ai%20search/ /ai-search/ 301

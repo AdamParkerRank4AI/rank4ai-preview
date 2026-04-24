@@ -23,7 +23,7 @@ for (const q of questions) {
     <p class="section-tag">Questions</p>
     <h1 class="mb-4">AI Search Questions and Answers</h1>
 
-    <img src="/images/content/five-signal-model.svg" alt="The Five Signal Model for AI search" class="w-full rounded-xl mb-8 mt-6" loading="lazy">
+    <img src="/images/content/five-signal-model.svg" alt="The Five Signal Model for AI search" class="w-full rounded-xl mb-8 mt-6" width="1200" height="600" loading="eager" fetchpriority="high">
     <p class="text-[17px] text-text-muted leading-relaxed mb-4">{questions.length} questions about AI search visibility, answered clearly.</p>
     <p class="text-sm text-text-muted mb-10">Covering AI platforms, AI SEO, technical visibility, industry-specific questions, citations and more.</p>
     <div class="flex flex-wrap gap-2 mb-12">
@@ -36,7 +36,7 @@ for (const q of questions) {
         <h2 class="!text-xl mb-4">{cat} <span class="text-sm text-text-muted font-body">({(qs as any[]).length})</span></h2>
         <div class="space-y-2">
           {(qs as any[]).map((q) => (
-            <a href={`/learn/questions/${q.slug}/`} class="block p-3 rounded-lg hover:bg-off-white transition-colors text-[15px] text-text hover:text-accent">
+            <a href={`/learn/questions/${q.slug}/`} class="block min-h-[48px] py-3 px-4 rounded-lg hover:bg-off-white transition-colors text-base text-text hover:text-accent leading-relaxed">
               {q.question}
             </a>
           ))}

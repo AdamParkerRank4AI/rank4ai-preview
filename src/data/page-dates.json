@@ -1,0 +1,958 @@
+{
+  "/404/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/about/five-signal-framework/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/about/how-we-work/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/about/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/about/our-story/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/about/team/adam-parker/": {
+    "added": "2026-04-14",
+    "updated": "2026-04-22"
+  },
+  "/about/team/jimmy-connoley/": {
+    "added": "2026-04-14",
+    "updated": "2026-04-20"
+  },
+  "/about/team/oliver-mackman/": {
+    "added": "2026-04-20",
+    "updated": "2026-04-20"
+  },
+  "/about/team/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-20"
+  },
+  "/accessibility/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/admin/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-10"
+  },
+  "/ai-marketing-growth/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/ai-search/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/ai-search-website-design/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-22"
+  },
+  "/ai-seo/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/ai-seo-agency-london/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/ai-seo-agency-manchester/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/ai-seo-agency-uk/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/ai-seo-company/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/ai-visibility-seo-agency/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-17"
+  },
+  "/best-chatgpt-optimisation-company/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/blog/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/book-a-call/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/chatgpt-optimisation-agency/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-22"
+  },
+  "/chatgpt-ranking-optimisation-service/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/chatgpt-seo-company/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/contact/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/cookies/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/ecosystem/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/free-ai-search-audit/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/free-ai-search-report/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/free-audit/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/google-ai-optimisation/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/how-often-should-i-analyze-ai-visibility-performance/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-15"
+  },
+  "/learn/glossary/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/learn/guides/aeo/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/ai-search-b2b/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/ai-search-for-solicitors/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/ai-search-roi/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/appear-in-perplexity/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/chatgpt-seo/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/check-ai-visibility/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/claude-optimisation/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/complete-guide-ai-search/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/copilot-optimisation/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/entity-seo-for-ai/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/geo-vs-seo/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/geo/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/get-cited-chatgpt/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/google-ai-mode/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/google-ai-overview-optimisation/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/google-ai-overview-ranking-factors/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/how-ai-chooses-businesses/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/learn/guides/perplexity-seo/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/searchgpt/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/structured-data-for-ai/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/learn/guides/who-should-i-hire/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-23"
+  },
+  "/learn/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/learn/questions/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/learn/tools/ai-visibility-checker/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/learn/tools/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/learn/tools/llms-txt-generator/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/lp/ai-ready-sites/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-23"
+  },
+  "/lp/ai-website-builder/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/lp/rank-on-chatgpt/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-16"
+  },
+  "/lp/seo-to-aio/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-16"
+  },
+  "/podcast/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/privacy/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/rank-on-chatgpt/": {
+    "added": "2026-04-12",
+    "updated": "2026-04-13"
+  },
+  "/research/case-studies/ai-visibility/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/case-studies/": {
+    "added": null,
+    "updated": "2026-04-13"
+  },
+  "/research/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/research/methodology/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-citation-rates-by-industry-uk/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-search-2025-vs-2026-what-changed/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-search-adoption-rates-uk-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-search-agencies-brighton/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-cambridge/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-cardiff/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-compared/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-edinburgh/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-for-accountants/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-financial-services/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-healthcare/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-law-firms/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-property/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-recruitment/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-for-small-business-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-glasgow/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-liverpool/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-manchester/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-newcastle/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-nottingham/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-oxford/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agencies-sheffield/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-agencies-southampton/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-agency-vs-freelancer/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-search-audit-services-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-search-companies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-experts-bristol/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-market-size-uk-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-search-optimisation-agencies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-specialists-essex/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-search-vs-paid-search-uk/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/research/rankings/ai-seo-agencies-london/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-seo-agency-comparison-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-seo-near-me/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/ai-seo-vs-content-marketing/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/research/rankings/ai-seo-vs-traditional-seo-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/ai-visibility-audit-vs-seo-audit/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/ai-visibility-consultants-leeds/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/average-ai-visibility-scores-by-business-size-uk/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-ai-search-agencies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-ai-search-audits-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-ai-search-monitoring-tools-2026/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-ai-search-strategy-for-ecommerce/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-ai-search-strategy-for-local-business/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-ai-search-strategy-for-professional-services/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-ai-search-strategy-for-small-business/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-ai-search-visibility-agencies/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-ai-seo-agencies-for-small-business-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/best-ai-seo-agencies-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-ai-seo-agency-small-business/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-ai-seo-tools-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/best-chatgpt-seo-agencies-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/best-content-formats-for-ai-citations/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-copilot-optimisation-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/best-gemini-visibility-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/best-geo-agencies-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-google-ai-overviews-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/best-google-business-profile-tips-for-ai-search/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-llms-txt-examples-2026/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-perplexity-seo-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/best-robots-txt-for-ai-search/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-schema-markup-for-ai-search/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-site-structure-for-ai-visibility/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-way-to-appear-in-ai-search-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-way-to-appear-on-chatgpt-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-way-to-appear-on-copilot-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-way-to-appear-on-gemini-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-way-to-appear-on-google-ai-overviews-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-way-to-appear-on-perplexity-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/best-ways-to-check-ai-visibility/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/best-website-builders-for-ai-search/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/bing-indexing-chatgpt-visibility-correlation/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/chatgpt-optimisation-agencies-london/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/chatgpt-usage-statistics-uk-businesses-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/chatgpt-vs-gemini-business-recommendations/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/research/rankings/free-ai-search-audits/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/geo-vs-aeo-agencies-uk/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-15"
+  },
+  "/research/rankings/google-ai-overviews-click-through-impact-uk/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/in-house-ai-seo-vs-agency/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/leading-ai-seo-agencies-manchester/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/llms-txt-adoption-rates-uk-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/lovable-base44-vs-ai-optimised-websites/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/research/rankings/perplexity-vs-chatgpt-uk-businesses/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/schema-markup-adoption-uk-smes-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-10-ai-search-visibility-mistakes-uk/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-search-agencies-for-professional-services-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-search-agencies-london/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-search-agencies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-ai-search-signals-that-actually-work/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/top-ai-search-specialists-birmingham/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-ai-search-visibility-agencies-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-bath-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-seo-agencies-birmingham-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-bristol-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-cardiff-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-coventry-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-seo-agencies-edinburgh-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-exeter-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-seo-agencies-glasgow-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-leeds-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-liverpool-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-london-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-manchester-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-newcastle-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ai-seo-agencies-reading-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-seo-agencies-uk-2026/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-14"
+  },
+  "/research/rankings/top-ai-seo-agencies-york-2026/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/research/rankings/top-ai-seo-companies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-ai-visibility-agencies-uk/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-ai-visibility-audits/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-chatgpt-agencies-uk/": {
+    "added": "2026-04-13",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-chatgpt-optimisation-agencies-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-free-ai-search-tools-2026/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/top-geo-agencies-uk-2026/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/top-google-ai-overviews-agencies-2026/": {
+    "added": "2026-04-21",
+    "updated": "2026-04-21"
+  },
+  "/research/rankings/top-ranking-factors-for-ai-search-2026/": {
+    "added": "2026-04-23",
+    "updated": "2026-04-23"
+  },
+  "/research/rankings/uk-ai-search-specialist-landscape-2026/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/research/rankings/wordpress-vs-ai-optimised-websites/": {
+    "added": "2026-04-16",
+    "updated": "2026-04-16"
+  },
+  "/research/uk-ai-visibility-stats/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/research/weekly-intelligence/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/resources/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/responsible-ai/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/services/ai-search-engine-optimization/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-21"
+  },
+  "/services/ai-search-for-construction/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/services/ai-search-for-dental-practices/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/ai-search-for-education/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/services/ai-search-for-estate-agents/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-21"
+  },
+  "/services/ai-search-for-hospitality/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/services/ai-search-for-insurance/": {
+    "added": "2026-04-22",
+    "updated": "2026-04-22"
+  },
+  "/services/ai-search-for-solicitors/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/ai-search-visibility/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/ai-seo-agency-services/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/ai-seo-services/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-21"
+  },
+  "/services/ai-seo-solutions/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-19"
+  },
+  "/services/chatgpt-optimisation/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/claude-optimisation/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/services/perplexity-optimisation/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/sitemap/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/terms/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/uk-ai-seo-company/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/visibility-in-ai-search/": {
+    "added": "2026-04-17",
+    "updated": "2026-04-17"
+  },
+  "/what-we-do/advisory/": {
+    "added": "2026-04-15",
+    "updated": "2026-04-23"
+  },
+  "/what-we-do/ai-visibility-audit/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/what-we-do/ecosystem-services/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/what-we-do/full-agency/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-23"
+  },
+  "/what-we-do/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-15"
+  },
+  "/what-we-do/pricing/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/who-we-help/accountants/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/architects/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/dentists/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/education/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/estate-agents/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/financial-advisors/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/healthcare/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/hospitality/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-22"
+  },
+  "/who-we-help/marketing-agencies/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/property/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/recruitment/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/restaurants/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/solicitors/": {
+    "added": "2026-04-10",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/technology/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  },
+  "/who-we-help/tradespeople/": {
+    "added": "2026-04-11",
+    "updated": "2026-04-13"
+  }
+}

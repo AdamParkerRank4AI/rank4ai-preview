@@ -1,0 +1,63 @@
+---
+/**
+ * PageDates: small "Added X · Updated Y" badge for tiles + cards.
+ *
+ * Resolution order:
+ *   1. Manual override in src/data/page-publish-dates.json (under `overrides`)
+ *   2. Git-derived dates in src/data/page-dates.json
+ */
+
+import gitDates from '../data/page-dates.json';
+import publishDates from '../data/page-publish-dates.json';
+
+interface Props {
+  href: string;
+  align?: 'left' | 'center' | 'right';
+  size?: 'xs' | 'sm';
+}
+const { href, align = 'center', size = 'xs' } = Astro.props;
+
+const overrides = (publishDates as any).overrides || {};
+
+function lookup(h: string) {
+  const candidates = [h, h.endsWith('/') ? h : h + '/', h.replace(/\/$/, '')];
+  for (const c of candidates) {
+    if (overrides[c]) {
+      const o = overrides[c];
+      return { added: o.added ?? null, updated: o.updated === null ? null : (o.updated ?? null), _source: 'override' };
+    }
+  }
+  for (const c of candidates) {
+    if ((gitDates as any)[c]) return { ...(gitDates as any)[c], _source: 'git' };
+  }
+  return null;
+}
+
+const d = lookup(href);
+
+function fmt(iso: string | null) {
+  if (!iso) return '';
+  try {
+    const dt = new Date(iso);
+    return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  } catch {
+    return iso;
+  }
+}
+
+const showUpdated = d && d.updated && d.updated !== d.added;
+const alignClass = align === 'left' ? 'justify-start' : align === 'right' ? 'justify-end' : 'justify-center';
+const sizeClass = size === 'sm' ? 'text-xs' : 'text-xs';
+---
+
+{d && d.added && (
+  <div class={`${sizeClass} text-gray-500 mt-2 flex items-center ${alignClass} gap-1.5 leading-tight`}>
+    <span>Added {fmt(d.added)}</span>
+    {showUpdated && (
+      <>
+        <span class="text-gray-400">·</span>
+        <span class="text-brand/80">Updated {fmt(d.updated)}</span>
+      </>
+    )}
+  </div>
+)}
