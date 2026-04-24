@@ -21,3 +21,7 @@
 /learn/guides/technical-ai-optimisation/ /ai-seo/technical/ 301
 /learn/guides/technical-ai-optimisation /ai-seo/technical/ 301
 /ai%20search/ /ai-search/ 301
+
+# Broken-content cannibal: body was entirely local-SEO under an AI-SEO title
+/services/ai-seo-agency-services/ /what-we-do/full-agency/ 301
+/services/ai-seo-agency-services /what-we-do/full-agency/ 301

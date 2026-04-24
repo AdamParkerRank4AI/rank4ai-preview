@@ -1,8 +1,8 @@
 # Robots.txt - Rank4AI.co.uk
-# AI Search Optimised - All Crawlers Welcome
-# Last updated: 2026-04-10
+# AI Search Optimised - All major AI + search crawlers explicitly allowed
+# Last updated: 2026-04-24
 
-# Search Engine Crawlers
+# === Search Engine Crawlers ===
 User-agent: Googlebot
 Allow: /
 
@@ -15,50 +15,72 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# AI Crawlers - All Welcome
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: cohere-ai
+User-agent: YandexBot
 Allow: /
 
 User-agent: GoogleOther
 Allow: /
 
-# Default
+# === AI Training Crawlers ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# === AI Search / Live-Lookup Crawlers (the citation drivers) ===
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# === Default ===
 User-agent: *
 Allow: /
 
-# Sitemaps
+# === Sitemaps ===
 Sitemap: https://www.rank4ai.co.uk/sitemap-index.xml
 
-# AI-specific resources
+# === AI-specific resources ===
 # llms.txt: https://www.rank4ai.co.uk/llms.txt
 # ai-sitemap: https://www.rank4ai.co.uk/ai-sitemap.txt
