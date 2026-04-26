@@ -1,5 +1,8 @@
 # Rank4AI — rank4ai.co.uk
 
+## On session start
+**Read `DAILY_BRIEF.md` at repo root if it exists.** It is auto-generated each morning by the dashboard's `push_to_fleet.py` and contains: top actions, page-1 zero-click queries, SERP movers, AI Search citation gaps, competitor visibility, today's audit issues, trending queries, content plans on file, and yesterday's wins. Use it to ground the conversation; it captures the full dashboard view, not just recommendations.
+
 ## Site
 - **Domain:** rank4ai.co.uk (live since 15 Apr 2026)
 - **Repo:** AdamParkerRank4AI/rank4ai-preview
