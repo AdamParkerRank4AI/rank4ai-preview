@@ -3,6 +3,18 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+// Per-URL lastmod from page-dates.json (built by scripts/build-page-dates.cjs).
+let pageDates = {};
+try {
+  pageDates = JSON.parse(
+    readFileSync(fileURLToPath(new URL('./src/data/page-dates.json', import.meta.url)), 'utf8')
+  );
+} catch {
+  pageDates = {};
+}
 
 export default defineConfig({
   site: 'https://www.rank4ai.co.uk',
@@ -29,6 +41,35 @@ export default defineConfig({
         if (page.includes('/ai-search-visibility')) return false;
         if (page.includes('/ai-search-vs-seo')) return false;
         return true;
+      },
+      serialize(item) {
+        const path = new URL(item.url).pathname;
+        const dates = pageDates[path];
+        if (dates && dates.updated) {
+          item.lastmod = dates.updated;
+        }
+        // Priority + changefreq hints (Bing's crawler weights these heavily;
+        // Google ignores priority but reads changefreq as a hint).
+        if (path === '/') {
+          item.priority = 1.0;
+          item.changefreq = 'daily';
+        } else if (path.match(/^\/(ai-search|ai-seo|what-we-do|who-we-help|free-audit|about|research)\/?$/)) {
+          item.priority = 0.9;
+          item.changefreq = 'weekly';
+        } else if (path.startsWith('/research/') || path.startsWith('/who-we-help/')) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+        } else if (path.startsWith('/learn/questions/') || path.startsWith('/learn/guides/')) {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+        } else if (path.startsWith('/blog/')) {
+          item.priority = 0.6;
+          item.changefreq = 'monthly';
+        } else {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+        }
+        return item;
       },
     }),
     partytown({
