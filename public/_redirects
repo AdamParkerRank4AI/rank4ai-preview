@@ -35,3 +35,11 @@
 # Broken-content cannibal: body was entirely local-SEO under an AI-SEO title
 /services/ai-seo-agency-services/ /what-we-do/full-agency/ 301
 /services/ai-seo-agency-services /what-we-do/full-agency/ 301
+
+# AI-SEO cannibal cluster — 3 duplicate pages consolidated to /ai-seo/ hub
+/services/ai-seo-services /ai-seo/ 301
+/services/ai-seo-services/ /ai-seo/ 301
+/services/ai-seo-solutions /ai-seo/ 301
+/services/ai-seo-solutions/ /ai-seo/ 301
+/services/ai-search-engine-optimization /ai-seo/ 301
+/services/ai-search-engine-optimization/ /ai-seo/ 301
