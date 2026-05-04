@@ -1,0 +1,58 @@
+name: Validate llms.txt
+
+on:
+  push:
+    branches: [main, dev]
+    paths: ['public/llms.txt', 'public/llms-full.txt']
+  pull_request:
+    paths: ['public/llms.txt', 'public/llms-full.txt']
+  schedule:
+    - cron: '0 9 * * 1'  # Monday 09:00 UTC
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate llms.txt structure
+        run: |
+          set -e
+          PASS=0
+          FAIL=0
+          NOTES=()
+          check() {
+            if eval "$2"; then
+              echo "✓ $1"
+              PASS=$((PASS + 1))
+            else
+              echo "✗ $1"
+              FAIL=$((FAIL + 1))
+              NOTES+=("$1")
+            fi
+          }
+
+          if [ ! -f public/llms.txt ]; then
+            echo "::error::public/llms.txt is missing"
+            exit 1
+          fi
+
+          F=public/llms.txt
+          check "File exists" "[ -f $F ]"
+          check "Starts with H1 (# Name)" "head -1 $F | grep -q '^# '"
+          check "Has entity-function blockquote line ('> X is a Y')" "grep -q '^> ' $F"
+          check "Has at least one section header (## ...)" "grep -q '^## ' $F"
+          check "Contains a link (markdown style)" "grep -qE '\\[.+\\]\\(https?://' $F"
+          check "Smaller than 200KB" "[ $(wc -c < $F) -lt 204800 ]"
+          check "Plain ASCII / UTF-8 (no BOM)" "! head -c 3 $F | grep -q $'\\xef\\xbb\\xbf'"
+
+          if [ -f public/llms-full.txt ]; then
+            check "llms-full.txt smaller than 5MB" "[ $(wc -c < public/llms-full.txt) -lt 5242880 ]"
+          fi
+
+          echo ""
+          echo "Result: $PASS passed, $FAIL failed"
+          if [ $FAIL -gt 0 ]; then
+            echo "::error::llms.txt validation failed"
+            exit 1
+          fi
