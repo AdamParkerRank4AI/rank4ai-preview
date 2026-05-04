@@ -1,0 +1,134 @@
+name: GEO audit (live URL)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 9 * * 1'  # Monday 09:00 UTC
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: 'Override URL to audit'
+        required: false
+        type: string
+
+env:
+  SITE_URL: ${{ github.event.inputs.site_url || 'https://www.rank4ai.co.uk' }}
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run GEO score check
+        run: |
+          python3 - <<'PYEOF'
+          import json, re, sys, os
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+
+          SITE = os.environ["SITE_URL"]
+          UA = "Mozilla/5.0 (compatible; Rank4AI-GEO-Audit/1.0)"
+
+          def fetch(url):
+              try:
+                  with urlopen(Request(url, headers={"User-Agent": UA}), timeout=15) as r:
+                      return r.status, r.read().decode("utf-8", errors="replace")
+              except (HTTPError, URLError, TimeoutError) as e:
+                  return getattr(e, "code", 0), ""
+
+          score = 0
+          findings = []
+
+          status, html = fetch(SITE)
+          if status != 200:
+              print(f"::error::Homepage returned {status}")
+              sys.exit(1)
+          findings.append(("Homepage 200", True))
+          score += 10
+
+          jsonld_blocks = re.findall(
+              r'<script[^>]*type="application/ld\+json"[^>]*>(.+?)</script>',
+              html, re.DOTALL,
+          )
+          schemas = []
+          for raw in jsonld_blocks:
+              try:
+                  data = json.loads(raw)
+                  graph = data.get("@graph") if isinstance(data, dict) else None
+                  items = graph if isinstance(graph, list) else [data]
+                  for item in items:
+                      if isinstance(item, dict):
+                          t = item.get("@type")
+                          schemas.append(t if isinstance(t, str) else (t[0] if isinstance(t, list) else "unknown"))
+              except json.JSONDecodeError:
+                  pass
+
+          required = {"Person", "Organization", "WebSite"}
+          present = set()
+          for t in schemas:
+              for r in required:
+                  if r in str(t):
+                      present.add(r)
+          for r in required:
+              ok = r in present
+              findings.append((f"Schema: {r}", ok))
+              if ok: score += 10
+
+          # llms.txt accessible
+          llms_status, llms_body = fetch(SITE.rstrip("/") + "/llms.txt")
+          findings.append(("llms.txt accessible", llms_status == 200))
+          if llms_status == 200:
+              score += 15
+              if llms_body.startswith("# "):
+                  findings.append(("llms.txt has H1", True)); score += 5
+              if any(line.startswith("> ") for line in llms_body.split("\n")):
+                  findings.append(("llms.txt has entity-function line", True)); score += 5
+
+          # robots.txt allows AI crawlers
+          robots_status, robots_body = fetch(SITE.rstrip("/") + "/robots.txt")
+          findings.append(("robots.txt accessible", robots_status == 200))
+          if robots_status == 200:
+              score += 5
+              ai_bots = ["GPTBot", "ChatGPT-User", "Google-Extended", "ClaudeBot", "PerplexityBot"]
+              # Pass if no Disallow: / for these bots
+              blocked = []
+              for bot in ai_bots:
+                  for m in re.finditer(rf"User-agent:\s*{bot}\s*\n((?:[A-Za-z-]+:.*\n)+)", robots_body):
+                      block = m.group(1)
+                      if re.search(r"Disallow:\s*/\s*$", block, re.MULTILINE):
+                          blocked.append(bot)
+              findings.append(("AI bots not blocked in robots.txt", len(blocked) == 0))
+              if not blocked: score += 10
+
+          # Title + meta description on homepage
+          title_match = re.search(r"<title>(.+?)</title>", html, re.IGNORECASE | re.DOTALL)
+          desc_match = re.search(r'<meta\s+name="description"\s+content="(.+?)"', html, re.IGNORECASE | re.DOTALL)
+          findings.append(("Has <title>", bool(title_match)))
+          if title_match: score += 5
+          findings.append(("Has meta description", bool(desc_match)))
+          if desc_match: score += 5
+
+          # Entity-function sentence in body (within first 800 visible chars)
+          body = re.sub(r"<script[^>]*>.*?</script>", "", html, flags=re.DOTALL)
+          body = re.sub(r"<style[^>]*>.*?</style>", "", body, flags=re.DOTALL)
+          body_text = re.sub(r"<[^>]+>", " ", body)
+          body_text = re.sub(r"\s+", " ", body_text).strip()
+          first_chunk = body_text[:1500]
+          # Heuristic: look for "<EntityName> is a/an"
+          has_entity_sentence = bool(re.search(r"\b\w+\s+is\s+(?:a|an|the)\s+", first_chunk[:1200], re.IGNORECASE))
+          findings.append(("Entity-function sentence in first 1500 chars", has_entity_sentence))
+          if has_entity_sentence: score += 10
+
+          print(f"\n=== GEO Audit: {SITE} ===")
+          for label, ok in findings:
+              print(f"  {'✓' if ok else '✗'} {label}")
+          print(f"\nScore: {score}/100")
+
+          # Fail the run if score is critically low
+          if score < 50:
+              print(f"::warning::GEO score is {score}/100 — investigate")
+          if score < 30:
+              print(f"::error::GEO score critically low ({score}/100)")
+              sys.exit(1)
+          PYEOF
