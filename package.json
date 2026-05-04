@@ -20,7 +20,7 @@
   "dependencies": {
     "@astrojs/partytown": "^2.1.6",
     "@astrojs/sitemap": "^3.7.2",
-    "@rank4ai/fleet-core": "github:AdamParkerRank4AI/fleet-core#v0.1.0",
+    "@rank4ai/fleet-core": "github:AdamParkerRank4AI/fleet-core#v0.2.1",
     "@supabase/supabase-js": "^2.103.0",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5",
