@@ -1,0 +1,75 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import Layout from '../../layouts/Layout.astro'
+import MapView from '../../components/MapView.astro'
+import cities from '../../data/uk-cities-map.json'
+
+const title = "AI SEO Agency UK – City Coverage Map | Rank4AI"
+const description = "Rank4AI works with UK businesses on AI search visibility nationwide. Browse our city coverage map across London, Manchester, Leeds, Bristol, Edinburgh and beyond."
+
+const cityEntities = cities.map(c => ({
+  name: c.name,
+  type: 'city',
+  lat: c.lat,
+  lng: c.lng,
+  url: c.url
+}))
+
+const cityCount = cities.length
+const regions = [...new Set(cities.map(c => c.region))].sort()
+---
+
+<Layout title={title} description={description}>
+  <section class="pt-12 pb-24">
+    <div class="container-narrow">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'UK' }
+      ]} />
+
+      <p class="section-tag">UK Coverage</p>
+      <h1 class="mb-6">AI Search Visibility Across the UK</h1>
+
+      <div class="bg-off-white border-l-3 border-l-teal rounded-lg p-6 mb-8">
+        <p class="text-[15px] text-text-muted leading-relaxed">Rank4AI works with UK businesses on AI search visibility from a UK base. The map below shows {cityCount} cities and regions where we have published research, agency rankings or sector pages. We work with businesses anywhere in the UK, not just the cities listed.</p>
+      </div>
+
+      <MapView lat={54.5} lng={-2.5} zoom={5} cityName="United Kingdom" entities={cityEntities} />
+
+      <h2 class="!text-2xl mb-4 mt-12">Cities and regions ({cityCount})</h2>
+      <p class="text-[15px] text-text-muted mb-6">Click any city to see its dedicated page or AI search rankings research.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {cities.map(city => (
+          <a href={city.url} class="block bg-white border border-border rounded-xl p-4 hover:border-teal hover:shadow-md transition-all">
+            <h3 class="!text-base font-semibold text-text mb-1">{city.name}</h3>
+            <p class="text-xs text-text-muted">{city.region}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <h2 class="!text-xl mb-4">Regions covered</h2>
+        <div class="flex flex-wrap gap-2">
+          {regions.map(r => (
+            <span class="inline-block bg-off-white border border-border rounded-full px-3 py-1 text-xs text-text-muted">{r}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <h2 class="!text-xl mb-4">Related</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="/who-we-help/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Who We Help</span></a>
+          <a href="/ai-seo-agency-uk/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">AI SEO Agency UK Definition</span></a>
+          <a href="/research/" class="card group text-sm"><span class="font-medium text-teal group-hover:text-accent">Research and Rankings</span></a>
+          <a href="/free-audit/" class="card group text-sm"><span class="font-medium text-accent">Get a Free Audit &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-off-white border-t border-border text-center py-16 px-10 mt-16">
+      <a href="/free-audit/" class="cta-primary">Get a Free AI Search Visibility Audit &rarr;</a>
+    </div>
+  </section>
+</Layout>

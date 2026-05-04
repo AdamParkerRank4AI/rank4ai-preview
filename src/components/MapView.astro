@@ -1,0 +1,107 @@
+---
+/**
+ * Mapbox Map Component (Astro Island, lazy loaded on scroll into view)
+ * Shows a map centred on the given coordinates with optional entity markers.
+ * Mapbox GL JS is fetched only when the map enters the viewport.
+ */
+
+interface Entity {
+  name: string;
+  type: string;
+  lat: number;
+  lng: number;
+  url?: string;
+}
+
+interface Props {
+  lat: number;
+  lng: number;
+  zoom?: number;
+  cityName: string;
+  entities?: Entity[];
+}
+
+const { lat, lng, zoom = 11, cityName, entities = [] } = Astro.props;
+const mapboxToken = 'pk.eyJ1IjoicmFuazRhaSIsImEiOiJjbW5kMTFpYzQxNnB3MndyNnA4b3l2N3FmIn0.jwLiKesNRVvayYzX2Fwi5Q';
+
+const typeColors: Record<string, string> = {
+  city: '#14b8a6',
+  agency: '#f59e0b',
+  office: '#ef4444',
+  default: '#14b8a6'
+};
+---
+
+<div class="rounded-xl overflow-hidden border border-border mb-8" style="height: 460px;">
+  <div id="map-container" data-lat={lat} data-lng={lng} data-zoom={zoom} data-city={cityName} data-entities={JSON.stringify(entities)} style="width: 100%; height: 100%; background: #f1f5f9;">
+    <div class="flex items-center justify-center h-full text-text-muted text-sm">
+      Loading map of {cityName}...
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ mapboxToken, typeColors }}>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.disconnect();
+        loadMap();
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  const container = document.getElementById('map-container');
+  if (container) observer.observe(container);
+
+  function loadMap() {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css';
+    document.head.appendChild(css);
+
+    const script = document.createElement('script');
+    script.src = 'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js';
+    script.onload = initMap;
+    document.head.appendChild(script);
+  }
+
+  function initMap() {
+    const container = document.getElementById('map-container');
+    if (!container || !window.mapboxgl) return;
+
+    const lat = parseFloat(container.dataset.lat);
+    const lng = parseFloat(container.dataset.lng);
+    const zoom = parseInt(container.dataset.zoom);
+    const cityName = container.dataset.city;
+    const entities = JSON.parse(container.dataset.entities || '[]');
+
+    container.innerHTML = '';
+
+    mapboxgl.accessToken = mapboxToken;
+    const map = new mapboxgl.Map({
+      container: container,
+      style: 'mapbox://styles/mapbox/light-v11',
+      center: [lng, lat],
+      zoom: zoom
+    });
+
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+    if (entities.length === 0) {
+      new mapboxgl.Marker({ color: '#0f172a' })
+        .setLngLat([lng, lat])
+        .setPopup(new mapboxgl.Popup().setHTML(`<strong>${cityName}</strong>`))
+        .addTo(map);
+    }
+
+    entities.forEach(entity => {
+      const color = typeColors[entity.type] || typeColors.default;
+      const popupHtml = `<strong>${entity.name}</strong>${entity.url ? `<br><a href="${entity.url}" style="color:#0d9488; font-weight:600">View page →</a>` : ''}`;
+      const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupHtml);
+      new mapboxgl.Marker({ color })
+        .setLngLat([entity.lng, entity.lat])
+        .setPopup(popup)
+        .addTo(map);
+    });
+  }
+</script>

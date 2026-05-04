@@ -1,0 +1,22 @@
+[
+  { "slug": "london", "name": "London", "lat": 51.5074, "lng": -0.1278, "region": "Greater London", "url": "/ai-seo-agency-london/" },
+  { "slug": "manchester", "name": "Manchester", "lat": 53.4808, "lng": -2.2426, "region": "North West", "url": "/ai-seo-agency-manchester/" },
+  { "slug": "birmingham", "name": "Birmingham", "lat": 52.4862, "lng": -1.8904, "region": "West Midlands", "url": "/who-we-help/birmingham/" },
+  { "slug": "leeds", "name": "Leeds", "lat": 53.8008, "lng": -1.5491, "region": "Yorkshire", "url": "/research/rankings/top-ai-seo-agencies-leeds-2026/" },
+  { "slug": "bristol", "name": "Bristol", "lat": 51.4545, "lng": -2.5879, "region": "South West", "url": "/research/rankings/top-ai-seo-agencies-bristol-2026/" },
+  { "slug": "essex", "name": "Essex", "lat": 51.7659, "lng": 0.4685, "region": "East of England", "url": "/who-we-help/essex/" },
+  { "slug": "colchester", "name": "Colchester", "lat": 51.8959, "lng": 0.8919, "region": "East of England", "url": "/who-we-help/colchester/" },
+  { "slug": "edinburgh", "name": "Edinburgh", "lat": 55.9533, "lng": -3.1883, "region": "Scotland", "url": "/ai-seo-agency-uk/" },
+  { "slug": "glasgow", "name": "Glasgow", "lat": 55.8642, "lng": -4.2518, "region": "Scotland", "url": "/ai-seo-agency-uk/" },
+  { "slug": "liverpool", "name": "Liverpool", "lat": 53.4084, "lng": -2.9916, "region": "North West", "url": "/ai-seo-agency-uk/" },
+  { "slug": "cardiff", "name": "Cardiff", "lat": 51.4816, "lng": -3.1791, "region": "Wales", "url": "/ai-seo-agency-uk/" },
+  { "slug": "sheffield", "name": "Sheffield", "lat": 53.3811, "lng": -1.4701, "region": "Yorkshire", "url": "/ai-seo-agency-uk/" },
+  { "slug": "newcastle", "name": "Newcastle", "lat": 54.9783, "lng": -1.6178, "region": "North East", "url": "/ai-seo-agency-uk/" },
+  { "slug": "nottingham", "name": "Nottingham", "lat": 52.9548, "lng": -1.1581, "region": "East Midlands", "url": "/ai-seo-agency-uk/" },
+  { "slug": "cambridge", "name": "Cambridge", "lat": 52.2053, "lng": 0.1218, "region": "East of England", "url": "/ai-seo-agency-uk/" },
+  { "slug": "oxford", "name": "Oxford", "lat": 51.7520, "lng": -1.2577, "region": "South East", "url": "/ai-seo-agency-uk/" },
+  { "slug": "brighton", "name": "Brighton", "lat": 50.8225, "lng": -0.1372, "region": "South East", "url": "/ai-seo-agency-uk/" },
+  { "slug": "reading", "name": "Reading", "lat": 51.4543, "lng": -0.9781, "region": "South East", "url": "/ai-seo-agency-uk/" },
+  { "slug": "belfast", "name": "Belfast", "lat": 54.5973, "lng": -5.9301, "region": "Northern Ireland", "url": "/ai-seo-agency-uk/" },
+  { "slug": "milton-keynes", "name": "Milton Keynes", "lat": 52.0406, "lng": -0.7594, "region": "South East", "url": "/ai-seo-agency-uk/" }
+]
