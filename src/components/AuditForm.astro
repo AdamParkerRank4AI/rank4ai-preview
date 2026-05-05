@@ -225,6 +225,57 @@
   // Set page URL and start time
   document.getElementById('page-url-field')?.setAttribute('value', window.location.href);
 
+  // ---- Attribution: capture once on first page in session + sticky across submit ----
+  // Mirrors the marketinvoice.co.uk LeadForm pattern.
+  function getOrSetFirstTouch() {
+    const KEY = 'r4_first_touch';
+    try {
+      const existing = sessionStorage.getItem(KEY);
+      if (existing) return JSON.parse(existing);
+    } catch {}
+    const url = new URL(window.location.href);
+    const firstTouch = {
+      landing_url: window.location.href,
+      landing_path: window.location.pathname,
+      referrer: document.referrer || null,
+      referrer_host: document.referrer ? (new URL(document.referrer).hostname) : null,
+      utm_source: url.searchParams.get('utm_source'),
+      utm_medium: url.searchParams.get('utm_medium'),
+      utm_campaign: url.searchParams.get('utm_campaign'),
+      utm_term: url.searchParams.get('utm_term'),
+      utm_content: url.searchParams.get('utm_content'),
+      gclid: url.searchParams.get('gclid'),
+      fbclid: url.searchParams.get('fbclid'),
+      msclkid: url.searchParams.get('msclkid'),
+      session_started_at: new Date().toISOString(),
+    };
+    try { sessionStorage.setItem(KEY, JSON.stringify(firstTouch)); } catch {}
+    return firstTouch;
+  }
+  const attribution = getOrSetFirstTouch();
+
+  function inferSource(ft: any): string {
+    if (ft.utm_source) return ft.utm_source;
+    if (ft.gclid) return 'google-ads';
+    if (ft.fbclid) return 'facebook-ads';
+    if (ft.msclkid) return 'bing-ads';
+    if (!ft.referrer_host) return 'direct';
+    const h = ft.referrer_host.toLowerCase();
+    if (h.includes('google.')) return 'google-organic';
+    if (h.includes('bing.')) return 'bing-organic';
+    if (h.includes('duckduckgo.')) return 'duckduckgo-organic';
+    if (h.includes('chat.openai.') || h.includes('chatgpt.')) return 'chatgpt';
+    if (h.includes('perplexity.')) return 'perplexity';
+    if (h.includes('claude.') || h.includes('anthropic.')) return 'claude';
+    if (h.includes('gemini.') || h.includes('bard.')) return 'gemini';
+    if (h.includes('rank4ai.co.uk')) return 'internal';
+    return 'referral-' + h;
+  }
+
+  function attributionSummary(): string {
+    return `[Attribution] source=${inferSource(attribution)} | landing=${attribution.landing_path} | referrer=${attribution.referrer || 'none'} | utm_source=${attribution.utm_source || ''} | utm_medium=${attribution.utm_medium || ''} | utm_campaign=${attribution.utm_campaign || ''} | gclid=${attribution.gclid || ''} | fbclid=${attribution.fbclid || ''} | session_started=${attribution.session_started_at}`;
+  }
+
   // Capture field data on blur (partial submission)
   document.querySelectorAll('#audit-form-element input, #audit-form-element select').forEach(input => {
     input.addEventListener('change', () => {
@@ -282,6 +333,7 @@
       data._dropped_at = new Date().toISOString();
 
       // Save partial data to Supabase as a conversation with 'partial' stage
+      const partialPageUrl = window.location.href;
       const partialPayload = JSON.stringify({
         company_name: data.business_name || null,
         contact_name: data.business_name || null,
@@ -289,8 +341,8 @@
         email: data.email || null,
         phone: data.phone || null,
         company_size: data.company_size || null,
-        notes: `PARTIAL DROPOFF - Step ${getCurrentStep()} - Goals: ${(data.goals || []).join(', ')} - Marketing: ${data.marketing || ''} - Agency exp: ${data.agency_experience || ''}`,
-        source: 'website_partial',
+        notes: `PARTIAL DROPOFF - Step ${getCurrentStep()} - Submitted from: ${partialPageUrl} - ${attributionSummary()} - Goals: ${(data.goals || []).join(', ')} - Marketing: ${data.marketing || ''} - Agency exp: ${data.agency_experience || ''}`,
+        source: inferSource(attribution) + '-partial',
         current_stage: 'new',
         audit_status: 'pending',
       });
@@ -315,6 +367,11 @@
       formPayload.append('Email', data.email || 'Not captured');
       formPayload.append('Phone', data.phone || 'Not captured');
       formPayload.append('Step reached', getCurrentStep().toString());
+      formPayload.append('Source', inferSource(attribution));
+      formPayload.append('Page', partialPageUrl);
+      formPayload.append('Landing page', attribution.landing_path || '');
+      formPayload.append('Referrer', attribution.referrer || 'direct');
+      formPayload.append('UTM campaign', attribution.utm_campaign || '');
       navigator.sendBeacon('https://formsubmit.co/ajax/info@rank4ai.online', formPayload);
     }
   }
@@ -435,7 +492,9 @@
     const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked')).map(c => (c as HTMLInputElement).value);
 
     // Write to Supabase, columns must match the conversations table
-    const supabasePayload = {
+    const pageUrl = fd.get('page_url') as string || window.location.href;
+    const inferredSource = inferSource(attribution);
+    const basePayload: Record<string, any> = {
       company_name: fd.get('business_name'),
       contact_name: fd.get('business_name'),
       email: fd.get('email'),
@@ -446,23 +505,43 @@
       marketing_type: fd.get('marketing') || null,
       agency_experience: fd.get('agency_experience') || null,
       consent: true,
-      notes: `Form: Website Audit Form | Marketing: ${fd.get('marketing') || 'N/A'} | Agency exp: ${fd.get('agency_experience') || 'N/A'}`,
-      source: 'website',
+      notes: `Form: Website Audit Form | Submitted from: ${pageUrl} | ${attributionSummary()} | Marketing: ${fd.get('marketing') || 'N/A'} | Agency exp: ${fd.get('agency_experience') || 'N/A'}`,
+      source: inferredSource,
       current_stage: 'new',
       audit_status: 'pending',
     };
+    const fullPayload = {
+      ...basePayload,
+      page_url: pageUrl,
+      landing_path: attribution.landing_path,
+      referrer: attribution.referrer,
+      referrer_host: attribution.referrer_host,
+      utm_source: attribution.utm_source,
+      utm_medium: attribution.utm_medium,
+      utm_campaign: attribution.utm_campaign,
+      utm_term: attribution.utm_term,
+      utm_content: attribution.utm_content,
+      gclid: attribution.gclid,
+      fbclid: attribution.fbclid,
+      msclkid: attribution.msclkid,
+      user_agent: navigator.userAgent,
+    };
 
     try {
-      // Write to Supabase (primary)
-      await fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
+      // Try full payload (with attribution columns) first; fall back to base
+      // payload if the schema doesn't have them yet. Attribution is also
+      // preserved in `notes` either way so nothing is lost pre-migration.
+      const post = (body: any) => fetch('https://tsscscjcxbzhicuuhter.supabase.co/rest/v1/conversations', {
         method: 'POST',
         headers: {
           'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
           'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzc2NzY2pjeGJ6aGljdXVodGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMzU1NDEsImV4cCI6MjA5MTYxMTU0MX0.Q4z8-zHq0RAjZ1Vnv339JwAY36aq5TvnDBwE7OvUNOM',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(supabasePayload),
+        body: JSON.stringify(body),
       });
+      const r = await post(fullPayload);
+      if (!r.ok) await post(basePayload);
 
       // Send email notifications via FormSubmit
       const emailData = new FormData();
@@ -477,6 +556,14 @@
       emailData.append('Marketing', fd.get('marketing') as string || '');
       emailData.append('Agency Experience', fd.get('agency_experience') as string || '');
       emailData.append('Goals', goals.join(', '));
+      emailData.append('Source', inferredSource);
+      emailData.append('Submitted from', pageUrl);
+      emailData.append('Landing page', attribution.landing_path || '');
+      emailData.append('Referrer', attribution.referrer || 'direct');
+      emailData.append('UTM source', attribution.utm_source || '');
+      emailData.append('UTM medium', attribution.utm_medium || '');
+      emailData.append('UTM campaign', attribution.utm_campaign || '');
+      emailData.append('Click ID', attribution.gclid || attribution.fbclid || attribution.msclkid || '');
       emailData.append('_captcha', 'false');
       fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
     } catch (err) {
