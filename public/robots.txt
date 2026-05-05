@@ -1,8 +1,13 @@
-# Robots.txt - Rank4AI.co.uk
-# AI Search Optimised - All major AI + search crawlers explicitly allowed
-# Last updated: 2026-04-24
+# Robots.txt - rank4ai.co.uk
+# Fleet-canonical AI + search crawler allow-list (harmonised across rank4ai.co.uk,
+# marketinvoice.co.uk and seocompare.co.uk).
+# Last harmonised: 2026-05-05
 
-# === Search Engine Crawlers ===
+# === Default ===
+User-agent: *
+Allow: /
+
+# === Traditional Search Engines ===
 User-agent: Googlebot
 Allow: /
 
@@ -18,7 +23,14 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+# === Search Engine Variants ===
 User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 # === AI Training Crawlers ===
@@ -31,9 +43,6 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Applebot
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
@@ -44,9 +53,6 @@ User-agent: Amazonbot
 Allow: /
 
 User-agent: cohere-ai
-Allow: /
-
-User-agent: Meta-ExternalAgent
 Allow: /
 
 # === AI Search / Live-Lookup Crawlers (the citation drivers) ===
@@ -74,8 +80,23 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-# === Default ===
-User-agent: *
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# === Other AI / Discovery Crawlers ===
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Omgilibot
 Allow: /
 
 # === Sitemaps ===
