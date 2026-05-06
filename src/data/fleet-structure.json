@@ -1,0 +1,981 @@
+[
+  {
+    "slug": "rank4ai",
+    "name": "Rank4AI",
+    "abbr": "R4",
+    "tagline": "AI search agency",
+    "tier": "editorial",
+    "domain": "rank4ai.co.uk",
+    "total": 746,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "learn",
+        "leaf_count": 240,
+        "sample": [
+          "glossary",
+          "guides",
+          "aeo",
+          "ai-search-b2b",
+          "ai-search-for-solicitors",
+          "ai-search-roi",
+          "appear-in-perplexity",
+          "chatgpt-seo"
+        ],
+        "more": 232
+      },
+      {
+        "name": "research",
+        "leaf_count": 156,
+        "sample": [
+          "case-studies",
+          "ai-visibility",
+          "methodology",
+          "rankings",
+          "ai-citation-rates-by-industry-uk",
+          "ai-search-2025-vs-2026-what-changed",
+          "ai-search-adoption-rates-uk-2026",
+          "ai-search-agencies-brighton"
+        ],
+        "more": 148
+      },
+      {
+        "name": "blog",
+        "leaf_count": 126,
+        "sample": [
+          "5-things-every-uk-business-gets-wrong-on-ai-search",
+          "ai-crawled-sites-get-3x-more-traffic-what-this-means-for-uk-businesses",
+          "can-a-marketing-agency-help-with-ai-search-visibility",
+          "can-ai-answers-change-over-time",
+          "can-ai-recommend-small-businesses-over-large-chains",
+          "can-ai-recommendations-be-trusted-for-services",
+          "can-ai-search-understand-local-businesses",
+          "can-ai-search-understand-service-businesses"
+        ],
+        "more": 118
+      },
+      {
+        "name": "ai-search",
+        "leaf_count": 71,
+        "sample": [
+          "agency-help-appear-in-ai",
+          "ai-authority-building-agency",
+          "ai-authority-systems",
+          "ai-discoverability-agency",
+          "ai-knowledge-graph-optimisation",
+          "ai-ranking-agency",
+          "ai-recommendation-optimisation",
+          "ai-search-agency"
+        ],
+        "more": 63
+      },
+      {
+        "name": "ai-seo",
+        "leaf_count": 40,
+        "sample": [
+          "ai-seo-agency",
+          "how-to-choose",
+          "ai-seo-audit",
+          "what-you-get",
+          "ai-seo-strategy",
+          "quick-checklist",
+          "ai-seo-vs-geo",
+          "ai-seo-vs-traditional-seo"
+        ],
+        "more": 32
+      },
+      {
+        "name": "who-we-help",
+        "leaf_count": 28,
+        "sample": [
+          "accountants",
+          "architects",
+          "b2b",
+          "birmingham",
+          "bristol",
+          "colchester",
+          "dentists",
+          "ecommerce"
+        ],
+        "more": 20
+      },
+      {
+        "name": "ai-marketing-growth",
+        "leaf_count": 15,
+        "sample": [
+          "ai-agents-marketing",
+          "ai-brand-trust-signals",
+          "ai-content-authority",
+          "ai-content-vs-ai-optimised-content",
+          "ai-powered-conversion-signals",
+          "ai-powered-customer-journeys",
+          "ai-powered-engagement",
+          "ai-search-marketing-small-business"
+        ],
+        "more": 7
+      },
+      {
+        "name": "ai-seo-agency-uk",
+        "leaf_count": 9,
+        "sample": [
+          "ai-interpretation",
+          "ai-seo-vs-seo",
+          "boundaries-exclusions",
+          "content-structuring",
+          "risks-limitations",
+          "definition-control",
+          "intent-mapping",
+          "maintenance"
+        ],
+        "more": 1
+      },
+      {
+        "name": "services",
+        "leaf_count": 10,
+        "sample": [
+          "ai-search-for-construction",
+          "ai-search-for-dental-practices",
+          "ai-search-for-education",
+          "ai-search-for-estate-agents",
+          "ai-search-for-hospitality",
+          "ai-search-for-insurance",
+          "ai-search-for-solicitors",
+          "chatgpt-optimisation"
+        ],
+        "more": 2
+      },
+      {
+        "name": "about",
+        "leaf_count": 8,
+        "sample": [
+          "editorial-policy",
+          "five-signal-framework",
+          "how-we-work",
+          "our-story",
+          "team",
+          "adam-parker",
+          "jimmy-connoley",
+          "oliver-mackman"
+        ],
+        "more": 0
+      },
+      {
+        "name": "what-we-do",
+        "leaf_count": 5,
+        "sample": [
+          "advisory",
+          "ai-visibility-audit",
+          "ecosystem-services",
+          "full-agency",
+          "pricing"
+        ],
+        "more": 0
+      },
+      {
+        "name": "accessibility",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "ai-search-website-design",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  },
+  {
+    "slug": "market-invoice",
+    "name": "Market Invoice",
+    "abbr": "MI",
+    "tagline": "UK invoice finance comparison",
+    "tier": "editorial",
+    "domain": "marketinvoice.co.uk",
+    "total": 426,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "questions",
+        "leaf_count": 114,
+        "sample": [
+          "bank-cut-my-overdraft",
+          "broker-or-go-direct",
+          "can-factoring-replace-my-credit-controller",
+          "can-i-change-from-factoring-to-discounting",
+          "can-i-factor-export-invoices",
+          "can-i-factor-invoices-to-individuals",
+          "can-i-factor-invoices-to-related-companies",
+          "can-i-factor-overseas-customer-invoices"
+        ],
+        "more": 106
+      },
+      {
+        "name": "providers",
+        "leaf_count": 90,
+        "sample": [
+          "4syte",
+          "abc-finance",
+          "accelerated-payments",
+          "accident-credit-group",
+          "aib",
+          "aldermore",
+          "allica-bank",
+          "apollo-finance"
+        ],
+        "more": 82
+      },
+      {
+        "name": "locations",
+        "leaf_count": 50,
+        "sample": [
+          "aberdeen",
+          "basildon",
+          "belfast",
+          "birmingham",
+          "blackburn",
+          "bolton",
+          "bournemouth",
+          "brighton"
+        ],
+        "more": 42
+      },
+      {
+        "name": "industries",
+        "leaf_count": 37,
+        "sample": [
+          "agriculture",
+          "architecture",
+          "asbestos-removal",
+          "automotive",
+          "care-agencies",
+          "cleaning",
+          "construction",
+          "consultancy"
+        ],
+        "more": 29
+      },
+      {
+        "name": "guides",
+        "leaf_count": 30,
+        "sample": [
+          "advance-on-invoices",
+          "asset-based-lending",
+          "borrow-against-invoices",
+          "confidential-invoice-discounting",
+          "construction-invoice-finance",
+          "costs",
+          "debt-factoring",
+          "documents-needed"
+        ],
+        "more": 22
+      },
+      {
+        "name": "blog",
+        "leaf_count": 26,
+        "sample": [
+          "bank-vs-independent-invoice-finance",
+          "construction-invoice-finance-retention-release-stage-payments",
+          "construction-payment-chain",
+          "did-barclays-stop-invoice-finance",
+          "future-of-invoice-finance",
+          "hidden-costs-invoice-finance",
+          "invoice-finance-conversion-rates-2026",
+          "invoice-finance-providers-that-disappeared"
+        ],
+        "more": 18
+      },
+      {
+        "name": "best",
+        "leaf_count": 20,
+        "sample": [
+          "best-confidential-discounting",
+          "best-for-bad-credit",
+          "best-for-construction",
+          "best-for-export",
+          "best-for-government-contractors",
+          "best-for-large-business",
+          "best-for-manufacturing",
+          "best-for-nhs-suppliers"
+        ],
+        "more": 12
+      },
+      {
+        "name": "compare",
+        "leaf_count": 17,
+        "sample": [
+          "aldermore-vs-skipton",
+          "barclays-vs-natwest",
+          "bibby-vs-ultimate-finance",
+          "close-brothers-vs-bibby",
+          "close-brothers-vs-skipton",
+          "factoring-vs-asset-finance",
+          "hsbc-vs-close-brothers",
+          "hsbc-vs-lloyds"
+        ],
+        "more": 9
+      },
+      {
+        "name": "working-capital",
+        "leaf_count": 7,
+        "sample": [
+          "cash-flow-problems",
+          "funding-business-growth",
+          "late-payment-uk",
+          "purchase-order-finance",
+          "seasonal-cash-flow",
+          "trade-credit-guide",
+          "vat-tax-bills"
+        ],
+        "more": 0
+      },
+      {
+        "name": "stats",
+        "leaf_count": 5,
+        "sample": [
+          "late-payment-crisis",
+          "uk-construction-late-payment-statistics-2026",
+          "uk-invoice-finance-statistics-2026",
+          "uk-late-payment-statistics-2026",
+          "uk-sme-insolvency-invoice-finance-statistics-2026"
+        ],
+        "more": 0
+      },
+      {
+        "name": "authors",
+        "leaf_count": 1,
+        "sample": [
+          "oliver-mackman"
+        ],
+        "more": 0
+      },
+      {
+        "name": "about",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "accessibility",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  },
+  {
+    "slug": "seocompare",
+    "name": "SEOCompare",
+    "abbr": "SC",
+    "tagline": "AI search optimisation comparison",
+    "tier": "editorial",
+    "domain": "seocompare.co.uk",
+    "total": 429,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "compare",
+        "leaf_count": 66,
+        "sample": [
+          "angelfish-marketing-vs-carrieann-sudlow",
+          "angelfish-marketing-vs-charle",
+          "angelfish-marketing-vs-clickslice",
+          "angelfish-marketing-vs-found",
+          "angelfish-marketing-vs-impression",
+          "angelfish-marketing-vs-mrs-digital",
+          "angelfish-marketing-vs-rank4ai",
+          "angelfish-marketing-vs-rise-at-seven"
+        ],
+        "more": 58
+      },
+      {
+        "name": "questions",
+        "leaf_count": 53,
+        "sample": [
+          "agency-vs-diy",
+          "ai-search-for-beginners",
+          "b2b-chatgpt",
+          "bing-submission",
+          "can-ai-seo-be-automated",
+          "chatgpt-vs-perplexity-optimization",
+          "citation-volatility",
+          "compare-seo-agencies-uk"
+        ],
+        "more": 45
+      },
+      {
+        "name": "blog",
+        "leaf_count": 35,
+        "sample": [
+          "10-questions-before-hiring",
+          "7-ai-seo-mistakes",
+          "agency-graveyard",
+          "agency-vs-freelance-vs-diy",
+          "ai-platform-recommendation-patterns",
+          "ai-search-franchises",
+          "ai-search-roi-real-numbers",
+          "ai-seo-accounting-firms"
+        ],
+        "more": 27
+      },
+      {
+        "name": "stats",
+        "leaf_count": 22,
+        "sample": [
+          "ai-crawler-blocking-patterns",
+          "ai-overviews-coverage",
+          "ai-search-conversion-rates",
+          "ai-search-market-share",
+          "ai-search-zero-click-rates",
+          "blocking-ai-crawlers",
+          "brand-mentions-vs-backlinks",
+          "chatgpt-referral-traffic"
+        ],
+        "more": 14
+      },
+      {
+        "name": "alternatives",
+        "leaf_count": 12,
+        "sample": [
+          "angelfish-marketing",
+          "carrieann-sudlow",
+          "charle",
+          "clickslice",
+          "found",
+          "impression",
+          "mrs-digital",
+          "rank4ai"
+        ],
+        "more": 4
+      },
+      {
+        "name": "insights",
+        "leaf_count": 8,
+        "sample": [
+          "ai-reshaping-local",
+          "ai-search-not-seo",
+          "google-ai-mode",
+          "missing-schema",
+          "perplexity-publishers",
+          "seo-agencies-not-ready",
+          "uk-behind",
+          "wordpress-invisible"
+        ],
+        "more": 0
+      },
+      {
+        "name": "research",
+        "leaf_count": 3,
+        "sample": [
+          "50-uk-websites-tested",
+          "industry-report-q2-2026",
+          "uk-seo-agency-ai-readiness-2026"
+        ],
+        "more": 0
+      },
+      {
+        "name": "tools",
+        "leaf_count": 3,
+        "sample": [
+          "ai-readiness-quiz",
+          "ai-seo-roi-calculator",
+          "ai-visibility-score-check"
+        ],
+        "more": 0
+      },
+      {
+        "name": "data",
+        "leaf_count": 2,
+        "sample": [
+          "ai-crawler-directory",
+          "algorithm-changes"
+        ],
+        "more": 0
+      },
+      {
+        "name": "about",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "aeo-vs-geo-vs-llmo",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "affordable-ai-seo-agencies",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "affordable-ai-seo-ecommerce",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  },
+  {
+    "slug": "bestbusinessloans",
+    "name": "BestBusinessLoans",
+    "abbr": "BBL",
+    "tagline": "Business loan editorial and lead capture",
+    "tier": "leadgen",
+    "domain": "bestbusinessloans.co.uk",
+    "total": 101,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "reviews",
+        "leaf_count": 18,
+        "sample": [
+          "365-business-finance",
+          "acorn-commercial-finance",
+          "aldermore",
+          "allica-bank",
+          "bizcap",
+          "bolton-finance",
+          "capify",
+          "fleximize"
+        ],
+        "more": 10
+      },
+      {
+        "name": "best",
+        "leaf_count": 16,
+        "sample": [
+          "business-loans-after-decline",
+          "business-loans-asset-finance",
+          "business-loans-for-construction",
+          "business-loans-for-e-commerce",
+          "business-loans-for-hospitality",
+          "business-loans-for-manufacturing",
+          "business-loans-for-recruitment",
+          "business-loans-for-retail"
+        ],
+        "more": 8
+      },
+      {
+        "name": "by-sector",
+        "leaf_count": 12,
+        "sample": [
+          "construction",
+          "franchisee",
+          "hgv-operator",
+          "hospitality",
+          "manufacturing",
+          "nursery-childcare",
+          "opticians",
+          "professional-services"
+        ],
+        "more": 4
+      },
+      {
+        "name": "guides",
+        "leaf_count": 12,
+        "sample": [
+          "business-loan-after-bankruptcy",
+          "business-loan-after-iva",
+          "business-loan-calculator",
+          "business-loan-first-year-trading",
+          "business-loan-no-credit-check",
+          "business-loan-no-pg",
+          "business-loan-rates-2026",
+          "business-loan-with-ccj"
+        ],
+        "more": 4
+      },
+      {
+        "name": "hmrc",
+        "leaf_count": 6,
+        "sample": [
+          "corporation-tax-pressure",
+          "directors-personal-tax-pressure",
+          "hmrc-time-to-pay",
+          "paye-cis-arrears",
+          "vat-bill-emergency",
+          "winding-up-petition"
+        ],
+        "more": 0
+      },
+      {
+        "name": "use-cases",
+        "leaf_count": 6,
+        "sample": [
+          "bounce-back-refinance",
+          "fit-out-loan",
+          "hmrc-tax-loan",
+          "partner-buyout",
+          "small-mbo",
+          "vat-loan"
+        ],
+        "more": 0
+      },
+      {
+        "name": "halal",
+        "leaf_count": 5,
+        "sample": [
+          "al-rayan-bank",
+          "blme",
+          "gatehouse-bank",
+          "kestrl",
+          "qib-uk"
+        ],
+        "more": 0
+      },
+      {
+        "name": "authors",
+        "leaf_count": 1,
+        "sample": [
+          "oliver-mackman"
+        ],
+        "more": 0
+      },
+      {
+        "name": "about",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "by-persona",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "by-product",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "compare",
+        "leaf_count": 1,
+        "sample": [
+          "iwoca-vs-funding-circle"
+        ],
+        "more": 0
+      },
+      {
+        "name": "contact",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  },
+  {
+    "slug": "fundbiz",
+    "name": "FundBiz",
+    "abbr": "FB",
+    "tagline": "Specialty UK SMB finance broker",
+    "tier": "leadgen",
+    "domain": "fundbiz.co.uk",
+    "total": 83,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "declined",
+        "leaf_count": 16,
+        "sample": [
+          "ccj",
+          "companies-house-overdue",
+          "complex-group",
+          "existing-debt-with-lender",
+          "high-affordability-ratio",
+          "low-turnover",
+          "missed-payments",
+          "no-business-bank-account"
+        ],
+        "more": 8
+      },
+      {
+        "name": "asset-finance",
+        "leaf_count": 15,
+        "sample": [
+          "cnc-machine-finance",
+          "dental-chair-finance",
+          "forklift-finance",
+          "gym-equipment-finance",
+          "hgv-finance",
+          "it-equipment-finance",
+          "modular-building-finance",
+          "photography-equipment-finance"
+        ],
+        "more": 7
+      },
+      {
+        "name": "sectors",
+        "leaf_count": 14,
+        "sample": [
+          "agriculture",
+          "charity-cic",
+          "construction",
+          "e-commerce",
+          "education",
+          "energy",
+          "healthcare",
+          "hospitality"
+        ],
+        "more": 6
+      },
+      {
+        "name": "banks",
+        "leaf_count": 12,
+        "sample": [
+          "allica-bank-business-loan",
+          "barclays",
+          "hsbc",
+          "lloyds",
+          "metro-bank",
+          "monzo-business",
+          "natwest",
+          "rbs"
+        ],
+        "more": 4
+      },
+      {
+        "name": "authors",
+        "leaf_count": 1,
+        "sample": [
+          "oliver-mackman"
+        ],
+        "more": 0
+      },
+      {
+        "name": "calculator",
+        "leaf_count": 1,
+        "sample": [
+          "mca"
+        ],
+        "more": 0
+      },
+      {
+        "name": "about",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "bridging",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "commercial-mortgage",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "contact",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "disclaimer",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "editorial-policy",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "eligibility-checker",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  },
+  {
+    "slug": "cardmachines",
+    "name": "CardTerminals",
+    "abbr": "CT",
+    "tagline": "Card machines and merchant accounts",
+    "tier": "leadgen",
+    "domain": "cardmachines.co.uk",
+    "total": 99,
+    "sections": [
+      {
+        "name": "(home)",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "trade",
+        "leaf_count": 25,
+        "sample": [
+          "b-and-b-airbnb",
+          "beauty-clinic",
+          "butcher",
+          "cafe",
+          "caterer",
+          "dentist",
+          "dog-grooming",
+          "electrician"
+        ],
+        "more": 17
+      },
+      {
+        "name": "reviews",
+        "leaf_count": 13,
+        "sample": [
+          "adyen",
+          "bbpos-wisepos-e",
+          "dojo-go",
+          "pax-a920-pro",
+          "revolut-card-reader",
+          "square-terminal",
+          "stripe-reader-s700",
+          "sumup-solo"
+        ],
+        "more": 5
+      },
+      {
+        "name": "high-risk",
+        "leaf_count": 11,
+        "sample": [
+          "adult",
+          "cbd",
+          "crypto",
+          "dating",
+          "firearms",
+          "gambling",
+          "pawnbroker",
+          "subscription"
+        ],
+        "more": 3
+      },
+      {
+        "name": "integrations",
+        "leaf_count": 6,
+        "sample": [
+          "card-machine-for-booksy",
+          "card-machine-for-cliniko",
+          "card-machine-for-quickbooks",
+          "card-machine-for-sage",
+          "card-machine-for-treatwell",
+          "card-machine-for-xero"
+        ],
+        "more": 0
+      },
+      {
+        "name": "faith",
+        "leaf_count": 5,
+        "sample": [
+          "church-collection",
+          "gurdwara-donations",
+          "mosque-donations",
+          "synagogue-donations",
+          "temple-donations"
+        ],
+        "more": 0
+      },
+      {
+        "name": "features",
+        "leaf_count": 5,
+        "sample": [
+          "card-machine-amex",
+          "card-machine-apple-pay",
+          "card-machine-tabs",
+          "card-machine-tipping",
+          "multi-currency-card-machine"
+        ],
+        "more": 0
+      },
+      {
+        "name": "switch",
+        "leaf_count": 5,
+        "sample": [
+          "leave-barclaycard",
+          "leave-elavon",
+          "leave-paymentsense",
+          "leave-takepayments",
+          "leave-worldpay"
+        ],
+        "more": 0
+      },
+      {
+        "name": "compare",
+        "leaf_count": 5,
+        "sample": [
+          "dojo-go-vs-zettle-reader-2",
+          "square-terminal-vs-stripe-reader-s700",
+          "sumup-vs-square",
+          "tap-to-pay-iphone-vs-sumup-solo",
+          "worldpay-vs-dojo"
+        ],
+        "more": 0
+      },
+      {
+        "name": "authors",
+        "leaf_count": 1,
+        "sample": [
+          "oliver-mackman"
+        ],
+        "more": 0
+      },
+      {
+        "name": "about",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "contact",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "disclaimer",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "editorial-policy",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      }
+    ]
+  }
+]

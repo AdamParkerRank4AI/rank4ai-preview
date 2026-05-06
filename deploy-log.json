@@ -1,0 +1,25 @@
+{
+  "deploys": [
+    {
+      "timestamp": "2026-05-04T18:55:09.671Z",
+      "urlCount": 749,
+      "duration": "46.3s",
+      "sitemapPing": {
+        "Google": "404 (deprecated — using robots.txt Sitemap directive instead)",
+        "Bing": "via IndexNow"
+      },
+      "indexNow": {
+        "count": 749,
+        "status": 200
+      },
+      "googleIndexing": {
+        "submitted": 2,
+        "failed": 198,
+        "skipped": false
+      },
+      "cachePurge": {
+        "purged": true
+      }
+    }
+  ]
+}

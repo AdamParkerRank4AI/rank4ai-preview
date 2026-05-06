@@ -141,7 +141,7 @@
   },
   "/": {
     "added": "2026-04-10",
-    "updated": "2026-04-15"
+    "updated": "2026-05-04"
   },
   "/learn/glossary/": {
     "added": "2026-04-10",
@@ -799,10 +799,6 @@
     "added": "2026-04-10",
     "updated": "2026-04-13"
   },
-  "/services/ai-search-engine-optimization/": {
-    "added": "2026-04-17",
-    "updated": "2026-04-21"
-  },
   "/services/ai-search-for-construction/": {
     "added": "2026-04-22",
     "updated": "2026-04-22"
@@ -835,14 +831,6 @@
     "added": "2026-04-17",
     "updated": "2026-04-17"
   },
-  "/services/ai-seo-services/": {
-    "added": "2026-04-17",
-    "updated": "2026-04-21"
-  },
-  "/services/ai-seo-solutions/": {
-    "added": "2026-04-17",
-    "updated": "2026-04-19"
-  },
   "/services/chatgpt-optimisation/": {
     "added": "2026-04-17",
     "updated": "2026-04-24"
@@ -862,6 +850,10 @@
   "/terms/": {
     "added": "2026-04-10",
     "updated": "2026-04-13"
+  },
+  "/uk/": {
+    "added": "2026-05-04",
+    "updated": "2026-05-04"
   },
   "/uk-ai-seo-company/": {
     "added": "2026-04-17",
