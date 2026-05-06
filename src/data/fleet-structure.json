@@ -6,17 +6,11 @@
     "tagline": "AI search agency",
     "tier": "editorial",
     "domain": "rank4ai.co.uk",
-    "total": 746,
+    "total": 1133,
     "sections": [
       {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
         "name": "learn",
-        "leaf_count": 240,
+        "leaf_count": 313,
         "sample": [
           "glossary",
           "guides",
@@ -27,7 +21,22 @@
           "appear-in-perplexity",
           "chatgpt-seo"
         ],
-        "more": 232
+        "more": 305
+      },
+      {
+        "name": "ai-search-questions",
+        "leaf_count": 213,
+        "sample": [
+          "are-google-ai-overviews-reducing-traffic-to-my-website",
+          "are-traditional-seo-ranking-factors-still-relevant-for-ai-search-visibility",
+          "can-a-small-uk-business-realistically-compete-in-ai-search-results",
+          "can-ai-describe-a-business-accurately-but-still-avoid-naming-it",
+          "can-ai-search-remove-or-suppress-my-business-from-results",
+          "can-ai-visibility-be-measured-reliably-in-the-uk",
+          "can-ai-visibility-work-without-strong-backlinks-in-the-uk",
+          "can-chatgpt-damage-my-business-reputation-if-it-gets-facts-wrong"
+        ],
+        "more": 205
       },
       {
         "name": "research",
@@ -61,7 +70,7 @@
       },
       {
         "name": "ai-search",
-        "leaf_count": 71,
+        "leaf_count": 75,
         "sample": [
           "agency-help-appear-in-ai",
           "ai-authority-building-agency",
@@ -72,11 +81,11 @@
           "ai-recommendation-optimisation",
           "ai-search-agency"
         ],
-        "more": 63
+        "more": 67
       },
       {
         "name": "ai-seo",
-        "leaf_count": 40,
+        "leaf_count": 41,
         "sample": [
           "ai-seo-agency",
           "how-to-choose",
@@ -87,7 +96,7 @@
           "ai-seo-vs-geo",
           "ai-seo-vs-traditional-seo"
         ],
-        "more": 32
+        "more": 33
       },
       {
         "name": "who-we-help",
@@ -105,8 +114,38 @@
         "more": 20
       },
       {
+        "name": "ai-market-stats",
+        "leaf_count": 26,
+        "sample": [
+          "1-in-6-uk-sme-outdated-privacy-policy",
+          "13-percent-uk-sme-llms-txt-adoption",
+          "20-percent-uk-sme-stock-photo-generic-alt-text",
+          "23-percent-uk-sme-websites-blocking-ai-crawlers",
+          "29-percent-uk-sme-title-h1-misalignment",
+          "36-percent-uk-sme-trust-page-gap",
+          "4-percent-uk-sme-person-schema-gap",
+          "42-percent-uk-sme-missing-social-links"
+        ],
+        "more": 18
+      },
+      {
+        "name": "ai-seo-agency-uk",
+        "leaf_count": 17,
+        "sample": [
+          "ai-interpretation",
+          "ai-seo-vs-seo",
+          "birmingham",
+          "boundaries-exclusions",
+          "bristol",
+          "content-structuring",
+          "essex",
+          "leeds"
+        ],
+        "more": 9
+      },
+      {
         "name": "ai-marketing-growth",
-        "leaf_count": 15,
+        "leaf_count": 16,
         "sample": [
           "ai-agents-marketing",
           "ai-brand-trust-signals",
@@ -117,26 +156,11 @@
           "ai-powered-engagement",
           "ai-search-marketing-small-business"
         ],
-        "more": 7
-      },
-      {
-        "name": "ai-seo-agency-uk",
-        "leaf_count": 9,
-        "sample": [
-          "ai-interpretation",
-          "ai-seo-vs-seo",
-          "boundaries-exclusions",
-          "content-structuring",
-          "risks-limitations",
-          "definition-control",
-          "intent-mapping",
-          "maintenance"
-        ],
-        "more": 1
+        "more": 8
       },
       {
         "name": "services",
-        "leaf_count": 10,
+        "leaf_count": 11,
         "sample": [
           "ai-search-for-construction",
           "ai-search-for-dental-practices",
@@ -145,9 +169,9 @@
           "ai-search-for-hospitality",
           "ai-search-for-insurance",
           "ai-search-for-solicitors",
-          "chatgpt-optimisation"
+          "ai-search-visibility"
         ],
-        "more": 2
+        "more": 3
       },
       {
         "name": "about",
@@ -165,27 +189,29 @@
         "more": 0
       },
       {
-        "name": "what-we-do",
-        "leaf_count": 5,
+        "name": "ai-services",
+        "leaf_count": 7,
         "sample": [
-          "advisory",
-          "ai-visibility-audit",
-          "ecosystem-services",
-          "full-agency",
-          "pricing"
+          "ai-agency-restructure",
+          "ai-content-rebuild",
+          "ai-meaning-clean-up",
+          "ai-messaging-clean-up",
+          "ai-search-audit",
+          "ai-visibility-boost",
+          "complete-guide"
         ],
         "more": 0
       },
       {
-        "name": "accessibility",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "ai-search-website-design",
-        "leaf_count": 0,
-        "sample": [],
+        "name": "ai-search-weekly",
+        "leaf_count": 5,
+        "sample": [
+          "2026-02-24-ai-search-weekly",
+          "2026-03-03-ai-search-weekly",
+          "2026-03-05-ai-search-weekly",
+          "2026-03-09-ai-search-weekly",
+          "2026-03-16-ai-search-weekly"
+        ],
         "more": 0
       }
     ]
@@ -197,14 +223,8 @@
     "tagline": "UK invoice finance comparison",
     "tier": "editorial",
     "domain": "marketinvoice.co.uk",
-    "total": 426,
+    "total": 432,
     "sections": [
-      {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
       {
         "name": "questions",
         "leaf_count": 114,
@@ -352,6 +372,16 @@
         "more": 0
       },
       {
+        "name": "preview",
+        "leaf_count": 3,
+        "sample": [
+          "option-a",
+          "option-b",
+          "option-c"
+        ],
+        "more": 0
+      },
+      {
         "name": "authors",
         "leaf_count": 1,
         "sample": [
@@ -360,13 +390,13 @@
         "more": 0
       },
       {
-        "name": "about",
+        "name": ".",
         "leaf_count": 0,
         "sample": [],
         "more": 0
       },
       {
-        "name": "accessibility",
+        "name": "404",
         "leaf_count": 0,
         "sample": [],
         "more": 0
@@ -380,14 +410,8 @@
     "tagline": "AI search optimisation comparison",
     "tier": "editorial",
     "domain": "seocompare.co.uk",
-    "total": 429,
+    "total": 434,
     "sections": [
-      {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
       {
         "name": "compare",
         "leaf_count": 66,
@@ -508,6 +532,18 @@
         "more": 0
       },
       {
+        "name": ".",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "404",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
@@ -524,12 +560,6 @@
         "leaf_count": 0,
         "sample": [],
         "more": 0
-      },
-      {
-        "name": "affordable-ai-seo-ecommerce",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
       }
     ]
   },
@@ -540,14 +570,8 @@
     "tagline": "Business loan editorial and lead capture",
     "tier": "leadgen",
     "domain": "bestbusinessloans.co.uk",
-    "total": 101,
+    "total": 102,
     "sections": [
-      {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
       {
         "name": "reviews",
         "leaf_count": 18,
@@ -655,6 +679,18 @@
         "more": 0
       },
       {
+        "name": ".",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "404",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
@@ -679,12 +715,6 @@
           "iwoca-vs-funding-circle"
         ],
         "more": 0
-      },
-      {
-        "name": "contact",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
       }
     ]
   },
@@ -695,14 +725,8 @@
     "tagline": "Specialty UK SMB finance broker",
     "tier": "leadgen",
     "domain": "fundbiz.co.uk",
-    "total": 83,
+    "total": 84,
     "sections": [
-      {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
       {
         "name": "declined",
         "leaf_count": 16,
@@ -780,6 +804,18 @@
         "more": 0
       },
       {
+        "name": ".",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "404",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
@@ -814,12 +850,6 @@
         "leaf_count": 0,
         "sample": [],
         "more": 0
-      },
-      {
-        "name": "eligibility-checker",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
       }
     ]
   },
@@ -828,16 +858,10 @@
     "name": "CardTerminals",
     "abbr": "CT",
     "tagline": "Card machines and merchant accounts",
-    "tier": "leadgen",
+    "tier": "product",
     "domain": "cardmachines.co.uk",
-    "total": 99,
+    "total": 100,
     "sections": [
-      {
-        "name": "(home)",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
       {
         "name": "trade",
         "leaf_count": 25,
@@ -953,6 +977,18 @@
         "more": 0
       },
       {
+        "name": ".",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "404",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
@@ -966,12 +1002,6 @@
       },
       {
         "name": "disclaimer",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "editorial-policy",
         "leaf_count": 0,
         "sample": [],
         "more": 0
