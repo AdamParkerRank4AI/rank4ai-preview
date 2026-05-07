@@ -19,6 +19,52 @@ const { question, slug, category, signalCategory, metaTitle, metaDesc, conciseAn
 const pageTitle = metaTitle || `${question} | Rank4AI`
 const pageDesc = metaDesc || conciseAnswer || `${question} - answered by Rank4AI.`
 const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''
+
+// Extract YouTube video ID for VideoObject schema (e.g. "25RfS4qWEYA" from any YouTube URL format)
+function extractYouTubeId(url: string | undefined): string | null {
+  if (!url) return null
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/)
+  return m ? m[1] : null
+}
+const ytId = extractYouTubeId(youtubeUrl)
+
+// VideoObject schema. Critical for Google AI Overviews + Bing Copilot
+// extracting video answers. transcript = the answer text so AI engines
+// can match the spoken content to the user's query.
+const videoSchema = ytId ? {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": question,
+  "description": conciseAnswer || pageDesc,
+  "thumbnailUrl": [
+    `https://i.ytimg.com/vi/${ytId}/maxresdefault.jpg`,
+    `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`
+  ],
+  "uploadDate": updatedAt || new Date().toISOString().split('T')[0],
+  "embedUrl": `https://www.youtube.com/embed/${ytId}`,
+  "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rank4AI",
+    "url": "https://www.rank4ai.co.uk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.rank4ai.co.uk/logo-dark.svg"
+    }
+  },
+  "transcript": (fullAnswer || conciseAnswer || '').replace(/<[^>]*>/g, '').slice(0, 5000),
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": `https://www.youtube.com/watch?v=${ytId}&t={seek_to_second_number}`,
+    "startOffset-input": "required name=seek_to_second_number"
+  },
+  "inLanguage": "en-GB",
+  "isFamilyFriendly": true,
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": { "@type": "WatchAction" }
+  }
+} : null
 ---
 <Layout title={pageTitle} description={pageDesc}>
 
@@ -50,10 +96,15 @@ const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
       </div>
     )}
 
-    <!-- YouTube -->
+    <!-- YouTube video + structured-data signal for AI Overviews extraction -->
     {youtubeUrl && (
-      <div class="my-8 aspect-video rounded-xl overflow-hidden">
-        <iframe src={youtubeUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')} class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <div class="my-8">
+        <div class="aspect-video rounded-xl overflow-hidden">
+          <iframe src={youtubeUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')} class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title={question}></iframe>
+        </div>
+        <p class="text-xs text-text-muted mt-2 text-center">
+          Watch on YouTube: <a href={youtubeUrl} target="_blank" rel="noopener" class="link">{question}</a>
+        </p>
       </div>
     )}
 
@@ -112,5 +163,9 @@ const updated = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
   "@type": "FAQPage",
   "mainEntity": [{ "@type": "Question", "name": question, "acceptedAnswer": { "@type": "Answer", "text": conciseAnswer || (fullAnswer ? fullAnswer.substring(0, 500) : '') }}]
 })} />
+
+{videoSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+)}
 
 </Layout>
