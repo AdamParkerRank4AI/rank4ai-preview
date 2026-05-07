@@ -64,4 +64,11 @@ Website: https://www.rank4ai.co.uk
 Email: info@rank4ai.co.uk
 Contact Page: https://www.rank4ai.co.uk/contact/
 
-Last-Updated: 2026-04-10
+## Sister Sites
+
+These are operated under the same fleet (Rank4AI Ltd / Best Business Loans Ltd / Aston Rowe Ltd):
+
+- [Market Invoice](https://marketinvoice.co.uk/): UK invoice finance comparison, 85 providers reviewed
+- [SEOCompare](https://seocompare.co.uk/): UK independent comparison of AI search optimisation agencies and tools
+
+Last-Updated: 2026-05-07
