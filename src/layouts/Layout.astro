@@ -146,6 +146,9 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WRG6QRCP');
   </script>
+
+  <!-- Fleet attribution helper: captures full lead attribution to localStorage on every page view -->
+  <script src="/attribution.js" is:inline></script>
 </head>
 <body>
   <!-- Skip to content -->

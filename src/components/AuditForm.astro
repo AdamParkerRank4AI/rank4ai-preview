@@ -225,55 +225,25 @@
   // Set page URL and start time
   document.getElementById('page-url-field')?.setAttribute('value', window.location.href);
 
-  // ---- Attribution: capture once on first page in session + sticky across submit ----
-  // Mirrors the marketinvoice.co.uk LeadForm pattern.
-  function getOrSetFirstTouch() {
-    const KEY = 'r4_first_touch';
-    try {
-      const existing = sessionStorage.getItem(KEY);
-      if (existing) return JSON.parse(existing);
-    } catch {}
-    const url = new URL(window.location.href);
-    const firstTouch = {
-      landing_url: window.location.href,
-      landing_path: window.location.pathname,
-      referrer: document.referrer || null,
-      referrer_host: document.referrer ? (new URL(document.referrer).hostname) : null,
-      utm_source: url.searchParams.get('utm_source'),
-      utm_medium: url.searchParams.get('utm_medium'),
-      utm_campaign: url.searchParams.get('utm_campaign'),
-      utm_term: url.searchParams.get('utm_term'),
-      utm_content: url.searchParams.get('utm_content'),
-      gclid: url.searchParams.get('gclid'),
-      fbclid: url.searchParams.get('fbclid'),
-      msclkid: url.searchParams.get('msclkid'),
-      session_started_at: new Date().toISOString(),
-    };
-    try { sessionStorage.setItem(KEY, JSON.stringify(firstTouch)); } catch {}
-    return firstTouch;
-  }
-  const attribution = getOrSetFirstTouch();
-
+  // ---- Attribution: provided by /attribution.js loaded in <head> on every page ----
+  // window.fleetAttribution is set up before this script runs (it's loaded synchronously
+  // in the head). It captures full first-touch + last-touch + journey + device data
+  // to localStorage on every page view, surviving tab opens and 30 days.
+  const FA = (window as any).fleetAttribution;
+  // Backward-compat shims so existing code below still works without rewrites:
+  const attribution = FA?._state?.first_touch || {
+    landing_url: window.location.href,
+    landing_path: window.location.pathname,
+    referrer: document.referrer || null,
+    referrer_host: null, utm_source: null, utm_medium: null, utm_campaign: null,
+    utm_term: null, utm_content: null, gclid: null, fbclid: null, msclkid: null,
+    session_started_at: new Date().toISOString(),
+  };
   function inferSource(ft: any): string {
-    if (ft.utm_source) return ft.utm_source;
-    if (ft.gclid) return 'google-ads';
-    if (ft.fbclid) return 'facebook-ads';
-    if (ft.msclkid) return 'bing-ads';
-    if (!ft.referrer_host) return 'direct';
-    const h = ft.referrer_host.toLowerCase();
-    if (h.includes('google.')) return 'google-organic';
-    if (h.includes('bing.')) return 'bing-organic';
-    if (h.includes('duckduckgo.')) return 'duckduckgo-organic';
-    if (h.includes('chat.openai.') || h.includes('chatgpt.')) return 'chatgpt';
-    if (h.includes('perplexity.')) return 'perplexity';
-    if (h.includes('claude.') || h.includes('anthropic.')) return 'claude';
-    if (h.includes('gemini.') || h.includes('bard.')) return 'gemini';
-    if (h.includes('rank4ai.co.uk')) return 'internal';
-    return 'referral-' + h;
+    return FA ? FA.inferSource(ft) : 'direct';
   }
-
   function attributionSummary(): string {
-    return `[Attribution] source=${inferSource(attribution)} | landing=${attribution.landing_path} | referrer=${attribution.referrer || 'none'} | utm_source=${attribution.utm_source || ''} | utm_medium=${attribution.utm_medium || ''} | utm_campaign=${attribution.utm_campaign || ''} | gclid=${attribution.gclid || ''} | fbclid=${attribution.fbclid || ''} | session_started=${attribution.session_started_at}`;
+    return FA ? FA.notes() : 'attribution_unavailable';
   }
 
   // Capture field data on blur (partial submission)
@@ -493,7 +463,15 @@
 
     // Write to Supabase, columns must match the conversations table
     const pageUrl = fd.get('page_url') as string || window.location.href;
-    const inferredSource = inferSource(attribution);
+    const flatAttr = FA?.flatPayload?.() || {};
+    const fullAttribution = FA?.payload?.() || null;
+    const inferredSource = flatAttr.attr_first_source || inferSource(attribution);
+    // Fire IP geo lookup in parallel (fire-and-forget; we don't block submit on it)
+    let geo: any = null;
+    try { geo = await Promise.race([
+      FA?.fetchGeo?.() || Promise.resolve(null),
+      new Promise(r => setTimeout(() => r(null), 2500)),  // hard 2.5s cap
+    ]); } catch { geo = null; }
     const basePayload: Record<string, any> = {
       company_name: fd.get('business_name'),
       contact_name: fd.get('business_name'),
@@ -505,26 +483,27 @@
       marketing_type: fd.get('marketing') || null,
       agency_experience: fd.get('agency_experience') || null,
       consent: true,
-      notes: `Form: Website Audit Form | Submitted from: ${pageUrl} | ${attributionSummary()} | Marketing: ${fd.get('marketing') || 'N/A'} | Agency exp: ${fd.get('agency_experience') || 'N/A'}`,
+      notes: `Form: Website Audit Form | Submitted from: ${pageUrl} | [Attribution] ${attributionSummary()}` + (geo ? ` | [Geo] ${geo.city || ''}, ${geo.region || ''}, ${geo.country || ''} (${geo.ip || ''})` : '') + ` | Marketing: ${fd.get('marketing') || 'N/A'} | Agency exp: ${fd.get('agency_experience') || 'N/A'}`,
       source: inferredSource,
       current_stage: 'new',
       audit_status: 'pending',
     };
-    const fullPayload = {
+    const fullPayload: Record<string, any> = {
       ...basePayload,
       page_url: pageUrl,
-      landing_path: attribution.landing_path,
-      referrer: attribution.referrer,
-      referrer_host: attribution.referrer_host,
-      utm_source: attribution.utm_source,
-      utm_medium: attribution.utm_medium,
-      utm_campaign: attribution.utm_campaign,
-      utm_term: attribution.utm_term,
-      utm_content: attribution.utm_content,
-      gclid: attribution.gclid,
-      fbclid: attribution.fbclid,
-      msclkid: attribution.msclkid,
       user_agent: navigator.userAgent,
+      // Flat attribution columns (attr_*) for direct querying once columns exist
+      ...flatAttr,
+      // Geo enrichment from ipapi.co
+      attr_geo_ip: geo?.ip || '',
+      attr_geo_country: geo?.country || '',
+      attr_geo_country_code: geo?.country_code || '',
+      attr_geo_region: geo?.region || '',
+      attr_geo_city: geo?.city || '',
+      attr_geo_postal: geo?.postal || '',
+      attr_geo_org: geo?.org || '',
+      // Full structured payload (JSON in a single column)
+      attribution_full: fullAttribution ? JSON.stringify(fullAttribution) : null,
     };
 
     try {
@@ -543,7 +522,7 @@
       const r = await post(fullPayload);
       if (!r.ok) await post(basePayload);
 
-      // Send email notifications via FormSubmit
+      // Send email notifications via FormSubmit (with full attribution)
       const emailData = new FormData();
       emailData.append('_subject', 'New AI Search Visibility Audit Request');
       emailData.append('_cc', 'adam@muswellrose.com,jimmy@rank4ai.online');
@@ -556,14 +535,32 @@
       emailData.append('Marketing', fd.get('marketing') as string || '');
       emailData.append('Agency Experience', fd.get('agency_experience') as string || '');
       emailData.append('Goals', goals.join(', '));
-      emailData.append('Source', inferredSource);
+      emailData.append('--- Attribution ---', '');
+      emailData.append('Original source', flatAttr.attr_first_source || inferredSource);
+      emailData.append('Original landing page', flatAttr.attr_first_landing_path || '');
+      emailData.append('Original referrer', flatAttr.attr_first_referrer || 'direct');
+      emailData.append('UTM source', flatAttr.attr_first_utm_source || '');
+      emailData.append('UTM medium', flatAttr.attr_first_utm_medium || '');
+      emailData.append('UTM campaign', flatAttr.attr_first_utm_campaign || '');
+      emailData.append('Click ID', flatAttr.attr_first_gclid || flatAttr.attr_first_fbclid || flatAttr.attr_first_msclkid || '');
+      emailData.append('First seen', flatAttr.attr_first_seen_at || '');
       emailData.append('Submitted from', pageUrl);
-      emailData.append('Landing page', attribution.landing_path || '');
-      emailData.append('Referrer', attribution.referrer || 'direct');
-      emailData.append('UTM source', attribution.utm_source || '');
-      emailData.append('UTM medium', attribution.utm_medium || '');
-      emailData.append('UTM campaign', attribution.utm_campaign || '');
-      emailData.append('Click ID', attribution.gclid || attribution.fbclid || attribution.msclkid || '');
+      emailData.append('Pages visited', flatAttr.attr_journey || pageUrl);
+      emailData.append('Pages count', String(flatAttr.attr_journey_count || 1));
+      emailData.append('Session pages', String(flatAttr.attr_session_page_count || 1));
+      emailData.append('--- Device ---', '');
+      emailData.append('Browser', flatAttr.attr_user_agent || navigator.userAgent);
+      emailData.append('Viewport', flatAttr.attr_viewport || '');
+      emailData.append('Screen', flatAttr.attr_screen || '');
+      emailData.append('Language', flatAttr.attr_language || navigator.language);
+      emailData.append('Timezone', flatAttr.attr_timezone || '');
+      if (geo) {
+        emailData.append('--- Geo ---', '');
+        emailData.append('IP', geo.ip || '');
+        emailData.append('Location', `${geo.city || ''}, ${geo.region || ''}, ${geo.country || ''}`);
+        emailData.append('Postal', geo.postal || '');
+        emailData.append('ISP/Org', geo.org || '');
+      }
       emailData.append('_captcha', 'false');
       fetch('https://formsubmit.co/ajax/info@rank4ai.online', { method: 'POST', body: emailData });
     } catch (err) {
