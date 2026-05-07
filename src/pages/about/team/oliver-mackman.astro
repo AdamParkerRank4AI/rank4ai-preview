@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
+import { oliver, personSchema } from '../../../data/authors'
 ---
 <Layout title="Oliver Mackman - Operations & Marketing Director, Rank4AI" description="Oliver Mackman is Operations and Marketing Director at Rank4AI. Background in marketing, digital strategy and commercial operations.">
 
@@ -50,14 +51,7 @@ import Layout from '../../../layouts/Layout.astro'
   </div>
 </article>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Oliver Mackman",
-  "jobTitle": "Operations & Marketing Director",
-  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
-  "description": "Operations and Marketing Director at Rank4AI. Background in marketing, digital strategy and commercial operations.",
-  "url": "https://www.rank4ai.co.uk/about/team/oliver-mackman/"
-})} />
+<!-- Person Schema (sourced from src/data/authors.ts) -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema(oliver))} />
 
 </Layout>

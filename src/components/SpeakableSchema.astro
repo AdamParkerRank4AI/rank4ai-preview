@@ -4,19 +4,24 @@
  *
  * Adds Article schema with SpeakableSpecification + linked @id references.
  * <10% of websites use Speakable. 127% increase in AI search referrals.
- * Connected to site-wide @graph via @id references.
+ * Connected to site-wide @graph via @id references — author resolves to
+ * the full Person node in src/data/authors.ts via Layout.astro.
  */
+
+import { authorByName } from '../data/authors';
 
 interface Props {
   title: string;
   description: string;
   dateModified?: string;
   url?: string;
+  author?: string;
 }
 
-const { title, description, dateModified = '2026-04-07', url } = Astro.props;
+const { title, description, dateModified = '2026-04-07', url, author } = Astro.props;
 const siteUrl = 'https://www.rank4ai.co.uk';
 const pageUrl = url || new URL(Astro.url.pathname, siteUrl).href;
+const resolvedAuthor = authorByName(author);
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -28,13 +33,7 @@ const articleSchema = {
   "dateModified": dateModified,
   "url": pageUrl,
   "isPartOf": { "@id": siteUrl + "/#website" },
-  "author": {
-    "@type": "Person",
-    "@id": siteUrl + "/#adam-parker",
-    "name": "Adam Parker",
-    "jobTitle": "Founder & AI Search Visibility Specialist",
-    "description": "Founder of Rank4AI, helping businesses improve their visibility across ChatGPT, Gemini, Perplexity, and AI Overviews."
-  },
+  "author": { "@id": resolvedAuthor.ref },
   "publisher": { "@id": siteUrl + "/#localbusiness" },
   "speakable": {
     "@type": "SpeakableSpecification",

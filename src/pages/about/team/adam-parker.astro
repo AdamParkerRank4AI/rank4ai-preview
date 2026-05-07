@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
+import { adam, personSchema } from '../../../data/authors'
 ---
 <Layout title="Adam Parker - Founder, Rank4AI | AI Search Visibility" description="Adam Parker is the founder of Rank4AI, a UK AI search agency. Creator of The Five Signal Model. Over 15 years across commercial strategy, product.">
 
@@ -59,17 +60,7 @@ import Layout from '../../../layouts/Layout.astro'
   </div>
 </article>
 
-<!-- Person Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Adam Parker",
-  "jobTitle": "Founder",
-  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
-  "description": "Founder of Rank4AI. Creator of The Five Signal Model. Over 15 years across commercial strategy, product, technology alignment and marketing.",
-  "knowsAbout": ["AI search visibility", "AI SEO", "Generative engine optimisation", "ChatGPT optimisation", "Entity-based SEO"],
-  "sameAs": ["https://www.linkedin.com/in/adamparkerrank4ai/", "https://x.com/rank4ai"],
-  "url": "https://www.rank4ai.co.uk/about/team/adam-parker/"
-})} />
+<!-- Person Schema (sourced from src/data/authors.ts) -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema(adam))} />
 
 </Layout>

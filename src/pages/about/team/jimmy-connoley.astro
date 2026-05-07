@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import Layout from '../../../layouts/Layout.astro'
+import { jimmy, personSchema } from '../../../data/authors'
 ---
 <Layout title="Jimmy Connoley - Co-Founder, Rank4AI | AI Search Strategist" description="Jimmy Connoley is co-founder of Rank4AI. AI search strategist specialising in entity clarity and citation architecture for UK businesses.">
 
@@ -43,16 +44,7 @@ import Layout from '../../../layouts/Layout.astro'
   </div>
 </article>
 
-<!-- Person Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jimmy Connoley",
-  "jobTitle": "Co-Founder",
-  "worksFor": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
-  "description": "Co-Founder of Rank4AI. 12 years in B2B growth strategy, business development and commercial performance. Focused on AI search visibility and entity clarity.",
-  "knowsAbout": ["Entity clarity", "Citation architecture", "AI ecosystem validation", "B2B AI search"],
-  "url": "https://www.rank4ai.co.uk/about/team/jimmy-connoley/"
-})} />
+<!-- Person Schema (sourced from src/data/authors.ts) -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema(jimmy))} />
 
 </Layout>

@@ -6,6 +6,7 @@ import CopyForAI from '../../components/CopyForAI.astro'
 import AIReadinessBlock from '../../components/AIReadinessBlock.astro'
 import SpeakableSchema from '../../components/SpeakableSchema.astro'
 import blogs from '../../data/blogs.json'
+import { authorByName } from '../../data/authors'
 
 export function getStaticPaths() {
   return blogs.map((post: any) => ({
@@ -132,8 +133,8 @@ const updDate = updatedAt ? new Date(updatedAt).toLocaleDateString('en-GB', { da
   "@type": "Article",
   "headline": title,
   "description": pageDesc,
-  "author": { "@type": "Person", "name": author || "Adam Parker" },
-  "publisher": { "@type": "Organization", "name": "Rank4AI", "url": "https://www.rank4ai.co.uk" },
+  "author": { "@id": authorByName(author).ref },
+  "publisher": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
   "datePublished": publishedAt || undefined,
   "dateModified": updatedAt || publishedAt || undefined,
   "url": `https://www.rank4ai.co.uk/blog/${slug}/`
