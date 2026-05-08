@@ -1,3 +1,8 @@
+# Specific overrides MUST come before the catch-all below (CF evaluates top-down)
+# /ai-search-questions/* catchall sends to /learn/questions/:splat which 404s for this one
+/ai-search-questions/why-does-chatgpt-recommend-my-competitors-but-not-my-business /learn/questions/ 301
+/ai-search-questions/why-does-chatgpt-recommend-my-competitors-but-not-my-business/ /learn/questions/ 301
+
 # Catch-all redirects for old URL patterns
 /ai-search-questions/* /learn/questions/:splat 301
 /ai-market-stats/* /research/stats/:splat 301
@@ -43,3 +48,45 @@
 /services/ai-seo-solutions/ /ai-seo/ 301
 /services/ai-search-engine-optimization /ai-seo/ 301
 /services/ai-search-engine-optimization/ /ai-seo/ 301
+
+# 25 URLs Google has on file as 404 (GSC export 8 May 2026)
+# Old hub / legacy URL patterns → closest live equivalent
+/uk-coverage /uk/ 301
+/uk-coverage/ /uk/ 301
+/technical-seo /ai-seo/technical/ 301
+/technical-seo/ /ai-seo/technical/ 301
+/how-ai-search-really-works /ai-search/ 301
+/how-ai-search-really-works/ /ai-search/ 301
+/ai-framework /about/five-signal-framework/ 301
+/ai-framework/ /about/five-signal-framework/ 301
+/website-upgrades /what-we-do/ 301
+/website-upgrades/ /what-we-do/ 301
+/ai-search-platform-differences /ai-search/platforms/ 301
+/ai-search-platform-differences/ /ai-search/platforms/ 301
+/boundaries /ai-seo-agency-uk/boundaries-exclusions/ 301
+/boundaries/ /ai-seo-agency-uk/boundaries-exclusions/ 301
+/ai-marketing-growth/ai-organic-marketing /ai-marketing-growth/ 301
+/ai-marketing-growth/ai-organic-marketing/ /ai-marketing-growth/ 301
+/ai-marketing-growth/ai-marketing-agency /ai-marketing-growth/ 301
+/ai-marketing-growth/ai-marketing-agency/ /ai-marketing-growth/ 301
+/industry-rankings/top-geo-agencies-us /research/rankings/ 301
+/industry-rankings/top-geo-agencies-us/ /research/rankings/ 301
+/industry-rankings/* /research/rankings/ 301
+/ai-seo-agency-uk/colchester /ai-seo-agency-uk/ 301
+/ai-seo-agency-uk/colchester/ /ai-seo-agency-uk/ 301
+
+# 8 ecosystem-validation/insights/* — drafted but never built. Send to parent hub.
+/ai-search/ecosystem-validation/insights/* /ai-search/ecosystem-validation/insights/ 301
+
+# 5 old blog URLs — redirect to blog index
+/blog/why-about-pages-matter-ai-search /blog/ 301
+/blog/why-about-pages-matter-ai-search/ /blog/ 301
+/blog/one-page-businesses-forget /blog/ 301
+/blog/one-page-businesses-forget/ /blog/ 301
+/blog/how-to-fix-meaning-gaps /blog/ 301
+/blog/how-to-fix-meaning-gaps/ /blog/ 301
+/blog/what-ai-tools-need /blog/ 301
+/blog/what-ai-tools-need/ /blog/ 301
+/blog/what-ai-looks-for-comparing-businesses /blog/ 301
+/blog/what-ai-looks-for-comparing-businesses/ /blog/ 301
+
