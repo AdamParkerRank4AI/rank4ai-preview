@@ -14,6 +14,7 @@
 import questions from '../data/questions.json';
 import blogs from '../data/blogs.json';
 import stats from '../data/stats.json';
+import library from '../data/knowledge-library-full.json';
 
 interface Props {
   currentPath: string;
@@ -57,6 +58,23 @@ const DATA_SOURCES: Record<string, { items: any[]; pathFn: (item: any) => string
     titleFn: (s) => s.title || s.slug,
   },
 };
+
+// knowledge-library-full.json is the source-of-truth for pages under
+// /ai-search/, /ai-seo/, /ai-marketing-growth/, /ai-seo-agency-uk/. Filter
+// here so AutoRelated has sibling candidates for those sections (otherwise
+// it falls back to file-glob which only finds static .astro files and
+// misses the dynamic ones).
+const LIBRARY_SECTIONS = ['/ai-search/', '/ai-seo/', '/ai-marketing-growth/', '/ai-seo-agency-uk/'];
+for (const prefix of LIBRARY_SECTIONS) {
+  DATA_SOURCES[prefix] = {
+    items: (library as any[]).filter((p: any) => {
+      const u = p.url || '';
+      return u.startsWith(prefix) && u !== prefix && u !== prefix.slice(0, -1);
+    }),
+    pathFn: (p) => (p.url.endsWith('/') ? p.url : p.url + '/'),
+    titleFn: (p) => p.name || p.title || p.url,
+  };
+}
 
 function matchSection(path: string): [string, string] | null {
   const keys = Object.keys(SECTIONS).sort((a, b) => b.length - a.length);
