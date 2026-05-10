@@ -25,15 +25,15 @@
   },
   "/about/team/adam-parker/": {
     "added": "2026-04-14",
-    "updated": "2026-04-22"
+    "updated": "2026-05-07"
   },
   "/about/team/jimmy-connoley/": {
     "added": "2026-04-14",
-    "updated": "2026-04-20"
+    "updated": "2026-05-07"
   },
   "/about/team/oliver-mackman/": {
     "added": "2026-04-20",
-    "updated": "2026-04-20"
+    "updated": "2026-05-07"
   },
   "/about/team/": {
     "added": "2026-04-10",
@@ -842,6 +842,10 @@
   "/services/perplexity-optimisation/": {
     "added": "2026-04-17",
     "updated": "2026-04-24"
+  },
+  "/site-structure/": {
+    "added": "2026-05-06",
+    "updated": "2026-05-06"
   },
   "/sitemap/": {
     "added": "2026-04-10",
