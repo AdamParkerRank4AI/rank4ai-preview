@@ -13,15 +13,21 @@ import { authorByName } from '../data/authors';
 interface Props {
   title: string;
   description: string;
+  datePublished?: string;
   dateModified?: string;
   url?: string;
   author?: string;
 }
 
-const { title, description, dateModified = '2026-04-07', url, author } = Astro.props;
+const { title, description, datePublished, dateModified, url, author } = Astro.props;
 const siteUrl = 'https://www.rank4ai.co.uk';
 const pageUrl = url || new URL(Astro.url.pathname, siteUrl).href;
 const resolvedAuthor = authorByName(author);
+
+// Build-time fallback so unmaintained pages don't all stamp the same date
+const buildDate = new Date().toISOString().split('T')[0];
+const resolvedPublished = datePublished || buildDate;
+const resolvedModified = dateModified || datePublished || buildDate;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -29,8 +35,8 @@ const articleSchema = {
   "@id": pageUrl + "#article",
   "headline": title,
   "description": description,
-  "datePublished": "2026-04-04",
-  "dateModified": dateModified,
+  "datePublished": resolvedPublished,
+  "dateModified": resolvedModified,
   "url": pageUrl,
   "isPartOf": { "@id": siteUrl + "/#website" },
   "author": { "@id": resolvedAuthor.ref },

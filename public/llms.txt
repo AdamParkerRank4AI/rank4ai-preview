@@ -64,11 +64,37 @@ Website: https://www.rank4ai.co.uk
 Email: info@rank4ai.co.uk
 Contact Page: https://www.rank4ai.co.uk/contact/
 
+## City and Sector Coverage
+UK Coverage Hub: https://www.rank4ai.co.uk/uk/
+London Accountants: https://www.rank4ai.co.uk/uk/london/accountants/
+London Dentists: https://www.rank4ai.co.uk/uk/london/dentists/
+London Law Firms: https://www.rank4ai.co.uk/uk/london/law-firms/
+Manchester Accountants: https://www.rank4ai.co.uk/uk/manchester/accountants/
+Manchester Dentists: https://www.rank4ai.co.uk/uk/manchester/dentists/
+Manchester Law Firms: https://www.rank4ai.co.uk/uk/manchester/law-firms/
+Birmingham Accountants: https://www.rank4ai.co.uk/uk/birmingham/accountants/
+Birmingham Dentists: https://www.rank4ai.co.uk/uk/birmingham/dentists/
+Birmingham Law Firms: https://www.rank4ai.co.uk/uk/birmingham/law-firms/
+Bristol Accountants: https://www.rank4ai.co.uk/uk/bristol/accountants/
+Bristol Dentists: https://www.rank4ai.co.uk/uk/bristol/dentists/
+Bristol Law Firms: https://www.rank4ai.co.uk/uk/bristol/law-firms/
+Leeds Accountants: https://www.rank4ai.co.uk/uk/leeds/accountants/
+Leeds Dentists: https://www.rank4ai.co.uk/uk/leeds/dentists/
+Leeds Law Firms: https://www.rank4ai.co.uk/uk/leeds/law-firms/
+
+## Research and Rankings
+Research Hub: https://www.rank4ai.co.uk/research/
+UK AI Visibility Statistics: https://www.rank4ai.co.uk/research/uk-ai-visibility-stats/
+Rankings Hub: https://www.rank4ai.co.uk/research/rankings/
+Case Studies: https://www.rank4ai.co.uk/research/case-studies/
+
 ## Sister Sites
 
 These are operated under the same fleet (Rank4AI Ltd / Best Business Loans Ltd / Aston Rowe Ltd):
 
-- [Market Invoice](https://marketinvoice.co.uk/): UK invoice finance comparison, 85 providers reviewed
-- [SEOCompare](https://seocompare.co.uk/): UK independent comparison of AI search optimisation agencies and tools
+- [Market Invoice](https://marketinvoice.co.uk/): UK invoice finance comparison
+- [SEOCompare](https://seocompare.co.uk/): AI search optimisation comparison
+- [Best Business Loans](https://bestbusinessloans.ai/): UK business loan editorial
+- [FundBiz](https://fundbiz.co.uk/): UK specialty SMB finance
 
-Last-Updated: 2026-05-07
+Last-Updated: 2026-05-10
