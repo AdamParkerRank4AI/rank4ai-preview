@@ -519,8 +519,19 @@
         },
         body: JSON.stringify(body),
       });
-      const r = await post(fullPayload);
-      if (!r.ok) await post(basePayload);
+      // 3-tier write: full → base → safe (schema-confirmed columns only).
+      // Guarantees a column gap can never silently lose a lead.
+      const SAFE_COLUMNS = ['business_name','website_url','email','phone','company_size','industry','goal','notes','source','landing_path','referrer','referrer_host','utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','msclkid','page_url','user_agent'];
+      const safePayload: Record<string, any> = {};
+      SAFE_COLUMNS.forEach(k => { if (fullPayload[k] !== undefined) safePayload[k] = fullPayload[k]; });
+      const r1 = await post(fullPayload);
+      if (!r1.ok) {
+        const r2 = await post(basePayload);
+        if (!r2.ok) {
+          const r3 = await post(safePayload);
+          if (!r3.ok) console.error('[R4 lead] Supabase write failed all retries:', r3.status, await r3.text());
+        }
+      }
 
       // Send email notifications via FormSubmit (with full attribution)
       const emailData = new FormData();
