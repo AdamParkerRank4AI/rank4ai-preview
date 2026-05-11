@@ -34,6 +34,11 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonicalUrl}>
+    <link rel="related" href="https://marketinvoice.co.uk/" title="Market Invoice" />
+    <link rel="related" href="https://seocompare.co.uk/" title="SEOCompare" />
+    <link rel="related" href="https://bestbusinessloans.ai/" title="Best Business Loans" />
+    <link rel="related" href="https://fundbiz.co.uk/" title="FundBiz" />
+
   {noindex && <meta name="robots" content="noindex, nofollow">}
 
   <!-- Open Graph -->
