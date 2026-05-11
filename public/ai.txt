@@ -1,0 +1,21 @@
+# ai.txt — purpose-based scraping declaration (Spawning standard)
+# https://spawning.ai/ai-txt
+
+User-Agent: *
+
+# Allow citation in AI search answers (RAG / retrieval-augmented generation)
+Allow-RAG: *
+
+# Allow snippet extraction for AI Overviews and similar
+Allow-Snippet: *
+
+# Disallow inclusion in training datasets without separate written agreement
+Disallow-Training: *
+
+# Disallow model inference / fine-tuning on full-page content
+Disallow-Inference: *
+
+# Contact for licensing inquiries
+Contact: adam@muswellrose.com
+
+Last-Updated: 2026-05-11
