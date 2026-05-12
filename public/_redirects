@@ -18,8 +18,7 @@
 /ai-platform-visibility/ /ai-search/platforms/ 301
 /ai-search-vs-seo /ai-search/comparisons/ai-search-vs-google/ 301
 /ai-search-vs-seo/ /ai-search/comparisons/ai-search-vs-google/ 301
-/services/gemini-optimisation /ai-search/platforms/ 301
-/services/gemini-optimisation/ /ai-search/platforms/ 301
+# /services/gemini-optimisation/ now a real page (peer parity with claude-optimisation + perplexity-optimisation). Redirect removed 12 May 2026.
 /seo-vs-aio-comparison /ai-search/comparisons/ai-search-optimisation-vs-seo/ 301
 /seo-vs-aio-comparison/ /ai-search/comparisons/ai-search-optimisation-vs-seo/ 301
 /ai-search-visibility/* /ai-search/:splat 301
