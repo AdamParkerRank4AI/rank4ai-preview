@@ -24,10 +24,12 @@ const siteUrl = 'https://www.rank4ai.co.uk';
 const pageUrl = url || new URL(Astro.url.pathname, siteUrl).href;
 const resolvedAuthor = authorByName(author);
 
-// Build-time fallback so unmaintained pages don't all stamp the same date
-const buildDate = new Date().toISOString().split('T')[0];
-const resolvedPublished = datePublished || buildDate;
-const resolvedModified = dateModified || datePublished || buildDate;
+// ISO 8601 with TZ — Bing/AI engines prioritise pages with full datetime.
+// Date-only inputs are coerced to start-of-day UTC. Per 11 May 2026 audit.
+const buildDate = new Date().toISOString();
+const toIso = (d?: string): string => !d ? buildDate : (/^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00.000Z` : d);
+const resolvedPublished = toIso(datePublished);
+const resolvedModified = toIso(dateModified || datePublished);
 
 const articleSchema = {
   "@context": "https://schema.org",
