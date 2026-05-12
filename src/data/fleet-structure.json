@@ -6,11 +6,11 @@
     "tagline": "AI search agency",
     "tier": "editorial",
     "domain": "rank4ai.co.uk",
-    "total": 1133,
+    "total": 761,
     "sections": [
       {
         "name": "learn",
-        "leaf_count": 313,
+        "leaf_count": 240,
         "sample": [
           "glossary",
           "guides",
@@ -21,22 +21,7 @@
           "appear-in-perplexity",
           "chatgpt-seo"
         ],
-        "more": 305
-      },
-      {
-        "name": "ai-search-questions",
-        "leaf_count": 213,
-        "sample": [
-          "are-google-ai-overviews-reducing-traffic-to-my-website",
-          "are-traditional-seo-ranking-factors-still-relevant-for-ai-search-visibility",
-          "can-a-small-uk-business-realistically-compete-in-ai-search-results",
-          "can-ai-describe-a-business-accurately-but-still-avoid-naming-it",
-          "can-ai-search-remove-or-suppress-my-business-from-results",
-          "can-ai-visibility-be-measured-reliably-in-the-uk",
-          "can-ai-visibility-work-without-strong-backlinks-in-the-uk",
-          "can-chatgpt-damage-my-business-reputation-if-it-gets-facts-wrong"
-        ],
-        "more": 205
+        "more": 232
       },
       {
         "name": "research",
@@ -70,7 +55,7 @@
       },
       {
         "name": "ai-search",
-        "leaf_count": 75,
+        "leaf_count": 71,
         "sample": [
           "agency-help-appear-in-ai",
           "ai-authority-building-agency",
@@ -81,11 +66,11 @@
           "ai-recommendation-optimisation",
           "ai-search-agency"
         ],
-        "more": 67
+        "more": 63
       },
       {
         "name": "ai-seo",
-        "leaf_count": 41,
+        "leaf_count": 40,
         "sample": [
           "ai-seo-agency",
           "how-to-choose",
@@ -96,7 +81,7 @@
           "ai-seo-vs-geo",
           "ai-seo-vs-traditional-seo"
         ],
-        "more": 33
+        "more": 32
       },
       {
         "name": "who-we-help",
@@ -114,38 +99,8 @@
         "more": 20
       },
       {
-        "name": "ai-market-stats",
-        "leaf_count": 26,
-        "sample": [
-          "1-in-6-uk-sme-outdated-privacy-policy",
-          "13-percent-uk-sme-llms-txt-adoption",
-          "20-percent-uk-sme-stock-photo-generic-alt-text",
-          "23-percent-uk-sme-websites-blocking-ai-crawlers",
-          "29-percent-uk-sme-title-h1-misalignment",
-          "36-percent-uk-sme-trust-page-gap",
-          "4-percent-uk-sme-person-schema-gap",
-          "42-percent-uk-sme-missing-social-links"
-        ],
-        "more": 18
-      },
-      {
-        "name": "ai-seo-agency-uk",
-        "leaf_count": 17,
-        "sample": [
-          "ai-interpretation",
-          "ai-seo-vs-seo",
-          "birmingham",
-          "boundaries-exclusions",
-          "bristol",
-          "content-structuring",
-          "essex",
-          "leeds"
-        ],
-        "more": 9
-      },
-      {
         "name": "ai-marketing-growth",
-        "leaf_count": 16,
+        "leaf_count": 15,
         "sample": [
           "ai-agents-marketing",
           "ai-brand-trust-signals",
@@ -156,11 +111,41 @@
           "ai-powered-engagement",
           "ai-search-marketing-small-business"
         ],
-        "more": 8
+        "more": 7
+      },
+      {
+        "name": "uk",
+        "leaf_count": 15,
+        "sample": [
+          "accountants",
+          "dentists",
+          "law-firms",
+          "accountants",
+          "dentists",
+          "law-firms",
+          "accountants",
+          "dentists"
+        ],
+        "more": 7
+      },
+      {
+        "name": "ai-seo-agency-uk",
+        "leaf_count": 9,
+        "sample": [
+          "ai-interpretation",
+          "ai-seo-vs-seo",
+          "boundaries-exclusions",
+          "content-structuring",
+          "risks-limitations",
+          "definition-control",
+          "intent-mapping",
+          "maintenance"
+        ],
+        "more": 1
       },
       {
         "name": "services",
-        "leaf_count": 11,
+        "leaf_count": 10,
         "sample": [
           "ai-search-for-construction",
           "ai-search-for-dental-practices",
@@ -169,9 +154,9 @@
           "ai-search-for-hospitality",
           "ai-search-for-insurance",
           "ai-search-for-solicitors",
-          "ai-search-visibility"
+          "chatgpt-optimisation"
         ],
-        "more": 3
+        "more": 2
       },
       {
         "name": "about",
@@ -189,29 +174,27 @@
         "more": 0
       },
       {
-        "name": "ai-services",
-        "leaf_count": 7,
+        "name": "what-we-do",
+        "leaf_count": 5,
         "sample": [
-          "ai-agency-restructure",
-          "ai-content-rebuild",
-          "ai-meaning-clean-up",
-          "ai-messaging-clean-up",
-          "ai-search-audit",
-          "ai-visibility-boost",
-          "complete-guide"
+          "advisory",
+          "ai-visibility-audit",
+          "ecosystem-services",
+          "full-agency",
+          "pricing"
         ],
         "more": 0
       },
       {
-        "name": "ai-search-weekly",
-        "leaf_count": 5,
-        "sample": [
-          "2026-02-24-ai-search-weekly",
-          "2026-03-03-ai-search-weekly",
-          "2026-03-05-ai-search-weekly",
-          "2026-03-09-ai-search-weekly",
-          "2026-03-16-ai-search-weekly"
-        ],
+        "name": "accessibility",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
+      },
+      {
+        "name": "ai-search-website-design",
+        "leaf_count": 0,
+        "sample": [],
         "more": 0
       }
     ]
@@ -223,11 +206,11 @@
     "tagline": "UK invoice finance comparison",
     "tier": "editorial",
     "domain": "marketinvoice.co.uk",
-    "total": 432,
+    "total": 573,
     "sections": [
       {
         "name": "questions",
-        "leaf_count": 114,
+        "leaf_count": 116,
         "sample": [
           "bank-cut-my-overdraft",
           "broker-or-go-direct",
@@ -238,7 +221,7 @@
           "can-i-factor-invoices-to-related-companies",
           "can-i-factor-overseas-customer-invoices"
         ],
-        "more": 106
+        "more": 108
       },
       {
         "name": "providers",
@@ -254,6 +237,36 @@
           "apollo-finance"
         ],
         "more": 82
+      },
+      {
+        "name": "best",
+        "leaf_count": 72,
+        "sample": [
+          "architecture-practice-finance",
+          "best-confidential-discounting",
+          "best-for-amazon-fba-with-accelerated-payments",
+          "best-for-bad-credit",
+          "best-for-construction-with-bibby",
+          "best-for-construction",
+          "best-for-creative-agencies-with-optimum-finance",
+          "best-for-digital-b2b-with-kriya"
+        ],
+        "more": 64
+      },
+      {
+        "name": "guides",
+        "leaf_count": 51,
+        "sample": [
+          "acquisition-finance-debtor-book",
+          "advance-on-invoices",
+          "asset-based-lending",
+          "bbl-refinance-via-invoice-finance",
+          "borrow-against-invoices",
+          "cbils-rls-refinance",
+          "cifas-impact",
+          "confidential-invoice-discounting"
+        ],
+        "more": 43
       },
       {
         "name": "locations",
@@ -286,23 +299,8 @@
         "more": 29
       },
       {
-        "name": "guides",
-        "leaf_count": 30,
-        "sample": [
-          "advance-on-invoices",
-          "asset-based-lending",
-          "borrow-against-invoices",
-          "confidential-invoice-discounting",
-          "construction-invoice-finance",
-          "costs",
-          "debt-factoring",
-          "documents-needed"
-        ],
-        "more": 22
-      },
-      {
         "name": "blog",
-        "leaf_count": 26,
+        "leaf_count": 27,
         "sample": [
           "bank-vs-independent-invoice-finance",
           "construction-invoice-finance-retention-release-stage-payments",
@@ -311,28 +309,13 @@
           "future-of-invoice-finance",
           "hidden-costs-invoice-finance",
           "invoice-finance-conversion-rates-2026",
-          "invoice-finance-providers-that-disappeared"
+          "invoice-finance-for-recruitment-agencies-payroll-funding-and-cash-flow"
         ],
-        "more": 18
-      },
-      {
-        "name": "best",
-        "leaf_count": 20,
-        "sample": [
-          "best-confidential-discounting",
-          "best-for-bad-credit",
-          "best-for-construction",
-          "best-for-export",
-          "best-for-government-contractors",
-          "best-for-large-business",
-          "best-for-manufacturing",
-          "best-for-nhs-suppliers"
-        ],
-        "more": 12
+        "more": 19
       },
       {
         "name": "compare",
-        "leaf_count": 17,
+        "leaf_count": 22,
         "sample": [
           "aldermore-vs-skipton",
           "barclays-vs-natwest",
@@ -343,7 +326,67 @@
           "hsbc-vs-close-brothers",
           "hsbc-vs-lloyds"
         ],
-        "more": 9
+        "more": 14
+      },
+      {
+        "name": "regions",
+        "leaf_count": 20,
+        "sample": [
+          "cornwall",
+          "east-anglia",
+          "east-midlands",
+          "east-of-england",
+          "home-counties",
+          "london",
+          "m4-corridor",
+          "north-east-england"
+        ],
+        "more": 12
+      },
+      {
+        "name": "unpaid-invoices",
+        "leaf_count": 11,
+        "sample": [
+          "acas-conciliation",
+          "chasing-script-templates",
+          "county-court-judgment",
+          "customer-in-administration",
+          "hmrc-bad-debt-vat-relief",
+          "late-payment-interest-calculator",
+          "late-payment-interest-rate",
+          "letter-before-action"
+        ],
+        "more": 3
+      },
+      {
+        "name": "tools",
+        "leaf_count": 10,
+        "sample": [
+          "affordability-calculator",
+          "approval-likelihood-checker",
+          "apr-equivalent-calculator",
+          "cost-of-not-using-finance",
+          "debtor-concentration-checker",
+          "early-payment-discount-vs-invoice-finance",
+          "eligibility-checker",
+          "invoice-age-vs-advance"
+        ],
+        "more": 2
+      },
+      {
+        "name": "construction-finance",
+        "leaf_count": 9,
+        "sample": [
+          "adjudication-unpaid-afp",
+          "application-for-payment-finance",
+          "cis-payroll-finance",
+          "jct-contract-finance",
+          "nec4-contract-finance",
+          "pay-less-notice",
+          "retentions-release-finance",
+          "stage-payment-finance"
+        ],
+        "more": 1
       },
       {
         "name": "working-capital",
@@ -361,44 +404,15 @@
       },
       {
         "name": "stats",
-        "leaf_count": 5,
+        "leaf_count": 6,
         "sample": [
           "late-payment-crisis",
           "uk-construction-late-payment-statistics-2026",
           "uk-invoice-finance-statistics-2026",
           "uk-late-payment-statistics-2026",
+          "uk-recruitment-payroll-funding-statistics-2026",
           "uk-sme-insolvency-invoice-finance-statistics-2026"
         ],
-        "more": 0
-      },
-      {
-        "name": "preview",
-        "leaf_count": 3,
-        "sample": [
-          "option-a",
-          "option-b",
-          "option-c"
-        ],
-        "more": 0
-      },
-      {
-        "name": "authors",
-        "leaf_count": 1,
-        "sample": [
-          "oliver-mackman"
-        ],
-        "more": 0
-      },
-      {
-        "name": ".",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "404",
-        "leaf_count": 0,
-        "sample": [],
         "more": 0
       }
     ]
@@ -410,7 +424,7 @@
     "tagline": "AI search optimisation comparison",
     "tier": "editorial",
     "domain": "seocompare.co.uk",
-    "total": 434,
+    "total": 450,
     "sections": [
       {
         "name": "compare",
@@ -429,22 +443,22 @@
       },
       {
         "name": "questions",
-        "leaf_count": 53,
+        "leaf_count": 56,
         "sample": [
           "agency-vs-diy",
           "ai-search-for-beginners",
+          "ai-search-user-intent-signals",
           "b2b-chatgpt",
           "bing-submission",
           "can-ai-seo-be-automated",
           "chatgpt-vs-perplexity-optimization",
-          "citation-volatility",
-          "compare-seo-agencies-uk"
+          "citation-volatility"
         ],
-        "more": 45
+        "more": 48
       },
       {
         "name": "blog",
-        "leaf_count": 35,
+        "leaf_count": 36,
         "sample": [
           "10-questions-before-hiring",
           "7-ai-seo-mistakes",
@@ -453,24 +467,39 @@
           "ai-platform-recommendation-patterns",
           "ai-search-franchises",
           "ai-search-roi-real-numbers",
-          "ai-seo-accounting-firms"
+          "ai-search-traffic-study-uk-businesses"
         ],
-        "more": 27
+        "more": 28
       },
       {
         "name": "stats",
-        "leaf_count": 22,
+        "leaf_count": 23,
         "sample": [
           "ai-crawler-blocking-patterns",
           "ai-overviews-coverage",
+          "ai-platform-latency-citations",
           "ai-search-conversion-rates",
           "ai-search-market-share",
           "ai-search-zero-click-rates",
           "blocking-ai-crawlers",
-          "brand-mentions-vs-backlinks",
-          "chatgpt-referral-traffic"
+          "brand-mentions-vs-backlinks"
         ],
-        "more": 14
+        "more": 15
+      },
+      {
+        "name": "best",
+        "leaf_count": 15,
+        "sample": [
+          "ai-seo-agencies-10k-plus-month",
+          "ai-seo-agencies-2k-to-5k-month",
+          "ai-seo-agencies-5k-to-10k-month",
+          "ai-seo-agencies-for-chatgpt",
+          "ai-seo-agencies-for-ecommerce",
+          "ai-seo-agencies-for-financial-services",
+          "ai-seo-agencies-for-gemini",
+          "ai-seo-agencies-for-google-ai-overviews"
+        ],
+        "more": 7
       },
       {
         "name": "alternatives",
@@ -532,18 +561,6 @@
         "more": 0
       },
       {
-        "name": ".",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "404",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
@@ -560,6 +577,12 @@
         "leaf_count": 0,
         "sample": [],
         "more": 0
+      },
+      {
+        "name": "affordable-ai-seo-ecommerce",
+        "leaf_count": 0,
+        "sample": [],
+        "more": 0
       }
     ]
   },
@@ -570,22 +593,37 @@
     "tagline": "Business loan editorial and lead capture",
     "tier": "leadgen",
     "domain": "bestbusinessloans.co.uk",
-    "total": 102,
+    "total": 343,
     "sections": [
       {
         "name": "reviews",
-        "leaf_count": 18,
+        "leaf_count": 110,
         "sample": [
           "365-business-finance",
+          "4syte",
+          "abn-amro",
           "acorn-commercial-finance",
           "aldermore",
           "allica-bank",
-          "bizcap",
-          "bolton-finance",
-          "capify",
-          "fleximize"
+          "arbuthnot-latham",
+          "argyll-property-partners"
         ],
-        "more": 10
+        "more": 102
+      },
+      {
+        "name": "guides",
+        "leaf_count": 50,
+        "sample": [
+          "acquisition-bridging-non-property",
+          "asset-backed-vs-unsecured-business-loans",
+          "bangladeshi-takeaway-card-vs-cash-financing",
+          "bbls-refinance-strategy-2026",
+          "business-loan-after-bankruptcy",
+          "business-loan-after-iva",
+          "business-loan-application-checklist",
+          "business-loan-calculator"
+        ],
+        "more": 42
       },
       {
         "name": "best",
@@ -603,6 +641,36 @@
         "more": 8
       },
       {
+        "name": "declined",
+        "leaf_count": 13,
+        "sample": [
+          "affordability",
+          "ccj",
+          "complex-group-structure",
+          "decision-tree",
+          "existing-debt",
+          "low-turnover",
+          "no-personal-guarantee",
+          "post-bankruptcy"
+        ],
+        "more": 5
+      },
+      {
+        "name": "hmrc",
+        "leaf_count": 13,
+        "sample": [
+          "corporation-tax-pressure",
+          "ct-carry-back-claim",
+          "ct600-late",
+          "directors-personal-tax-pressure",
+          "hmrc-time-to-pay",
+          "ir35-determination-dispute",
+          "notice-of-requirement",
+          "paye-cis-arrears"
+        ],
+        "more": 5
+      },
+      {
         "name": "by-sector",
         "leaf_count": 12,
         "sample": [
@@ -618,32 +686,34 @@
         "more": 4
       },
       {
-        "name": "guides",
-        "leaf_count": 12,
+        "name": "compare",
+        "leaf_count": 9,
         "sample": [
-          "business-loan-after-bankruptcy",
-          "business-loan-after-iva",
-          "business-loan-calculator",
-          "business-loan-first-year-trading",
-          "business-loan-no-credit-check",
-          "business-loan-no-pg",
-          "business-loan-rates-2026",
-          "business-loan-with-ccj"
+          "allica-bank-vs-oaknorth",
+          "bizcap-vs-jpm-capital",
+          "capify-vs-365-business-finance",
+          "funding-circle-vs-allica-bank",
+          "funding-circle-vs-oaknorth",
+          "iwoca-vs-capify",
+          "iwoca-vs-funding-circle",
+          "iwoca-vs-tide-loans"
         ],
-        "more": 4
+        "more": 1
       },
       {
-        "name": "hmrc",
-        "leaf_count": 6,
+        "name": "halal",
+        "leaf_count": 9,
         "sample": [
-          "corporation-tax-pressure",
-          "directors-personal-tax-pressure",
-          "hmrc-time-to-pay",
-          "paye-cis-arrears",
-          "vat-bill-emergency",
-          "winding-up-petition"
+          "al-rayan-bank",
+          "arabic",
+          "bengali",
+          "blme",
+          "gatehouse-bank",
+          "kestrl",
+          "punjabi",
+          "qib-uk"
         ],
-        "more": 0
+        "more": 1
       },
       {
         "name": "use-cases",
@@ -659,14 +729,23 @@
         "more": 0
       },
       {
-        "name": "halal",
+        "name": "tools",
         "leaf_count": 5,
         "sample": [
-          "al-rayan-bank",
-          "blme",
-          "gatehouse-bank",
-          "kestrl",
-          "qib-uk"
+          "bbls-payg-vs-refinance-break-even",
+          "blended-cost-of-capital-calculator",
+          "dscr-calculator",
+          "effective-apr-converter",
+          "loan-affordability-calculator"
+        ],
+        "more": 0
+      },
+      {
+        "name": "by-product",
+        "leaf_count": 2,
+        "sample": [
+          "asset-finance",
+          "stock-finance"
         ],
         "more": 0
       },
@@ -679,41 +758,15 @@
         "more": 0
       },
       {
-        "name": ".",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "404",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
         "name": "about",
         "leaf_count": 0,
         "sample": [],
         "more": 0
       },
       {
-        "name": "by-persona",
+        "name": "accountants-business-loans",
         "leaf_count": 0,
         "sample": [],
-        "more": 0
-      },
-      {
-        "name": "by-product",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "compare",
-        "leaf_count": 1,
-        "sample": [
-          "iwoca-vs-funding-circle"
-        ],
         "more": 0
       }
     ]
@@ -725,37 +778,37 @@
     "tagline": "Specialty UK SMB finance broker",
     "tier": "leadgen",
     "domain": "fundbiz.co.uk",
-    "total": 84,
+    "total": 168,
     "sections": [
       {
         "name": "declined",
-        "leaf_count": 16,
+        "leaf_count": 57,
         "sample": [
-          "ccj",
-          "companies-house-overdue",
-          "complex-group",
-          "existing-debt-with-lender",
-          "high-affordability-ratio",
-          "low-turnover",
-          "missed-payments",
-          "no-business-bank-account"
+          "365-business-finance",
+          "aesthetic-clinic-cqc-compliance",
+          "agriculture-single-buyer",
+          "aldermore",
+          "allica-bank",
+          "bizcap",
+          "capify",
+          "care-home-cqc-pressure"
         ],
-        "more": 8
+        "more": 49
       },
       {
         "name": "asset-finance",
-        "leaf_count": 15,
+        "leaf_count": 17,
         "sample": [
+          "balloon-payment-options",
           "cnc-machine-finance",
           "dental-chair-finance",
           "forklift-finance",
+          "frs-102-lease-changes-2026",
           "gym-equipment-finance",
           "hgv-finance",
-          "it-equipment-finance",
-          "modular-building-finance",
-          "photography-equipment-finance"
+          "it-equipment-finance"
         ],
-        "more": 7
+        "more": 9
       },
       {
         "name": "sectors",
@@ -773,6 +826,21 @@
         "more": 6
       },
       {
+        "name": "lenders",
+        "leaf_count": 13,
+        "sample": [
+          "365-business-finance",
+          "aldermore",
+          "allica-bank",
+          "bizcap",
+          "capify",
+          "funding-circle",
+          "iwoca",
+          "jpm-capital"
+        ],
+        "more": 5
+      },
+      {
         "name": "banks",
         "leaf_count": 12,
         "sample": [
@@ -788,6 +856,64 @@
         "more": 4
       },
       {
+        "name": "triggered",
+        "leaf_count": 9,
+        "sample": [
+          "asset-finance-balloon-due",
+          "declined-by-funding-circle",
+          "lease-residual-shock",
+          "mca-card-takings-collapsed",
+          "project-bond-call",
+          "r-and-d-hmrc-enquiry",
+          "sales-down-mid-mca",
+          "supplier-demanding-payment"
+        ],
+        "more": 1
+      },
+      {
+        "name": "calculator",
+        "leaf_count": 7,
+        "sample": [
+          "affordability-ratio",
+          "asset-finance-cost-compare",
+          "eligibility-self-score",
+          "mca-apr-converter",
+          "mca",
+          "r-and-d-advance-estimator",
+          "working-capital-cycle"
+        ],
+        "more": 0
+      },
+      {
+        "name": "hmrc",
+        "leaf_count": 4,
+        "sample": [
+          "cis-deduction-finance",
+          "corporation-tax-bridge",
+          "paye-arrears-funding",
+          "vat-loan-emergency"
+        ],
+        "more": 0
+      },
+      {
+        "name": "schemes",
+        "leaf_count": 3,
+        "sample": [
+          "growth-guarantee-scheme-2030",
+          "recovery-loan-scheme",
+          "start-up-loans"
+        ],
+        "more": 0
+      },
+      {
+        "name": "asset-refinance",
+        "leaf_count": 1,
+        "sample": [
+          "sale-and-leaseback"
+        ],
+        "more": 0
+      },
+      {
         "name": "authors",
         "leaf_count": 1,
         "sample": [
@@ -796,57 +922,23 @@
         "more": 0
       },
       {
-        "name": "calculator",
+        "name": "lender-comfort",
         "leaf_count": 1,
         "sample": [
-          "mca"
+          "companies-house-id-verification"
         ],
         "more": 0
       },
       {
-        "name": ".",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "404",
-        "leaf_count": 0,
-        "sample": [],
+        "name": "vat-loan",
+        "leaf_count": 1,
+        "sample": [
+          "vs-hmrc-time-to-pay"
+        ],
         "more": 0
       },
       {
         "name": "about",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "bridging",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "commercial-mortgage",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "contact",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "disclaimer",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "editorial-policy",
         "leaf_count": 0,
         "sample": [],
         "more": 0
@@ -860,37 +952,82 @@
     "tagline": "Card machines and merchant accounts",
     "tier": "product",
     "domain": "cardmachines.co.uk",
-    "total": 100,
+    "total": 709,
     "sections": [
       {
+        "name": "best",
+        "leaf_count": 462,
+        "sample": [
+          "best-card-machine-for-addison-lee",
+          "best-card-machine-for-aesthetics-clinic",
+          "best-card-machine-for-airport-taxi",
+          "best-card-machine-for-birmingham-taxi",
+          "best-card-machine-for-black-cab",
+          "best-card-machine-for-bolt-drivers",
+          "best-card-machine-for-bristol-taxi",
+          "best-card-machine-for-cardiff-taxi"
+        ],
+        "more": 454
+      },
+      {
         "name": "trade",
-        "leaf_count": 25,
+        "leaf_count": 30,
         "sample": [
           "b-and-b-airbnb",
           "beauty-clinic",
           "butcher",
           "cafe",
+          "cash-and-carry",
           "caterer",
           "dentist",
-          "dog-grooming",
-          "electrician"
+          "dog-grooming"
         ],
-        "more": 17
+        "more": 22
       },
       {
         "name": "reviews",
-        "leaf_count": 13,
+        "leaf_count": 18,
         "sample": [
           "adyen",
+          "bbpos-wisepad-3",
           "bbpos-wisepos-e",
           "dojo-go",
+          "ingenico-iwl250-move-5000",
+          "pax-a77",
           "pax-a920-pro",
-          "revolut-card-reader",
-          "square-terminal",
-          "stripe-reader-s700",
-          "sumup-solo"
+          "revolut-card-reader"
         ],
-        "more": 5
+        "more": 10
+      },
+      {
+        "name": "compare",
+        "leaf_count": 15,
+        "sample": [
+          "adyen-vs-stripe-reader-s700",
+          "dojo-go-vs-sumup-solo",
+          "dojo-go-vs-zettle-reader-2",
+          "pax-a920-pro-vs-bbpos-wisepos-e",
+          "revolut-card-reader-vs-tide-card-reader",
+          "square-terminal-vs-dojo-go",
+          "square-terminal-vs-stripe-reader-s700",
+          "stripe-reader-s700-vs-adyen"
+        ],
+        "more": 7
+      },
+      {
+        "name": "locations",
+        "leaf_count": 12,
+        "sample": [
+          "birmingham-handsworth",
+          "coventry-foleshill",
+          "east-ham",
+          "harrow",
+          "leeds-harehills",
+          "leicester",
+          "manchester-cheetham-hill",
+          "slough"
+        ],
+        "more": 4
       },
       {
         "name": "high-risk",
@@ -908,102 +1045,122 @@
         "more": 3
       },
       {
-        "name": "integrations",
-        "leaf_count": 6,
+        "name": "by-sector",
+        "leaf_count": 10,
         "sample": [
-          "card-machine-for-booksy",
-          "card-machine-for-cliniko",
-          "card-machine-for-quickbooks",
-          "card-machine-for-sage",
-          "card-machine-for-treatwell",
-          "card-machine-for-xero"
+          "automotive",
+          "charities",
+          "food-vans",
+          "healthcare",
+          "hospitality",
+          "market-traders",
+          "mobile-traders",
+          "pop-ups"
         ],
-        "more": 0
+        "more": 2
+      },
+      {
+        "name": "learn",
+        "leaf_count": 10,
+        "sample": [
+          "chargebacks-uk-2026",
+          "contactless-cap-removal-2026",
+          "cross-border-interchange-uk-2026",
+          "interchange-plus-vs-blended",
+          "match-list-tmf-uk",
+          "pci-dss-v4-uk-small-merchant",
+          "sca-3ds2-uk-merchants",
+          "settlement-schedules-explained"
+        ],
+        "more": 2
+      },
+      {
+        "name": "switch",
+        "leaf_count": 10,
+        "sample": [
+          "leave-barclaycard",
+          "leave-elavon",
+          "leave-mypos",
+          "leave-paymentsense",
+          "leave-square",
+          "leave-stripe",
+          "leave-sumup",
+          "leave-takepayments"
+        ],
+        "more": 2
       },
       {
         "name": "faith",
-        "leaf_count": 5,
+        "leaf_count": 8,
         "sample": [
           "church-collection",
+          "gurdwara-donation-terminal",
           "gurdwara-donations",
+          "mandir-hundi-digital",
           "mosque-donations",
+          "polish-catholic-parish-contactless",
           "synagogue-donations",
           "temple-donations"
         ],
         "more": 0
       },
       {
-        "name": "features",
-        "leaf_count": 5,
+        "name": "help",
+        "leaf_count": 8,
         "sample": [
-          "card-machine-amex",
-          "card-machine-apple-pay",
-          "card-machine-tabs",
-          "card-machine-tipping",
-          "multi-currency-card-machine"
+          "account-terminated-by-acquirer",
+          "acquirer-froze-my-funds",
+          "chargeback-notification-uk",
+          "match-list-listing-suspected",
+          "my-card-machine-isnt-working",
+          "processing-limit-breached",
+          "refund-batch-rejected",
+          "surcharging-uk-b2b-vs-b2c"
         ],
         "more": 0
       },
       {
-        "name": "switch",
-        "leaf_count": 5,
+        "name": "lp",
+        "leaf_count": 8,
         "sample": [
-          "leave-barclaycard",
-          "leave-elavon",
-          "leave-paymentsense",
-          "leave-takepayments",
-          "leave-worldpay"
+          "dojo-go",
+          "get-card-machine",
+          "high-risk",
+          "online-payments",
+          "square-terminal",
+          "stripe-checkout",
+          "sumup-solo",
+          "tap-to-pay"
         ],
         "more": 0
       },
       {
-        "name": "compare",
-        "leaf_count": 5,
+        "name": "online-payments",
+        "leaf_count": 8,
         "sample": [
-          "dojo-go-vs-zettle-reader-2",
-          "square-terminal-vs-stripe-reader-s700",
-          "sumup-vs-square",
-          "tap-to-pay-iphone-vs-sumup-solo",
-          "worldpay-vs-dojo"
+          "adyen-web",
+          "gocardless",
+          "mollie",
+          "opayo",
+          "paypal-checkout",
+          "shopify-payments",
+          "square-online",
+          "stripe-checkout"
         ],
         "more": 0
       },
       {
-        "name": "authors",
-        "leaf_count": 1,
+        "name": "pa",
+        "leaf_count": 7,
         "sample": [
-          "oliver-mackman"
+          "birmingham-card-machine-pa",
+          "corner-shop-card-machine",
+          "mobile-tap-to-pay-pa",
+          "southall-card-machine-pa",
+          "takeaway-card-machine",
+          "taxi-card-reader",
+          "worldpay-cancel-pa"
         ],
-        "more": 0
-      },
-      {
-        "name": ".",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "404",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "about",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "contact",
-        "leaf_count": 0,
-        "sample": [],
-        "more": 0
-      },
-      {
-        "name": "disclaimer",
-        "leaf_count": 0,
-        "sample": [],
         "more": 0
       }
     ]
