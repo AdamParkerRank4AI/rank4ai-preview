@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import sectors from '../../data/sectors.json'
 import cities from '../../data/cities.json'
 
@@ -27,6 +28,11 @@ const metaDesc = type === 'city'
 
 <section class="pt-12 pb-24 reveal">
   <div class="container-narrow">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Who We Help', href: '/who-we-help/' },
+      { label: h1 }
+    ]} />
     <p class="section-tag">{type === 'city' ? 'By Location' : 'By Sector'}</p>
     <h1 class="mb-6">{h1}</h1>
     <p class="text-[17px] text-text-muted leading-relaxed mb-5">{desc}</p>
