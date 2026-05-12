@@ -25,6 +25,11 @@ const {
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const siteUrl = 'https://www.rank4ai.co.uk'
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
+
+// Tracking — paste real IDs to activate. GA4 from analytics.google.com,
+// Clarity from clarity.microsoft.com.
+const GA4_ID: string = '';
+const CLARITY_ID: string = '';
 ---
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -34,6 +39,17 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonicalUrl}>
+    {/* Tracking — paste IDs in constants at top of frontmatter. Live on push. */}
+    {GA4_ID && (
+      <>
+        <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script type="text/partytown" set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}',{anonymize_ip:true});`} />
+      </>
+    )}
+    {CLARITY_ID && (
+      <script type="text/partytown" set:html={`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`} />
+    )}
+
     <link rel="related" href="https://marketinvoice.co.uk/" title="Market Invoice" />
     <link rel="related" href="https://seocompare.co.uk/" title="SEOCompare" />
     <link rel="related" href="https://bestbusinessloans.ai/" title="Best Business Loans" />
