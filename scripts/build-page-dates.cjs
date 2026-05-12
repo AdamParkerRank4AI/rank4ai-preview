@@ -76,11 +76,30 @@ function walk(dir, files = []) {
   return files;
 }
 
+function isShallowRepo() {
+  try {
+    const out = execSync('git rev-parse --is-shallow-repository 2>/dev/null', { cwd: ROOT, encoding: 'utf8' }).trim();
+    return out === 'true';
+  } catch {
+    return false;
+  }
+}
+
 function main() {
   if (!fs.existsSync(PAGES_DIR)) {
     console.error('No src/pages/ found.');
     process.exit(1);
   }
+
+  // Shallow clones (Cloudflare Pages, CI) can't produce per-file git history.
+  // git log returns HEAD's date for every file, which would clobber the
+  // committed page-dates.json with all-identical dates and silently break
+  // sitemap lastmod. Preserve the committed file instead.
+  if (isShallowRepo()) {
+    console.log('Shallow repository detected, preserving committed page-dates.json (skipping regen).');
+    return;
+  }
+
   const files = walk(PAGES_DIR);
   const manifest = {};
   let withDates = 0;
