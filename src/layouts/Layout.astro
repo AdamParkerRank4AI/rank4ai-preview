@@ -114,6 +114,21 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href
         "inLanguage": "en-GB",
         "publisher": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
         "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://www.rank4ai.co.uk/learn/questions/?q={search_term_string}" }, "query-input": "required name=search_term_string" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": canonicalUrl + "#webpage",
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": { "@id": "https://www.rank4ai.co.uk/#website" },
+        "about": { "@id": "https://www.rank4ai.co.uk/#localbusiness" },
+        "inLanguage": "en-GB",
+        "dateModified": new Date().toISOString(),
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".answer-capsule", ".section-tag", "h1", "h2"]
+        }
       }
     ]
   })} />
