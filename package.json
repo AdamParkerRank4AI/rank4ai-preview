@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/build-page-dates.cjs",
+    "prebuild": "node scripts/build-page-dates.cjs; node scripts/lint-meta.cjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
